@@ -22,7 +22,7 @@ import HengitysPage from "./Pages/HengitysPage";
 function App() {
   let history = useHistory();
   const [personData, setPersonData] = useState({});
-
+  console.log(personData);
   return (
     <BrowserRouter>
       <div className="App">
@@ -35,23 +35,58 @@ function App() {
           />
           <Route
             path="/hengitystie"
-            render={props => <HengitystiePage history={history} {...props} />}
+            render={props => (
+              <HengitystiePage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hengitys"
-            render={props => <HengitysPage history={history} {...props} />}
+            render={props => (
+              <HengitysPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/iho"
-            render={props => <IhoPage history={history} {...props} />}
+            render={props => (
+              <IhoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/verenkierto"
-            render={props => <VerenkiertoPage history={history} {...props} />}
+            render={props => (
+              <VerenkiertoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/tajunta"
-            render={props => <TajuntaPage history={history} {...props} />}
+            render={props => (
+              <TajuntaPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hengitystaajuus"

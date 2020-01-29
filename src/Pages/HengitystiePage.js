@@ -1,14 +1,15 @@
 import React from "react";
 import DoubleButon from "../Components/DoubleButton";
 
-function HengitystiePage({ history }) {
+function HengitystiePage({ history, personData, setPersonData }) {
   const red = "#AD3E2F";
   const green = "#377D4F";
-
   const open_hoitoOje = className => {
     var [element] = document.getElementsByClassName(className);
     element.classList.toggle("active");
   };
+  const question1 = "hengitysAuki";
+  const question2 = "ilmatieestetta";
 
   return (
     <div className="Page">
@@ -25,6 +26,9 @@ function HengitystiePage({ history }) {
         eventHandler={open_hoitoOje}
         hoitoOhjeOn={"hoito-ohje_1"}
         hoitoOhjeOn_YesNo={"Kyllä"}
+        personData={personData}
+        setPersonData={setPersonData}
+        question={question1}
       />
       <DoubleButon
         header={"Onko ilmatie estettä?"}
@@ -37,6 +41,9 @@ function HengitystiePage({ history }) {
         eventHandler={open_hoitoOje}
         hoitoOhjeOn={"hoito-ohje_2"}
         hoitoOhjeOn_YesNo={"Ei"}
+        personData={personData}
+        setPersonData={setPersonData}
+        question={question2}
       />
       <div className="nextButtondiv">
         <button

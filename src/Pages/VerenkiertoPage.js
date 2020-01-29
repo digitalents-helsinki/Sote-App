@@ -1,7 +1,7 @@
 import React from "react";
 import DoubleButon from "../Components/DoubleButton";
 
-function VerenkiertoPage({ history }) {
+function VerenkiertoPage({ history, personData, setPersonData }) {
   const red = "#AD3E2F";
   const green = "#377D4F";
 
@@ -27,6 +27,8 @@ function VerenkiertoPage({ history }) {
         eventHandler={open_hoitoOje}
         hoitoOhjeOn={""}
         hoitoOhjeOn_YesNo={""}
+        personData={personData}
+        setPersonData={setPersonData}
       />
       <DoubleButon
         header={"Tuntuuko lämpöraja:"}
@@ -41,6 +43,8 @@ function VerenkiertoPage({ history }) {
         eventHandler={open_hoitoOje}
         hoitoOhjeOn={""}
         hoitoOhjeOn_YesNo={""}
+        personData={personData}
+        setPersonData={setPersonData}
       />
       <div className="nextButtondiv">
         <button
