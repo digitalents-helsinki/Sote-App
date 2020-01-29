@@ -1,0 +1,379 @@
+$font-montserrat: "Montserrat", sans-serif;
+$sote-black: #212121;
+$sote-red: #ad3e2f;
+$sote-green: #377d4f;
+$sote-orange: #db5400;
+$sote-light-orange: #f0a171;
+
+$app-background-color: #fafafa;
+
+body,
+html {
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  background-color: $app-background-color;
+
+  .TopArea {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      height: 100px;
+      width: 100%;
+      padding: 0 8vw;
+      box-sizing: border-box;
+
+      color: $sote-black;
+      background-image: linear-gradient(
+        rgba(250, 250, 250, 1),
+        rgba(250, 250, 250, 1),
+        rgba(250, 250, 250, 0.7)
+      );
+
+      .back-arrow {
+        height: 26px;
+        width: 26px;
+      }
+
+      .AppName {
+        font-family: $font-montserrat;
+        font-size: 20px;
+        font-weight: 800;
+        margin: 4px 0 0 0;
+      }
+
+      .more-btn {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  .ProgressBar {
+    .bar-background {
+      background-color: #e8e8e8;
+
+      height: 18px;
+      border-radius: 18px;
+      margin: 0 8vw;
+
+      box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
+      position: relative;
+
+      .bar-shadow-indicator {
+        height: 14px;
+        width: 50px;
+        border-radius: 14px;
+        position: absolute;
+        top: 2px;
+        margin: 0 2px;
+
+        background-color: #b8b8b8;
+      }
+
+      .bar-indicator {
+        height: 14px;
+        width: 50px;
+        border-radius: 14px;
+        position: absolute;
+        top: 2px;
+        margin: 0 2px;
+
+        background-color: #315991;
+      }
+    }
+  }
+
+  .nextButtondiv {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.8rem;
+
+    .nextButtoninactive {
+      width: 280px;
+      height: 55px;
+      border-radius: 50px;
+      background-color: #b5b5b5;
+      color: #cfcfcf;
+      //font-family:Montserrat;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
+      outline: none;
+      border: none;
+    }
+
+    /*.nextButtonactive{
+            background-image:linear-gradient(0deg, #cf7740 0%, #cc693b 100%);
+            color:#ffffff;
+            text-align:center;
+            box-shadow:0px 6px 15px rgba(0, 0, 0, 0.4);
+        }*/
+
+    .nextButtonactive:focus {
+      outline: none;
+      border: 0;
+    }
+    .nextButtonactive::-moz-focus-inner {
+      outline: none;
+      border: 0;
+    }
+  }
+
+  .checkboxComponent {
+    width: 100%;
+    padding: 10px 0;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        color: $sote-black;
+        margin: 0;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .checkbox-input {
+        appearance: none;
+        background-color: #fff;
+        border: 2px solid $sote-black;
+        padding: 9px;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .checkbox-input:checked::after {
+        content: url(./Images/checkbox-tik.svg);
+        position: absolute;
+        top: -5px;
+        left: 3px;
+      }
+    }
+  }
+
+
+  .Textarea {  
+        margin-top: 30px;
+
+        p {
+            margin: 10px 0 !important;
+            text-align: start !important;
+            font-weight: 700 !important;
+            font-size: 0.9rem;
+        }
+
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            height: 30vh;
+            border: 1px solid #8c8c8c;
+            border-radius: 4px;
+            background-color: #ffffff;
+            font-family: $font-montserrat;
+            font-weight: 100;
+            font-style: italic;
+            font-size: 14px;
+            padding: 15px;
+        }
+    
+  }
+
+
+  .Page {
+    width: 100%;
+    background-color: $app-background-color;
+    padding: 27vh 8vw 30vh 8vw;
+    box-sizing: border-box;
+
+    font-family: $font-montserrat;
+
+    h1 {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 300;
+      line-height: 1.8rem;
+    }
+
+    /*.attention text and emergency link properties are in the landingpage*/
+    .attentionText {
+      color: $sote-red;
+      font-weight: 800;
+    }
+
+    .emergencyPage-link {
+      font-size: 0.9rem;
+
+      span {
+        text-decoration: underline;
+        color: $sote-red;
+      }
+    }
+  }
+
+
+
+  .DoubleButton {
+    margin: 50px 0 70px 0;
+
+    h2 {
+      font-family: $font-montserrat;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-weight: 100;
+      text-align: start;
+      font-size: 0.9rem;
+    }
+
+    form {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input {
+      border: 1px solid #8c8c8c;
+      background-color: #fff;
+      border-radius: 4px;
+      height: 36px;
+      width: 40vw;
+      font-size: 14px;
+    }
+
+    .hoito-ohje_1 {
+      margin-top: 10px;
+      padding: 0px 20px;
+      font-size: 16px;
+      box-sizing: border-box;
+      width: 100%;
+      max-height: 0;
+      background-color: #f0c816;
+      overflow: hidden;
+
+      transition-duration: 400ms;
+      transition-timing-function: ease-in-out;
+
+      p {
+        font-size: 14px;
+        text-align: start;
+        line-height: 1.8rem;
+      }
+    }
+
+    .hoito-ohje_2 {
+      margin-top: 10px;
+      padding: 0px 20px;
+      font-size: 16px;
+      box-sizing: border-box;
+      width: 100%;
+      max-height: 0;
+      background-color: #f0c816;
+      overflow: hidden;
+
+      transition-duration: 400ms;
+
+      p {
+        font-size: 14px;
+        text-align: start;
+        line-height: 1.8rem;
+      }
+    }
+
+    .active {
+      width: 100%;
+      max-height: 200px;
+      padding: 10px 20px;
+    }
+  }
+
+  .news-container {
+    text-align: center;
+
+    .news-input {
+      border: 1px solid #8c8c8c;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 28px;
+      color: $sote-black;
+
+      width: 140px;
+      height: 60px;
+
+      margin-bottom: 20px;
+    }
+
+    .news-meter {
+      display: flex;
+      height: 30px;
+      width: 100%;
+    }
+
+    .news-meter-cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+      width: (100% / 7);
+
+      opacity: 0.8;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .n1 {
+      background-color: $sote-red;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .n7 {
+      background-color: $sote-red;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .n2,
+    .n6 {
+      background-color: $sote-orange;
+    }
+
+    .n3,
+    .n5 {
+      background-color: $sote-light-orange;
+    }
+
+    .n4 {
+      background-color: $sote-green;
+    }
+
+    .active {
+      background-color: black;
+    }
+  }
+}
