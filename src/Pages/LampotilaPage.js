@@ -1,7 +1,7 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 
-function LampotilaPage({ history }) {
+function LampotilaPage({ history, personData, setPersonData }) {
   return (
     <div className="Page">
       <h1>Mittaa lämpötila:</h1>
@@ -16,6 +16,9 @@ function LampotilaPage({ history }) {
           39.1,
           null
         ]}
+        name={"Mittaa lämpötila"}
+        personData={personData}
+        setPersonData={setPersonData}
       />
       <div className="nextButtondiv">
         <button

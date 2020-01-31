@@ -2,7 +2,7 @@ import React from "react";
 import Textarea from "../Components/Textarea";
 import Checkbox from "../Components/Checkbox";
 
-function TajuntaPage({ history }) {
+function TajuntaPage({ history, personData, setPersonData }) {
   return (
     <div className="Page">
       <h1>Tajunta</h1>
@@ -10,8 +10,16 @@ function TajuntaPage({ history }) {
         Tarkista tajunta ja kirjoita mahdoliset löydökset/käyttätyminen alla
         olevaan tekstikenttään.
       </p>
-      <Checkbox checkboxlabel={"Ei poikkeavia löydöksiä."} />
-      <Textarea />
+      <Checkbox
+        checkboxlabel={"Ei poikkeavia löydöksiä."}
+        personData={personData}
+        setPersonData={setPersonData}
+      />
+      <Textarea
+        name={"tajunta"}
+        personData={personData}
+        setPersonData={setPersonData}
+      />
       <div className="nextButtondiv">
         <button
           className="nextButtoninactive nextButtonactive"
