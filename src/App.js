@@ -18,6 +18,7 @@ import LampotilaPage from "./Pages/LampotilaPage";
 import VerensokeriPage from "./Pages/VerensokeriPage";
 import TajunnantasoPage from "./Pages/TajunnantasoPage";
 import HengitysPage from "./Pages/HengitysPage";
+import EmergencyPage from "./Pages/EmergencyPage";
 
 function App() {
   let history = useHistory();
@@ -86,6 +87,10 @@ function App() {
           <Route
             path="/verensokeri"
             render={props => <VerensokeriPage history={history} {...props} />}
+          />
+          <Route
+            path="/hatatilanne"
+            render={props => <EmergencyPage history={history} {...props} />}
           />
         </Switch>
       </div>

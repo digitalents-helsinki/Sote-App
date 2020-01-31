@@ -9,6 +9,133 @@ html {
   background-color: #fafafa;
 }
 
+.App .emergencyPage-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App .emergencyPage-container .emergencyPage-topBar {
+  background-color: #ab2615;
+  padding: 26px 8vw 0 8vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  z-index: 10;
+}
+
+.App .emergencyPage-container .emergencyPage-topBar img {
+  width: 26px;
+  height: 26px;
+}
+
+.App .emergencyPage-container .emergencyPage-topBar h2 {
+  font-size: 24px;
+  padding: 20px 0 10px 0;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.App .emergencyPage-container .symptoms-container {
+  width: 100%;
+  height: 100%;
+  padding: 155px 3vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App .emergencyPage-container .symptoms-container .symptom-card {
+  background-color: #f0e4bb;
+  border: 1px solid #e0d9b8;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 6px 14px;
+  margin: 12px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-duration: 400;
+  transition-duration: 400;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .header-content {
+  font-size: 15px;
+  line-height: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .header-content
+  h4 {
+  color: #ab2615;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .header-content
+  span {
+  color: #212121;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .header-content
+  .dropdown-btn {
+  height: 100%;
+  width: 40px;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .header-content
+  .dropdown-btn
+  img {
+  height: 12px;
+}
+
+.App .emergencyPage-container .symptoms-container .symptom-card .instructions {
+  overflow-y: hidden;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+.App
+  .emergencyPage-container
+  .symptoms-container
+  .symptom-card
+  .instructions
+  p {
+  font-weight: 300;
+  line-height: 1.7rem;
+}
+
 .App .TopArea {
   position: fixed;
   top: 0;
@@ -20,18 +147,25 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100px;
   width: 100%;
   padding: 0 8vw;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #212121;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), color-stop(#fafafa), to(rgba(250, 250, 250, 0.7)));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fafafa),
+    color-stop(#fafafa),
+    to(rgba(250, 250, 250, 0.7))
+  );
   background-image: linear-gradient(#fafafa, #fafafa, rgba(250, 250, 250, 0.7));
 }
 
@@ -58,7 +192,7 @@ html {
   border-radius: 18px;
   margin: 0 8vw;
   -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
-          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
@@ -107,7 +241,7 @@ html {
   line-height: 22px;
   text-align: center;
   -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
-          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
   outline: none;
   border: none;
 }
@@ -132,11 +266,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .App .checkboxComponent form p {
@@ -148,8 +282,8 @@ html {
 
 .App .checkboxComponent form .checkbox-input {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #fff;
   border: 2px solid #212121;
   padding: 9px;
@@ -178,7 +312,7 @@ html {
 
 .App .Textarea textarea {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   height: 30vh;
   border: 1px solid #8c8c8c;
@@ -196,7 +330,7 @@ html {
   background-color: #fafafa;
   padding: 27vh 8vw 30vh 8vw;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   /*.attention text and emergency link properties are in the landingpage*/
 }
@@ -252,8 +386,8 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .App .DoubleButton input {
@@ -270,15 +404,15 @@ html {
   padding: 0px 20px;
   font-size: 16px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   max-height: 0;
   background-color: #f0c816;
   overflow: hidden;
   -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
+  transition-duration: 400ms;
   -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .App .DoubleButton .hoito-ohje_1 p {
@@ -292,13 +426,13 @@ html {
   padding: 0px 20px;
   font-size: 16px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   max-height: 0;
   background-color: #f0c816;
   overflow: hidden;
   -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
+  transition-duration: 400ms;
 }
 
 .App .DoubleButton .hoito-ohje_2 p {
@@ -341,11 +475,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 14.28571%;
   opacity: 0.8;
