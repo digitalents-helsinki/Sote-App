@@ -1,6 +1,7 @@
 $font-montserrat: "Montserrat", sans-serif;
 $sote-black: #212121;
 $sote-red: #ad3e2f;
+$sote-dark-red: #ab2615;
 $sote-green: #377d4f;
 $sote-orange: #db5400;
 $sote-light-orange: #f0a171;
@@ -16,6 +17,95 @@ html {
   width: 100%;
   height: 100vh;
   background-color: $app-background-color;
+
+  .emergencyPage-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+    font-family: $font-montserrat;
+
+    .emergencyPage-topBar {
+      background-color: $sote-dark-red;
+      padding: 26px 8vw 0 8vw;
+      box-sizing: border-box;
+      position: fixed;
+      width: 100%;
+      height: 150px;
+      z-index: 10;
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+
+      h2 {
+        font-size: 24px;
+        padding: 20px 0 10px 0;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .symptoms-container {
+      width: 100%;
+      height: 100%;
+      padding: 155px 3vw;
+      box-sizing: border-box;
+
+      .symptom-card {
+        background-color: #f0e4bb;
+        border: 1px solid #e0d9b8;
+        border-radius: 4px;
+
+        width: 100%;
+        height: 100%;
+        padding: 6px 14px;
+        margin: 12px 0;
+        box-sizing: border-box;
+
+        transition-duration: 400;
+
+        .header-content {
+          font-size: 15px;
+          line-height: 20px;
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          h4 {
+            color: $sote-dark-red;
+          }
+
+          span {
+            color: $sote-black;
+          }
+
+          .dropdown-btn {
+            height: 100%;
+            width: 40px;
+
+            img {
+              height: 12px;
+            }
+          }
+        }
+
+        .instructions {
+          overflow-y: hidden;
+          transition-timing-function: ease-in-out;
+          transition-duration: 250ms;
+
+          p {
+            font-weight: 300;
+            line-height: 1.7rem;
+          }
+        }
+      }
+    }
+  }
 
   .TopArea {
     position: fixed;
