@@ -3,32 +3,39 @@ import Checkbox from "../Components/Checkbox";
 import Textarea from "../Components/Textarea";
 
 function IhoPage({ history, personData, setPersonData }) {
+  const Title = "Iho, paljastaminen";
+
   return (
     <div className="Page">
-      <h1>Iho, paljastaminen</h1>
+      <h1>{Title}</h1>
       <p>Miltä iho tuntuu:</p>
       <Checkbox
         checkboxlabel={"Normaali"}
+        subject={Title}
         personData={personData}
         setPersonData={setPersonData}
       />
       <Checkbox
         checkboxlabel={"Kuiva"}
+        subject={Title}
         personData={personData}
         setPersonData={setPersonData}
       />
       <Checkbox
         checkboxlabel={"Kostea"}
+        subject={Title}
         personData={personData}
         setPersonData={setPersonData}
       />
       <Checkbox
         checkboxlabel={"Kylmä"}
+        subject={Title}
         personData={personData}
         setPersonData={setPersonData}
       />
       <Checkbox
         checkboxlabel={"Kuuma"}
+        subject={Title}
         personData={personData}
         setPersonData={setPersonData}
       />

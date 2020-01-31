@@ -91,36 +91,79 @@ function App() {
           <Route
             path="/hengitystaajuus"
             render={props => (
-              <HengitystaajuusPage history={history} {...props} />
+              <HengitystaajuusPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/happisaturaatio"
             render={props => (
-              <HappisaturaatioPage history={history} {...props} />
+              <HappisaturaatioPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/systolinenverenpaine"
             render={props => (
-              <SystolinenverenpainePage history={history} {...props} />
+              <SystolinenverenpainePage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/syketaajuus"
-            render={props => <SyketaajuusPage history={history} {...props} />}
+            render={props => (
+              <SyketaajuusPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/lampotila"
-            render={props => <LampotilaPage history={history} {...props} />}
+            render={props => (
+              <LampotilaPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/tajunnantaso"
-            render={props => <TajunnantasoPage history={history} {...props} />}
+            render={props => (
+              <TajunnantasoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/verensokeri"
-            render={props => <VerensokeriPage history={history} {...props} />}
+            render={props => (
+              <VerensokeriPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
         </Switch>
       </div>

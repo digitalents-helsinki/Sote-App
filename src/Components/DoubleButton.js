@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function DoubleButon(props) {
+  const Key = props.name ? props.name : props.header;
   const [buttonStyle_1, setButtonStyle_1] = useState({
     background: "#fff",
     textcolor: "#212121",
@@ -91,7 +92,7 @@ function DoubleButon(props) {
             const oldData = props.personData;
             const newData = {
               ...oldData,
-              [props.header]: true
+              [Key]: true
             };
             props.setPersonData(newData);
             if (props.hoitoOhjeOn_YesNo === "Kyllä") {
@@ -119,7 +120,7 @@ function DoubleButon(props) {
             const oldData = props.personData;
             const newData = {
               ...oldData,
-              [props.header]: false
+              [Key]: false
             };
             props.setPersonData(newData);
 

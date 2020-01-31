@@ -1,7 +1,7 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
 
-function TajunnantasoPage({ history }) {
+function TajunnantasoPage({ history, personData, setPersonData }) {
   const red = "#AD3E2F";
   const green = "#377D4F";
 
@@ -27,6 +27,9 @@ function TajunnantasoPage({ history }) {
         eventHandler={open_hoitoOje}
         hoitoOhjeOn={""}
         hoitoOhjeOn_YesNo={""}
+        personData={personData}
+        setPersonData={setPersonData}
+        name={"Tajunnan taso"}
       />
       <div className="nextButtondiv">
         <button

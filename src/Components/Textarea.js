@@ -1,5 +1,6 @@
 import React from "react";
 
+// When implementing a Textarea component on any of the pages, pass in the State-Variables: "personData" and "setPersonData" to update the global personData variable as props. Also pass in a "name" prop to indicate what the key in the "personData" object should be.
 const Textarea = props => {
   return (
     <div className="Textarea">
@@ -8,7 +9,6 @@ const Textarea = props => {
         <textarea
           placeholder="Kirjoita tähän löydöksiäsi..."
           onChange={e => {
-            console.log(e.target.value);
             const oldData = props.personData;
             const newData = {
               ...oldData,

@@ -8,9 +8,6 @@ function HengitystiePage({ history, personData, setPersonData }) {
     var [element] = document.getElementsByClassName(className);
     element.classList.toggle("active");
   };
-  const question1 = "hengitysAuki";
-  const question2 = "ilmatieestetta";
-
   return (
     <div className="Page">
       <h1>Hengitystie</h1>
@@ -28,7 +25,6 @@ function HengitystiePage({ history, personData, setPersonData }) {
         hoitoOhjeOn_YesNo={"Kyllä"}
         personData={personData}
         setPersonData={setPersonData}
-        question={question1}
       />
       <DoubleButon
         header={"Onko ilmatie estettä?"}
@@ -43,7 +39,6 @@ function HengitystiePage({ history, personData, setPersonData }) {
         hoitoOhjeOn_YesNo={"Ei"}
         personData={personData}
         setPersonData={setPersonData}
-        question={question2}
       />
       <div className="nextButtondiv">
         <button
