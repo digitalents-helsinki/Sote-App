@@ -1,7 +1,7 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 
-function VerensokeriPage({ history }) {
+function VerensokeriPage({ history, personData, setPersonData }) {
   return (
     <div className="Page">
       <h1>Mittaa verensokeri:</h1>
@@ -16,6 +16,9 @@ function VerensokeriPage({ history }) {
       </p>
       <NewsComponent
         cells={[4, [5, 6], null, [7, 14], [15, 20], [20, 24], 25]}
+        name={"Mittaa verensokeri:"}
+        personData={personData}
+        setPersonData={setPersonData}
       />
       <div className="nextButtondiv">
         <button

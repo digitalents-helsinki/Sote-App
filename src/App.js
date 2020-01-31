@@ -23,7 +23,7 @@ import EmergencyPage from "./Pages/EmergencyPage";
 function App() {
   let history = useHistory();
   const [personData, setPersonData] = useState({});
-
+  console.log(personData);
   return (
     <BrowserRouter>
       <div className="App">
@@ -36,57 +36,135 @@ function App() {
           />
           <Route
             path="/hengitystie"
-            render={props => <HengitystiePage history={history} {...props} />}
+            render={props => (
+              <HengitystiePage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hengitys"
-            render={props => <HengitysPage history={history} {...props} />}
+            render={props => (
+              <HengitysPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/iho"
-            render={props => <IhoPage history={history} {...props} />}
+            render={props => (
+              <IhoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/verenkierto"
-            render={props => <VerenkiertoPage history={history} {...props} />}
+            render={props => (
+              <VerenkiertoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/tajunta"
-            render={props => <TajuntaPage history={history} {...props} />}
+            render={props => (
+              <TajuntaPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hengitystaajuus"
             render={props => (
-              <HengitystaajuusPage history={history} {...props} />
+              <HengitystaajuusPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/happisaturaatio"
             render={props => (
-              <HappisaturaatioPage history={history} {...props} />
+              <HappisaturaatioPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/systolinenverenpaine"
             render={props => (
-              <SystolinenverenpainePage history={history} {...props} />
+              <SystolinenverenpainePage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
             )}
           />
           <Route
             path="/syketaajuus"
-            render={props => <SyketaajuusPage history={history} {...props} />}
+            render={props => (
+              <SyketaajuusPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/lampotila"
-            render={props => <LampotilaPage history={history} {...props} />}
+            render={props => (
+              <LampotilaPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/tajunnantaso"
-            render={props => <TajunnantasoPage history={history} {...props} />}
+            render={props => (
+              <TajunnantasoPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/verensokeri"
-            render={props => <VerensokeriPage history={history} {...props} />}
+            render={props => (
+              <VerensokeriPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hatatilanne"
