@@ -58,7 +58,7 @@ html {
   width: 100%;
   height: 0vh;
   overflow: auto;
-  z-index: 12;
+  z-index: 21;
   -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
   -webkit-transition-timing-function: ease-out;
@@ -194,6 +194,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 20;
 }
 
 .App .TopArea .flex-container {
@@ -346,10 +347,16 @@ html {
   position: relative;
 }
 
+.App .checkboxComponent form .checkbox-input:focus {
+  outline: none;
+}
+
 .App .checkboxComponent form .checkbox-input:checked::after {
   content: url(./Images/checkbox-tik.svg);
   position: absolute;
-  top: -5px;
+  width: 21px;
+  height: 21px;
+  top: -3px;
   left: 3px;
 }
 
@@ -536,7 +543,7 @@ html {
   align-items: center;
   height: 100%;
   width: 14.28571%;
-  opacity: 0.8;
+  opacity: 0.7;
   color: #fff;
   font-size: 12px;
 }
@@ -566,6 +573,6 @@ html {
 }
 
 .App .news-container .active {
-  background-color: black;
+  opacity: 1;
 }
 /*# sourceMappingURL=App.css.map */

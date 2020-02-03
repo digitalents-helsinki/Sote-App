@@ -71,7 +71,7 @@ html {
     height: 0vh;
 
     overflow: auto;
-    z-index: 12;
+    z-index: 21;
 
     transition-duration: 400ms;
     transition-timing-function: ease-out;
@@ -168,6 +168,7 @@ html {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 20;
 
     .flex-container {
       display: flex;
@@ -306,10 +307,16 @@ html {
         position: relative;
       }
 
+      .checkbox-input:focus {
+        outline: none;
+      }
+
       .checkbox-input:checked::after {
         content: url(./Images/checkbox-tik.svg);
         position: absolute;
-        top: -5px;
+        width: 21px;
+        height: 21px;
+        top: -3px;
         left: 3px;
       }
     }

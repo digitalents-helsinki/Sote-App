@@ -40,9 +40,16 @@ function IhoPage({ history, personData, setPersonData }) {
         setPersonData={setPersonData}
       />
 
-      <h4 style={{ fontSize: "0.9rem", lineHeight: "1.8rem" }}>
+      <h4 style={{ fontSize: "1rem", lineHeight: "1.8rem", marginTop: "60px" }}>
         Kirjaa asiakkaan ihomuutokset ja muut löydökset:
       </h4>
+
+      <Checkbox
+        checkboxlabel={"Ei poikkeavia löydöksiä"}
+        subject={Title}
+        personData={personData}
+        setPersonData={setPersonData}
+      />
       <Textarea
         name={"Iho"}
         personData={personData}
