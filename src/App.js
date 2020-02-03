@@ -20,6 +20,7 @@ import VerensokeriPage from "./Pages/VerensokeriPage";
 import TajunnantasoPage from "./Pages/TajunnantasoPage";
 import HengitysPage from "./Pages/HengitysPage";
 import EmergencyPage from "./Pages/EmergencyPage";
+import InstructionPage from "./Pages/InstructionPage";
 
 function App() {
   let history = useHistory();
@@ -173,6 +174,17 @@ function App() {
             path="/verensokeri"
             render={props => (
               <VerensokeriPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
+          />
+          <Route
+            path="/toimintaohje"
+            render={props => (
+              <InstructionPage
                 personData={personData}
                 setPersonData={setPersonData}
                 history={history}
