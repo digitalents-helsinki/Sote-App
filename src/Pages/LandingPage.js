@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 
 function LandingPage({ props, history }) {
+  const emergencyHandler = useRef();
+
   return (
     <div className="Page">
       <p>

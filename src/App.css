@@ -10,9 +10,16 @@ html {
 }
 
 .App .emergencyPage-container {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  position: absolute;
-  top: 0;
+  height: 0vh;
+  overflow: auto;
+  z-index: 12;
+  -webkit-transition-duration: 600ms;
+  transition-duration: 600ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -24,7 +31,7 @@ html {
   position: fixed;
   width: 100%;
   height: 150px;
-  z-index: 10;
+  z-index: 13;
 }
 
 .App .emergencyPage-container .emergencyPage-topBar img {
@@ -41,10 +48,10 @@ html {
 
 .App .emergencyPage-container .symptoms-container {
   width: 100%;
-  height: 100%;
   padding: 155px 3vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  background-color: #fff;
 }
 
 .App .emergencyPage-container .symptoms-container .symptom-card {
@@ -52,7 +59,6 @@ html {
   border: 1px solid #e0d9b8;
   border-radius: 4px;
   width: 100%;
-  height: 100%;
   padding: 6px 14px;
   margin: 12px 0;
   -webkit-box-sizing: border-box;
@@ -87,6 +93,7 @@ html {
   .header-content
   h4 {
   color: #ab2615;
+  width: 70vw;
 }
 
 .App
@@ -105,7 +112,7 @@ html {
   .header-content
   .dropdown-btn {
   height: 100%;
-  width: 40px;
+  width: 30px;
 }
 
 .App
@@ -115,7 +122,7 @@ html {
   .header-content
   .dropdown-btn
   img {
-  height: 12px;
+  height: 10px;
 }
 
 .App .emergencyPage-container .symptoms-container .symptom-card .instructions {
@@ -134,6 +141,11 @@ html {
   p {
   font-weight: 300;
   line-height: 1.7rem;
+}
+
+.App .emergencyPage-container,
+.App .active {
+  height: 100vh;
 }
 
 .App .TopArea {

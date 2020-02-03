@@ -88,11 +88,8 @@ function App() {
             path="/verensokeri"
             render={props => <VerensokeriPage history={history} {...props} />}
           />
-          <Route
-            path="/hatatilanne"
-            render={props => <EmergencyPage history={history} {...props} />}
-          />
         </Switch>
+        <EmergencyPage />
       </div>
     </BrowserRouter>
   );
