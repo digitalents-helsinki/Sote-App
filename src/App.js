@@ -182,7 +182,7 @@ function App() {
             )}
           />
           <Route
-            path="/toimintaohje"
+            path="/instructionPage"
             render={props => (
               <InstructionPage
                 personData={personData}
