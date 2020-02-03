@@ -5,7 +5,7 @@ $sote-dark-red: #ab2615;
 $sote-green: #377d4f;
 $sote-orange: #db5400;
 $sote-light-orange: #f0a171;
-
+$sote-blue: #284e78;
 $app-background-color: #fafafa;
 
 body,
@@ -18,6 +18,52 @@ html {
   height: 100vh;
   background-color: $app-background-color;
 
+  .menu-panel {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+      15deg,
+      rgba(29, 61, 105, 0.75),
+      rgba(29, 61, 105, 0.9),
+      rgba(29, 61, 105, 0.98),
+      rgba(29, 61, 105, 1)
+    );
+
+    position: fixed;
+    top: 0;
+    z-index: 50;
+
+    padding: 40px 12vw;
+    box-sizing: border-box;
+
+    font-family: $font-montserrat;
+    color: #fff;
+
+    transition-duration: 400ms;
+
+    img {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    .content {
+      margin-top: 80px;
+      float: right;
+
+      p {
+        opacity: 0.8;
+        display: block;
+        float: right;
+      }
+    }
+  }
+
+  .menu-panel.active {
+    display: block;
+  }
+
   .emergencyPage-container {
     position: fixed;
     bottom: 0;
@@ -27,7 +73,7 @@ html {
     overflow: auto;
     z-index: 12;
 
-    transition-duration: 600ms;
+    transition-duration: 400ms;
     transition-timing-function: ease-out;
 
     font-family: $font-montserrat;
@@ -114,8 +160,7 @@ html {
     }
   }
 
-  .emergencyPage-container,
-  .active {
+  .emergencyPage-container.active {
     height: 100vh;
   }
 

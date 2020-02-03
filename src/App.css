@@ -9,6 +9,49 @@ html {
   background-color: #fafafa;
 }
 
+.App .menu-panel {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    15deg,
+    rgba(29, 61, 105, 0.75),
+    rgba(29, 61, 105, 0.9),
+    rgba(29, 61, 105, 0.98),
+    #1d3d69
+  );
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  padding: 40px 12vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+
+.App .menu-panel img {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.App .menu-panel .content {
+  margin-top: 80px;
+  float: right;
+}
+
+.App .menu-panel .content p {
+  opacity: 0.8;
+  display: block;
+  float: right;
+}
+
+.App .menu-panel.active {
+  display: block;
+}
+
 .App .emergencyPage-container {
   position: fixed;
   bottom: 0;
@@ -16,8 +59,8 @@ html {
   height: 0vh;
   overflow: auto;
   z-index: 12;
-  -webkit-transition-duration: 600ms;
-  transition-duration: 600ms;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   font-family: "Montserrat", sans-serif;
@@ -143,8 +186,7 @@ html {
   line-height: 1.7rem;
 }
 
-.App .emergencyPage-container,
-.App .active {
+.App .emergencyPage-container.active {
   height: 100vh;
 }
 

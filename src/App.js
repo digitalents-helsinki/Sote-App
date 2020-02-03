@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
 
 //Transition group downloaded
 
+import MenuPanel from "./Components/MenuPanel";
 import TopArea from "./Components/TopArea";
 import LandingPage from "./Pages/LandingPage";
 import HengitystiePage from "./Pages/HengitystiePage";
@@ -24,15 +25,28 @@ function App() {
   let history = useHistory();
   const [personData, setPersonData] = useState({});
 
+  const [emergencyVisibility, setEmergencyVisibility] = useState(false);
+  const [menuVisibility, setMenuVisibility] = useState(false);
+
   return (
     <BrowserRouter>
       <div className="App">
-        <TopArea history={history} />
+        <MenuPanel
+          menuVisibility={menuVisibility}
+          setMenuVisibility={setMenuVisibility}
+        />
+        <TopArea history={history} setMenuVisibility={setMenuVisibility} />
         <Switch>
           <Route
             exact={true}
             path="/"
-            render={props => <LandingPage history={history} {...props} />}
+            render={props => (
+              <LandingPage
+                history={history}
+                setEmergencyVisibility={setEmergencyVisibility}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/hengitystie"
@@ -89,7 +103,10 @@ function App() {
             render={props => <VerensokeriPage history={history} {...props} />}
           />
         </Switch>
-        <EmergencyPage />
+        <EmergencyPage
+          visibility={emergencyVisibility}
+          setEmergencyVisibility={setEmergencyVisibility}
+        />
       </div>
     </BrowserRouter>
   );

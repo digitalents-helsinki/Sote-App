@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 
-function LandingPage({ props, history }) {
-  const emergencyHandler = useRef();
-
+function LandingPage({ props, setEmergencyVisibility, history }) {
   return (
     <div className="Page">
       <p>
@@ -15,7 +13,10 @@ function LandingPage({ props, history }) {
         <br />
         hätätilanne, soita suoraan 112.
       </p>
-      <p className="emergencyPage-link">
+      <p
+        className="emergencyPage-link"
+        onClick={() => setEmergencyVisibility(true)}
+      >
         Todelliset <span>hätätilanneoireet</span>
       </p>
       <div className="nextButtondiv">
