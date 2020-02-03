@@ -4,7 +4,7 @@ import moreBtnSvg from "../Images/more-btn.svg";
 
 import ProgressBar from "./ProgressBar";
 
-function TopArea({ history }) {
+function TopArea({ setMenuVisibility, history }) {
   return (
     <div className="TopArea">
       <div className="flex-container">
@@ -17,7 +17,12 @@ function TopArea({ history }) {
           alt="backArrowSvg"
         />
         <h1 className="AppName">SoTe</h1>
-        <img className="more-btn" src={moreBtnSvg} alt="moreBtnSvg" />
+        <img
+          className="more-btn"
+          src={moreBtnSvg}
+          alt="moreBtnSvg"
+          onClick={() => setMenuVisibility(true)}
+        />
       </div>
       <ProgressBar />
     </div>

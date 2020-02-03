@@ -3,11 +3,15 @@ import Arrow from "../Images/arrow-white.svg";
 import SymptomCard from "../Components/SymptomCard";
 import ESC from "../Components/EmergencySymptomsContent";
 
-function EmergencyPage() {
+function EmergencyPage({ props, setEmergencyVisibility, visibility }) {
   return (
-    <div className="emergencyPage-container">
+    <div className={"emergencyPage-container" + (visibility ? " active" : "")}>
       <div className="emergencyPage-topBar">
-        <img src={Arrow} alt="arrow.svg"></img>
+        <img
+          src={Arrow}
+          alt="arrow.svg"
+          onClick={() => setEmergencyVisibility(false)}
+        ></img>
         <h2>Hätätilanne oireet</h2>
       </div>
       <div className="symptoms-container">

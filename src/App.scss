@@ -5,7 +5,7 @@ $sote-dark-red: #ab2615;
 $sote-green: #377d4f;
 $sote-orange: #db5400;
 $sote-light-orange: #f0a171;
-
+$sote-blue: #284e78;
 $app-background-color: #fafafa;
 
 body,
@@ -18,10 +18,63 @@ html {
   height: 100vh;
   background-color: $app-background-color;
 
-  .emergencyPage-container {
+  .menu-panel {
+    display: none;
+
     width: 100%;
-    position: absolute;
+    height: 100vh;
+    background-image: linear-gradient(
+      15deg,
+      rgba(29, 61, 105, 0.75),
+      rgba(29, 61, 105, 0.9),
+      rgba(29, 61, 105, 0.98),
+      rgba(29, 61, 105, 1)
+    );
+
+    position: fixed;
     top: 0;
+    z-index: 50;
+
+    padding: 40px 12vw;
+    box-sizing: border-box;
+
+    font-family: $font-montserrat;
+    color: #fff;
+
+    transition-duration: 400ms;
+
+    img {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    .content {
+      margin-top: 80px;
+      float: right;
+
+      p {
+        opacity: 0.8;
+        display: block;
+        float: right;
+      }
+    }
+  }
+
+  .menu-panel.active {
+    display: block;
+  }
+
+  .emergencyPage-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0vh;
+
+    overflow: auto;
+    z-index: 12;
+
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
 
     font-family: $font-montserrat;
 
@@ -32,7 +85,7 @@ html {
       position: fixed;
       width: 100%;
       height: 150px;
-      z-index: 10;
+      z-index: 13;
 
       img {
         width: 26px;
@@ -49,9 +102,9 @@ html {
 
     .symptoms-container {
       width: 100%;
-      height: 100%;
       padding: 155px 3vw;
       box-sizing: border-box;
+      background-color: #fff;
 
       .symptom-card {
         background-color: #f0e4bb;
@@ -59,7 +112,6 @@ html {
         border-radius: 4px;
 
         width: 100%;
-        height: 100%;
         padding: 6px 14px;
         margin: 12px 0;
         box-sizing: border-box;
@@ -77,6 +129,7 @@ html {
 
           h4 {
             color: $sote-dark-red;
+            width: 70vw;
           }
 
           span {
@@ -85,10 +138,10 @@ html {
 
           .dropdown-btn {
             height: 100%;
-            width: 40px;
+            width: 30px;
 
             img {
-              height: 12px;
+              height: 10px;
             }
           }
         }
@@ -105,6 +158,10 @@ html {
         }
       }
     }
+  }
+
+  .emergencyPage-container.active {
+    height: 100vh;
   }
 
   .TopArea {
