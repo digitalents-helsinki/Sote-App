@@ -3,7 +3,6 @@ import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
-import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -37,7 +36,7 @@ let testingdata = {
   "Mittaa verensokeri:": 10
 };
 
-function InstructionPage({ history, personData, setPersonData }) {
+function InstructionPage() {
   let NEWSscoreTotal;
 
   if (
@@ -62,16 +61,26 @@ function InstructionPage({ history, personData, setPersonData }) {
   return (
     <div className="instruction-page">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
-      <InstructionCardFirst
-        testingdata={testingdata}
-        personData={personData}
-        setPersonData={setPersonData}
-      />
+      <InstructionCardFirst />
       <InstructionNewsComponent />
       <ControlledScoreCard />
-      <InstructionCardSecond />
     </div>
   );
 }
 
+// function InstructionPage({ history, personData, setPersonData }) {
+
+//   return (
+//     <div className="instruction-page">
+//       <p>{testingdata["Onko hengitystie auki?"] ? "Kyllä" : "Ei"}</p>
+//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
+//       <hr></hr>
+//       <h5>Hengitys</h5>
+//       <p>
+//         {testingdata["Hengitys - Normaali hengitys/ei ääniä"] ? "Kyllä" : null}
+//       </p>
+//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
+//     </div>
+//   );
+// }
 export default InstructionPage;
