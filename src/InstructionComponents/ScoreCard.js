@@ -11,19 +11,19 @@ function ScoreCard({ NEWSscoreTotal }) {
       setRiskLevel(0);
       setCardText("Lievä riski");
       setCardStyle({
-        backgroundColor: "green"
+        backgroundColor: "#377d4f"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("kohtalainen riski");
       setCardStyle({
-        backgroundColor: "blue"
+        backgroundColor: "#284e78"
       });
     } else if (NEWSscoreTotal >= 3) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
-        backgroundColor: "red"
+        backgroundColor: "#ad3e2f"
       });
     }
   }, [riskLevel, NEWSscoreTotal]);
