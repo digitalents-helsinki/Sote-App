@@ -657,10 +657,7 @@ html {
 }
 
 .App .instruction-page .InstructionCard-first-container .unusual-findings-list {
-  <<<<<<<HEAD
-  padding: 15px;
-  =======padding: 10px 20px;
-  >>>>>>>feature/instructionPage-components
+  padding: 10px 20px;
   color: #ad3e2f;
   font-weight: 500;
 }
