@@ -3,16 +3,6 @@ import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 
-function InstructionPage() {
-  return (
-    <div className="instruction-page">
-      <ScoreCard />
-      <InstructionCardFirst />
-      <ControlledScoreCard />
-    </div>
-  );
-}
-
 let testingdata = {
   "Onko hengitystie auki?": true,
   "Onko ilmatie estettä?": false,
@@ -32,41 +22,64 @@ let testingdata = {
   "Tajunta - Ei poikkeavia löydöksiä.": true,
   Tajunta: "Testing",
   Hengitystaajuus: 15,
-  "Hengitystaajuus - NEWSscore": 3,
+  "Hengitystaajuus - NEWSscore": 0,
   Happisaturaatio: 95,
-  "Happisaturaatio - NEWSscore": 1,
+  "Happisaturaatio - NEWSscore": 0,
   "Systolinen verenpaine": 150,
   "Systolinen verenpaine - NEWSscore": 0,
   Syketaajuus: 60,
-  "Syketaajuus - NEWSscore": 0,
+  "Syketaajuus - NEWSscore": 3,
   "Mittaa lämpötila": 37,
   "Mittaa lämpötila - NEWSscore": 0,
   "Tajunnan taso": true,
   "Mittaa verensokeri:": 10
 };
 
-function InstructionPage({ history, personData, setPersonData }) {
-  let NEWSscoreTotal =
-    testingdata["Hengitystaajuus - NEWSscore"] +
-    testingdata["Happisaturaatio - NEWSscore"] +
-    testingdata["Systolinen verenpaine - NEWSscore"] +
-    testingdata["Mittaa lämpötila - NEWSscore"] +
-    testingdata["Mittaa verensokeri: - NEWSscore"];
+function InstructionPage() {
+  let NEWSscoreTotal;
 
-  console.log(NEWSscoreTotal, "beep");
+  if (
+    testingdata["Hengitystaajuus - NEWSscore"] === 3 ||
+    testingdata["Happisaturaatio - NEWSscore"] === 3 ||
+    testingdata["Systolinen verenpaine - NEWSscore"] === 3 ||
+    testingdata["Syketaajuus - NEWSscore"] === 3 ||
+    testingdata["Mittaa lämpötila - NEWSscore"] === 3
+  ) {
+    NEWSscoreTotal = 4;
+  } else {
+    NEWSscoreTotal =
+      testingdata["Hengitystaajuus - NEWSscore"] +
+      testingdata["Happisaturaatio - NEWSscore"] +
+      testingdata["Systolinen verenpaine - NEWSscore"] +
+      testingdata["Syketaajuus - NEWSscore"] +
+      testingdata["Mittaa lämpötila - NEWSscore"];
+  }
+  // console.log(testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Syketaajuus - NEWSscore"], testingdata["Mittaa lämpötila - NEWSscore"])
+  // console.log(NEWSscoreTotal, "beep");
 
   return (
     <div className="instruction-page">
-      <p>{testingdata["Onko hengitystie auki?"] ? "Kyllä" : "Ei"}</p>
-      <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
-      <hr></hr>
-      <h5>Hengitys</h5>
-      <p>
-        {testingdata["Hengitys - Normaali hengitys/ei ääniä"] ? "Kyllä" : null}
-      </p>
-      <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
+      <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
+      <InstructionCardFirst />
+      <ControlledScoreCard />
     </div>
   );
 }
+
+// function InstructionPage({ history, personData, setPersonData }) {
+
+//   return (
+//     <div className="instruction-page">
+//       <p>{testingdata["Onko hengitystie auki?"] ? "Kyllä" : "Ei"}</p>
+//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
+//       <hr></hr>
+//       <h5>Hengitys</h5>
+//       <p>
+//         {testingdata["Hengitys - Normaali hengitys/ei ääniä"] ? "Kyllä" : null}
+//       </p>
+//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
+//     </div>
+//   );
+// }
 
 export default InstructionPage;
