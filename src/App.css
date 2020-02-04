@@ -613,27 +613,6 @@ html {
   margin-top: 35px;
 }
 
-.App .instruction-page .controlled-scoreCard-container {
-  width: 100%;
-  background-color: #284e78;
-  padding: 5px 15px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 12px 0;
-  letter-spacing: 0.5px;
-  line-height: 1.6rem;
-  color: #fff;
-}
-
-.App .instruction-page .controlled-scoreCard-container p {
-  font-size: 1.1rem;
-  margin: 20px 0;
-}
-
-.App .instruction-page .controlled-scoreCard-container h3 {
-  margin-top: 35px;
-}
-
 .App .instruction-page .InstructionCard-first-container {
   width: 100%;
   background-color: #fff;
@@ -670,5 +649,44 @@ html {
   border-radius: 4px;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.App .instruction-page .instruction-news-component {
+  border: 1px solid #8c8c8c;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.App .instruction-page .instruction-news-component h1 {
+  font-size: 1.2rem;
+}
+
+.App .instruction-page .instruction-news-component p {
+  margin-bottom: 50px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 15px;
+  line-height: 1.6rem;
+}
+
+.App .instruction-page .controlled-scoreCard-container {
+  width: 100%;
+  background-color: #284e78;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 12px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+}
+
+.App .instruction-page .controlled-scoreCard-container p {
+  font-size: 1.1rem;
+  margin: 60px 0 10px 0;
+}
+
+.App .instruction-page .controlled-scoreCard-container h3 {
+  margin-top: 35px;
 }
 /*# sourceMappingURL=App.css.map */

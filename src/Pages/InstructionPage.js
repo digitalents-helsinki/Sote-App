@@ -2,6 +2,7 @@ import React from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
+import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -61,6 +62,7 @@ function InstructionPage() {
     <div className="instruction-page">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
       <InstructionCardFirst />
+      <InstructionNewsComponent />
       <ControlledScoreCard />
     </div>
   );
