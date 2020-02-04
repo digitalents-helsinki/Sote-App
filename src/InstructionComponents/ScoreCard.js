@@ -4,25 +4,26 @@ function ScoreCard({ NEWSscoreTotal }) {
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
   const [riskLevel, setRiskLevel] = useState(0);
+  const mappedNewsScore = useState(NEWSscoreTotal);
 
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
       setRiskLevel(0);
       setCardText("Lievä riski");
       setCardStyle({
-        backgroundColor: "green"
+        backgroundColor: "#377d4f"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("kohtalainen riski");
       setCardStyle({
-        backgroundColor: "blue"
+        backgroundColor: "#284e78"
       });
     } else if (NEWSscoreTotal >= 4) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
-        backgroundColor: "red"
+        backgroundColor: "#ad3e2f"
       });
     }
   }, [riskLevel, NEWSscoreTotal]);

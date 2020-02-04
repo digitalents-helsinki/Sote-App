@@ -727,4 +727,83 @@ html {
   display: -ms-flexbox;
   display: flex;
 }
+
+.App .instruction-page .report-container {
+  color: #212121;
+  margin-top: 60px;
+}
+
+.App .instruction-page .report-container hr {
+  opacity: 0.3;
+}
+
+.App .instruction-page .report-container h2 {
+  margin-bottom: 30px;
+}
+
+.App .instruction-page .report-container .reportElement {
+  margin: 50px 0;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App .instruction-page .report-container .reportElement h3 {
+  color: #284e78;
+}
+
+.App .instruction-page .report-container .reportElement .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.App .instruction-page .report-container .reportElement .flex .subject {
+  line-height: 1.6rem;
+  font-weight: 200;
+  width: 75%;
+}
+
+.App .instruction-page .report-container .reportElement .flex .answer {
+  line-height: 1.6rem;
+  font-weight: 200;
+  width: 25%;
+}
+
+.App .instruction-page .report-container .vitalValues {
+  margin-top: 100px;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App .instruction-page .report-container .vitalValues h3 {
+  color: #ad3e2f;
+}
+
+.App .instruction-page .report-container .vitalValues .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.App .instruction-page .report-container .vitalValues .flex .vital-subject {
+  line-height: 1.6rem;
+  font-weight: 200;
+  width: 80%;
+}
+
+.App .instruction-page .report-container .vitalValues .flex .vital-answer {
+  line-height: 1.6rem;
+  font-weight: 200;
+  width: 20%;
+}
 /*# sourceMappingURL=App.css.map */
