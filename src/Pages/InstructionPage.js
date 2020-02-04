@@ -4,6 +4,7 @@ import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst"
 import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
+import Report from "../InstructionComponents/Report";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -70,6 +71,7 @@ function InstructionPage({ history, personData, setPersonData }) {
       <InstructionNewsComponent />
       <ControlledScoreCard />
       <InstructionCardSecond />
+      <Report />
     </div>
   );
 }
