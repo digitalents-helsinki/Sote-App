@@ -6,7 +6,7 @@ import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 import Report from "../InstructionComponents/Report";
 
-function InstructionPage({ history, personData, setPersonData }) {
+function InstructionPage({ personData, setPersonData }) {
   const [controlNEWSscore, setcontrolNEWSscore] = useState(null);
   console.log(personData);
   let NEWSscoreTotal;
@@ -40,11 +40,12 @@ function InstructionPage({ history, personData, setPersonData }) {
       />
       <InstructionNewsComponent
         personData={personData}
+        setPersonData={setPersonData}
         controlNEWSscore={controlNEWSscore}
         setcontrolNEWSscore={setcontrolNEWSscore}
       />
-      <ControlledScoreCard />
-      <InstructionCardSecond />
+      <ControlledScoreCard NEWSscoreTotal={NEWSscoreTotal} />
+      <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
       <Report />
     </div>
   );

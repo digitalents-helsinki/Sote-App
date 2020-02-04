@@ -1,7 +1,7 @@
 import React from "react";
 
-function InstructionCardSecond() {
-  if (/*if Risk level high*/ false) {
+function InstructionCardSecond({ NEWSscoreTotal }) {
+  if (NEWSscoreTotal >= 4) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
@@ -11,7 +11,7 @@ function InstructionCardSecond() {
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
       </div>
     );
-  } else if (/*if risk level medium*/ false) {
+  } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
@@ -42,7 +42,7 @@ function InstructionCardSecond() {
         <p>Odota ohjetta.</p>
       </div>
     );
-  } /*if risk level low*/ else {
+  } else {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>

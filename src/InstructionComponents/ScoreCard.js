@@ -18,7 +18,7 @@ function ScoreCard({ NEWSscoreTotal }) {
       setCardStyle({
         backgroundColor: "blue"
       });
-    } else if (NEWSscoreTotal >= 3) {
+    } else if (NEWSscoreTotal >= 4) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
