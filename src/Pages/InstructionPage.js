@@ -36,7 +36,7 @@ let testingdata = {
   "Mittaa verensokeri:": 10
 };
 
-function InstructionPage() {
+function InstructionPage({ history, personData, setPersonData }) {
   let NEWSscoreTotal;
 
   if (
@@ -61,7 +61,11 @@ function InstructionPage() {
   return (
     <div className="instruction-page">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
-      <InstructionCardFirst />
+      <InstructionCardFirst
+        testingdata={testingdata}
+        personData={personData}
+        setPersonData={setPersonData}
+      />
       <InstructionNewsComponent />
       <ControlledScoreCard />
     </div>
