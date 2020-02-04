@@ -2,8 +2,6 @@ import React from "react";
 import backArrowSvg from "../Images/back-arrow.svg";
 import moreBtnSvg from "../Images/more-btn.svg";
 
-import ProgressBar from "./ProgressBar";
-
 function TopArea({ setMenuVisibility, history }) {
   return (
     <div className="TopArea">
@@ -24,7 +22,6 @@ function TopArea({ setMenuVisibility, history }) {
           onClick={() => setMenuVisibility(true)}
         />
       </div>
-      <ProgressBar />
     </div>
   );
 }
