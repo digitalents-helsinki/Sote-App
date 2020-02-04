@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
+import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
+import Report from "../InstructionComponents/Report";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -75,6 +77,8 @@ function InstructionPage({ history, personData, setPersonData }) {
         setcontrolNEWSscore={setcontrolNEWSscore}
       />
       <ControlledScoreCard />
+      <InstructionCardSecond />
+      <Report />
     </div>
   );
 }
