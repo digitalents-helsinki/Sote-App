@@ -1,6 +1,6 @@
 import React from "react";
 
-//to add a Checkbox component, pass in "personData" and "setPersonData" as props to allow access to the personData variable. Also pass in "checkboxlabel" for the checkbox name and a "Title" to indicate the subject in the personData variable
+//to add a Checkbox component, pass in "personData" and "setPersonData" as props to allow access to the personData variable. Also pass in "checkboxlabel" for the checkbox name and a "subject to indicate the title in the personData variable
 
 function Checkbox(props) {
   const keyvalue = `${props.subject} - ${props.checkboxlabel}`;

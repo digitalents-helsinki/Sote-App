@@ -12,11 +12,12 @@ function TajuntaPage({ history, personData, setPersonData }) {
       </p>
       <Checkbox
         checkboxlabel={"Ei poikkeavia löydöksiä."}
+        subject={"Tajunta"}
         personData={personData}
         setPersonData={setPersonData}
       />
       <Textarea
-        name={"tajunta"}
+        name={"Tajunta"}
         personData={personData}
         setPersonData={setPersonData}
       />

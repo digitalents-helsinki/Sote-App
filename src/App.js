@@ -25,9 +25,10 @@ import InstructionPage from "./Pages/InstructionPage";
 function App() {
   let history = useHistory();
   const [personData, setPersonData] = useState({});
-
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
+
+  console.log(personData);
 
   return (
     <BrowserRouter>
