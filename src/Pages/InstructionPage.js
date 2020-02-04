@@ -2,6 +2,7 @@ import React from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
+import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -65,6 +66,7 @@ function InstructionPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
+      <InstructionNewsComponent />
       <ControlledScoreCard />
     </div>
   );
