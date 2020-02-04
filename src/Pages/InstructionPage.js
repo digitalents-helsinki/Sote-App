@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
@@ -23,37 +23,39 @@ let testingdata = {
   "Tajunta - Ei poikkeavia löydöksiä.": true,
   Tajunta: "Testing",
   Hengitystaajuus: 15,
-  "Hengitystaajuus - NEWSscore": 0,
+  "Hengitystaajuus - NEWSscore": 1,
   Happisaturaatio: 95,
-  "Happisaturaatio - NEWSscore": 0,
+  "Happisaturaatio - NEWSscore": 1,
   "Systolinen verenpaine": 150,
-  "Systolinen verenpaine - NEWSscore": 0,
+  "Systolinen verenpaine - NEWSscore": 1,
   Syketaajuus: 60,
   "Syketaajuus - NEWSscore": 3,
   "Mittaa lämpötila": 37,
-  "Mittaa lämpötila - NEWSscore": 0,
+  "Mittaa lämpötila - NEWSscore": 1,
   "Tajunnan taso": true,
   "Mittaa verensokeri:": 10
 };
 
 function InstructionPage({ history, personData, setPersonData }) {
+  const [controlNEWSscore, setcontrolNEWSscore] = useState(null);
+  console.log(controlNEWSscore);
   let NEWSscoreTotal;
 
   if (
-    testingdata["Hengitystaajuus - NEWSscore"] === 3 ||
-    testingdata["Happisaturaatio - NEWSscore"] === 3 ||
-    testingdata["Systolinen verenpaine - NEWSscore"] === 3 ||
-    testingdata["Syketaajuus - NEWSscore"] === 3 ||
-    testingdata["Mittaa lämpötila - NEWSscore"] === 3
+    personData["Hengitystaajuus - NEWSscore"] === 3 ||
+    personData["Happisaturaatio - NEWSscore"] === 3 ||
+    personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+    personData["Syketaajuus - NEWSscore"] === 3 ||
+    personData["Mittaa lämpötila - NEWSscore"] === 3
   ) {
     NEWSscoreTotal = 4;
   } else {
     NEWSscoreTotal =
-      testingdata["Hengitystaajuus - NEWSscore"] +
-      testingdata["Happisaturaatio - NEWSscore"] +
-      testingdata["Systolinen verenpaine - NEWSscore"] +
-      testingdata["Syketaajuus - NEWSscore"] +
-      testingdata["Mittaa lämpötila - NEWSscore"];
+      personData["Hengitystaajuus - NEWSscore"] +
+      personData["Happisaturaatio - NEWSscore"] +
+      personData["Systolinen verenpaine - NEWSscore"] +
+      personData["Syketaajuus - NEWSscore"] +
+      personData["Mittaa lämpötila - NEWSscore"];
   }
   // console.log(testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Syketaajuus - NEWSscore"], testingdata["Mittaa lämpötila - NEWSscore"])
   // console.log(NEWSscoreTotal, "beep");
@@ -66,7 +68,12 @@ function InstructionPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <InstructionNewsComponent />
+      <InstructionNewsComponent
+        testingdata={testingdata}
+        personData={personData}
+        controlNEWSscore={controlNEWSscore}
+        setcontrolNEWSscore={setcontrolNEWSscore}
+      />
       <ControlledScoreCard />
     </div>
   );

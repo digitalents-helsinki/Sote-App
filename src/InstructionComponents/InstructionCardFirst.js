@@ -21,25 +21,25 @@ function InstructionCardFirst({ testingdata, personData, setPersonData }) {
       <p>{instruction_content.noneEmergencyContent}</p>
       <div className="unusual-findings-list">
         <p>
-          {testingdata["Hengitystaajuus - NEWSscore"] !== 0
+          {personData["Hengitystaajuus - NEWSscore"] >= 1
             ? "Hengitystaajuus"
             : null}
         </p>
         <p>
-          {testingdata["Happisaturaatio - NEWSscore"] !== 0
+          {personData["Happisaturaatio - NEWSscore"] >= 1
             ? "Happisaturaatio"
             : null}
         </p>
         <p>
-          {testingdata["Systolinen verenpaine - NEWSscore"] !== 0
+          {personData["Systolinen verenpaine - NEWSscore"] >= 1
             ? "Systolinen verenpaine"
             : null}
         </p>
         <p>
-          {testingdata["Syketaajuus - NEWSscore"] !== 0 ? "Syketaajuus" : null}
+          {personData["Syketaajuus - NEWSscore"] >= 1 ? "Syketaajuus" : null}
         </p>
         <p>
-          {testingdata["Mittaa lämpötila - NEWSscore"] !== 0
+          {personData["Mittaa lämpötila - NEWSscore"] >= 1
             ? "Mittaa lämpötila"
             : null}
         </p>

@@ -24,7 +24,7 @@ function VerensokeriPage({ history, personData, setPersonData }) {
         <button
           className="nextButtoninactive nextButtonactive"
           onClick={() => {
-            history.push("/");
+            history.push("/instructionPage");
           }}
         >
           {" "}
