@@ -3,23 +3,23 @@ import React, { useState, useEffect } from "react";
 function ScoreCard({ NEWSscoreTotal }) {
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
+  const [riskLevel, setRiskLevel] = useState(0);
 
-  let riskLevel;
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
-      riskLevel = 1;
+      setRiskLevel(0);
       setCardText("Lievä riski");
       setCardStyle({
         backgroundColor: "green"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
-      riskLevel = 2;
+      setRiskLevel(NEWSscoreTotal);
       setCardText("kohtalainen riski");
       setCardStyle({
         backgroundColor: "blue"
       });
     } else if (NEWSscoreTotal >= 3) {
-      riskLevel = 3;
+      setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
         backgroundColor: "red"
