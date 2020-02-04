@@ -35,7 +35,7 @@ let testingdata = {
   "Mittaa verensokeri:": 10
 };
 
-function InstructionPage() {
+function InstructionPage({ history, personData, setPersonData }) {
   let NEWSscoreTotal;
 
   if (
@@ -60,26 +60,14 @@ function InstructionPage() {
   return (
     <div className="instruction-page">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
-      <InstructionCardFirst />
+      <InstructionCardFirst
+        testingdata={testingdata}
+        personData={personData}
+        setPersonData={setPersonData}
+      />
       <ControlledScoreCard />
     </div>
   );
 }
-
-// function InstructionPage({ history, personData, setPersonData }) {
-
-//   return (
-//     <div className="instruction-page">
-//       <p>{testingdata["Onko hengitystie auki?"] ? "Kyllä" : "Ei"}</p>
-//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
-//       <hr></hr>
-//       <h5>Hengitys</h5>
-//       <p>
-//         {testingdata["Hengitys - Normaali hengitys/ei ääniä"] ? "Kyllä" : null}
-//       </p>
-//       <p>{testingdata["Onko ilmatie estettä?"] ? "Kyllä" : "Ei"}</p>
-//     </div>
-//   );
-// }
 
 export default InstructionPage;

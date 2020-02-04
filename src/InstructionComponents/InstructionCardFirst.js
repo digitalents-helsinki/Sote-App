@@ -1,6 +1,6 @@
 import React from "react";
 
-function InstructionCardFirst() {
+function InstructionCardFirst({ testingdata, personData, setPersonData }) {
   const instruction_content = {
     emergencyContent: (
       <>
@@ -20,11 +20,27 @@ function InstructionCardFirst() {
       <h3>Toimintaohje:</h3>
       <p>{instruction_content.noneEmergencyContent}</p>
       <div className="unusual-findings-list">
-        <p>&rarr; Poop</p>
-        <p>&rarr; Poop</p>
-        <p>&rarr; Poop</p>
-        <p>&rarr; Poop</p>
-        <p>&rarr; Poop</p>
+        <p>
+          {testingdata["Hengitystaajuus - NEWSscore"]
+            ? "Hengitystaajuus"
+            : null}
+        </p>
+        <p>
+          {testingdata["Happisaturaatio - NEWSscore"]
+            ? "Happisaturaatio"
+            : null}
+        </p>
+        <p>
+          {testingdata["Systolinen verenpaine - NEWSscore"]
+            ? "Systolinen verenpaine"
+            : null}
+        </p>
+        <p>{testingdata["Syketaajuus - NEWSscore"] ? "Syketaajuus" : null}</p>
+        <p>
+          {testingdata["Mittaa lämpötila - NEWSscore"]
+            ? "Mittaa lämpötila"
+            : null}
+        </p>
       </div>
       <div className="control-btn">Kontrolloi mittaus</div>
     </div>
