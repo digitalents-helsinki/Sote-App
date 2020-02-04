@@ -575,4 +575,65 @@ html {
 .App .news-container .active {
   opacity: 1;
 }
+
+.App .instruction-page {
+  width: 100%;
+  padding: 120px 4vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App .instruction-page .scoreCard-container {
+  width: 100%;
+  background-color: #284e78;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 12px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+}
+
+.App .instruction-page .scoreCard-container p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.App .instruction-page .scoreCard-container h3 {
+  margin-top: 35px;
+}
+
+.App .instruction-page .InstructionCard-first-container {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #8c8c8c;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 15px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #212121;
+}
+
+.App .instruction-page .InstructionCard-first-container p {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.App .instruction-page .InstructionCard-first-container span {
+  font-weight: 600;
+}
+
+.App .instruction-page .InstructionCard-first-container .control-btn {
+  background-color: #f0c816;
+  margin: 50px 30px 30px 30px;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
 /*# sourceMappingURL=App.css.map */

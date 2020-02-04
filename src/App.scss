@@ -6,6 +6,7 @@ $sote-green: #377d4f;
 $sote-orange: #db5400;
 $sote-light-orange: #f0a171;
 $sote-blue: #284e78;
+$sote-yellow: #f0c816;
 $app-background-color: #fafafa;
 
 body,
@@ -523,6 +524,93 @@ html {
 
     .active {
       opacity: 1;
+    }
+  }
+
+  .instruction-page {
+    width: 100%;
+    padding: 120px 4vw;
+    box-sizing: border-box;
+
+    font-family: $font-montserrat;
+
+    .scoreCard-container {
+      width: 100%;
+      background-color: $sote-blue;
+      padding: 5px 15px;
+      box-sizing: border-box;
+      margin: 12px 0;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #fff;
+
+      p {
+        font-size: 1.1rem;
+        margin: 20px 0;
+      }
+
+      h3 {
+        margin-top: 35px;
+      }
+    }
+
+    .controlled-scoreCard-container {
+      width: 100%;
+      background-color: $sote-blue;
+      padding: 5px 15px;
+      box-sizing: border-box;
+      margin: 12px 0;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #fff;
+
+      p {
+        font-size: 1.1rem;
+        margin: 20px 0;
+      }
+
+      h3 {
+        margin-top: 35px;
+      }
+    }
+
+    .InstructionCard-first-container {
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #8c8c8c;
+      padding: 5px 15px;
+      box-sizing: border-box;
+      margin: 15px 0;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #212121;
+
+      p {
+        font-weight: 200;
+        font-size: 0.9rem;
+      }
+
+      span {
+        font-weight: 600;
+      }
+
+      .unusual-findings-list {
+        padding: 15px;
+        color: $sote-red;
+        font-weight: 500;
+      }
+
+      .control-btn {
+        background-color: $sote-yellow;
+        margin: 50px 30px 30px 30px;
+        padding: 10px 15px;
+        text-align: center;
+        border-radius: 4px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
