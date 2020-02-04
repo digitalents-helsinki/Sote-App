@@ -605,6 +605,27 @@ html {
   margin-top: 35px;
 }
 
+.App .instruction-page .controlled-scoreCard-container {
+  width: 100%;
+  background-color: #284e78;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 12px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+}
+
+.App .instruction-page .controlled-scoreCard-container p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.App .instruction-page .controlled-scoreCard-container h3 {
+  margin-top: 35px;
+}
+
 .App .instruction-page .InstructionCard-first-container {
   width: 100%;
   background-color: #fff;
@@ -625,6 +646,12 @@ html {
 
 .App .instruction-page .InstructionCard-first-container span {
   font-weight: 600;
+}
+
+.App .instruction-page .InstructionCard-first-container .unusual-findings-list {
+  padding: 15px;
+  color: #ad3e2f;
+  font-weight: 500;
 }
 
 .App .instruction-page .InstructionCard-first-container .control-btn {
