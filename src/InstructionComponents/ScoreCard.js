@@ -4,6 +4,7 @@ function ScoreCard({ NEWSscoreTotal }) {
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
   const [riskLevel, setRiskLevel] = useState(0);
+  const mappedNewsScore = useState(NEWSscoreTotal);
 
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
