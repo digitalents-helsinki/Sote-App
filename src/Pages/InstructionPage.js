@@ -6,41 +6,9 @@ import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 import Report from "../InstructionComponents/Report";
 
-let testingdata = {
-  "Onko hengitystie auki?": true,
-  "Onko ilmatie estettä?": false,
-  "Hengitys - Normaali hengitys/ei ääniä": true,
-  "Hengitys - Vinkuna": true,
-  "Hengitys - Korina": true,
-  "Hengitys - Rohina": true,
-  "Iho, paljastaminen - Normaali": true,
-  "Iho, paljastaminen - Kuiva": true,
-  "Iho, paljastaminen - Kostea": true,
-  "Iho, paljastaminen - Kylmä": true,
-  "Iho, paljastaminen - Kuuma": true,
-  "Iho, paljastaminen - Ei poikkeavia löydöksiä": true,
-  Iho: "Testing",
-  "Tuntuuko paikallista lämpöeroa:": false,
-  "Tarkista syke:": true,
-  "Tajunta - Ei poikkeavia löydöksiä.": true,
-  Tajunta: "Testing",
-  Hengitystaajuus: 15,
-  "Hengitystaajuus - NEWSscore": 1,
-  Happisaturaatio: 95,
-  "Happisaturaatio - NEWSscore": 1,
-  "Systolinen verenpaine": 150,
-  "Systolinen verenpaine - NEWSscore": 1,
-  Syketaajuus: 60,
-  "Syketaajuus - NEWSscore": 3,
-  "Mittaa lämpötila": 37,
-  "Mittaa lämpötila - NEWSscore": 1,
-  "Tajunnan taso": true,
-  "Mittaa verensokeri:": 10
-};
-
 function InstructionPage({ history, personData, setPersonData }) {
   const [controlNEWSscore, setcontrolNEWSscore] = useState(null);
-  console.log(controlNEWSscore);
+  console.log(personData);
   let NEWSscoreTotal;
 
   if (
@@ -59,6 +27,7 @@ function InstructionPage({ history, personData, setPersonData }) {
       personData["Syketaajuus - NEWSscore"] +
       personData["Mittaa lämpötila - NEWSscore"];
   }
+  console.log(NEWSscoreTotal);
   // console.log(testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Syketaajuus - NEWSscore"], testingdata["Mittaa lämpötila - NEWSscore"])
   // console.log(NEWSscoreTotal, "beep");
 
@@ -66,12 +35,10 @@ function InstructionPage({ history, personData, setPersonData }) {
     <div className="instruction-page">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} />
       <InstructionCardFirst
-        testingdata={testingdata}
         personData={personData}
         setPersonData={setPersonData}
       />
       <InstructionNewsComponent
-        testingdata={testingdata}
         personData={personData}
         controlNEWSscore={controlNEWSscore}
         setcontrolNEWSscore={setcontrolNEWSscore}

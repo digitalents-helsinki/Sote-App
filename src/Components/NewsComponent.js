@@ -99,7 +99,6 @@ function NewsComponent(props) {
 
           let NEWSscore = undefined;
 
-          console.log(props.cells);
           if (
             props.cells[3] &&
             (inputValue === props.cells[3] ||
@@ -146,17 +145,14 @@ function NewsComponent(props) {
           }
           //Update personData
           const keyvalue = `${props.name} - NEWSscore`;
-          const oldData = props.controlNEWSscore
-            ? props.controlNEWSscore
-            : props.personData;
+          const oldData = props.personData;
           const newData = {
             ...oldData,
             [props.name]: Number(e.target.value),
             [keyvalue]: NEWSscore
           };
-          props.setcontrolNEWSscore
-            ? props.setcontrolNEWSscore(newData)
-            : props.setPersonData(newData);
+          props.setPersonData(newData);
+
           //--Update personData
         }}
       />
