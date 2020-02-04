@@ -560,7 +560,7 @@ html {
     .InstructionCard-first-container {
       width: 100%;
       background-color: #fff;
-      border: 1px solid #8c8c8c;
+      border: 1px solid #b5b5b5;
       padding: 5px 15px;
       box-sizing: border-box;
       margin: 15px 0;
@@ -570,8 +570,9 @@ html {
       color: #212121;
 
       p {
+        margin-top: 28px;
         font-weight: 200;
-        font-size: 0.9rem;
+        padding: 0 15px;
       }
 
       span {
@@ -582,6 +583,10 @@ html {
         padding: 10px 20px;
         color: $sote-red;
         font-weight: 500;
+
+        p {
+          font-size: 1.1rem;
+        }
       }
 
       .control-btn {
@@ -595,7 +600,7 @@ html {
     }
 
     .instruction-news-component {
-      border: 1px solid #8c8c8c;
+      border: 1px solid #b5b5b5;
       text-align: center;
       padding: 30px 10px;
 
@@ -629,6 +634,33 @@ html {
 
       h3 {
         margin-top: 35px;
+      }
+    }
+
+    .InstructionCard-second-container {
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #b5b5b5;
+      padding: 5px 15px;
+      box-sizing: border-box;
+      margin: 15px 0;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #212121;
+
+      p {
+        margin-top: 28px;
+        font-weight: 200;
+        padding: 0 15px;
+      }
+
+      span {
+        font-weight: 600;
+      }
+
+      .content {
+        display: flex;
       }
     }
   }

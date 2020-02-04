@@ -1,6 +1,7 @@
 import React from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
+import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 
@@ -68,6 +69,7 @@ function InstructionPage({ history, personData, setPersonData }) {
       />
       <InstructionNewsComponent />
       <ControlledScoreCard />
+      <InstructionCardSecond />
     </div>
   );
 }
