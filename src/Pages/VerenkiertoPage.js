@@ -61,6 +61,7 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
               history.push("/tajunta");
+              window.scrollTo(0, 0);
             } else {
               return;
             }

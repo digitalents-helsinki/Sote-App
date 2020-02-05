@@ -73,6 +73,7 @@ function IhoPage({ history, personData, setPersonData }) {
           className={buttonActive}
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
               history.push("/verenkierto");
             } else {
               return;

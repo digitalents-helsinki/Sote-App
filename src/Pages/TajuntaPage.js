@@ -35,6 +35,7 @@ function TajuntaPage({ history, personData, setPersonData }) {
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
               history.push("/hengitystaajuus");
+              window.scrollTo(0, 0);
             } else {
               return;
             }
