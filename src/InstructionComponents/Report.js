@@ -87,7 +87,7 @@ function Report({ personData }) {
         </div>
         <div className="flex">
           <p className="subject">{"Onko iho muutoksia?"}</p>
-          <p className="answer">{personData.Iho ? personData.Iho : null}</p>
+          <p className="answer">{personData.Iho ? personData.Iho : "Ei"}</p>
         </div>
       </div>
 
