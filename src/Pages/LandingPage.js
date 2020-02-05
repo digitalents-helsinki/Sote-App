@@ -1,6 +1,6 @@
 import React from "react";
 
-function LandingPage({ props, setEmergencyVisibility, history }) {
+function LandingPage({ props, setEmergencyVisibility, history, setBackBtn }) {
   return (
     <div className="Page">
       <p>

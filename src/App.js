@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  useHistory,
+  useLocation
+} from "react-router-dom";
 
 //Transition group downloaded
 
@@ -58,12 +64,12 @@ let testingdata = {
 
 function App() {
   let history = useHistory();
+  let location = useLocation();
   const [personData, setPersonData] = useState({});
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   console.log(personData);
-  console.log(BrowserRouter.match);
 
   return (
     <BrowserRouter>
@@ -72,7 +78,11 @@ function App() {
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
         />
-        <TopArea history={history} setMenuVisibility={setMenuVisibility} />
+        <TopArea
+          history={history}
+          displayArrow={location.pathname === "/"}
+          setMenuVisibility={setMenuVisibility}
+        />
         <Switch>
           <Route
             exact={true}

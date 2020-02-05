@@ -2,8 +2,8 @@ import React from "react";
 import backArrowSvg from "../Images/back-arrow.svg";
 import moreBtnSvg from "../Images/more-btn.svg";
 
-function TopArea({ setMenuVisibility, history }) {
-  if (true) {
+function TopArea({ setMenuVisibility, history, displayArrow }) {
+  if (displayArrow) {
     return (
       <div className="TopArea">
         <div className="flex-container">
