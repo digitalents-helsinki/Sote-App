@@ -3,6 +3,14 @@ import Textarea from "../Components/Textarea";
 import Checkbox from "../Components/Checkbox";
 
 function TajuntaPage({ history, personData, setPersonData }) {
+  let buttonActive = "nextButtoninactive";
+
+  if (
+    personData["Tajunta - Ei poikkeavia löydöksiä."] === true ||
+    personData.Tajunta
+  ) {
+    buttonActive = "nextButtonactive";
+  }
   return (
     <div className="Page">
       <h1>Tajunta</h1>
@@ -23,10 +31,14 @@ function TajuntaPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/hengitystaajuus");
+            if (buttonActive === "nextButtonactive") {
+              history.push("/hengitystaajuus");
+              window.scrollTo(0, 0);
+            } else {
+              return;
+            }
           }}
         >
           {" "}

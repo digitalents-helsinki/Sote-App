@@ -3,7 +3,6 @@ import React from "react";
 //to add a Checkbox component, pass in "personData" and "setPersonData" as props to allow access to the personData variable. Also pass in "checkboxlabel" for the checkbox name and a "subject to indicate the title in the personData variable
 
 function Checkbox(props) {
-  const keyvalue = `${props.subject} - ${props.checkboxlabel}`;
   return (
     <div className="checkboxComponent">
       <form>
@@ -12,7 +11,9 @@ function Checkbox(props) {
           className="checkbox-input"
           type="checkbox"
           onInput={() => {
-            if (props.personData[props.checkboxlabel] === true) {
+            let keyvalue = `${props.subject} - ${props.checkboxlabel}`;
+
+            if (props.personData[keyvalue] === true) {
               const oldData = props.personData;
               const newData = {
                 ...oldData,

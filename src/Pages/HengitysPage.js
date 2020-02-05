@@ -3,6 +3,17 @@ import Checkbox from "../Components/Checkbox";
 
 function HengitysPage({ history, personData, setPersonData }) {
   const Title = "Hengitys";
+  let buttonActive = "nextButtoninactive";
+
+  if (
+    personData["Hengitys - Normaali hengitys/ei ääniä"] ||
+    personData["Hengitys - Vinkuna"] ||
+    personData["Hengitys - Korina"] ||
+    personData["Hengitys - Rohina"]
+  ) {
+    buttonActive = "nextButtonactive";
+  }
+
   return (
     <div className="Page">
       <h1>{Title}</h1>
@@ -33,10 +44,14 @@ function HengitysPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/iho");
+            if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
+              history.push("/iho");
+            } else {
+              return;
+            }
           }}
         >
           {" "}

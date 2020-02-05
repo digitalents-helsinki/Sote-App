@@ -32,7 +32,7 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
         backgroundColor: "#ad3e2f"
       });
     }
-  }, [riskLevel, NEWSscoreTotal]);
+  }, [riskLevel, NEWSscoreTotal, personData]);
 
   return (
     <div style={cardStyle} className="scoreCard-container">
