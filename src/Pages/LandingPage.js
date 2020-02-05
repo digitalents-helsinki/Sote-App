@@ -4,9 +4,9 @@ function LandingPage({ props, setEmergencyVisibility, history }) {
   return (
     <div className="Page">
       <p>
-        Sovellus ohjaa sinua päivystystilanteen
+        Sovellus ohjaa sinua
         <br />
-        läpikäymisessä
+        päivystystilanteen läpikäymisessä
       </p>
       <p className="attentionText">
         Jos tilanne on todellinen
@@ -23,6 +23,7 @@ function LandingPage({ props, setEmergencyVisibility, history }) {
         <button
           className="nextButtoninactive nextButtonactive"
           onClick={() => {
+            window.scrollTo(0, 0);
             history.push("/hengitystie");
           }}
         >

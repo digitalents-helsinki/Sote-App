@@ -55,12 +55,15 @@ function HengitystiePage({ history, personData, setPersonData }) {
       <div className="nextButtondiv">
         <button
           className={buttonActive}
-          onClick={() => {
+          onClick={e => {
             if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
               history.push("/hengitys");
             } else {
               return;
             }
+
+            console.log(e);
           }}
         >
           {" "}

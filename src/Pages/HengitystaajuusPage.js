@@ -19,6 +19,7 @@ function HengitystaajuusPage({ history, personData, setPersonData }) {
         <button
           className="nextButtoninactive nextButtonactive"
           onClick={() => {
+            window.scrollTo(0, 0);
             history.push("/happisaturaatio");
           }}
         >
