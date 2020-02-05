@@ -77,6 +77,7 @@ function App() {
         <MenuPanel
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
+          setEmergencyVisibility={setEmergencyVisibility}
         />
         <TopArea
           history={history}

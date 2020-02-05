@@ -2,6 +2,12 @@ import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 
 function HengitystaajuusPage({ history, personData, setPersonData }) {
+  let buttonActive = "nextButtoninactive";
+
+  if (personData["Hengitystaajuus"]) {
+    buttonActive = "nextButtonactive";
+  }
+
   return (
     <div className="Page">
       <h1>Hengitystaajuus</h1>
@@ -17,10 +23,14 @@ function HengitystaajuusPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/happisaturaatio");
+            if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
+              history.push("/happisaturaatio");
+            } else {
+              return;
+            }
           }}
         >
           {" "}

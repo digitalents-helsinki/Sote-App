@@ -62,8 +62,6 @@ function HengitystiePage({ history, personData, setPersonData }) {
             } else {
               return;
             }
-
-            console.log(e);
           }}
         >
           {" "}
