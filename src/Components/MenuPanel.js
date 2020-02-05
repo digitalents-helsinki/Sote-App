@@ -11,7 +11,7 @@ function MenuPanel({ props, setMenuVisibility, menuVisibility }) {
         alt="exit-icon"
       ></img>
       <div className="content">
-        <div className="reset">
+        <div className="reset" onClick={() => window.location.reload()}>
           <p>Aloita alusta</p>
         </div>
         <div className="emeregencyPage-fromMenu">
