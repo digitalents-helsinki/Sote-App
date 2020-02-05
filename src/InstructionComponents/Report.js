@@ -33,7 +33,7 @@ function Report({ personData }) {
               : null}
             {personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
             {personData["Hengitys - Korina"] ? "Korina" : null}
-            {personData["Hengitys - Rohina"] ? "Rohina" : null}}
+            {personData["Hengitys - Rohina"] ? "Rohina" : null}
           </p>
         </div>
       </div>
