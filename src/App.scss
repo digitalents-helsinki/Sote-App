@@ -353,7 +353,7 @@ html {
   .Page {
     width: 100%;
     background-color: $app-background-color;
-    padding: 27vh 8vw 30vh 8vw;
+    padding: 23vh 6vw 30vh 6vw;
     box-sizing: border-box;
 
     font-family: $font-montserrat;
@@ -389,7 +389,7 @@ html {
   }
 
   .DoubleButton {
-    margin: 50px 0 70px 0;
+    margin: 50px 10px 70px 10px;
 
     h2 {
       font-family: $font-montserrat;
@@ -495,37 +495,48 @@ html {
       height: 100%;
       width: (100% / 7);
 
-      opacity: 0.7;
+      opacity: 0.65;
       color: #fff;
       font-size: 12px;
+
+      transition-duration: 250ms;
     }
 
     .n1 {
       background-color: $sote-red;
       border-radius: 4px 0 0 4px;
+      overflow: hidden;
     }
 
     .n7 {
       background-color: $sote-red;
       border-radius: 0 4px 4px 0;
+      overflow: hidden;
     }
 
     .n2,
     .n6 {
       background-color: $sote-orange;
+      overflow: hidden;
     }
 
     .n3,
     .n5 {
       background-color: $sote-light-orange;
+      overflow: hidden;
     }
 
     .n4 {
       background-color: $sote-green;
+      overflow: hidden;
     }
 
     .active {
       opacity: 1;
+      width: 60px;
+      height: 40px;
+      transform: translateY(-12%);
+      font-size: 15px;
     }
   }
 

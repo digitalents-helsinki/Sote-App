@@ -28,25 +28,25 @@ function InstructionCardFirst({
       <div className="unusual-findings-list">
         <p>
           {personData["Hengitystaajuus - NEWSscore"] >= 1
-            ? "Hengitystaajuus"
+            ? "→  Hengitystaajuus"
             : null}
         </p>
         <p>
           {personData["Happisaturaatio - NEWSscore"] >= 1
-            ? "Happisaturaatio"
+            ? "→  Happisaturaatio"
             : null}
         </p>
         <p>
           {personData["Systolinen verenpaine - NEWSscore"] >= 1
-            ? "Systolinen verenpaine"
+            ? "→  Systolinen verenpaine"
             : null}
         </p>
         <p>
-          {personData["Syketaajuus - NEWSscore"] >= 1 ? "Syketaajuus" : null}
+          {personData["Syketaajuus - NEWSscore"] >= 1 ? "→  Syketaajuus" : null}
         </p>
         <p>
           {personData["Mittaa lämpötila - NEWSscore"] >= 1
-            ? "Mittaa lämpötila"
+            ? "→  Lämpötila"
             : null}
         </p>
       </div>

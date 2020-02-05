@@ -397,7 +397,7 @@ html {
 .App .Page {
   width: 100%;
   background-color: #fafafa;
-  padding: 27vh 8vw 30vh 8vw;
+  padding: 23vh 6vw 30vh 6vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -433,7 +433,7 @@ html {
 }
 
 .App .DoubleButton {
-  margin: 50px 0 70px 0;
+  margin: 50px 10px 70px 10px;
 }
 
 .App .DoubleButton h2 {
@@ -551,37 +551,49 @@ html {
   align-items: center;
   height: 100%;
   width: 14.28571%;
-  opacity: 0.7;
+  opacity: 0.65;
   color: #fff;
   font-size: 12px;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 .App .news-container .n1 {
   background-color: #ad3e2f;
   border-radius: 4px 0 0 4px;
+  overflow: hidden;
 }
 
 .App .news-container .n7 {
   background-color: #ad3e2f;
   border-radius: 0 4px 4px 0;
+  overflow: hidden;
 }
 
 .App .news-container .n2,
 .App .news-container .n6 {
   background-color: #db5400;
+  overflow: hidden;
 }
 
 .App .news-container .n3,
 .App .news-container .n5 {
   background-color: #f0a171;
+  overflow: hidden;
 }
 
 .App .news-container .n4 {
   background-color: #377d4f;
+  overflow: hidden;
 }
 
 .App .news-container .active {
   opacity: 1;
+  width: 60px;
+  height: 40px;
+  -webkit-transform: translateY(-12%);
+  transform: translateY(-12%);
+  font-size: 15px;
 }
 
 .App .instruction-page {
@@ -661,6 +673,7 @@ html {
 }
 
 .App .instruction-page .instruction-news-component {
+  display: none;
   border: 1px solid #b5b5b5;
   text-align: center;
   padding: 30px 10px;
@@ -676,6 +689,10 @@ html {
   box-sizing: border-box;
   padding: 0 15px;
   line-height: 1.6rem;
+}
+
+.App .instruction-page .instruction-news-component.active {
+  display: block;
 }
 
 .App .instruction-page .controlled-scoreCard-container {
