@@ -7,7 +7,7 @@ import InstructionNewsComponent from "../InstructionComponents/InstructionNewsCo
 import Report from "../InstructionComponents/Report";
 
 function InstructionPage({ personData, setPersonData }) {
-  const [controlNEWSscore, setcontrolNEWSscore] = useState(null);
+  const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   console.log(personData);
   let NEWSscoreTotal;
 
@@ -37,16 +37,17 @@ function InstructionPage({ personData, setPersonData }) {
       <InstructionCardFirst
         personData={personData}
         setPersonData={setPersonData}
+        ControlCardVisibility={ControlCardVisibility}
+        setControlCardVisibility={setControlCardVisibility}
       />
       <InstructionNewsComponent
         personData={personData}
         setPersonData={setPersonData}
-        controlNEWSscore={controlNEWSscore}
-        setcontrolNEWSscore={setcontrolNEWSscore}
+        ControlCardVisibility={ControlCardVisibility}
       />
       <ControlledScoreCard NEWSscoreTotal={NEWSscoreTotal} />
       <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
-      <Report />
+      <Report personData={personData} />
     </div>
   );
 }

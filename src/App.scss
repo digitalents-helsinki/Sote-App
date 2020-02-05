@@ -600,6 +600,7 @@ html {
     }
 
     .instruction-news-component {
+      display: none;
       border: 1px solid #b5b5b5;
       text-align: center;
       padding: 30px 10px;
@@ -615,7 +616,9 @@ html {
         line-height: 1.6rem;
       }
     }
-
+    .instruction-news-component.active {
+      display: block;
+    }
     .controlled-scoreCard-container {
       width: 100%;
       background-color: $sote-blue;

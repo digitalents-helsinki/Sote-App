@@ -1,6 +1,12 @@
 import React from "react";
 
-function InstructionCardFirst({ testingdata, personData, setPersonData }) {
+function InstructionCardFirst({
+  testingdata,
+  personData,
+  setPersonData,
+  ControlCardVisibility,
+  setControlCardVisibility
+}) {
   const instruction_content = {
     emergencyContent: (
       <>
@@ -44,7 +50,17 @@ function InstructionCardFirst({ testingdata, personData, setPersonData }) {
             : null}
         </p>
       </div>
-      <div className="control-btn">Kontrolloi mittaus</div>
+      <div
+        onClick={() => {
+          !ControlCardVisibility
+            ? setControlCardVisibility(true)
+            : setControlCardVisibility(false);
+          console.log(ControlCardVisibility);
+        }}
+        className="control-btn"
+      >
+        Kontrolloi mittaus
+      </div>
     </div>
   );
 }
