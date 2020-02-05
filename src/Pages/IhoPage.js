@@ -4,6 +4,19 @@ import Textarea from "../Components/Textarea";
 
 function IhoPage({ history, personData, setPersonData }) {
   const Title = "Iho, paljastaminen";
+  let buttonActive = "nextButtoninactive";
+
+  if (
+    (personData["Iho, paljastaminen - Normaali"] ||
+      personData["Iho, paljastaminen - Kuiva"] ||
+      personData["Iho, paljastaminen - Kostea"] ||
+      personData["Iho, paljastaminen - Kylmä"] ||
+      personData["Iho, paljastaminen - Kuuma"]) &&
+    (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
+      personData.Iho)
+  ) {
+    buttonActive = "nextButtonactive";
+  }
 
   return (
     <div className="Page">
@@ -57,9 +70,13 @@ function IhoPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            history.push("/verenkierto");
+            if (buttonActive === "nextButtonactive") {
+              history.push("/verenkierto");
+            } else {
+              return;
+            }
           }}
         >
           {" "}

@@ -5,6 +5,15 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
   const red = "#AD3E2F";
   const green = "#377D4F";
 
+  let buttonActive = "nextButtoninactive";
+  if (
+    (personData["Tarkista syke:"] || personData["Tarkista syke:"] === false) &&
+    (personData["Tuntuuko paikallista lämpöeroa:"] ||
+      personData["Tuntuuko paikallista lämpöeroa:"] === false)
+  ) {
+    buttonActive = "nextButtonactive";
+  }
+
   const open_hoitoOje = className => {
     /*       Uncomment this if you want to activate the eventHandler in double-button component*/
 
@@ -48,9 +57,13 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            history.push("/tajunta");
+            if (buttonActive === "nextButtonactive") {
+              history.push("/tajunta");
+            } else {
+              return;
+            }
           }}
         >
           {" "}
