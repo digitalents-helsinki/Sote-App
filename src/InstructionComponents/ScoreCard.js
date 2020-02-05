@@ -29,7 +29,7 @@ function ScoreCard({ NEWSscoreTotal }) {
 
   return (
     <div style={cardStyle} className="scoreCard-container">
-      <p>NEWS-pisteitä yhteensä {riskLevel}p.</p>
+      <p>NEWS-pisteitä yhteensä {NEWSscoreTotal}p.</p>
       <h3>RISKILUOKKA: {cardText}</h3>
     </div>
   );
