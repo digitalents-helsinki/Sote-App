@@ -53,6 +53,7 @@ html {
 }
 
 .App .emergencyPage-container {
+  display: none;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -187,6 +188,7 @@ html {
 }
 
 .App .emergencyPage-container.active {
+  display: unset;
   height: 100vh;
 }
 
@@ -232,9 +234,13 @@ html {
   );
 }
 
-.App .TopArea .flex-container .back-arrow {
-  height: 26px;
+.App .TopArea .flex-container img {
   width: 26px;
+}
+
+.App .TopArea .flex-container .back-arrow {
+  width: 26px;
+  height: 26px;
 }
 
 .App .TopArea .flex-container .AppName {
@@ -246,7 +252,7 @@ html {
 
 .App .TopArea .flex-container .more-btn {
   height: 24px;
-  width: 24px;
+  width: 26px;
 }
 
 .App .ProgressBar .bar-background {
@@ -397,7 +403,7 @@ html {
 .App .Page {
   width: 100%;
   background-color: #fafafa;
-  padding: 23vh 6vw 30vh 6vw;
+  padding: 21vh 6vw 30vh 6vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;

@@ -63,6 +63,7 @@ function App() {
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   console.log(personData);
+  console.log(BrowserRouter.match);
 
   return (
     <BrowserRouter>

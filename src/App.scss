@@ -66,6 +66,7 @@ html {
   }
 
   .emergencyPage-container {
+    display: none;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -162,6 +163,7 @@ html {
   }
 
   .emergencyPage-container.active {
+    display: unset;
     height: 100vh;
   }
 
@@ -190,9 +192,13 @@ html {
         rgba(250, 250, 250, 0) 100%
       );
 
-      .back-arrow {
-        height: 26px;
+      img {
         width: 26px;
+      }
+
+      .back-arrow {
+        width: 26px;
+        height: 26px;
       }
 
       .AppName {
@@ -204,7 +210,7 @@ html {
 
       .more-btn {
         height: 24px;
-        width: 24px;
+        width: 26px;
       }
     }
   }
@@ -353,7 +359,7 @@ html {
   .Page {
     width: 100%;
     background-color: $app-background-color;
-    padding: 23vh 6vw 30vh 6vw;
+    padding: 21vh 6vw 30vh 6vw;
     box-sizing: border-box;
 
     font-family: $font-montserrat;
