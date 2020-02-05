@@ -2,6 +2,11 @@ import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 
 function SyketaajuusPage({ history, personData, setPersonData }) {
+  let buttonActive = "nextButtoninactive";
+
+  if (personData["Syketaajuus"]) {
+    buttonActive = "nextButtonactive";
+  }
   return (
     <div className="Page">
       <h1>Syketaajuus</h1>
@@ -14,10 +19,14 @@ function SyketaajuusPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
+          className={buttonActive}
           onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/lampotila");
+            if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
+              history.push("/lampotila");
+            } else {
+              return;
+            }
           }}
         >
           {" "}
@@ -27,5 +36,4 @@ function SyketaajuusPage({ history, personData, setPersonData }) {
     </div>
   );
 }
-
 export default SyketaajuusPage;

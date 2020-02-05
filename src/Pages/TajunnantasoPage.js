@@ -9,6 +9,11 @@ function TajunnantasoPage({ history, personData, setPersonData }) {
     return;
   };
 
+  let buttonActive = "nextButtoninactive";
+  if (personData["Tajunnan taso"] || personData["Tajunnan taso"] === false) {
+    buttonActive = "nextButtonactive";
+  }
+
   return (
     <div className="Page">
       <h1>Tajunnan taso:</h1>
@@ -33,10 +38,14 @@ function TajunnantasoPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className="nextButtoninactive nextButtonactive"
-          onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/verensokeri");
+          className={buttonActive}
+          onClick={e => {
+            if (buttonActive === "nextButtonactive") {
+              window.scrollTo(0, 0);
+              history.push("/verensokeri");
+            } else {
+              return;
+            }
           }}
         >
           {" "}
