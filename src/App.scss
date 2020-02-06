@@ -547,6 +547,8 @@ html {
     }
   }
 
+  //--------------BELOW ARE ALL INSTRUCTION PAGE RELATED STYLINGS-------------------
+
   .instruction-page {
     width: 100%;
     padding: 120px 4vw;
@@ -557,13 +559,16 @@ html {
     .scoreCard-container {
       width: 100%;
       background-color: $sote-blue;
-      padding: 5px 15px;
+      padding: 15px 20px;
       box-sizing: border-box;
-      margin: 12px 0;
 
       letter-spacing: 0.5px;
       line-height: 1.6rem;
       color: #fff;
+
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
       p {
         font-size: 1.1rem;
@@ -578,19 +583,21 @@ html {
     .InstructionCard-first-container {
       width: 100%;
       background-color: #fff;
-      border: 1px solid #b5b5b5;
-      padding: 5px 15px;
+      padding: 15px 20px;
       box-sizing: border-box;
-      margin: 15px 0;
 
       letter-spacing: 0.5px;
       line-height: 1.6rem;
       color: #212121;
 
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
       p {
         margin-top: 28px;
         font-weight: 200;
-        padding: 0 15px;
+        padding: 0;
       }
 
       span {
@@ -598,7 +605,7 @@ html {
       }
 
       .unusual-findings-list {
-        padding: 10px 20px;
+        padding: 10px 10px;
         color: $sote-red;
         font-weight: 500;
 
@@ -619,35 +626,43 @@ html {
 
     .instruction-news-component {
       display: none;
-      border: 1px solid #b5b5b5;
       text-align: center;
-      padding: 30px 10px;
-      margin: 15px 0;
+      padding: 40px 10px;
+
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
       h1 {
         font-size: 1.2rem;
       }
 
       p {
-        margin-bottom: 50px;
+        margin: 40px 0 50px 0;
+        font-weight: 200;
         box-sizing: border-box;
         padding: 0 15px;
         line-height: 1.6rem;
       }
     }
+
     .instruction-news-component.active {
       display: block;
     }
+
     .controlled-scoreCard-container {
       width: 100%;
       background-color: $sote-blue;
-      padding: 5px 15px;
+      padding: 15px 20px;
       box-sizing: border-box;
-      margin: 12px 0;
 
       letter-spacing: 0.5px;
       line-height: 1.6rem;
       color: #fff;
+
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
       p {
         font-size: 1.1rem;
@@ -662,19 +677,21 @@ html {
     .InstructionCard-second-container {
       width: 100%;
       background-color: #fff;
-      border: 1px solid #b5b5b5;
-      padding: 5px 15px;
+      padding: 15px 20px;
       box-sizing: border-box;
-      margin: 15px 0;
 
       letter-spacing: 0.5px;
       line-height: 1.6rem;
       color: #212121;
 
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
       p {
         margin-top: 28px;
         font-weight: 200;
-        padding: 0 15px;
+        padding: 0;
       }
 
       span {
