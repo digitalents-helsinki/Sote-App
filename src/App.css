@@ -318,8 +318,8 @@ html {
   -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
   border: 0;
-  -webkit-transition-delay: 400ms;
-  transition-delay: 400ms;
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms;
   -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
 }
