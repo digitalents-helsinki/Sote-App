@@ -6,7 +6,9 @@ function MenuPanel({
   setMenuVisibility,
   menuVisibility,
   setEmergencyVisibility,
-  history
+  history,
+  setPersonData,
+  testingdata
 }) {
   return (
     <div className={"menu-panel" + (menuVisibility ? " active" : "")}>
@@ -34,6 +36,15 @@ function MenuPanel({
           }}
         >
           <p>Hätätilanne oireet</p>
+        </div>
+        <div
+          className="emeregencyPage-fromMenu"
+          onClick={() => {
+            setPersonData(testingdata);
+            setMenuVisibility(false);
+          }}
+        >
+          <p>DevOps: Activate testing Data</p>
         </div>
       </div>
     </div>

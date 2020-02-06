@@ -65,7 +65,7 @@ let testingdata = {
 function App() {
   let history = useHistory();
   let location = useLocation();
-  const [personData, setPersonData] = useState(testingdata);
+  const [personData, setPersonData] = useState({});
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
@@ -79,6 +79,8 @@ function App() {
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
+          setPersonData={setPersonData}
+          testingdata={testingdata}
         />
         <TopArea
           history={history}
