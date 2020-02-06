@@ -38,7 +38,13 @@ function TajuntaPage({ history, personData, setPersonData }) {
       />
       {personData["Tajunta"] &&
         personData["Tajunta - Ei poikkeavia löydöksiä."] && (
-          <p style={{ color: "#AD3E2F", textAlign: "start" }}>
+          <p
+            style={{
+              color: "#AD3E2F",
+              textAlign: "start",
+              marginBottom: "0px"
+            }}
+          >
             Jos valitset: Ei poikkeavia löydöksiä, kirjoittamasi löydökset eivät
             kirjaudu raporttiin.
           </p>
