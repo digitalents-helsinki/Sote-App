@@ -15,19 +15,19 @@ function ControlledScoreCard({ NEWSscoreTotal }) {
       setRiskLevel(0);
       setCardText("Lievä riski");
       setCardStyle({
-        backgroundColor: "green"
+        backgroundColor: "#377d4f"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("kohtalainen riski");
       setCardStyle({
-        backgroundColor: "blue"
+        backgroundColor: "#284e78"
       });
     } else if (NEWSscoreTotal >= 4) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
-        backgroundColor: "red"
+        backgroundColor: "#ab2615"
       });
     }
   }, [riskLevel, NEWSscoreTotal]);
@@ -35,7 +35,7 @@ function ControlledScoreCard({ NEWSscoreTotal }) {
     <div style={cardStyle} className="controlled-scoreCard-container">
       <h3>RISKILUOKKA: {cardText}</h3>
       <p>Kontrolloidut NEWS-pisteet: {riskLevel}p.</p>
-      <h3>{"KONTROLLOITU RISKILUOKKA:" + " KOHTALAINEN RISKI"}</h3>
+      <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
     </div>
   );
 }
