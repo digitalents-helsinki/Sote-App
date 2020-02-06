@@ -15,7 +15,13 @@ function VerensokeriPage({ history, personData, setPersonData }) {
       </p>
       <p style={{ fontSize: "0.9rem" }}>
         Jos ei tarvetta mittaukselle,{" "}
-        <span style={{ color: "#AD3E2F", textDecoration: "underline" }}>
+        <span
+          style={{ color: "#AD3E2F", textDecoration: "underline" }}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            history.push("/instructionPage");
+          }}
+        >
           ohita
         </span>
       </p>

@@ -820,7 +820,7 @@ html {
 .App .instruction-page .report-container .reportElement .flex .answer {
   display: block;
   line-height: 1.6rem;
-  font-weight: 200;
+  font-weight: 600;
   width: 30%;
 }
 
@@ -853,7 +853,7 @@ html {
 
 .App .instruction-page .report-container .vitalValues .flex .vital-answer {
   line-height: 1.6rem;
-  font-weight: 200;
+  font-weight: 400;
   width: 20%;
 }
 /*# sourceMappingURL=App.css.map */
