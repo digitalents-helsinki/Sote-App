@@ -43,9 +43,9 @@ let testingdata = {
   "Iho, paljastaminen - Ei poikkeavia löydöksiä": true,
   Iho:
     "Turmoil at the front, Wilhelms forces on the hunt. There's a thunder in the east, it's the attack of the deceased! They've been facing poison gas, seven-thousand charge at last. Turn the tide of the attack, and force the enemy to turn back! And that's when the dead man are marching again. Osowytch, then and again. Attack of the dead, hundred man. Facing the led, once again. Hundred man, charge again, die again...What!? I need to put something in here and this song popped in my head :D",
-  "Tuntuuko paikallista lämpöeroa:": false,
+  "Tuntuuko paikallista lämpöeroa:": true,
   "Tarkista syke:": true,
-  "Tajunta - Ei poikkeavia löydöksiä.": true,
+  "Tajunta - Ei poikkeavia löydöksiä.": false,
   Tajunta:
     "This is some testing text imma just put right here. I would use lorem ipsum text to fill this normally but unfortunately the interwebs does not work so I have to do this manually, which makes me think should there be like a wordlimit on this stuff or are we confident it'll just stretch to whatever we need it to be ? I noticed this looks pretty silly pushed to the side but I suppose it'll usually be either 'no abnormalities' or this text right here. Ok peace!",
   Hengitystaajuus: 15,
