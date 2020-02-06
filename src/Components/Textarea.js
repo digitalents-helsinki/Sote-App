@@ -8,6 +8,9 @@ const Textarea = props => {
       <form>
         <textarea
           placeholder="Kirjoita tähän löydöksiäsi..."
+          value={
+            props.personData[props.name] ? props.personData[props.name] : ""
+          }
           onChange={e => {
             const oldData = props.personData;
             const newData = {
