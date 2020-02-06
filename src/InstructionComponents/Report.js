@@ -27,23 +27,27 @@ function Report({ personData }) {
         <h3>Hengitys:</h3>
         <div className="flex">
           <p className="subject">{"Korvin kuultavat äänet?"}</p>
-          <p className="answer">
-            {personData["Hengitys - Normaali hengitys/ei ääniä"]
-              ? "Normaali"
-              : null}
-            {personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
-            {personData["Hengitys - Korina"] ? "Korina" : null}
-            {personData["Hengitys - Rohina"] ? "Rohina" : null}
-          </p>
+          <div className="answer">
+            <p>
+              {personData["Hengitys - Normaali hengitys/ei ääniä"]
+                ? "Normaali"
+                : null}
+            </p>
+            <p>{personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}</p>
+            <p>{personData["Hengitys - Korina"] ? "Korina" : null}</p>
+            <p>{personData["Hengitys - Rohina"] ? "Rohina" : null}</p>
+          </div>
         </div>
       </div>
+
+      <hr />
 
       <div className="reportElement">
         <h3>Verenkierto:</h3>
         <div className="flex">
           <p className="subject">{"Syke"}</p>
           <p className="answer">
-            {personData["Hengitys - Rohina"] ? "Kyllä" : "Ei"}
+            {personData["Tarkista syke:"] ? "Säännöllinen" : "Epäsäännöllinen"}
           </p>
         </div>
         <div className="flex">

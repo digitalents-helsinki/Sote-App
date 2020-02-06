@@ -29,7 +29,7 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
       setRiskLevel(NEWSscoreTotal);
       setCardText("Korkea riski");
       setCardStyle({
-        backgroundColor: "#ad3e2f"
+        backgroundColor: "#ab2615"
       });
     }
   }, [riskLevel, NEWSscoreTotal, personData]);
