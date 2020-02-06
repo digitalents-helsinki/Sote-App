@@ -434,7 +434,7 @@ html {
       outline: none;
     }
 
-    .hoito-ohje_1 {
+    .hoito-ohje {
       margin-top: 10px;
       padding: 0px 20px;
       font-size: 16px;
@@ -454,23 +454,10 @@ html {
       }
     }
 
-    .hoito-ohje_2 {
-      margin-top: 10px;
-      padding: 0px 20px;
-      font-size: 16px;
-      box-sizing: border-box;
-      width: 100%;
-      max-height: 0;
-      background-color: #f0c816;
-      overflow: hidden;
-
-      transition-duration: 400ms;
-
-      p {
-        font-size: 14px;
-        text-align: start;
-        line-height: 1.8rem;
-      }
+    .double-button-inactive {
+      background: "#fff";
+      color: "#212121";
+      border-color: "#8c8c8c";
     }
 
     .active {
