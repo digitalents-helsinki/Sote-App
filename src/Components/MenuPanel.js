@@ -5,7 +5,8 @@ function MenuPanel({
   props,
   setMenuVisibility,
   menuVisibility,
-  setEmergencyVisibility
+  setEmergencyVisibility,
+  history
 }) {
   return (
     <div className={"menu-panel" + (menuVisibility ? " active" : "")}>
@@ -16,7 +17,13 @@ function MenuPanel({
         alt="exit-icon"
       ></img>
       <div className="content">
-        <div className="reset" onClick={() => window.location.reload()}>
+        <div
+          className="reset"
+          onClick={() => {
+            history.push("/");
+            window.location.reload();
+          }}
+        >
           <p>Aloita alusta</p>
         </div>
         <div

@@ -75,6 +75,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <MenuPanel
+          history={history}
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
