@@ -19,7 +19,7 @@ function SyketaajuusPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className={buttonActive}
+          className={"nextButtoninactive " + buttonActive}
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
               window.scrollTo(0, 0);

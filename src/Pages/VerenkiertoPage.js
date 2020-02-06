@@ -57,7 +57,7 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
       />
       <div className="nextButtondiv">
         <button
-          className={buttonActive}
+          className={"nextButtoninactive " + buttonActive}
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
               history.push("/tajunta");
