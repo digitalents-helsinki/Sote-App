@@ -18,6 +18,17 @@ function IhoPage({ history, personData, setPersonData }) {
     buttonActive = "nextButtonactive";
   }
 
+  const hookIntoTextAreaSetPersonData = value => {
+    if (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"]) {
+      setPersonData({
+        ...value,
+        "Iho, paljastaminen - Ei poikkeavia löydöksiä": false
+      });
+    } else {
+      setPersonData(value);
+    }
+  };
+
   return (
     <div className="Page">
       <h1>{Title}</h1>
@@ -63,10 +74,23 @@ function IhoPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
+      {personData["Iho"] &&
+        personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] && (
+          <p
+            style={{
+              color: "#AD3E2F",
+              textAlign: "start",
+              marginBottom: "0px"
+            }}
+          >
+            Jos valitset: Ei poikkeavia löydöksiä, kirjoittamasi löydökset eivät
+            kirjaudu raporttiin.
+          </p>
+        )}
       <Textarea
         name={"Iho"}
         personData={personData}
-        setPersonData={setPersonData}
+        setPersonData={hookIntoTextAreaSetPersonData}
       />
       <div className="nextButtondiv">
         <button
