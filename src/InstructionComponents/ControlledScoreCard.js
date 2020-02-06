@@ -32,7 +32,7 @@ function ControlledScoreCard({ NEWSscoreTotal }) {
     }
   }, [riskLevel, NEWSscoreTotal]);
   return (
-    <div className="controlled-scoreCard-container">
+    <div style={cardStyle} className="controlled-scoreCard-container">
       <h3>RISKILUOKKA: {cardText}</h3>
       <p>Kontrolloidut NEWS-pisteet: {riskLevel}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA:" + " KOHTALAINEN RISKI"}</h3>
