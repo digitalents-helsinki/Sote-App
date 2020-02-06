@@ -66,7 +66,7 @@ html {
   }
 
   .emergencyPage-container {
-    display: none;
+    opacity: 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -75,7 +75,7 @@ html {
     overflow: auto;
     z-index: 21;
 
-    transition-duration: 400ms;
+    transition-duration: 300ms;
     transition-timing-function: ease-out;
 
     font-family: $font-montserrat;
@@ -163,7 +163,7 @@ html {
   }
 
   .emergencyPage-container.active {
-    display: unset;
+    opacity: 1;
     height: 100vh;
   }
 
@@ -390,7 +390,7 @@ html {
     }
 
     .emergencyPage-link {
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       span {
         text-decoration: underline;
@@ -712,7 +712,8 @@ html {
       }
 
       h2 {
-        margin-bottom: 30px;
+        margin: 40px 0 30px 0;
+        padding: 0 15px;
       }
 
       .reportElement {

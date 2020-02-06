@@ -53,15 +53,15 @@ html {
 }
 
 .App .emergencyPage-container {
-  display: none;
+  opacity: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 0vh;
   overflow: auto;
   z-index: 21;
-  -webkit-transition-duration: 400ms;
-  transition-duration: 400ms;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   font-family: "Montserrat", sans-serif;
@@ -188,7 +188,7 @@ html {
 }
 
 .App .emergencyPage-container.active {
-  display: unset;
+  opacity: 1;
   height: 100vh;
 }
 
@@ -445,7 +445,7 @@ html {
 }
 
 .App .Page .emergencyPage-link {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .App .Page .emergencyPage-link span {
@@ -786,7 +786,8 @@ html {
 }
 
 .App .instruction-page .report-container h2 {
-  margin-bottom: 30px;
+  margin: 40px 0 30px 0;
+  padding: 0 15px;
 }
 
 .App .instruction-page .report-container .reportElement {
