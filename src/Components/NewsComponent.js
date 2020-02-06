@@ -3,6 +3,8 @@ import React, { useState } from "react";
 // When implementing a Newscomponent on any of the pages, pass in the State-Variables: "personData" and "setPersonData" to update the global variable as props. Also pass in a "name" prop to indicate what the key in the "personData" object should be.
 function NewsComponent(props) {
   const [input, setInput] = useState(0);
+  const keyvalue = `${props.name} - NEWSscore`;
+
   console.log(props);
 
   function renderCells() {
@@ -93,6 +95,7 @@ function NewsComponent(props) {
       <input
         className="news-input"
         type="number"
+        value={props.personData[props.name] ? props.personData[props.name] : ""}
         onChange={e => {
           const inputValue = Number(e.target.value);
           setInput(inputValue);
