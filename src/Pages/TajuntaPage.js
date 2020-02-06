@@ -11,11 +11,23 @@ function TajuntaPage({ history, personData, setPersonData }) {
   ) {
     buttonActive = "nextButtonactive";
   }
+
+  const hookIntoTextAreaSetPersonData = value => {
+    if (personData["Tajunta - Ei poikkeavia löydöksiä."]) {
+      setPersonData({
+        ...value,
+        "Tajunta - Ei poikkeavia löydöksiä.": false
+      });
+    } else {
+      setPersonData(value);
+    }
+  };
+
   return (
     <div className="Page">
       <h1>Tajunta</h1>
       <p>
-        Tarkista tajunta ja kirjoita mahdoliset löydökset/käyttätyminen alla
+        Tarkista tajunta ja kirjoita mahdolliset löydökset/käyttäytyminen alla
         olevaan tekstikenttään.
       </p>
       <Checkbox
@@ -24,10 +36,17 @@ function TajuntaPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
+      {personData["Tajunta"] &&
+        personData["Tajunta - Ei poikkeavia löydöksiä."] && (
+          <p style={{ color: "#AD3E2F", textAlign: "start" }}>
+            Jos valitset: Ei poikkeavia löydöksiä, kirjoittamasi löydökset eivät
+            kirjaudu raporttiin.
+          </p>
+        )}
       <Textarea
         name={"Tajunta"}
         personData={personData}
-        setPersonData={setPersonData}
+        setPersonData={hookIntoTextAreaSetPersonData}
       />
       <div className="nextButtondiv">
         <button

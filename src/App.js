@@ -47,7 +47,7 @@ let testingdata = {
   "Tarkista syke:": true,
   "Tajunta - Ei poikkeavia löydöksiä.": false,
   Tajunta:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra libero sed libero tincidunt, id aliquet ex porttitor. Sed at felis imperdiet, tincidunt lorem eget, faucibus nisl. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis eget nisi nec tristique. Curabitur euismod auctor condimentum.",
+    "This is some testing text imma just put right here. I would use lorem ipsum text to fill this normally but unfortunately the interwebs does not work so I have to do this manually, which makes me think should there be like a wordlimit on this stuff or are we confident it'll just stretch to whatever we need it to be ? I noticed this looks pretty silly pushed to the side but I suppose it'll usually be either 'no abnormalities' or this text right here. Ok peace!",
   Hengitystaajuus: 15,
   "Hengitystaajuus - NEWSscore": 1,
   Happisaturaatio: 95,
