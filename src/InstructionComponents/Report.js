@@ -63,14 +63,10 @@ function Report({ personData }) {
       <div className="reportElement">
         <h3>Tajunta:</h3>
         <div className="flex">
-          <p className="subject">{"Ei poikkeavia löydöksiä"}</p>
-          <p className="answer">
-            {personData["Tuntuuko paikallista lämpöeroa:"]
+          <p style={{ width: "100%" }} className="answer">
+            {personData["Tajunta - Ei poikkeavia löydöksiä."]
               ? "Ei poikkeavia löydöksiä."
-              : null}
-          </p>
-          <p className="answer">
-            {personData.Tajunta ? personData.Tajunta : null}
+              : personData.Tajunta}
           </p>
         </div>
       </div>
@@ -81,18 +77,36 @@ function Report({ personData }) {
         <h3>Iho, paljastaminen:</h3>
         <div className="flex">
           <p className="subject">{"Miltä iho tuntuu?"}</p>
-          <p className="answer">
-            {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
-            {personData["Iho, paljastaminen - Kuiva"] ? "Vinkuna" : null}
-            {personData["Iho, paljastaminen - Kostea"] ? "Korina" : null}
-            {personData["Iho, paljastaminen - Kylmä"] ? "Rohina" : null}
-            {personData["Iho, paljastaminen - Kuuma"] ? "Rohina" : null}
-          </p>
+          <div className="answer">
+            <p>
+              {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
+            </p>
+            <p>{personData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}</p>
+            <p>{personData["Iho, paljastaminen - Kostea"] ? "Kostea" : null}</p>
+            <p>{personData["Iho, paljastaminen - Kylmä"] ? "Kylmä" : null}</p>
+            <p>{personData["Iho, paljastaminen - Kuuma"] ? "Kuuma" : null}</p>
+          </div>
         </div>
         <div className="flex">
-          <p className="subject">{"Onko iho muutoksia?"}</p>
-          <p className="answer">{personData.Iho ? personData.Iho : "Ei"}</p>
+          <p className="subject">Onko iho muutoksia?</p>
+          <p className="answer">
+            {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"]
+              ? "Kyllä"
+              : "Ei"}
+          </p>
         </div>
+        {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
+          <p
+            style={{
+              fontWeight: "200",
+              fontSize: "0.9rem",
+              lineHeight: "1.6rem"
+            }}
+            className="answer"
+          >
+            {personData.Iho}
+          </p>
+        ) : null}
       </div>
 
       <hr />

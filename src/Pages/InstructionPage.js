@@ -27,6 +27,7 @@ function InstructionPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         ControlCardVisibility={ControlCardVisibility}
         setControlCardVisibility={setControlCardVisibility}
+        NEWSscoreTotal={NEWSscoreTotal}
       />
       <InstructionNewsComponent
         personData={personData}

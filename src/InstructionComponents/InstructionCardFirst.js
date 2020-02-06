@@ -5,7 +5,8 @@ function InstructionCardFirst({
   personData,
   setPersonData,
   ControlCardVisibility,
-  setControlCardVisibility
+  setControlCardVisibility,
+  NEWSscoreTotal
 }) {
   const instruction_content = {
     emergencyContent: (
@@ -13,18 +14,33 @@ function InstructionCardFirst({
         <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 2-3 minuutin.
       </>
     ),
-    noneEmergencyContent: (
+    mediumEmergencyContent: (
       <>
         <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 5 minuutin
         päästä ennen mahdollista konsultaatiota.
       </>
+    ),
+    noneEmergencyContent: (
+      <>
+        <span>Kontrolloi</span> nollan pisteen tilanne
+      </>
     )
+  };
+
+  const chooseEmergencyContent = () => {
+    if (NEWSscoreTotal === 0) {
+      return instruction_content.noneEmergencyContent;
+    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+      return instruction_content.mediumEmergencyContent;
+    } else if (NEWSscoreTotal >= 4) {
+      return instruction_content.emergencyContent;
+    }
   };
 
   return (
     <div className="InstructionCard-first-container">
       <h3>Toimintaohje:</h3>
-      <p>{instruction_content.noneEmergencyContent}</p>
+      <p>{chooseEmergencyContent()}</p>
       <div className="unusual-findings-list">
         <p>
           {personData["Hengitystaajuus - NEWSscore"] >= 1

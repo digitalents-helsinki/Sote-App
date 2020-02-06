@@ -1,10 +1,7 @@
 import React from "react";
-import DoubleButon from "../Components/DoubleButton";
+import DoubleButton from "../Components/DoubleButton";
 
 function VerenkiertoPage({ history, personData, setPersonData }) {
-  const red = "#AD3E2F";
-  const green = "#377D4F";
-
   let buttonActive = "nextButtoninactive";
   if (
     (personData["Tarkista syke:"] || personData["Tarkista syke:"] === false) &&
@@ -14,44 +11,22 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
     buttonActive = "nextButtonactive";
   }
 
-  const open_hoitoOje = className => {
-    /*       Uncomment this if you want to activate the eventHandler in double-button component*/
-
-    /*        var [element] = document.getElementsByClassName(className)
-        element.classList.toggle('active')*/
-    return;
-  };
-
   return (
     <div className="Page">
       <h1>Verenkierto</h1>
       <p></p>
-      <DoubleButon
+      <DoubleButton
         header={"Tarkista syke:"}
-        value1={"Säännöllinen"}
-        value2={"Epäsäännöllinen"}
-        buttonColor_1={green}
-        buttonColor_2={red}
-        hoito_ohje={""}
-        eventHandler={open_hoitoOje}
-        hoitoOhjeOn={""}
-        hoitoOhjeOn_YesNo={""}
+        values={["Säännöllinen", "Epäsäännöllinen"]}
         personData={personData}
         setPersonData={setPersonData}
       />
-      <DoubleButon
+      <DoubleButton
         header={"Tuntuuko paikallista lämpöeroa:"}
         bodyText={
           "molemminpuolisia/ toispuolisia (ranne/nilkka, kyynärpää/ polvi, olkavarsi/nivunen)?"
         }
-        value1={"Kyllä"}
-        value2={"Ei"}
-        buttonColor_1={red}
-        buttonColor_2={green}
-        hoito_ohje={""}
-        eventHandler={open_hoitoOje}
-        hoitoOhjeOn={""}
-        hoitoOhjeOn_YesNo={""}
+        redFirst={true}
         personData={personData}
         setPersonData={setPersonData}
       />

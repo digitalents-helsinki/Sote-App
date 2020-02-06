@@ -42,10 +42,10 @@ let testingdata = {
   "Iho, paljastaminen - Kuuma": true,
   "Iho, paljastaminen - Ei poikkeavia löydöksiä": true,
   Iho:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra libero sed libero tincidunt, id aliquet ex porttitor. Sed at felis imperdiet, tincidunt lorem eget, faucibus nisl. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis eget nisi nec tristique. Curabitur euismod auctor condimentum.",
-  "Tuntuuko paikallista lämpöeroa:": false,
+    "Turmoil at the front, Wilhelms forces on the hunt. There's a thunder in the east, it's the attack of the deceased! They've been facing poison gas, seven-thousand charge at last. Turn the tide of the attack, and force the enemy to turn back! And that's when the dead man are marching again. Osowytch, then and again. Attack of the dead, hundred man. Facing the led, once again. Hundred man, charge again, die again...What!? I need to put something in here and this song popped in my head :D",
+  "Tuntuuko paikallista lämpöeroa:": true,
   "Tarkista syke:": true,
-  "Tajunta - Ei poikkeavia löydöksiä.": true,
+  "Tajunta - Ei poikkeavia löydöksiä.": false,
   Tajunta:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra libero sed libero tincidunt, id aliquet ex porttitor. Sed at felis imperdiet, tincidunt lorem eget, faucibus nisl. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis eget nisi nec tristique. Curabitur euismod auctor condimentum.",
   Hengitystaajuus: 15,
@@ -65,7 +65,7 @@ let testingdata = {
 function App() {
   let history = useHistory();
   let location = useLocation();
-  const [personData, setPersonData] = useState(testingdata);
+  const [personData, setPersonData] = useState({});
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 

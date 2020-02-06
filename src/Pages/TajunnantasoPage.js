@@ -2,13 +2,6 @@ import React from "react";
 import DoubleButton from "../Components/DoubleButton";
 
 function TajunnantasoPage({ history, personData, setPersonData }) {
-  const red = "#AD3E2F";
-  const green = "#377D4F";
-
-  const open_hoitoOje = className => {
-    return;
-  };
-
   let buttonActive = "nextButtoninactive";
   if (personData["Tajunnan taso"] || personData["Tajunnan taso"] === false) {
     buttonActive = "nextButtonactive";
@@ -22,16 +15,7 @@ function TajunnantasoPage({ history, personData, setPersonData }) {
         saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
       </p>
       <DoubleButton
-        header={""}
-        value1={"Normaali"}
-        value2={"Poikkeava"}
-        buttonColor_1={green}
-        buttonColor_2={red}
-        hoitoOhje_header={""}
-        hoito_ohje={""}
-        eventHandler={open_hoitoOje}
-        hoitoOhjeOn={""}
-        hoitoOhjeOn_YesNo={""}
+        values={["Normaali", "Poikkeava"]}
         personData={personData}
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
