@@ -41,12 +41,12 @@ function VerensokeriPage({
           className={"nextButtoninactive " + buttonActive}
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
-              if (!NEWSscoreTotal === 0) {
-                window.scrollTo(0, 0);
-                history.push("/instructionPage");
-              } else {
+              if (NEWSscoreTotal === 0) {
                 window.scrollTo(0, 0);
                 history.push("/instructionPageTwo");
+              } else {
+                window.scrollTo(0, 0);
+                history.push("/instructionPage");
               }
             } else {
               return;
