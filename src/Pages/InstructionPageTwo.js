@@ -26,26 +26,13 @@ function InstructionPage({ personData, setPersonData, history }) {
 
   return (
     <div className="instruction-page">
-      <ScoreCard NEWSscoreTotal={NEWSscoreTotal} personData={personData} />
-      <InstructionCardFirst
-        personData={personData}
-        setPersonData={setPersonData}
-        ControlCardVisibility={ControlCardVisibility}
-        setControlCardVisibility={setControlCardVisibility}
+      <ControlledScoreCard
         NEWSscoreTotal={NEWSscoreTotal}
-        controlData={controlData}
-        setcontrolData={setcontrolData}
-      />
-      <InstructionNewsComponent
-        history={history}
         personData={personData}
-        setPersonData={setPersonData}
-        ControlCardVisibility={ControlCardVisibility}
-        controlData={controlData}
-        setcontrolData={setcontrolData}
         ControlRiskCardVisibility={ControlRiskCardVisibility}
-        setControlRiskCardVisibility={setControlRiskCardVisibility}
       />
+      <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
+      <Report personData={personData} />
     </div>
   );
 }
