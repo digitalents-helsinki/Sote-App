@@ -120,8 +120,6 @@ function InstructionNewsComponent({
       <div
         onClick={() => {
           console.log("beep");
-          setPersonData({});
-          setPersonData(controlData);
 
           !ControlRiskCardVisibility
             ? setControlRiskCardVisibility(true)
