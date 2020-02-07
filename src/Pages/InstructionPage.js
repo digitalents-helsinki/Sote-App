@@ -8,7 +8,8 @@ import Report from "../InstructionComponents/Report";
 
 function InstructionPage({ personData, setPersonData }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
-  console.log(personData);
+  const [controlData, setcontrolData] = useState({});
+
   const NEWSscoreTotal =
     personData["Hengitystaajuus - NEWSscore"] +
     personData["Happisaturaatio - NEWSscore"] +
@@ -16,6 +17,7 @@ function InstructionPage({ personData, setPersonData }) {
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
   console.log(NEWSscoreTotal);
+
   // console.log(testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Syketaajuus - NEWSscore"], testingdata["Mittaa lämpötila - NEWSscore"])
   // console.log(NEWSscoreTotal, "beep");
 
@@ -28,13 +30,20 @@ function InstructionPage({ personData, setPersonData }) {
         ControlCardVisibility={ControlCardVisibility}
         setControlCardVisibility={setControlCardVisibility}
         NEWSscoreTotal={NEWSscoreTotal}
+        controlData={controlData}
+        setcontrolData={setcontrolData}
       />
       <InstructionNewsComponent
         personData={personData}
         setPersonData={setPersonData}
         ControlCardVisibility={ControlCardVisibility}
+        controlData={controlData}
+        setcontrolData={setcontrolData}
       />
-      <ControlledScoreCard NEWSscoreTotal={NEWSscoreTotal} />
+      <ControlledScoreCard
+        NEWSscoreTotal={NEWSscoreTotal}
+        personData={personData}
+      />
       <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
       <Report personData={personData} />
     </div>

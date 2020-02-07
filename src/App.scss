@@ -773,5 +773,17 @@ html {
         }
       }
     }
+    .controlDone-btn {
+      display: none;
+    }
+    .controlDone-btn.active {
+      display: block;
+      background-color: $sote-yellow;
+      margin: 50px 30px 30px 30px;
+      padding: 10px 15px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 }

@@ -6,11 +6,15 @@ function InstructionNewsComponent({
   setPersonData,
   personData,
   ControlCardVisibility,
-  setControlCardVisibility
+  setControlCardVisibility,
+  controlData,
+  setcontrolData
 }) {
+  console.log(controlData);
+
   return (
     <div>
-      {personData["Hengitystaajuus - NEWSscore"] >= 1 ? (
+      {controlData["Hengitystaajuus - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -31,7 +35,7 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {personData["Happisaturaatio - NEWSscore"] >= 1 ? (
+      {controlData["Happisaturaatio - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -49,7 +53,7 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {personData["Systolinen verenpaine - NEWSscore"] >= 1 ? (
+      {controlData["Systolinen verenpaine - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -67,7 +71,7 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {personData["Syketaajuus - NEWSscore"] >= 1 ? (
+      {controlData["Syketaajuus - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -85,7 +89,7 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {personData["Mittaa lämpötila - NEWSscore"] >= 1 ? (
+      {controlData["Mittaa lämpötila - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +
@@ -110,6 +114,19 @@ function InstructionNewsComponent({
           />
         </div>
       ) : null}
+
+      <div
+        onClick={() => {
+          console.log("beep");
+          setPersonData({});
+          setPersonData(controlData);
+
+          console.log(controlData);
+        }}
+        className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}
+      >
+        Kontrolloi valmis
+      </div>
     </div>
   );
 }

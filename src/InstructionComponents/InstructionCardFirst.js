@@ -6,7 +6,9 @@ function InstructionCardFirst({
   setPersonData,
   ControlCardVisibility,
   setControlCardVisibility,
-  NEWSscoreTotal
+  NEWSscoreTotal,
+  controlData,
+  setcontrolData
 }) {
   const instruction_content = {
     emergencyContent: (
@@ -68,6 +70,10 @@ function InstructionCardFirst({
       </div>
       <div
         onClick={() => {
+          console.log(personData);
+          setcontrolData(personData);
+          console.log(controlData);
+
           !ControlCardVisibility
             ? setControlCardVisibility(true)
             : setControlCardVisibility(false);
