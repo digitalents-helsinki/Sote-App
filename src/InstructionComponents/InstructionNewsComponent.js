@@ -126,7 +126,7 @@ function InstructionNewsComponent({
         }}
         className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}
       >
-        Kontrolloi valmis
+        Kontrolli valmis
       </div>
     </div>
   );
