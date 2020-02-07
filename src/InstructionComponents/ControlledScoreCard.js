@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function ControlledScoreCard({ NEWSscoreTotal, personData }) {
+function ControlledScoreCard({
+  NEWSscoreTotal,
+  personData,
+  ControlRiskCardVisibility
+}) {
   // If the RISK LEVEL stayed the same after control, render PYSYI SAMANA. If the not render MUUTTUI
   const newRiskLevel = {
     stayedSame: " PYSYI SAMANA",
@@ -35,7 +39,13 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
     }
   }, [NEWSscoreTotal, personData]);
   return (
-    <div style={cardStyle} className={"controlled-scoreCard-container"}>
+    <div
+      style={cardStyle}
+      className={
+        "controlled-scoreCard-container" +
+        (ControlRiskCardVisibility ? " active" : "")
+      }
+    >
       <h3>RISKILUOKKA: {cardText}</h3>
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
