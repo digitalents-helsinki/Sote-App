@@ -8,6 +8,9 @@ import Report from "../InstructionComponents/Report";
 
 function InstructionPage({ personData, setPersonData }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
+  const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
+    false
+  );
   const [controlData, setcontrolData] = useState({});
 
   const NEWSscoreTotal =
@@ -39,10 +42,14 @@ function InstructionPage({ personData, setPersonData }) {
         ControlCardVisibility={ControlCardVisibility}
         controlData={controlData}
         setcontrolData={setcontrolData}
+        ControlRiskCardVisibility={ControlRiskCardVisibility}
+        setControlRiskCardVisibility={setControlRiskCardVisibility}
       />
       <ControlledScoreCard
         NEWSscoreTotal={NEWSscoreTotal}
         personData={personData}
+        ControlRiskCardVisibility={ControlRiskCardVisibility}
+        controlData={controlData}
       />
       <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
       <Report personData={personData} />

@@ -54,5 +54,4 @@ function ControlledScoreCard({
     </div>
   );
 }
-
 export default ControlledScoreCard;

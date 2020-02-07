@@ -66,7 +66,7 @@ let testingdata = {
 function App() {
   let history = useHistory();
   let location = useLocation();
-  const [personData, setPersonData] = useState({});
+  const [personData, setPersonData] = useState(testingdata);
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 

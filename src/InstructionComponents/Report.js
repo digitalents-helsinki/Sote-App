@@ -1,5 +1,4 @@
 import React from "react";
-import { red } from "color-name";
 
 function Report({ personData }) {
   const red = "#ad3e2f";
