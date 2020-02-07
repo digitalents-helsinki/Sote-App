@@ -6,15 +6,27 @@ function ControlledScoreCard({
   ControlRiskCardVisibility,
   controlData
 }) {
-  // If the RISK LEVEL stayed the same after control, render PYSYI SAMANA. If the not render MUUTTUI
-  const newRiskLevel = {
-    stayedSame: " PYSYI SAMANA",
-    changed: " MUUTTUI"
+  const controlData_RiskLevel = () => {
+    if (controlData === 0) {
+      return "Lievä riski";
+    } else if (controlData >= 1 && controlData <= 3) {
+      return "Kohtalainen riski";
+    } else if (
+      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+      controlData["Happisaturaatio - NEWSscore"] === 3 ||
+      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      controlData["Syketaajuus - NEWSscore"] === 3 ||
+      controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      controlData >= 4
+    ) {
+      return "Korkea riski";
+    }
   };
+
+  console.log(controlData);
+
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
-
-  var oldNewsScores = NEWSscoreTotal;
 
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
@@ -41,6 +53,7 @@ function ControlledScoreCard({
       });
     }
   }, [NEWSscoreTotal, personData]);
+
   return (
     <div
       style={cardStyle}
@@ -49,7 +62,10 @@ function ControlledScoreCard({
         (ControlRiskCardVisibility ? " active" : "")
       }
     >
-      <h3>RISKILUOKKA: {cardText}</h3>
+      <h3>
+        Riskiluokka{" "}
+        {cardText === controlData_RiskLevel() ? "pysyi samana." : "muuttui."}
+      </h3>
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
     </div>
