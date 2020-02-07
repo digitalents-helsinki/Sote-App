@@ -73,7 +73,8 @@ function App() {
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
-  console.log(personData);
+  console.log("This is personData", personData);
+  console.log("This is controlData", controlData);
 
   return (
     <BrowserRouter>

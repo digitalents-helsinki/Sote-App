@@ -6,12 +6,17 @@ import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 import Report from "../InstructionComponents/Report";
 
-function InstructionPage({ personData, setPersonData, history }) {
+function InstructionPage({
+  personData,
+  setPersonData,
+  history,
+  controlData,
+  setcontrolData
+}) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
     false
   );
-  const [controlData, setcontrolData] = useState({});
 
   const NEWSscoreTotal =
     personData["Hengitystaajuus - NEWSscore"] +
