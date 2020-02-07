@@ -35,13 +35,7 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
     }
   }, [NEWSscoreTotal, personData]);
   return (
-    <div
-      style={cardStyle}
-      className={
-        "controlled-scoreCard-container" +
-        (controlled - scoreCardVisibility ? " active" : "")
-      }
-    >
+    <div style={cardStyle} className={"controlled-scoreCard-container"}>
       <h3>RISKILUOKKA: {cardText}</h3>
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
