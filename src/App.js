@@ -27,6 +27,7 @@ import TajunnantasoPage from "./Pages/TajunnantasoPage";
 import HengitysPage from "./Pages/HengitysPage";
 import EmergencyPage from "./Pages/EmergencyPage";
 import InstructionPage from "./Pages/InstructionPage";
+import InstructionPageTwo from "./Pages/InstructionPageTwo";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -235,6 +236,17 @@ function App() {
             path="/instructionPage"
             render={props => (
               <InstructionPage
+                personData={personData}
+                setPersonData={setPersonData}
+                history={history}
+                {...props}
+              />
+            )}
+          />
+          <Route
+            path="/instructionPageTwo"
+            render={props => (
+              <InstructionPageTwo
                 personData={personData}
                 setPersonData={setPersonData}
                 history={history}

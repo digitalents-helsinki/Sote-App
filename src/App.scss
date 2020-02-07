@@ -651,6 +651,55 @@ html {
     }
 
     .controlled-scoreCard-container {
+      display: hidden;
+      width: 100%;
+      background-color: $sote-blue;
+      padding: 15px 20px;
+      box-sizing: border-box;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #fff;
+
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+      p {
+        font-size: 1.1rem;
+        margin: 60px 0 10px 0;
+      }
+
+      h3 {
+        margin-top: 35px;
+      }
+    }
+
+    .controlled-scoreCard-container.active {
+      display: block;
+      width: 100%;
+      background-color: $sote-blue;
+      padding: 15px 20px;
+      box-sizing: border-box;
+
+      letter-spacing: 0.5px;
+      line-height: 1.6rem;
+      color: #fff;
+
+      margin: 20px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+      p {
+        font-size: 1.1rem;
+        margin: 60px 0 10px 0;
+      }
+
+      h3 {
+        margin-top: 35px;
+      }
+    }
+    .controlled-scoreCard-container.active {
       width: 100%;
       background-color: $sote-blue;
       padding: 15px 20px;
