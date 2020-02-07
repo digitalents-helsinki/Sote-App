@@ -66,7 +66,10 @@ let testingdata = {
 function App() {
   let history = useHistory();
   let location = useLocation();
+
   const [personData, setPersonData] = useState(testingdata);
+  const [controlData, setcontrolData] = useState({});
+
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
@@ -238,6 +241,8 @@ function App() {
               <InstructionPage
                 personData={personData}
                 setPersonData={setPersonData}
+                controlData={controlData}
+                setcontrolData={setcontrolData}
                 history={history}
                 {...props}
               />
@@ -249,6 +254,8 @@ function App() {
               <InstructionPageTwo
                 personData={personData}
                 setPersonData={setPersonData}
+                controlData={controlData}
+                setcontrolData={setcontrolData}
                 history={history}
                 {...props}
               />
