@@ -9,6 +9,8 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
 
+  var oldNewsScores = NEWSscoreTotal;
+
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
       setCardText("Lievä riski");
@@ -36,7 +38,7 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
   }, [NEWSscoreTotal, personData]);
   return (
     <div style={cardStyle} className={"controlled-scoreCard-container"}>
-      <h3>RISKILUOKKA: {cardText}</h3>
+      <h3>Riskiluokka {"pysyi samana."}</h3>
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
     </div>
