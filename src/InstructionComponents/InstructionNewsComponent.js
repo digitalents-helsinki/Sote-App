@@ -120,12 +120,8 @@ function InstructionNewsComponent({
       <div
         onClick={() => {
           console.log("beep");
-          setPersonData({});
-          setPersonData(controlData);
-
-          !ControlRiskCardVisibility
-            ? setControlRiskCardVisibility(true)
-            : setControlRiskCardVisibility(false);
+          window.scrollTo(0, 0);
+          history.push("/InstructionPageTwo");
           console.log(controlData);
         }}
         className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}

@@ -6,7 +6,7 @@ import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 import Report from "../InstructionComponents/Report";
 
-function InstructionPage({ personData, setPersonData }) {
+function InstructionPage({ personData, setPersonData, history }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
     false
@@ -37,6 +37,7 @@ function InstructionPage({ personData, setPersonData }) {
         setcontrolData={setcontrolData}
       />
       <InstructionNewsComponent
+        history={history}
         personData={personData}
         setPersonData={setPersonData}
         ControlCardVisibility={ControlCardVisibility}
@@ -45,14 +46,6 @@ function InstructionPage({ personData, setPersonData }) {
         ControlRiskCardVisibility={ControlRiskCardVisibility}
         setControlRiskCardVisibility={setControlRiskCardVisibility}
       />
-      <ControlledScoreCard
-        NEWSscoreTotal={NEWSscoreTotal}
-        personData={personData}
-        ControlRiskCardVisibility={ControlRiskCardVisibility}
-        controlData={controlData}
-      />
-      <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
-      <Report personData={personData} />
     </div>
   );
 }

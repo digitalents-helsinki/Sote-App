@@ -11,7 +11,6 @@ function InstructionPage({ personData, setPersonData, history }) {
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
     false
   );
-  const [controlData, setcontrolData] = useState({});
 
   const NEWSscoreTotal =
     personData["Hengitystaajuus - NEWSscore"] +
