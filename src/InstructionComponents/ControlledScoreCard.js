@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 function ControlledScoreCard({
   NEWSscoreTotal,
   personData,
-  ControlRiskCardVisibility
+  ControlRiskCardVisibility,
+  controlData
 }) {
   // If the RISK LEVEL stayed the same after control, render PYSYI SAMANA. If the not render MUUTTUI
   const newRiskLevel = {
