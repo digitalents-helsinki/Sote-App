@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-function ControlledScoreCard({ NEWSscoreTotal, personData }) {
-  // If the RISK LEVEL stayed the same after control, render PYSYI SAMANA. If the not render MUUTTUI
-  const newRiskLevel = {
-    stayedSame: " PYSYI SAMANA",
-    changed: " MUUTTUI"
-  };
+function ControlledScoreCard({
+  NEWSscoreTotal,
+  personData,
+  ControlRiskCardVisibility,
+  controlData
+}) {
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
 
-  var oldNewsScores = NEWSscoreTotal;
+  const controlData_RiskLevel = () => {
+    if (controlData === 0) {
+      return "Lievä riski";
+    } else if (controlData >= 1 && controlData <= 3) {
+      return "Kohtalainen riski";
+    } else if (
+      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+      controlData["Happisaturaatio - NEWSscore"] === 3 ||
+      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      controlData["Syketaajuus - NEWSscore"] === 3 ||
+      controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      controlData >= 4
+    ) {
+      return "Korkea riski";
+    }
+  };
+
+  console.log(controlData);
 
   useEffect(() => {
     if (NEWSscoreTotal === 0) {
@@ -18,7 +35,7 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
         backgroundColor: "#377d4f"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
-      setCardText("kohtalainen riski");
+      setCardText("Kohtalainen riski");
       setCardStyle({
         backgroundColor: "#284e78"
       });
@@ -36,9 +53,19 @@ function ControlledScoreCard({ NEWSscoreTotal, personData }) {
       });
     }
   }, [NEWSscoreTotal, personData]);
+
   return (
-    <div style={cardStyle} className={"controlled-scoreCard-container"}>
-      <h3>Riskiluokka {"pysyi samana."}</h3>
+    <div
+      style={cardStyle}
+      className={
+        "controlled-scoreCard-container" +
+        (ControlRiskCardVisibility ? " active" : "")
+      }
+    >
+      <h3>
+        Riskiluokka{" "}
+        {cardText === controlData_RiskLevel() ? "pysyi samana." : "muuttui."}
+      </h3>
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
     </div>
