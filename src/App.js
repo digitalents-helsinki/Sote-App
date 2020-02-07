@@ -258,6 +258,7 @@ function App() {
                 controlData={controlData}
                 setcontrolData={setcontrolData}
                 history={history}
+                controlData={controlData}
                 {...props}
               />
             )}

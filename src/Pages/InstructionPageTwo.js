@@ -31,6 +31,7 @@ function InstructionPage({
       <ControlledScoreCard
         NEWSscoreTotal={NEWSscoreTotal}
         personData={personData}
+        controlData={controlData}
       />
       <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
       <Report personData={personData} />
