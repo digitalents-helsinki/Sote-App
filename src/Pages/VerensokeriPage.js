@@ -1,7 +1,12 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 
-function VerensokeriPage({ history, personData, setPersonData }) {
+function VerensokeriPage({
+  history,
+  personData,
+  setPersonData,
+  NEWSscoreTotal
+}) {
   let buttonActive = "nextButtoninactive";
 
   if (personData["Mittaa verensokeri:"]) {
@@ -36,8 +41,13 @@ function VerensokeriPage({ history, personData, setPersonData }) {
           className={"nextButtoninactive " + buttonActive}
           onClick={() => {
             if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/instructionPage");
+              if (!NEWSscoreTotal === 0) {
+                window.scrollTo(0, 0);
+                history.push("/instructionPage");
+              } else {
+                window.scrollTo(0, 0);
+                history.push("/instructionPageTwo");
+              }
             } else {
               return;
             }

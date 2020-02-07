@@ -11,19 +11,14 @@ function InstructionPage({
   setPersonData,
   history,
   controlData,
-  setcontrolData
+  setcontrolData,
+  NEWSscoreTotal
 }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
     false
   );
 
-  const NEWSscoreTotal =
-    personData["Hengitystaajuus - NEWSscore"] +
-    personData["Happisaturaatio - NEWSscore"] +
-    personData["Systolinen verenpaine - NEWSscore"] +
-    personData["Syketaajuus - NEWSscore"] +
-    personData["Mittaa lämpötila - NEWSscore"];
   console.log(NEWSscoreTotal);
 
   // console.log(testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Hengitystaajuus - NEWSscore"], testingdata["Syketaajuus - NEWSscore"], testingdata["Mittaa lämpötila - NEWSscore"])

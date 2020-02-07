@@ -73,6 +73,13 @@ function App() {
   const [emergencyVisibility, setEmergencyVisibility] = useState(false);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
+  const NEWSscoreTotal =
+    personData["Hengitystaajuus - NEWSscore"] +
+    personData["Happisaturaatio - NEWSscore"] +
+    personData["Systolinen verenpaine - NEWSscore"] +
+    personData["Syketaajuus - NEWSscore"] +
+    personData["Mittaa lämpötila - NEWSscore"];
+
   console.log("This is personData", personData);
   console.log("This is controlData", controlData);
 
@@ -232,6 +239,7 @@ function App() {
                 personData={personData}
                 setPersonData={setPersonData}
                 history={history}
+                NEWSscoreTotal={NEWSscoreTotal}
                 {...props}
               />
             )}
@@ -245,6 +253,7 @@ function App() {
                 controlData={controlData}
                 setcontrolData={setcontrolData}
                 history={history}
+                NEWSscoreTotal={NEWSscoreTotal}
                 {...props}
               />
             )}
