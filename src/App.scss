@@ -62,22 +62,7 @@ html {
     transform: translateX(30vw);
   }
 
-  @keyframes slideToBottom {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(100vh);
-      opacity: 1;
-    }
-  }
-
   .emergencyPage-container {
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-    animation-name: slideToBottom;
     position: fixed;
     opacity: 0;
     bottom: 0;
@@ -85,9 +70,7 @@ html {
     height: 100vh;
     overflow: auto;
     z-index: 50;
-
     transform: translateY(100vh);
-
     font-family: $font-montserrat;
 
     .emergencyPage-topBar {
@@ -172,6 +155,18 @@ html {
     }
   }
 
+  @keyframes slideToBottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+
   @keyframes slideFromBottom {
     0% {
       transform: translateY(100vh);
@@ -189,6 +184,14 @@ html {
     animation-name: slideFromBottom;
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .emergencyPage-container.inactive {
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-name: slideToBottom;
+    transform: translateY(100vh);
+    opacity: 0;
   }
 
   .TopArea {

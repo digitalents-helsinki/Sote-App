@@ -5,7 +5,16 @@ import ESC from "../Components/EmergencySymptomsContent";
 
 function EmergencyPage({ setEmergencyVisibility, visibility }) {
   return (
-    <div className={"emergencyPage-container" + (visibility ? " active" : "")}>
+    <div
+      className={
+        "emergencyPage-container" +
+        (typeof visibility === "boolean"
+          ? visibility
+            ? " active"
+            : " inactive"
+          : "")
+      }
+    >
       <div className="emergencyPage-topBar">
         <img
           src={Arrow}

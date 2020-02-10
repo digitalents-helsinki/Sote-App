@@ -70,7 +70,7 @@ function App() {
   const [personData, setPersonData] = useState({});
   const [controlData, setcontrolData] = useState({});
 
-  const [emergencyVisibility, setEmergencyVisibility] = useState(false);
+  const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   const NEWSscoreTotal =
