@@ -722,6 +722,7 @@ html {
 }
 
 .App .instruction-page .controlled-scoreCard-container {
+  display: hidden;
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
@@ -742,6 +743,55 @@ html {
 }
 
 .App .instruction-page .controlled-scoreCard-container h3 {
+  margin-top: 35px;
+}
+
+.App .instruction-page .controlled-scoreCard-container.active {
+  display: block;
+  width: 100%;
+  background-color: #284e78;
+  padding: 15px 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+  margin: 20px 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+}
+
+.App .instruction-page .controlled-scoreCard-container.active p {
+  font-size: 1.1rem;
+  margin: 60px 0 10px 0;
+}
+
+.App .instruction-page .controlled-scoreCard-container.active h3 {
+  margin-top: 35px;
+}
+
+.App .instruction-page .controlled-scoreCard-container.active {
+  width: 100%;
+  background-color: #284e78;
+  padding: 15px 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+  margin: 20px 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+}
+
+.App .instruction-page .controlled-scoreCard-container.active p {
+  font-size: 1.1rem;
+  margin: 60px 0 10px 0;
+}
+
+.App .instruction-page .controlled-scoreCard-container.active h3 {
   margin-top: 35px;
 }
 
@@ -855,5 +905,20 @@ html {
   line-height: 1.6rem;
   font-weight: 400;
   width: 20%;
+}
+
+.App .instruction-page .controlDone-btn {
+  display: none;
+}
+
+.App .instruction-page .controlDone-btn.active {
+  display: block;
+  background-color: #f0c816;
+  margin: 50px 30px 30px 30px;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=App.css.map */
