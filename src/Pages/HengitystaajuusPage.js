@@ -1,17 +1,16 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function HengitystaajuusPage({ personData, setPersonData }) {
   const buttonActive = personData["Hengitystaajuus"];
 
   return (
-    <div className="Page">
-      <h1>Hengitystaajuus</h1>
-      <p>
-        Laske rintakehän liikkeet minuutin ajalta. Asiakkaan pitäisi olla
-        puhumatta tämän ajan.
-      </p>
+    <Page
+      title="Hengitystaajuus"
+      paragraph="Laske rintakehän liikkeet minuutin ajalta. Asiakkaan pitäisi olla puhumatta tämän ajan."
+    >
       <NewsComponent
         name={"Hengitystaajuus"}
         personData={personData}
@@ -19,7 +18,7 @@ function HengitystaajuusPage({ personData, setPersonData }) {
         cells={[8, null, [9, 11], [12, 20], null, [21, 24], 25]}
       />
       <NextButton nextPage={"/happisaturaatio"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function HengitystiePage({ personData, setPersonData }) {
   const buttonActive = [
@@ -9,9 +10,7 @@ function HengitystiePage({ personData, setPersonData }) {
   ].every(type => type === "boolean");
 
   return (
-    <div className="Page">
-      <h1>Hengitystie</h1>
-      <p>Tarkista asiakkaan hengitystiet</p>
+    <Page title="Hengitystie" paragraph="Tarkista asiakkaan hengitystiet">
       <DoubleButton
         header={"Onko hengitystie auki?"}
         hoitoOhjeHeader={"Hoito-ohje"}
@@ -28,7 +27,7 @@ function HengitystiePage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
       <NextButton buttonActive={buttonActive} nextPage={"/hengitys"} />
-    </div>
+    </Page>
   );
 }
 

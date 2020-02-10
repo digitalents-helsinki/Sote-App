@@ -1,6 +1,7 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function VerenkiertoPage({ personData, setPersonData }) {
   const buttonActive = [
@@ -9,9 +10,7 @@ function VerenkiertoPage({ personData, setPersonData }) {
   ].every(type => type === "boolean");
 
   return (
-    <div className="Page">
-      <h1>Verenkierto</h1>
-      <p></p>
+    <Page title="Verenkierto">
       <DoubleButton
         header={"Tarkista syke:"}
         values={["Säännöllinen", "Epäsäännöllinen"]}
@@ -28,7 +27,7 @@ function VerenkiertoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
       <NextButton nextPage={"/tajunta"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

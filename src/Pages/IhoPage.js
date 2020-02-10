@@ -2,6 +2,7 @@ import React from "react";
 import Checkbox from "../Components/Checkbox";
 import Textarea from "../Components/Textarea";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function IhoPage({ personData, setPersonData }) {
   const Title = "Iho, paljastaminen";
@@ -27,9 +28,7 @@ function IhoPage({ personData, setPersonData }) {
   };
 
   return (
-    <div className="Page">
-      <h1>{Title}</h1>
-      <p>Miltä iho tuntuu:</p>
+    <Page title={Title} paragraph="Miltä iho tuntuu:">
       <Checkbox
         checkboxlabel={"Normaali"}
         subject={Title}
@@ -90,7 +89,7 @@ function IhoPage({ personData, setPersonData }) {
         setPersonData={hookIntoTextAreaSetPersonData}
       />
       <NextButton nextPage={"/verenkierto"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

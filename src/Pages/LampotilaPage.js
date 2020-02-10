@@ -1,4 +1,5 @@
 import React from "react";
+import Page from "../Components/Page";
 import NewsComponent from "../Components/NewsComponent";
 import NextButton from "../Components/NextButton";
 
@@ -6,9 +7,10 @@ function LampotilaPage({ personData, setPersonData }) {
   const buttonActive = personData["Mittaa lämpötila"];
 
   return (
-    <div className="Page">
-      <h1>Mittaa lämpötila:</h1>
-      <p>Mittaa lämpö kainalosta/korvasta</p>
+    <Page
+      title="Mittaa lämpötila:"
+      paragraph="Mittaa lämpö kainalosta/korvasta"
+    >
       <NewsComponent
         cells={[
           35.0,
@@ -24,7 +26,7 @@ function LampotilaPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
       <NextButton nextPage={"/tajunnantaso"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

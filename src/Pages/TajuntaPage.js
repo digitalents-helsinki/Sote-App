@@ -2,6 +2,7 @@ import React from "react";
 import Textarea from "../Components/Textarea";
 import Checkbox from "../Components/Checkbox";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function TajuntaPage({ personData, setPersonData }) {
   const buttonActive =
@@ -19,12 +20,10 @@ function TajuntaPage({ personData, setPersonData }) {
   };
 
   return (
-    <div className="Page">
-      <h1>Tajunta</h1>
-      <p>
-        Tarkista tajunta ja kirjoita mahdolliset löydökset/käyttäytyminen alla
-        olevaan tekstikenttään.
-      </p>
+    <Page
+      title="Tajunta"
+      paragraph="Tarkista tajunta ja kirjoita mahdolliset löydökset/käyttäytyminen alla olevaan tekstikenttään."
+    >
       <Checkbox
         checkboxlabel={"Ei poikkeavia löydöksiä."}
         subject={"Tajunta"}
@@ -50,7 +49,7 @@ function TajuntaPage({ personData, setPersonData }) {
         setPersonData={hookIntoTextAreaSetPersonData}
       />
       <NextButton nextPage={"/hengitystaajuus"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

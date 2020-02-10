@@ -1,4 +1,5 @@
 import React from "react";
+import Page from "../Components/Page";
 import Checkbox from "../Components/Checkbox";
 import NextButton from "../Components/NextButton";
 
@@ -11,9 +12,7 @@ function HengitysPage({ personData, setPersonData }) {
     personData["Hengitys - Rohina"];
 
   return (
-    <div className="Page">
-      <h1>{Title}</h1>
-      <p>Onko korvin kuultavia ääniä?</p>
+    <Page title={Title} paragraph="Onko korvin kuultavia ääniä?">
       <Checkbox
         checkboxlabel={"Normaali hengitys/ei ääniä"}
         subject={Title}
@@ -39,7 +38,7 @@ function HengitysPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
       <NextButton nextPage={"/iho"} buttonActive={buttonActive} />
-    </div>
+    </Page>
   );
 }
 

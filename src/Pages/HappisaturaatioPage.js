@@ -1,14 +1,16 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 import NextButton from "../Components/NextButton";
+import Page from "../Components/Page";
 
 function HappisaturaatioPage({ personData, setPersonData }) {
   const buttonActive = personData["Happisaturaatio"];
 
   return (
-    <div className="Page">
-      <h1>Happisaturaatio</h1>
-      <p>Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi.</p>
+    <Page
+      title="Happisaturaatio"
+      paragraph="Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi."
+    >
       <NewsComponent
         name={"Happisaturaatio"}
         personData={personData}
@@ -19,7 +21,7 @@ function HappisaturaatioPage({ personData, setPersonData }) {
         nextPage={"/systolinenverenpaine"}
         buttonActive={buttonActive}
       />
-    </div>
+    </Page>
   );
 }
 
