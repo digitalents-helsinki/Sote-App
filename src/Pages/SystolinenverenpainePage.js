@@ -1,12 +1,9 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
+import NextButton from "../Components/NextButton";
 
-function SystolinenverenpainePage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-
-  if (personData["Systolinen verenpaine"]) {
-    buttonActive = "nextButtonactive";
-  }
+function SystolinenverenpainePage({ personData, setPersonData }) {
+  const buttonActive = personData["Systolinen verenpaine"];
 
   return (
     <div className="Page">
@@ -18,22 +15,7 @@ function SystolinenverenpainePage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/syketaajuus");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/syketaajuus"} buttonActive={buttonActive} />
     </div>
   );
 }

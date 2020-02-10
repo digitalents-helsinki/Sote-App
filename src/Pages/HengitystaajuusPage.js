@@ -1,12 +1,9 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
+import NextButton from "../Components/NextButton";
 
-function HengitystaajuusPage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-
-  if (personData["Hengitystaajuus"]) {
-    buttonActive = "nextButtonactive";
-  }
+function HengitystaajuusPage({ personData, setPersonData }) {
+  const buttonActive = personData["Hengitystaajuus"];
 
   return (
     <div className="Page">
@@ -21,22 +18,7 @@ function HengitystaajuusPage({ history, personData, setPersonData }) {
         setPersonData={setPersonData}
         cells={[8, null, [9, 11], [12, 20], null, [21, 24], 25]}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/happisaturaatio");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/happisaturaatio"} buttonActive={buttonActive} />
     </div>
   );
 }

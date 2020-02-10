@@ -1,16 +1,11 @@
 import React from "react";
 import Textarea from "../Components/Textarea";
 import Checkbox from "../Components/Checkbox";
+import NextButton from "../Components/NextButton";
 
-function TajuntaPage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-
-  if (
-    personData["Tajunta - Ei poikkeavia löydöksiä."] === true ||
-    personData.Tajunta
-  ) {
-    buttonActive = "nextButtonactive";
-  }
+function TajuntaPage({ personData, setPersonData }) {
+  const buttonActive =
+    personData["Tajunta - Ei poikkeavia löydöksiä."] || personData.Tajunta;
 
   const hookIntoTextAreaSetPersonData = value => {
     if (personData["Tajunta - Ei poikkeavia löydöksiä."]) {
@@ -54,22 +49,7 @@ function TajuntaPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={hookIntoTextAreaSetPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              history.push("/hengitystaajuus");
-              window.scrollTo(0, 0);
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/hengitystaajuus"} buttonActive={buttonActive} />
     </div>
   );
 }

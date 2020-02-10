@@ -1,18 +1,14 @@
 import React from "react";
 import Checkbox from "../Components/Checkbox";
+import NextButton from "../Components/NextButton";
 
-function HengitysPage({ history, personData, setPersonData }) {
+function HengitysPage({ personData, setPersonData }) {
   const Title = "Hengitys";
-  let buttonActive = "nextButtoninactive";
-
-  if (
+  const buttonActive =
     personData["Hengitys - Normaali hengitys/ei ääniä"] ||
     personData["Hengitys - Vinkuna"] ||
     personData["Hengitys - Korina"] ||
-    personData["Hengitys - Rohina"]
-  ) {
-    buttonActive = "nextButtonactive";
-  }
+    personData["Hengitys - Rohina"];
 
   return (
     <div className="Page">
@@ -42,22 +38,7 @@ function HengitysPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/iho");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/iho"} buttonActive={buttonActive} />
     </div>
   );
 }

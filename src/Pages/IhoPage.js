@@ -1,22 +1,19 @@
 import React from "react";
 import Checkbox from "../Components/Checkbox";
 import Textarea from "../Components/Textarea";
+import NextButton from "../Components/NextButton";
 
-function IhoPage({ history, personData, setPersonData }) {
+function IhoPage({ personData, setPersonData }) {
   const Title = "Iho, paljastaminen";
-  let buttonActive = "nextButtoninactive";
 
-  if (
+  const buttonActive =
     (personData["Iho, paljastaminen - Normaali"] ||
       personData["Iho, paljastaminen - Kuiva"] ||
       personData["Iho, paljastaminen - Kostea"] ||
       personData["Iho, paljastaminen - Kylmä"] ||
       personData["Iho, paljastaminen - Kuuma"]) &&
     (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
-      personData.Iho)
-  ) {
-    buttonActive = "nextButtonactive";
-  }
+      personData.Iho);
 
   const hookIntoTextAreaSetPersonData = value => {
     if (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"]) {
@@ -92,22 +89,7 @@ function IhoPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={hookIntoTextAreaSetPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/verenkierto");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/verenkierto"} buttonActive={buttonActive} />
     </div>
   );
 }

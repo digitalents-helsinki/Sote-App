@@ -1,15 +1,12 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
+import NextButton from "../Components/NextButton";
 
-function VerenkiertoPage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-  if (
-    (personData["Tarkista syke:"] || personData["Tarkista syke:"] === false) &&
-    (personData["Tuntuuko paikallista lämpöeroa:"] ||
-      personData["Tuntuuko paikallista lämpöeroa:"] === false)
-  ) {
-    buttonActive = "nextButtonactive";
-  }
+function VerenkiertoPage({ personData, setPersonData }) {
+  const buttonActive = [
+    typeof personData["Tarkista syke:"],
+    typeof personData["Tuntuuko paikallista lämpöeroa:"]
+  ].every(type => type === "boolean");
 
   return (
     <div className="Page">
@@ -30,22 +27,7 @@ function VerenkiertoPage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              history.push("/tajunta");
-              window.scrollTo(0, 0);
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/tajunta"} buttonActive={buttonActive} />
     </div>
   );
 }

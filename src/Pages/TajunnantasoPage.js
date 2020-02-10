@@ -1,11 +1,9 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
+import NextButton from "../Components/NextButton";
 
-function TajunnantasoPage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-  if (personData["Tajunnan taso"] || personData["Tajunnan taso"] === false) {
-    buttonActive = "nextButtonactive";
-  }
+function TajunnantasoPage({ personData, setPersonData }) {
+  const buttonActive = typeof personData["Tajunnan taso"] === "boolean";
 
   return (
     <div className="Page">
@@ -20,22 +18,7 @@ function TajunnantasoPage({ history, personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={e => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/verensokeri");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton nextPage={"/verensokeri"} buttonActive={buttonActive} />
     </div>
   );
 }

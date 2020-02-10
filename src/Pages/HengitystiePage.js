@@ -1,17 +1,12 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
+import NextButton from "../Components/NextButton";
 
-function HengitystiePage({ history, personData, setPersonData }) {
-  let buttonActive = "nextButtoninactive";
-
-  if (
-    (personData["Onko hengitystie auki?"] ||
-      personData["Onko hengitystie auki?"] === false) &&
-    (personData["Onko ilmatie estettä?"] ||
-      personData["Onko ilmatie estettä?"] === false)
-  ) {
-    buttonActive = "nextButtonactive";
-  }
+function HengitystiePage({ personData, setPersonData }) {
+  const buttonActive = [
+    typeof personData["Onko hengitystie auki?"],
+    typeof personData["Onko ilmatie estettä?"]
+  ].every(type => type === "boolean");
 
   return (
     <div className="Page">
@@ -32,22 +27,7 @@ function HengitystiePage({ history, personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={e => {
-            if (buttonActive === "nextButtonactive") {
-              window.scrollTo(0, 0);
-              history.push("/hengitys");
-            } else {
-              return;
-            }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
+      <NextButton buttonActive={buttonActive} nextPage={"/hengitys"} />
     </div>
   );
 }
