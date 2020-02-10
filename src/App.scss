@@ -20,9 +20,9 @@ html {
   background-color: $app-background-color;
 
   .menu-panel {
-    display: none;
-
-    width: 100%;
+    transition: transform 250ms ease-out;
+    transform: translateX(100vw);
+    width: 70vw;
     height: 100vh;
     background-image: linear-gradient(
       15deg,
@@ -34,15 +34,13 @@ html {
 
     position: fixed;
     top: 0;
-    z-index: 50;
+    z-index: 21;
 
     padding: 40px 12vw;
     box-sizing: border-box;
 
     font-family: $font-montserrat;
     color: #fff;
-
-    transition-duration: 400ms;
 
     img {
       display: block;
@@ -51,32 +49,44 @@ html {
 
     .content {
       margin-top: 80px;
-      float: right;
 
       p {
+        margin-bottom: 30px;
         opacity: 0.8;
         display: block;
-        float: right;
       }
     }
   }
 
   .menu-panel.active {
-    display: block;
+    transform: translateX(30vw);
+  }
+
+  @keyframes slideToBottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
   }
 
   .emergencyPage-container {
-    opacity: 0;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-name: slideToBottom;
     position: fixed;
+    opacity: 0;
     bottom: 0;
     width: 100%;
-    height: 0vh;
-
+    height: 100vh;
     overflow: auto;
-    z-index: 21;
+    z-index: 50;
 
-    transition-duration: 300ms;
-    transition-timing-function: ease-out;
+    transform: translateY(100vh);
 
     font-family: $font-montserrat;
 
@@ -162,9 +172,23 @@ html {
     }
   }
 
+  @keyframes slideFromBottom {
+    0% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .emergencyPage-container.active {
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-name: slideFromBottom;
+    transform: translateY(0);
     opacity: 1;
-    height: 100vh;
   }
 
   .TopArea {

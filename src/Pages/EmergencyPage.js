@@ -3,7 +3,7 @@ import Arrow from "../Images/arrow-white.svg";
 import SymptomCard from "../Components/SymptomCard";
 import ESC from "../Components/EmergencySymptomsContent";
 
-function EmergencyPage({ props, setEmergencyVisibility, visibility }) {
+function EmergencyPage({ setEmergencyVisibility, visibility }) {
   return (
     <div className={"emergencyPage-container" + (visibility ? " active" : "")}>
       <div className="emergencyPage-topBar">

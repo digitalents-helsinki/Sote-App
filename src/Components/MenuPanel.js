@@ -2,7 +2,6 @@ import React from "react";
 import Exit_icon from "../Images/exit-icon.svg";
 
 function MenuPanel({
-  props,
   setMenuVisibility,
   menuVisibility,
   setEmergencyVisibility,
@@ -35,7 +34,7 @@ function MenuPanel({
             setMenuVisibility(false);
           }}
         >
-          <p>Hätätilanne oireet</p>
+          <p>Hätätilanneoireet</p>
         </div>
         <div
           className="emeregencyPage-fromMenu"
