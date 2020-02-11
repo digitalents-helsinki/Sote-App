@@ -1,13 +1,20 @@
 import React from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import backArrowSvg from "../Images/back-arrow.svg";
 import moreBtnSvg from "../Images/more-btn.svg";
 import ProgressBar from "../Components/ProgressBar";
 
-function TopArea({ setMenuVisibility, history, personData }) {
+function TopArea({ setMenuVisibility, personData }) {
+  const location = useLocation();
+  const history = useHistory();
+
   return (
     <div className="TopArea">
       <div className="flex-container">
         <img
+          style={{
+            visibility: location.pathname === "/" ? "hidden" : "visible"
+          }}
           className="back-arrow"
           src={backArrowSvg}
           onClick={() => {

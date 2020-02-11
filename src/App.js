@@ -64,8 +64,8 @@ let testingdata = {
 };
 
 function App() {
-  let history = useHistory();
-  let location = useLocation();
+  const history = useHistory();
+  const location = useLocation();
 
   const [personData, setPersonData] = useState({});
   const [controlData, setcontrolData] = useState({});
@@ -95,8 +95,6 @@ function App() {
           testingdata={testingdata}
         />
         <TopArea
-          history={history}
-          displayArrow={location.pathname === "/"}
           setMenuVisibility={setMenuVisibility}
           personData={personData}
         />
