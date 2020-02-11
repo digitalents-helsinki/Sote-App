@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 
 // When implementing a Newscomponent on any of the pages, pass in the State-Variables: "personData" and "setPersonData" to update the global variable as props. Also pass in a "name" prop to indicate what the key in the "personData" object should be.
 function NewsComponent(props) {
-  const [input, setInput] = useState(0);
   const newsRef = useRef(null);
   //  const keyvalue = `${props.name} - NEWSscore`;
 
@@ -10,17 +9,23 @@ function NewsComponent(props) {
 
   function renderCells() {
     function calculateActiveState(cell, idx) {
-      if (input === 0 || cell === null) {
+      if (props.personData[props.name] === 0 || cell === null) {
         return "";
       }
       if (Array.isArray(cell)) {
-        if (input >= cell[0] && input <= cell[1]) {
+        if (
+          props.personData[props.name] >= cell[0] &&
+          props.personData[props.name] <= cell[1]
+        ) {
           return "active";
         } else {
           return "";
         }
       } else {
-        if ((idx < 3 && input <= cell) || (idx >= 3 && input >= cell)) {
+        if (
+          (idx < 3 && props.personData[props.name] <= cell) ||
+          (idx >= 3 && props.personData[props.name] >= cell)
+        ) {
           return "active";
         } else {
           return "";
@@ -78,7 +83,6 @@ function NewsComponent(props) {
         }
         onChange={e => {
           const inputValue = Number(e.target.value);
-          setInput(inputValue);
 
           let NEWSscore = undefined;
 
