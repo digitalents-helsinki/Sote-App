@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // When implementing a Newscomponent on any of the pages, pass in the State-Variables: "personData" and "setPersonData" to update the global variable as props. Also pass in a "name" prop to indicate what the key in the "personData" object should be.
 function NewsComponent(props) {
   const [input, setInput] = useState(0);
+  const newsRef = useRef(null);
   //  const keyvalue = `${props.name} - NEWSscore`;
 
   console.log(props);
@@ -62,40 +63,19 @@ function NewsComponent(props) {
     });
   }
 
-  /*   useEffect(() => {
-        const domCells = [...document.getElementsByClassName('news-meter-cell')]
-        const addStyleBasedOnIndex = index => {
-            const domCellIndex = domCells.findIndex(node => node.classList.contains(`n${index + 1}`))
-            domCells[domCellIndex].classList.add('active')
-            domCells.splice(domCellIndex, 1)
-        }
-        if (input || input === 0) {
-            props.cells.forEach((cell, idx) => {
-                if (Array.isArray(cell)) {
-                    if (input >= cell[0] && input <= cell[1]) {
-                        addStyleBasedOnIndex(idx)
-                    } else {
-                        domCells.forEach(cell => cell.classList.remove('active'))
-                    }
-                } else if (cell !== null) {
-                    if ((input <= cell) ||( input >= cell)) {
-                        addStyleBasedOnIndex(idx)
-                    } else {
-                        domCells.forEach(cell => cell.classList.remove('active'))
-                    }
-                }
-            });
-        } else {
-            domCells.forEach(cell => cell.classList.remove('active'))
-        }
-    }, [input, props.cells])*/
-
   return (
     <div className="news-container">
       <input
         className="news-input"
         type="number"
         value={props.personData[props.name] ? props.personData[props.name] : ""}
+        onFocus={() =>
+          window.scrollTo(
+            0,
+            newsRef.current.offsetTop -
+              newsRef.current.offsetParent.clientHeight / 2
+          )
+        }
         onChange={e => {
           const inputValue = Number(e.target.value);
           setInput(inputValue);
@@ -159,7 +139,9 @@ function NewsComponent(props) {
           //--Update personData
         }}
       />
-      <div className="news-meter">{renderCells()}</div>
+      <div className="news-meter" ref={newsRef}>
+        {renderCells()}
+      </div>
     </div>
   );
 }
