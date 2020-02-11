@@ -1,8 +1,9 @@
 import React from "react";
 import backArrowSvg from "../Images/back-arrow.svg";
 import moreBtnSvg from "../Images/more-btn.svg";
+import ProgressBar from "../Components/ProgressBar";
 
-function TopArea({ setMenuVisibility, history }) {
+function TopArea({ setMenuVisibility, history, personData }) {
   return (
     <div className="TopArea">
       <div className="flex-container">
@@ -22,6 +23,7 @@ function TopArea({ setMenuVisibility, history }) {
           onClick={() => setMenuVisibility(true)}
         />
       </div>
+      <ProgressBar personData={personData} />
     </div>
   );
 }

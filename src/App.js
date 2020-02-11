@@ -98,6 +98,7 @@ function App() {
           history={history}
           displayArrow={location.pathname === "/"}
           setMenuVisibility={setMenuVisibility}
+          personData={personData}
         />
         <Switch>
           <Route
