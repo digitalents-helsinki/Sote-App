@@ -22,7 +22,7 @@ html {
   .menu-panel {
     transition: transform 250ms ease-out;
     transform: translateX(100vw);
-    width: 70vw;
+    width: 60vw;
     height: 100vh;
     background-image: linear-gradient(
       15deg,
@@ -36,7 +36,7 @@ html {
     top: 0;
     z-index: 21;
 
-    padding: 40px 12vw;
+    padding: 12vw 40px 12vw 30px;
     box-sizing: border-box;
 
     font-family: $font-montserrat;
@@ -52,6 +52,7 @@ html {
 
       p {
         margin-bottom: 30px;
+        margin-right: -10px;
         opacity: 0.8;
         display: block;
       }
@@ -59,7 +60,7 @@ html {
   }
 
   .menu-panel.active {
-    transform: translateX(30vw);
+    transform: translateX(40vw);
   }
 
   .emergencyPage-container {

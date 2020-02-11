@@ -34,7 +34,11 @@ function MenuPanel({
             setMenuVisibility(false);
           }}
         >
-          <p>Hätätilanneoireet</p>
+          <p>
+            Hätätilanne
+            <wbr />
+            oireet
+          </p>
         </div>
         <div
           className="emeregencyPage-fromMenu"

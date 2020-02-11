@@ -21,7 +21,7 @@ function EmergencyPage({ setEmergencyVisibility, visibility }) {
           alt="arrow.svg"
           onClick={() => setEmergencyVisibility(false)}
         ></img>
-        <h2>Hätätilanne oireet</h2>
+        <h2>Hätätilanneoireet</h2>
       </div>
       <div className="symptoms-container">
         <SymptomCard content={ESC.aivoverenkierronhairio} />
