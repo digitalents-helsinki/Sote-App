@@ -74,17 +74,44 @@ function NewsComponent(props) {
         className="news-input"
         type="number"
         value={props.personData[props.name] ? props.personData[props.name] : ""}
-        onFocus={() =>
+        onFocus={() => {
           window.scrollTo(
             0,
             newsRef.current.offsetTop -
               newsRef.current.offsetParent.clientHeight / 2
-          )
-        }
+          );
+          // detect mobile keyboard popping up and then scroll
+          (function listenToWindowHeight(originalWindowHeight, startTime) {
+            if (
+              originalWindowHeight !==
+              (window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight)
+            ) {
+              window.scrollTo(
+                0,
+                newsRef.current.offsetTop -
+                  newsRef.current.offsetParent.clientHeight / 2
+              );
+            } else if (startTime + 2000 > Date.now()) {
+              setTimeout(
+                listenToWindowHeight,
+                0,
+                originalWindowHeight,
+                startTime
+              );
+            }
+          })(
+            window.innerHeight ||
+              document.documentElement.clientHeight ||
+              document.body.clientHeight,
+            Date.now()
+          );
+        }}
         onChange={e => {
           const inputValue = Number(e.target.value);
 
-          let NEWSscore = undefined;
+          let NEWSscore;
 
           if (
             props.cells[3] &&
