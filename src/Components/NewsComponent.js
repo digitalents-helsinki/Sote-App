@@ -73,7 +73,9 @@ function NewsComponent(props) {
       <input
         className="news-input"
         type="number"
-        value={props.personData[props.name] ? props.personData[props.name] : ""}
+        placeholder={
+          props.personData[props.name] ? props.personData[props.name] : ""
+        }
         onFocus={() => {
           window.scrollTo(
             0,

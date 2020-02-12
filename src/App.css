@@ -621,6 +621,38 @@ html {
   outline: none;
 }
 
+.App .news-container ::-webkit-input-placeholder {
+  opacity: 0.32;
+}
+
+.App .news-container :-ms-input-placeholder {
+  opacity: 0.32;
+}
+
+.App .news-container ::-ms-input-placeholder {
+  opacity: 0.32;
+}
+
+.App .news-container ::placeholder {
+  opacity: 0.32;
+}
+
+.App .news-container .news-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.App .news-container .news-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.App .news-container .news-input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.App .news-container .news-input:focus::placeholder {
+  color: transparent;
+}
+
 .App .news-container .news-meter {
   display: -webkit-box;
   display: -ms-flexbox;

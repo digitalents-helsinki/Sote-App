@@ -514,6 +514,14 @@ html {
       outline: none;
     }
 
+    ::placeholder {
+      opacity: 0.32;
+    }
+
+    .news-input:focus::placeholder {
+      color: transparent;
+    }
+
     .news-meter {
       display: flex;
       height: 30px;
