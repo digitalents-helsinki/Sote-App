@@ -10,8 +10,13 @@ html {
 }
 
 .App .menu-panel {
-  display: none;
-  width: 100%;
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  transition: -webkit-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out, -webkit-transform 250ms ease-out;
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+  width: 60vw;
   height: 100vh;
   background-image: linear-gradient(
     15deg,
@@ -22,14 +27,12 @@ html {
   );
   position: fixed;
   top: 0;
-  z-index: 50;
-  padding: 40px 12vw;
+  z-index: 21;
+  padding: 12vw 40px 12vw 30px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   color: #fff;
-  -webkit-transition-duration: 400ms;
-  transition-duration: 400ms;
 }
 
 .App .menu-panel img {
@@ -39,31 +42,30 @@ html {
 
 .App .menu-panel .content {
   margin-top: 80px;
-  float: right;
 }
 
 .App .menu-panel .content p {
+  margin-bottom: 30px;
+  margin-right: -10px;
   opacity: 0.8;
   display: block;
-  float: right;
 }
 
 .App .menu-panel.active {
-  display: block;
+  -webkit-transform: translateX(40vw);
+  transform: translateX(40vw);
 }
 
 .App .emergencyPage-container {
-  opacity: 0;
   position: fixed;
+  opacity: 0;
   bottom: 0;
   width: 100%;
-  height: 0vh;
+  height: 100vh;
   overflow: auto;
-  z-index: 21;
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  z-index: 50;
+  -webkit-transform: translateY(100vh);
+  transform: translateY(100vh);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -187,9 +189,78 @@ html {
   line-height: 1.7rem;
 }
 
+@-webkit-keyframes slideToBottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+@keyframes slideToBottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideFromBottom {
+  0% {
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .App .emergencyPage-container.active {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: slideFromBottom;
+  animation-name: slideFromBottom;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
   opacity: 1;
-  height: 100vh;
+}
+
+.App .emergencyPage-container.inactive {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: slideToBottom;
+  animation-name: slideToBottom;
+  -webkit-transform: translateY(100vh);
+  transform: translateY(100vh);
+  opacity: 0;
 }
 
 .App .TopArea {
@@ -197,6 +268,25 @@ html {
   top: 0;
   width: 100%;
   z-index: 20;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(30%, #fafafa),
+    color-stop(45%, rgba(250, 250, 250, 0.95)),
+    color-stop(65%, rgba(250, 250, 250, 0.925)),
+    color-stop(80%, rgba(250, 250, 250, 0.9)),
+    color-stop(90%, rgba(250, 250, 250, 0.85)),
+    to(rgba(250, 250, 250, 0))
+  );
+  background-image: linear-gradient(
+    #fafafa 30%,
+    rgba(250, 250, 250, 0.95) 45%,
+    rgba(250, 250, 250, 0.925) 65%,
+    rgba(250, 250, 250, 0.9) 80%,
+    rgba(250, 250, 250, 0.85) 90%,
+    rgba(250, 250, 250, 0) 100%
+  );
 }
 
 .App .TopArea .flex-container {
@@ -209,29 +299,12 @@ html {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 130px;
+  height: 100px;
   width: 100%;
-  padding: 0 8vw 30px 8vw;
+  padding: 0 8vw 0 8vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #212121;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(30%, #fafafa),
-    color-stop(45%, rgba(250, 250, 250, 0.9)),
-    color-stop(65%, rgba(250, 250, 250, 0.35)),
-    color-stop(80%, rgba(250, 250, 250, 0.15)),
-    to(rgba(250, 250, 250, 0))
-  );
-  background-image: linear-gradient(
-    #fafafa 30%,
-    rgba(250, 250, 250, 0.9) 45%,
-    rgba(250, 250, 250, 0.35) 65%,
-    rgba(250, 250, 250, 0.15) 80%,
-    rgba(250, 250, 250, 0) 100%
-  );
 }
 
 .App .TopArea .flex-container img {
@@ -267,21 +340,23 @@ html {
 
 .App .ProgressBar .bar-background .bar-shadow-indicator {
   height: 14px;
-  width: 50px;
   border-radius: 14px;
   position: absolute;
   top: 2px;
   margin: 0 2px;
+  -webkit-transition: width 250ms linear;
+  transition: width 250ms linear;
   background-color: #b8b8b8;
 }
 
 .App .ProgressBar .bar-background .bar-indicator {
   height: 14px;
-  width: 50px;
   border-radius: 14px;
   position: absolute;
   top: 2px;
   margin: 0 2px;
+  -webkit-transition: width 250ms linear;
+  transition: width 250ms linear;
   background-color: #315991;
 }
 
@@ -418,7 +493,7 @@ html {
 .App .Page {
   width: 100%;
   background-color: #fafafa;
-  padding: 21vh 6vw 30vh 6vw;
+  padding: 23vh 6vw 30vh 6vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
