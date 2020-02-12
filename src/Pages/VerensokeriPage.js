@@ -1,5 +1,7 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
+import Page from "../Components/Page";
+import NextButton from "../Components/NextButton";
 
 function VerensokeriPage({
   history,
@@ -7,18 +9,14 @@ function VerensokeriPage({
   setPersonData,
   NEWSscoreTotal
 }) {
-  let buttonActive = "nextButtoninactive";
+  const buttonActive = personData["Mittaa verensokeri:"];
 
-  if (personData["Mittaa verensokeri:"]) {
-    buttonActive = "nextButtonactive";
-  }
   return (
-    <div className="Page">
-      <h1>Mittaa verensokeri:</h1>
-      <p style={{ marginBottom: "30px" }}>
-        Mittaa aina kun tajunnantason häiriö tai diabeetikko.
-      </p>
-      <p style={{ fontSize: "0.9rem" }}>
+    <Page
+      title="Mittaa verensokeri:"
+      paragraph="Mittaa aina kun tajunnantason häiriö tai diabeetikko."
+    >
+      <p style={{ fontSize: "0.9rem", marginTop: "-30px" }}>
         Jos ei tarvetta mittaukselle,{" "}
         <span
           style={{ color: "#AD3E2F", textDecoration: "underline" }}
@@ -36,28 +34,21 @@ function VerensokeriPage({
         personData={personData}
         setPersonData={setPersonData}
       />
-      <div className="nextButtondiv">
-        <button
-          className={"nextButtoninactive " + buttonActive}
-          onClick={() => {
-            if (buttonActive === "nextButtonactive") {
-              if (NEWSscoreTotal === 0) {
-                window.scrollTo(0, 0);
-                history.push("/instructionPageTwo");
-              } else {
-                window.scrollTo(0, 0);
-                history.push("/instructionPage");
-              }
+      <NextButton
+        buttonActive={buttonActive}
+        onClick={() => {
+          if (buttonActive) {
+            if (NEWSscoreTotal === 0) {
+              window.scrollTo(0, 0);
+              history.push("/instructionPageTwo");
             } else {
-              return;
+              window.scrollTo(0, 0);
+              history.push("/instructionPage");
             }
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
-    </div>
+          }
+        }}
+      />
+    </Page>
   );
 }
 export default VerensokeriPage;
