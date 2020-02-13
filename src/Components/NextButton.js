@@ -1,5 +1,6 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const NextButton = ({ onClick, buttonActive, nextPage }) => {
   const history = useHistory();
@@ -7,12 +8,11 @@ const NextButton = ({ onClick, buttonActive, nextPage }) => {
     onClick ||
     (() => {
       if (buttonActive) {
-        window.scrollTo(0, 0);
         history.push(nextPage);
       }
     });
 
-  return (
+  const component = (
     <div className="nextButtondiv">
       <button
         className={
@@ -27,6 +27,8 @@ const NextButton = ({ onClick, buttonActive, nextPage }) => {
       </button>
     </div>
   );
+
+  return createPortal(component, document.getElementById("portal-root"));
 };
 
 export default NextButton;
