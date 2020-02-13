@@ -13,7 +13,11 @@ function MenuPanel({
   const location = useLocation();
   return (
     <>
-      <div className="menu-panel-bg" onClick={() => setMenuVisibility(false)} />
+      <div
+        style={{ display: menuVisibility ? "block" : "none" }}
+        className="menu-panel-bg"
+        onClick={() => setMenuVisibility(false)}
+      />
       <div className={"menu-panel" + (menuVisibility ? " active" : "")}>
         <img
           onClick={() => setMenuVisibility(false)}
