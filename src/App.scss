@@ -354,34 +354,18 @@ body {
   .slidable.slide-right {
     &-enter {
       transform: translateX(100vw);
-      & + .slidable.slide-left-exit {
-        transform: translateX(0);
-      }
       &-active {
         overflow-y: hidden;
         transform: translateX(0);
         transition: transform 300ms;
-        & + .slidable.slide-left-exit-active {
-          overflow-y: hidden;
-          transform: translateX(-100vw);
-          transition: transform 300ms;
-        }
       }
     }
     &-exit {
       transform: translateX(0);
-      & + .slidable.slide-left-enter {
-        transform: translateX(100vw);
-      }
       &-active {
         overflow-y: hidden;
         transform: translateX(-100vw);
         transition: transform 300ms;
-        & + .slidable.slide-left-enter-active {
-          overflow-y: hidden;
-          transform: translateX(0);
-          transition: transform 300ms;
-        }
       }
     }
   }
@@ -389,34 +373,18 @@ body {
   .slidable.slide-left {
     &-enter {
       transform: translateX(-100vw);
-      & + .slidable.slide-right-exit {
-        transform: translateX(0);
-      }
       &-active {
         transform: translateX(0);
         transition: transform 300ms;
         overflow-y: hidden;
-        & + .slidable.slide-right-exit-active {
-          transform: translateX(100vw);
-          transition: transform 300ms;
-          overflow-y: hidden;
-        }
       }
     }
     &-exit {
       transform: translateX(0);
-      & + .slidable.slide-right-enter {
-        transform: translateX(100vw);
-      }
       &-active {
         overflow-y: hidden;
         transform: translateX(100vw);
         transition: transform 300ms;
-        & + .slidable.slide-right-enter-active {
-          overflow-y: hidden;
-          transform: translateX(0);
-          transition: transform 300ms;
-        }
       }
     }
   }
