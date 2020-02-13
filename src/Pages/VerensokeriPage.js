@@ -16,7 +16,10 @@ function VerensokeriPage({
       title="Mittaa verensokeri:"
       paragraph="Mittaa aina kun tajunnantason häiriö tai diabeetikko."
     >
-      <p style={{ fontSize: "0.9rem", marginTop: "-30px" }}>
+      <p
+        className="page-paragraph"
+        style={{ fontSize: "0.9rem", marginTop: "-30px" }}
+      >
         Jos ei tarvetta mittaukselle,{" "}
         <span
           style={{ color: "#AD3E2F", textDecoration: "underline" }}
