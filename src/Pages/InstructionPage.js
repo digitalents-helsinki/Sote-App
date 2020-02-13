@@ -25,7 +25,7 @@ function InstructionPage({
   // console.log(NEWSscoreTotal, "beep");
 
   return (
-    <div className="instruction-page">
+    <div className="instruction-page slidable">
       <ScoreCard NEWSscoreTotal={NEWSscoreTotal} personData={personData} />
       <InstructionCardFirst
         personData={personData}

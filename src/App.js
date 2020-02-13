@@ -7,7 +7,7 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { TransitionGroup, Transition } from "react-transition-group";
 
 import MenuPanel from "./Components/MenuPanel";
 import TopArea from "./Components/TopArea";
@@ -77,6 +77,9 @@ function App() {
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
 
+  const genAnimClass = (historyAction, cycle) =>
+    historyAction === "PUSH" ? `slide-right-${cycle}` : `slide-left-${cycle}`;
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -95,13 +98,41 @@ function App() {
         <Route
           render={({ history, location }) => (
             <TransitionGroup component={null}>
-              <CSSTransition
+              <Transition
                 key={location.key}
                 timeout={300}
-                classNames={
-                  history.action === "PUSH"
-                    ? "slide-right"
-                    : "slide-left" /* this sometimes does not apply the correct class, the effect only works because adjacent sibling combinators are used for applying the correct styling in case this fails */
+                onEnter={(node, isAppearing) =>
+                  isAppearing ||
+                  node.classList.add(genAnimClass(history.action, "enter"))
+                }
+                onEntering={(node, isAppearing) =>
+                  isAppearing ||
+                  setTimeout(() =>
+                    node.classList.add(
+                      genAnimClass(history.action, "enter-active")
+                    )
+                  )
+                }
+                onEntered={(node, isAppearing) =>
+                  isAppearing ||
+                  node.classList.remove(
+                    genAnimClass(history.action, "enter"),
+                    genAnimClass(history.action, "enter-active")
+                  )
+                }
+                onExit={node =>
+                  node.classList.add(genAnimClass(history.action, "exit"))
+                }
+                onExiting={node =>
+                  node.classList.add(
+                    genAnimClass(history.action, "exit-active")
+                  )
+                }
+                onExited={node =>
+                  node.classList.remove(
+                    genAnimClass(history.action, "exit"),
+                    genAnimClass(history.action, "exit-active")
+                  )
                 }
               >
                 <Switch location={location}>
@@ -278,7 +309,7 @@ function App() {
                     )}
                   />
                 </Switch>
-              </CSSTransition>
+              </Transition>
             </TransitionGroup>
           )}
         />

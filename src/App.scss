@@ -351,17 +351,17 @@ body {
     }
   }
 
-  .Page.slide-right {
+  .slidable.slide-right {
     &-enter {
       transform: translateX(100vw);
-      & + .Page.slide-left-exit {
+      & + .slidable.slide-left-exit {
         transform: translateX(0);
       }
       &-active {
         overflow-y: hidden;
         transform: translateX(0);
         transition: transform 300ms;
-        & + .Page.slide-left-exit-active {
+        & + .slidable.slide-left-exit-active {
           overflow-y: hidden;
           transform: translateX(-100vw);
           transition: transform 300ms;
@@ -370,14 +370,14 @@ body {
     }
     &-exit {
       transform: translateX(0);
-      & + .Page.slide-left-enter {
+      & + .slidable.slide-left-enter {
         transform: translateX(100vw);
       }
       &-active {
         overflow-y: hidden;
         transform: translateX(-100vw);
         transition: transform 300ms;
-        & + .Page.slide-left-enter-active {
+        & + .slidable.slide-left-enter-active {
           overflow-y: hidden;
           transform: translateX(0);
           transition: transform 300ms;
@@ -386,17 +386,17 @@ body {
     }
   }
 
-  .Page.slide-left {
+  .slidable.slide-left {
     &-enter {
       transform: translateX(-100vw);
-      & + .Page.slide-right-exit {
+      & + .slidable.slide-right-exit {
         transform: translateX(0);
       }
       &-active {
         transform: translateX(0);
         transition: transform 300ms;
         overflow-y: hidden;
-        & + .Page.slide-right-exit-active {
+        & + .slidable.slide-right-exit-active {
           transform: translateX(100vw);
           transition: transform 300ms;
           overflow-y: hidden;
@@ -405,14 +405,14 @@ body {
     }
     &-exit {
       transform: translateX(0);
-      & + .Page.slide-right-enter {
+      & + .slidable.slide-right-enter {
         transform: translateX(100vw);
       }
       &-active {
         overflow-y: hidden;
         transform: translateX(100vw);
         transition: transform 300ms;
-        & + .Page.slide-right-enter-active {
+        & + .slidable.slide-right-enter-active {
           overflow-y: hidden;
           transform: translateX(0);
           transition: transform 300ms;
