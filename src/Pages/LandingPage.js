@@ -1,37 +1,28 @@
 import React from "react";
+import Page from "../Components/Page";
+import NextButton from "../Components/NextButton";
 
 function LandingPage({ props, setEmergencyVisibility, history, setBackBtn }) {
   return (
-    <div className="Page">
-      <p>
+    <Page>
+      <p className="page-paragraph">
         Sovellus ohjaa sinua
         <br />
         päivystystilanteen läpikäymisessä
       </p>
-      <p className="attentionText">
+      <p className="attentionText page-paragraph">
         Jos tilanne on todellinen
         <br />
         hätätilanne, soita suoraan 112.
       </p>
       <p
-        className="emergencyPage-link"
+        className="emergencyPage-link page-paragraph"
         onClick={() => setEmergencyVisibility(true)}
       >
         Todelliset <span>hätätilanneoireet</span>
       </p>
-      <div className="nextButtondiv">
-        <button
-          className="nextButtoninactive nextButtonactive"
-          onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/hengitystie");
-          }}
-        >
-          {" "}
-          Seuraava{" "}
-        </button>
-      </div>
-    </div>
+      <NextButton buttonActive={true} nextPage="/hengitystie" />
+    </Page>
   );
 }
 

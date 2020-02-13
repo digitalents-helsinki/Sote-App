@@ -12,6 +12,7 @@ $app-background-color: #fafafa;
 body,
 html {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .App {
@@ -277,47 +278,6 @@ html {
     }
   }
 
-  .nextButtondiv {
-    background-image: linear-gradient(
-      rgba(250, 250, 250, 0) 0%,
-      rgba(250, 250, 250, 0.9) 50%,
-      rgba(250, 250, 250, 1) 80%
-    );
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0 25px 0;
-
-    .nextButtoninactive {
-      width: 265px;
-      height: 52px;
-      border-radius: 52px;
-      background-color: #b5b5b5;
-      color: #cfcfcf;
-      //font-family:Montserrat;
-      font-size: 17px;
-      text-align: center;
-      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
-      border: 0;
-
-      transition-delay: 300ms;
-      transition-duration: 250ms;
-    }
-
-    .nextButtoninactive.nextButtonactive {
-      background-color: #cf7740;
-      color: #fff;
-      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .nextButtoninactive:focus,
-    .nextButtonactive:focus {
-      outline: none;
-    }
-  }
-
   .checkboxComponent {
     width: 100%;
     padding: 10px 0;
@@ -388,40 +348,116 @@ html {
     }
   }
 
+  .Page.slide-right {
+    &-enter {
+      transform: translateX(100vw);
+      & + .Page.slide-left-exit {
+        transform: translateX(0);
+      }
+      &-active {
+        overflow-y: hidden;
+        transform: translateX(0);
+        transition: transform 300ms;
+        & + .Page.slide-left-exit-active {
+          overflow-y: hidden;
+          transform: translateX(-100vw);
+          transition: transform 300ms;
+        }
+      }
+    }
+    &-exit {
+      transform: translateX(0);
+      & + .Page.slide-left-enter {
+        transform: translateX(100vw);
+      }
+      &-active {
+        overflow-y: hidden;
+        transform: translateX(-100vw);
+        transition: transform 300ms;
+        & + .Page.slide-left-enter-active {
+          overflow-y: hidden;
+          transform: translateX(0);
+          transition: transform 300ms;
+        }
+      }
+    }
+  }
+
+  .Page.slide-left {
+    &-enter {
+      transform: translateX(-100vw);
+      & + .Page.slide-right-exit {
+        transform: translateX(0);
+      }
+      &-active {
+        transform: translateX(0);
+        transition: transform 300ms;
+        overflow-y: hidden;
+        & + .Page.slide-right-exit-active {
+          transform: translateX(100vw);
+          transition: transform 300ms;
+          overflow-y: hidden;
+        }
+      }
+    }
+    &-exit {
+      transform: translateX(0);
+      & + .Page.slide-right-enter {
+        transform: translateX(100vw);
+      }
+      &-active {
+        overflow-y: hidden;
+        transform: translateX(100vw);
+        transition: transform 300ms;
+        & + .Page.slide-right-enter-active {
+          overflow-y: hidden;
+          transform: translateX(0);
+          transition: transform 300ms;
+        }
+      }
+    }
+  }
+
   .Page {
+    position: absolute;
+    top: 118px;
+    height: 81.7vh;
     width: 100%;
-    background-color: $app-background-color;
-    padding: 23vh 6vw 30vh 6vw;
-    box-sizing: border-box;
+    overflow-y: scroll;
 
-    font-family: $font-montserrat;
+    .page-content {
+      background-color: $app-background-color;
+      padding: 4.5vh 6vw 30vh 6vw;
+      box-sizing: border-box;
+      font-family: $font-montserrat;
 
-    h1 {
-      text-align: center;
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-      font-weight: 600;
-    }
+      .page-title {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
 
-    p {
-      text-align: center;
-      margin-bottom: 60px;
-      font-weight: 300;
-      line-height: 1.8rem;
-    }
+      .page-paragraph {
+        text-align: center;
+        margin-bottom: 60px;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
 
-    /*.attention text and emergency link properties are in the landingpage*/
-    .attentionText {
-      color: $sote-red;
-      font-weight: 800;
-    }
-
-    .emergencyPage-link {
-      font-size: 1rem;
-
-      span {
-        text-decoration: underline;
+      /*.attention text and emergency link properties are in the landingpage*/
+      .attentionText {
         color: $sote-red;
+        font-weight: 800;
+      }
+
+      .emergencyPage-link {
+        font-size: 1rem;
+
+        span {
+          text-decoration: underline;
+          color: $sote-red;
+        }
       }
     }
   }
@@ -873,6 +909,49 @@ html {
       text-align: center;
       border-radius: 4px;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+#portal-root {
+  .nextButtondiv {
+    background-image: linear-gradient(
+      rgba(250, 250, 250, 0) 0%,
+      rgba(250, 250, 250, 0.9) 50%,
+      rgba(250, 250, 250, 1) 80%
+    );
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 25px 0;
+
+    .nextButtoninactive {
+      width: 265px;
+      height: 52px;
+      border-radius: 52px;
+      background-color: #b5b5b5;
+      color: #cfcfcf;
+      //font-family:Montserrat;
+      font-size: 17px;
+      text-align: center;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
+      border: 0;
+
+      transition-delay: 300ms;
+      transition-duration: 250ms;
+    }
+
+    .nextButtoninactive.nextButtonactive {
+      background-color: #cf7740;
+      color: #fff;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .nextButtoninactive:focus,
+    .nextButtonactive:focus {
+      outline: none;
     }
   }
 }

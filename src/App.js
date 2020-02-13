@@ -7,8 +7,7 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-
-//Transition group downloaded
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import MenuPanel from "./Components/MenuPanel";
 import TopArea from "./Components/TopArea";
@@ -65,8 +64,6 @@ let testingdata = {
 
 function App() {
   const history = useHistory();
-  const location = useLocation();
-
   const [personData, setPersonData] = useState({});
   const [controlData, setcontrolData] = useState({});
 
@@ -79,9 +76,6 @@ function App() {
     personData["Systolinen verenpaine - NEWSscore"] +
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
-
-  console.log("This is personData", personData);
-  console.log("This is controlData", controlData);
 
   return (
     <BrowserRouter>
@@ -98,180 +92,197 @@ function App() {
           setMenuVisibility={setMenuVisibility}
           personData={personData}
         />
-        <Switch>
-          <Route
-            exact={true}
-            path="/"
-            render={props => (
-              <LandingPage
-                history={history}
-                setEmergencyVisibility={setEmergencyVisibility}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/hengitystie"
-            render={props => (
-              <HengitystiePage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/hengitys"
-            render={props => (
-              <HengitysPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/iho"
-            render={props => (
-              <IhoPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/verenkierto"
-            render={props => (
-              <VerenkiertoPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/tajunta"
-            render={props => (
-              <TajuntaPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/hengitystaajuus"
-            render={props => (
-              <HengitystaajuusPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/happisaturaatio"
-            render={props => (
-              <HappisaturaatioPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/systolinenverenpaine"
-            render={props => (
-              <SystolinenverenpainePage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/syketaajuus"
-            render={props => (
-              <SyketaajuusPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/lampotila"
-            render={props => (
-              <LampotilaPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/tajunnantaso"
-            render={props => (
-              <TajunnantasoPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/verensokeri"
-            render={props => (
-              <VerensokeriPage
-                personData={personData}
-                setPersonData={setPersonData}
-                history={history}
-                NEWSscoreTotal={NEWSscoreTotal}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/instructionPage"
-            render={props => (
-              <InstructionPage
-                personData={personData}
-                setPersonData={setPersonData}
-                controlData={controlData}
-                setcontrolData={setcontrolData}
-                history={history}
-                NEWSscoreTotal={NEWSscoreTotal}
-                {...props}
-              />
-            )}
-          />
-          <Route
-            path="/instructionPageTwo"
-            render={props => (
-              <InstructionPageTwo
-                personData={personData}
-                setPersonData={setPersonData}
-                controlData={controlData}
-                setcontrolData={setcontrolData}
-                history={history}
-                controlData={controlData}
-                {...props}
-              />
-            )}
-          />
-        </Switch>
+        <Route
+          render={({ history, location }) => (
+            <TransitionGroup component={null}>
+              <CSSTransition
+                key={location.key}
+                timeout={300}
+                classNames={
+                  history.action === "PUSH"
+                    ? "slide-right"
+                    : "slide-left" /* this sometimes does not apply the correct class, the effect only works because adjacent sibling combinators are used for applying the correct styling in case this fails */
+                }
+              >
+                <Switch location={location}>
+                  <Route
+                    exact={true}
+                    path="/"
+                    children={props => (
+                      <LandingPage
+                        history={history}
+                        setEmergencyVisibility={setEmergencyVisibility}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/hengitystie"
+                    children={props => (
+                      <HengitystiePage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/hengitys"
+                    children={props => (
+                      <HengitysPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/iho"
+                    children={props => (
+                      <IhoPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/verenkierto"
+                    children={props => (
+                      <VerenkiertoPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/tajunta"
+                    children={props => (
+                      <TajuntaPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/hengitystaajuus"
+                    children={props => (
+                      <HengitystaajuusPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/happisaturaatio"
+                    children={props => (
+                      <HappisaturaatioPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/systolinenverenpaine"
+                    children={props => (
+                      <SystolinenverenpainePage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/syketaajuus"
+                    children={props => (
+                      <SyketaajuusPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/lampotila"
+                    children={props => (
+                      <LampotilaPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/tajunnantaso"
+                    children={props => (
+                      <TajunnantasoPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/verensokeri"
+                    children={props => (
+                      <VerensokeriPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        NEWSscoreTotal={NEWSscoreTotal}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/instructionPage"
+                    children={props => (
+                      <InstructionPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        controlData={controlData}
+                        setcontrolData={setcontrolData}
+                        history={history}
+                        NEWSscoreTotal={NEWSscoreTotal}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/instructionPageTwo"
+                    children={props => (
+                      <InstructionPageTwo
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        controlData={controlData}
+                        setcontrolData={setcontrolData}
+                        history={history}
+                        controlData={controlData}
+                        {...props}
+                      />
+                    )}
+                  />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
+
         <EmergencyPage
           visibility={emergencyVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
