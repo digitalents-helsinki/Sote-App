@@ -7,7 +7,6 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-import { TransitionGroup, Transition } from "react-transition-group";
 
 import MenuPanel from "./Components/MenuPanel";
 import TopArea from "./Components/TopArea";
@@ -27,6 +26,7 @@ import HengitysPage from "./Pages/HengitysPage";
 import EmergencyPage from "./Pages/EmergencyPage";
 import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -80,6 +80,9 @@ function App() {
   const genAnimClass = (historyAction, cycle) =>
     historyAction === "PUSH" ? `slide-right-${cycle}` : `slide-left-${cycle}`;
 
+  const generateClassNames = historyAction =>
+    historyAction === "PUSH" ? "slide-right" : "slide-left";
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -97,43 +100,18 @@ function App() {
         />
         <Route
           render={({ history, location }) => (
-            <TransitionGroup component={null}>
-              <Transition
+            <TransitionGroup
+              component={null}
+              childFactory={child =>
+                React.cloneElement(child, {
+                  classNames: generateClassNames(history.action)
+                })
+              }
+            >
+              <CSSTransition
                 key={location.key}
                 timeout={300}
-                onEnter={(node, isAppearing) =>
-                  isAppearing ||
-                  node.classList.add(genAnimClass(history.action, "enter"))
-                }
-                onEntering={(node, isAppearing) =>
-                  isAppearing ||
-                  setTimeout(() =>
-                    node.classList.add(
-                      genAnimClass(history.action, "enter-active")
-                    )
-                  )
-                }
-                onEntered={(node, isAppearing) =>
-                  isAppearing ||
-                  node.classList.remove(
-                    genAnimClass(history.action, "enter"),
-                    genAnimClass(history.action, "enter-active")
-                  )
-                }
-                onExit={node =>
-                  node.classList.add(genAnimClass(history.action, "exit"))
-                }
-                onExiting={node =>
-                  node.classList.add(
-                    genAnimClass(history.action, "exit-active")
-                  )
-                }
-                onExited={node =>
-                  node.classList.remove(
-                    genAnimClass(history.action, "exit"),
-                    genAnimClass(history.action, "exit-active")
-                  )
-                }
+                classNames={generateClassNames(history.action)}
               >
                 <Switch location={location}>
                   <Route
@@ -309,7 +287,7 @@ function App() {
                     )}
                   />
                 </Switch>
-              </Transition>
+              </CSSTransition>
             </TransitionGroup>
           )}
         />
