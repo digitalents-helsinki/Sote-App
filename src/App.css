@@ -917,8 +917,13 @@ html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
+.App .instruction-page .InstructionCard-second-container hr {
+  margin: 25px 0;
+  opacity: 0.25;
+}
+
 .App .instruction-page .InstructionCard-second-container p {
-  margin-top: 28px;
+  margin: 0 0 20px 0;
   font-weight: 200;
   padding: 0;
 }

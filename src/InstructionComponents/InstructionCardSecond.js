@@ -5,6 +5,7 @@ function InstructionCardSecond({ NEWSscoreTotal }) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
+        <hr />
         <p>
           &rarr; <span>Soita 112.</span>
         </p>
@@ -15,10 +16,14 @@ function InstructionCardSecond({ NEWSscoreTotal }) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
-        <p>
-          <span>Virka-aikana</span> konsultoi <span>välittömästi</span> oma
-          SH/lääkäri.
-        </p>
+        <hr />
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Konsultoi <span>välittömästi</span> oma SH/lääkäri.
+          </p>
+        </div>
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
@@ -32,30 +37,51 @@ function InstructionCardSecond({ NEWSscoreTotal }) {
             Jos konsultoit lääkäriä suoraan, hän ohjeistaa tilanteessa.
           </p>
         </div>
-        <p>
-          <span>Virka-ajan ulkopuolella,</span> jos oma SH ei paikalla voit
-          konsultoida oman alueesi päivystyspoliklinikan vuorovastaavaa tai{" "}
-          <span>
-            virka-ajan ulkopuolista lääkäriä ISBAR-raportointiohjeen mukaan.
-          </span>
-        </p>
-        <p>Odota ohjetta.</p>
+        <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Jos oma SH ei paikalla voit konsultoida oman alueesi
+            päivystyspoliklinikan vuorovastaavaa tai{" "}
+            <span>
+              virka-ajan ulkopuolista lääkäriä ISBAR-raportointiohjeen mukaan.
+            </span>
+          </p>
+        </div>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Odota ohjetta.
+          </p>
+        </div>
       </div>
     );
   } else {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
-        <p>
-          <span>Virka-aikana:</span> konsultoi oman yksikön SH tai hoitavaa
-          lääkäriä.
-        </p>
-        <p>
-          <span>Virka-ajan ulkopuolella:</span> konsultoi oman yksikön sh, jos
-          paikalle tai suoraan <span>geriatrista lääkäriä</span> (kts. erillinen
-          konsultointiohje).
-        </p>
-        <p>Odota ohjetta.</p>
+        <hr />
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Konsultoi oman yksikön SH tai hoitavaa lääkäriä.
+          </p>
+        </div>
+        <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Konsultoi oman yksikön sh, jos paikalle tai suoraan{" "}
+            <span>geriatrista lääkäriä</span> (kts. erillinen konsultointiohje).
+          </p>
+        </div>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Odota ohjetta.
+          </p>
+        </div>
       </div>
     );
   }
