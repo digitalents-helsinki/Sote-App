@@ -1,14 +1,15 @@
 import React from "react";
 import Exit_icon from "../Images/exit-icon.svg";
+import { useHistory } from "react-router-dom";
 
 function MenuPanel({
   setMenuVisibility,
   menuVisibility,
   setEmergencyVisibility,
-  history,
   setPersonData,
   testingdata
 }) {
+  const history = useHistory();
   return (
     <div className={"menu-panel" + (menuVisibility ? " active" : "")}>
       <img
@@ -21,8 +22,9 @@ function MenuPanel({
         <div
           className="reset"
           onClick={() => {
-            history.push("/");
-            window.location.reload();
+            history.replace("/");
+            setPersonData({});
+            setMenuVisibility(false);
           }}
         >
           <p>Aloita alusta</p>

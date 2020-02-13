@@ -63,7 +63,6 @@ let testingdata = {
 };
 
 function App() {
-  const history = useHistory();
   const [personData, setPersonData] = useState({});
   const [controlData, setcontrolData] = useState({});
 
@@ -87,7 +86,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <MenuPanel
-          history={history}
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
