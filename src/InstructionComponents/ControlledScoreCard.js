@@ -7,23 +7,26 @@ function ControlledScoreCard({
   controlData
 }) {
   const controlData_RiskLevel = () => {
-    if (controlData === 0) {
+    if (personData === 0) {
+      console.log("Lievä riski");
       return "Lievä riski";
-    } else if (controlData >= 1 && controlData <= 3) {
-      return "Kohtalainen riski";
     } else if (
-      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
-      controlData["Happisaturaatio - NEWSscore"] === 3 ||
-      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
-      controlData["Syketaajuus - NEWSscore"] === 3 ||
-      controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
-      controlData >= 4
+      personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      personData["Happisaturaatio - NEWSscore"] === 3 ||
+      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      personData["Syketaajuus - NEWSscore"] === 3 ||
+      personData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      personData >= 4
     ) {
       return "Korkea riski";
+    } else if (personData >= 1 && personData <= 3) {
+      console.log("Lievä riski");
+      return "Kohtalainen riski";
     }
   };
 
-  console.log(controlData);
+  console.log("ControlData", controlData);
+  console.log("PersonData", personData);
 
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
@@ -33,11 +36,6 @@ function ControlledScoreCard({
       setCardText("Lievä riski");
       setCardStyle({
         backgroundColor: "#377d4f"
-      });
-    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
-      setCardText("kohtalainen riski");
-      setCardStyle({
-        backgroundColor: "#284e78"
       });
     } else if (
       personData["Hengitystaajuus - NEWSscore"] === 3 ||
@@ -50,6 +48,11 @@ function ControlledScoreCard({
       setCardText("Korkea riski");
       setCardStyle({
         backgroundColor: "#ab2615"
+      });
+    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+      setCardText("kohtalainen riski");
+      setCardStyle({
+        backgroundColor: "#284e78"
       });
     }
   }, [NEWSscoreTotal, personData]);
