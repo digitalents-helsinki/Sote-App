@@ -5,8 +5,6 @@ function NewsComponent(props) {
   const newsRef = useRef(null);
   //  const keyvalue = `${props.name} - NEWSscore`;
 
-  console.log(props);
-
   function renderCells() {
     function calculateActiveState(cell, idx) {
       if (props.personData[props.name] === 0 || cell === null) {
@@ -77,11 +75,15 @@ function NewsComponent(props) {
           props.personData[props.name] ? props.personData[props.name] : ""
         }
         onFocus={() => {
-          window.scrollTo(
-            0,
-            newsRef.current.offsetTop -
-              newsRef.current.offsetParent.clientHeight / 2
-          );
+          const scrollParent = document.querySelector(".Page") || window;
+          const y =
+            newsRef.current.getBoundingClientRect().top +
+            (scrollParent.scrollY || scrollParent.scrollTop) -
+            (window.innerHeight ||
+              document.documentElement.clientHeight ||
+              document.body.clientHeight) /
+              1.8;
+          scrollParent.scrollTo(0, y);
           // detect mobile keyboard popping up and then scroll
           (function listenToWindowHeight(originalWindowHeight, startTime) {
             if (
@@ -90,11 +92,7 @@ function NewsComponent(props) {
                 document.documentElement.clientHeight ||
                 document.body.clientHeight)
             ) {
-              window.scrollTo(
-                0,
-                newsRef.current.offsetTop -
-                  newsRef.current.offsetParent.clientHeight / 2
-              );
+              scrollParent.scrollTo(0, y);
             } else if (startTime + 2000 > Date.now()) {
               setTimeout(
                 listenToWindowHeight,
