@@ -14,7 +14,10 @@ function MenuPanel({
   return (
     <>
       <div
-        style={{ display: menuVisibility ? "block" : "none" }}
+        style={{
+          transform: menuVisibility ? "translateX(0)" : "translateX(100vw)",
+          opacity: menuVisibility ? 0.1 : 0
+        }}
         className="menu-panel-bg"
         onClick={() => setMenuVisibility(false)}
       />
