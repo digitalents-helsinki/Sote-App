@@ -257,6 +257,27 @@ body {
   }
 
   .ProgressBar {
+    &.progress-bar-transition {
+      &-enter {
+        transform: translateY(-5vh);
+        opacity: 0 !important;
+        &-active {
+          transition: transform 300ms, opacity 300ms ease-in;
+          transform: translateY(0);
+          opacity: 1 !important;
+        }
+      }
+      &-exit {
+        transform: translateY(0);
+        opacity: 1 !important;
+        &-active {
+          transition: transform 300ms, opacity 300ms ease-out;
+          transform: translateY(-5vh);
+          opacity: 0 !important;
+        }
+      }
+    }
+
     .bar-background {
       background-color: #e8e8e8;
 

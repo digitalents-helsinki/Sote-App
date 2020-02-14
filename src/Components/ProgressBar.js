@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
 function ProgressBar({ personData }) {
   const location = useLocation();
@@ -18,8 +19,11 @@ function ProgressBar({ personData }) {
     "/verensokeri"
   ];
   const locationIndex = locations.findIndex(loc => loc === location.pathname);
-  const progressBarWidthInPercents = `calc(${(100 / locations.length) *
-    locationIndex}% - 4px)`;
+  const progressBarWidthInPercents = ~locationIndex
+    ? `calc(${(100 / locations.length) * locationIndex}% - 4px)`
+    : location.pathname === "/"
+    ? "0"
+    : "calc(100% - 4px)";
   const progressBarShadowExpressions = [
     typeof personData["Onko hengitystie auki?"] === "boolean" &&
       typeof personData["Onko ilmatie estettä?"] === "boolean",
@@ -51,9 +55,13 @@ function ProgressBar({ personData }) {
       0
     )}% - 4px)`;
 
-  if (~locationIndex) {
-    return (
-      <div className="ProgressBar">
+  return (
+    <CSSTransition
+      in={!!~locationIndex}
+      timeout={300}
+      classNames="progress-bar-transition"
+    >
+      <div className="ProgressBar" style={{ opacity: ~locationIndex ? 1 : 0 }}>
         <div className="bar-background">
           <div
             style={{ width: progressBarShadowWidth }}
@@ -65,10 +73,8 @@ function ProgressBar({ personData }) {
           ></div>
         </div>
       </div>
-    );
-  } else {
-    return null;
-  }
+    </CSSTransition>
+  );
 }
 
 export default ProgressBar;
