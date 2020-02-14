@@ -32,7 +32,7 @@ function VerensokeriPage({
         </span>
       </p>
       <NewsComponent
-        cells={[4, [5, 6], null, [7, 14], [15, 20], [20, 24], 25]}
+        cells={[4, [5, 6], null, [7, 14], [15, 20], [21, 24], 25]}
         name={"Mittaa verensokeri:"}
         personData={personData}
         setPersonData={setPersonData}
