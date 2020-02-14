@@ -18,8 +18,8 @@ function ProgressBar({ personData }) {
     "/verensokeri"
   ];
   const locationIndex = locations.findIndex(loc => loc === location.pathname);
-  const progressBarWidthInPercents = `${(100 / locations.length) *
-    locationIndex}%`;
+  const progressBarWidthInPercents = `calc(${(100 / locations.length) *
+    locationIndex}% - 4px)`;
   const progressBarShadowExpressions = [
     typeof personData["Onko hengitystie auki?"] === "boolean" &&
       typeof personData["Onko ilmatie estettä?"] === "boolean",
@@ -45,18 +45,18 @@ function ProgressBar({ personData }) {
     typeof personData["Tajunnan taso"] === "boolean",
     personData["Mittaa verensokeri:"]
   ];
-  const progressBarShadowWidthInPercents = `${(100 / locations.length) *
+  const progressBarShadowWidth = `calc(${(100 / locations.length) *
     progressBarShadowExpressions.reduce(
       (trueCount, curr) => (!curr ? trueCount : trueCount + 1),
       0
-    )}%`;
+    )}% - 4px)`;
 
   if (~locationIndex) {
     return (
       <div className="ProgressBar">
         <div className="bar-background">
           <div
-            style={{ width: progressBarShadowWidthInPercents }}
+            style={{ width: progressBarShadowWidth }}
             className="bar-shadow-indicator"
           ></div>
           <div
