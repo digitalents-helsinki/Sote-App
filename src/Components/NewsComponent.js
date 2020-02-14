@@ -7,7 +7,7 @@ function NewsComponent(props) {
 
   function renderCells() {
     function calculateActiveState(cell, idx) {
-      if (props.personData[props.name] === 0 || cell === null) {
+      if (!props.personData[props.name] || cell === null) {
         return "";
       }
       if (Array.isArray(cell)) {
@@ -16,19 +16,14 @@ function NewsComponent(props) {
           props.personData[props.name] <= cell[1]
         ) {
           return "active";
-        } else {
-          return "";
         }
-      } else {
-        if (
-          (idx < 3 && props.personData[props.name] <= cell) ||
-          (idx >= 3 && props.personData[props.name] >= cell)
-        ) {
-          return "active";
-        } else {
-          return "";
-        }
+      } else if (
+        (!idx && props.personData[props.name] <= cell) ||
+        (idx && props.personData[props.name] >= cell)
+      ) {
+        return "active";
       }
+      return "";
     }
 
     return props.cells.map((cell, idx) => {
@@ -60,7 +55,7 @@ function NewsComponent(props) {
               idx
             )}`}
             key={idx}
-          >{`${idx < 3 ? "≤ " : "≥ "}${cell}`}</div>
+          >{`${!idx ? "≤ " : "≥ "}${cell}`}</div>
         );
       }
     });
@@ -119,7 +114,7 @@ function NewsComponent(props) {
                 if (inputValue >= cell[0] && inputValue <= cell[1]) {
                   return getNewsFromIndex(idx);
                 }
-              } else if (idx < 2) {
+              } else if (idx === 0) {
                 if (inputValue <= cell) return getNewsFromIndex(idx);
               } else if (cell <= inputValue) return getNewsFromIndex(idx);
             }
