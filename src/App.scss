@@ -621,321 +621,324 @@ body {
 
   //--------------BELOW ARE ALL INSTRUCTION PAGE RELATED STYLINGS-------------------
 
-  .instruction-page {
+  .instruction-page-container {
+    position: absolute;
     width: 100%;
     height: 100%;
-    padding: 120px 4vw;
-    box-sizing: border-box;
-    position: relative;
-    font-family: $font-montserrat;
-
-    .checkmark {
-      width: 40px;
-      position: absolute;
-      top: 38%;
-      left: 50%;
-      transform: translateX(-50%);
-      transition-duration: 500ms;
-      transition-delay: 400ms;
-    }
-
-    .checkmark.animate {
-      opacity: 1;
-      width: 80px;
-    }
-
-    .scoreCard-container {
-      width: 100%;
-      background-color: $sote-blue;
-      padding: 15px 20px;
+    overflow-y: scroll;
+    .instruction-page {
+      padding: 120px 4vw 0 4vw;
       box-sizing: border-box;
+      font-family: $font-montserrat;
 
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #fff;
+      .checkmark {
+        width: 40px;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition-duration: 500ms;
+        transition-delay: 400ms;
+      }
 
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+      .checkmark.animate {
+        opacity: 1;
+        width: 80px;
+      }
 
-      p {
-        font-size: 1.1rem;
+      .scoreCard-container {
+        width: 100%;
+        background-color: $sote-blue;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #fff;
+
         margin: 20px 0;
-      }
-
-      h3 {
-        margin-top: 35px;
-      }
-    }
-
-    .InstructionCard-first-container {
-      width: 100%;
-      background-color: #fff;
-      padding: 15px 20px;
-      box-sizing: border-box;
-
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #212121;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      p {
-        margin-top: 28px;
-        font-weight: 200;
-        padding: 0;
-      }
-
-      span {
-        font-weight: 600;
-      }
-
-      .unusual-findings-list {
-        padding: 10px 10px;
-        color: $sote-red;
-        font-weight: 500;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
         p {
           font-size: 1.1rem;
+          margin: 20px 0;
+        }
+
+        h3 {
+          margin-top: 35px;
         }
       }
 
-      .control-btn {
-        margin: 50px auto 30px auto;
-        display: flex;
-        justify-content: space-between;
-        width: 180px;
+      .InstructionCard-first-container {
+        width: 100%;
+        background-color: #fff;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #212121;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
         p {
-          font-weight: 800;
-        }
-        .downArrow {
-          width: 24px;
-          height: 24px;
-          background-color: $sote-yellow;
-          padding: 20px 23px 26px 23px;
-          border-radius: 40px;
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-      }
-    }
-
-    .instruction-news-component {
-      display: none;
-      text-align: center;
-      padding: 40px 10px;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      h1 {
-        font-size: 1.2rem;
-      }
-
-      p {
-        margin: 40px 0 50px 0;
-        font-weight: 200;
-        box-sizing: border-box;
-        padding: 0 15px;
-        line-height: 1.6rem;
-      }
-    }
-
-    .instruction-news-component.active {
-      display: block;
-    }
-
-    .controlled-scoreCard-container {
-      display: hidden;
-      width: 100%;
-      background-color: $sote-blue;
-      padding: 15px 20px;
-      box-sizing: border-box;
-
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #fff;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      p {
-        font-size: 1.1rem;
-        margin: 60px 0 10px 0;
-      }
-
-      h3 {
-        margin-top: 35px;
-      }
-    }
-
-    .controlled-scoreCard-container.active {
-      display: block;
-      width: 100%;
-      background-color: $sote-blue;
-      padding: 15px 20px;
-      box-sizing: border-box;
-
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #fff;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      p {
-        font-size: 1.1rem;
-        margin: 60px 0 10px 0;
-      }
-
-      h3 {
-        margin-top: 35px;
-      }
-    }
-    .controlled-scoreCard-container.active {
-      width: 100%;
-      background-color: $sote-blue;
-      padding: 15px 20px;
-      box-sizing: border-box;
-
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #fff;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      p {
-        font-size: 1.1rem;
-        margin: 60px 0 10px 0;
-      }
-
-      h3 {
-        margin-top: 35px;
-      }
-    }
-
-    .InstructionCard-second-container {
-      width: 100%;
-      background-color: #fff;
-      padding: 15px 20px;
-      box-sizing: border-box;
-
-      letter-spacing: 0.5px;
-      line-height: 1.6rem;
-      color: #212121;
-
-      margin: 20px 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
-
-      hr {
-        margin: 25px 0;
-        opacity: 0.25;
-      }
-
-      p {
-        margin: 0 0 20px 0;
-        font-weight: 200;
-        padding: 0;
-      }
-
-      span {
-        font-weight: 600;
-      }
-
-      .content {
-        display: flex;
-      }
-    }
-
-    .report-container {
-      color: #212121;
-      margin-top: 60px;
-
-      hr {
-        opacity: 0.3;
-      }
-
-      h2 {
-        margin: 40px 0 30px 0;
-        padding: 0 15px;
-      }
-
-      .reportElement {
-        margin: 50px 0;
-        padding: 0 15px;
-        box-sizing: border-box;
-
-        h3 {
-          color: $sote-blue;
+          margin-top: 28px;
+          font-weight: 200;
+          padding: 0;
         }
 
-        .flex {
-          display: flex;
-          justify-content: space-between;
-          font-size: 0.9rem;
-
-          .subject {
-            line-height: 1.6rem;
-            font-weight: 200;
-            width: 70%;
-          }
-
-          .answer {
-            display: block;
-            line-height: 1.6rem;
-            font-weight: 600;
-            width: 30%;
-          }
+        span {
+          font-weight: 600;
         }
-      }
 
-      .vitalValues {
-        margin-top: 100px;
-        padding: 0 15px;
-        box-sizing: border-box;
-
-        h3 {
+        .unusual-findings-list {
+          padding: 10px 10px;
           color: $sote-red;
+          font-weight: 500;
+
+          p {
+            font-size: 1.1rem;
+          }
         }
 
-        .flex {
+        .control-btn {
+          margin: 50px auto 30px auto;
           display: flex;
           justify-content: space-between;
-          font-size: 1rem;
+          width: 180px;
 
-          .vital-subject {
-            line-height: 1.6rem;
-            font-weight: 200;
-            width: 80%;
+          p {
+            font-weight: 800;
           }
-
-          .vital-answer {
-            line-height: 1.6rem;
-            font-weight: 400;
-            width: 20%;
+          .downArrow {
+            width: 24px;
+            height: 24px;
+            background-color: $sote-yellow;
+            padding: 20px 23px 26px 23px;
+            border-radius: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
           }
         }
       }
-    }
-    .controlDone-btn {
-      display: none;
-    }
-    .controlDone-btn.active {
-      display: block;
-      background-color: $sote-yellow;
-      margin: 50px 30px 30px 30px;
-      padding: 10px 15px;
-      text-align: center;
-      border-radius: 4px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+      .instruction-news-component {
+        display: none;
+        text-align: center;
+        padding: 40px 10px;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        h1 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          margin: 40px 0 50px 0;
+          font-weight: 200;
+          box-sizing: border-box;
+          padding: 0 15px;
+          line-height: 1.6rem;
+        }
+      }
+
+      .instruction-news-component.active {
+        display: block;
+      }
+
+      .controlled-scoreCard-container {
+        display: hidden;
+        width: 100%;
+        background-color: $sote-blue;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #fff;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        p {
+          font-size: 1.1rem;
+          margin: 60px 0 10px 0;
+        }
+
+        h3 {
+          margin-top: 35px;
+        }
+      }
+
+      .controlled-scoreCard-container.active {
+        display: block;
+        width: 100%;
+        background-color: $sote-blue;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #fff;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        p {
+          font-size: 1.1rem;
+          margin: 60px 0 10px 0;
+        }
+
+        h3 {
+          margin-top: 35px;
+        }
+      }
+      .controlled-scoreCard-container.active {
+        width: 100%;
+        background-color: $sote-blue;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #fff;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        p {
+          font-size: 1.1rem;
+          margin: 60px 0 10px 0;
+        }
+
+        h3 {
+          margin-top: 35px;
+        }
+      }
+
+      .InstructionCard-second-container {
+        width: 100%;
+        background-color: #fff;
+        padding: 15px 20px;
+        box-sizing: border-box;
+
+        letter-spacing: 0.5px;
+        line-height: 1.6rem;
+        color: #212121;
+
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+
+        hr {
+          margin: 25px 0;
+          opacity: 0.25;
+        }
+
+        p {
+          margin: 0 0 20px 0;
+          font-weight: 200;
+          padding: 0;
+        }
+
+        span {
+          font-weight: 600;
+        }
+
+        .content {
+          display: flex;
+        }
+      }
+
+      .report-container {
+        color: #212121;
+        margin-top: 60px;
+
+        hr {
+          opacity: 0.3;
+        }
+
+        h2 {
+          margin: 40px 0 30px 0;
+          padding: 0 15px;
+        }
+
+        .reportElement {
+          margin: 50px 0;
+          padding: 0 15px;
+          box-sizing: border-box;
+
+          h3 {
+            color: $sote-blue;
+          }
+
+          .flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+
+            .subject {
+              line-height: 1.6rem;
+              font-weight: 200;
+              width: 70%;
+            }
+
+            .answer {
+              display: block;
+              line-height: 1.6rem;
+              font-weight: 600;
+              width: 30%;
+            }
+          }
+        }
+
+        .vitalValues {
+          margin-top: 100px;
+          padding: 0 15px;
+          box-sizing: border-box;
+
+          h3 {
+            color: $sote-red;
+          }
+
+          .flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+
+            .vital-subject {
+              line-height: 1.6rem;
+              font-weight: 200;
+              width: 80%;
+            }
+
+            .vital-answer {
+              line-height: 1.6rem;
+              font-weight: 400;
+              width: 20%;
+            }
+          }
+        }
+      }
+      .controlDone-btn {
+        display: none;
+      }
+      .controlDone-btn.active {
+        display: block;
+        background-color: $sote-yellow;
+        margin: 50px 30px 30px 30px;
+        padding: 10px 15px;
+        text-align: center;
+        border-radius: 4px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }

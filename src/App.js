@@ -76,9 +76,6 @@ function App() {
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
 
-  const genAnimClass = (historyAction, cycle) =>
-    historyAction === "PUSH" ? `slide-right-${cycle}` : `slide-left-${cycle}`;
-
   const generateClassNames = historyAction =>
     historyAction === "PUSH" ? "slide-right" : "slide-left";
 
@@ -279,7 +276,6 @@ function App() {
                         controlData={controlData}
                         setcontrolData={setcontrolData}
                         history={history}
-                        controlData={controlData}
                         {...props}
                       />
                     )}

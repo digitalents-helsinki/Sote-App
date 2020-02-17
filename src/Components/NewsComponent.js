@@ -70,7 +70,9 @@ function NewsComponent(props) {
           props.personData[props.name] ? props.personData[props.name] : ""
         }
         onFocus={() => {
-          const scrollParent = document.querySelector(".Page") || window;
+          const scrollParent =
+            document.querySelector(".Page") ||
+            document.querySelector(".instruction-page-container");
           const y =
             newsRef.current.getBoundingClientRect().top +
             (scrollParent.scrollY || scrollParent.scrollTop) -
@@ -78,7 +80,15 @@ function NewsComponent(props) {
               document.documentElement.clientHeight ||
               document.body.clientHeight) /
               1.8;
-          scrollParent.scrollTo(0, y);
+          const scrollToNews = () => {
+            try {
+              scrollParent.scrollTo({ top: y, behavior: "smooth" });
+            } catch (err) {
+              console.log(err);
+              scrollParent.scrollTop = y;
+            }
+          };
+          scrollToNews();
           // detect mobile keyboard popping up and then scroll
           (function listenToWindowHeight(originalWindowHeight, startTime) {
             if (
@@ -87,7 +97,7 @@ function NewsComponent(props) {
                 document.documentElement.clientHeight ||
                 document.body.clientHeight)
             ) {
-              scrollParent.scrollTo(0, y);
+              scrollToNews();
             } else if (startTime + 2000 > Date.now()) {
               setTimeout(
                 listenToWindowHeight,

@@ -27,14 +27,16 @@ function InstructionPage({
   // console.log(NEWSscoreTotal, "beep");
 
   return (
-    <div className="instruction-page">
-      <ControlledScoreCard
-        NEWSscoreTotal={NEWSscoreTotal}
-        personData={personData}
-        controlData={controlData}
-      />
-      <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
-      <Report personData={personData} />
+    <div className="instruction-page-container slidable">
+      <div className="instruction-page">
+        <ControlledScoreCard
+          NEWSscoreTotal={NEWSscoreTotal}
+          personData={personData}
+          controlData={controlData}
+        />
+        <InstructionCardSecond NEWSscoreTotal={NEWSscoreTotal} />
+        <Report personData={personData} />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import downArrow from "../Images/down-arrow.svg";
 
 function InstructionCardFirst({
@@ -41,13 +41,7 @@ function InstructionCardFirst({
     }
   };
 
-  // Pos Y of control button for scrolling to next News Component
-  let posY;
-
-  useEffect(() => {
-    const controlBtn = document.querySelector(".control-btn");
-    posY = controlBtn.getBoundingClientRect();
-  });
+  const ctrlBtnRef = useRef(null);
 
   return (
     <div className="InstructionCard-first-container">
@@ -78,8 +72,16 @@ function InstructionCardFirst({
       </div>
       <div
         onClick={() => {
+          const elem = document.querySelector(".instruction-page-container");
+          const y =
+            ctrlBtnRef.current.getBoundingClientRect().top + elem.scrollTop;
           setTimeout(() => {
-            window.scrollTo({ top: `${posY.top}`, behavior: "smooth" });
+            try {
+              elem.scrollTo({ top: y, behavior: "smooth" });
+            } catch (err) {
+              console.error(err);
+              elem.scrollTop = y;
+            }
           }, 250);
 
           console.log(personData);
@@ -92,6 +94,7 @@ function InstructionCardFirst({
           console.log(ControlCardVisibility);
         }}
         className="control-btn"
+        ref={ctrlBtnRef}
       >
         <p>Kontrolloi</p>
         <div className="downArrow">

@@ -23,27 +23,29 @@ function InstructionPage({
   console.log(NEWSscoreTotal);
 
   return (
-    <div className="instruction-page slidable">
-      <ScoreCard NEWSscoreTotal={NEWSscoreTotal} personData={personData} />
-      <InstructionCardFirst
-        personData={personData}
-        setPersonData={setPersonData}
-        ControlCardVisibility={ControlCardVisibility}
-        setControlCardVisibility={setControlCardVisibility}
-        NEWSscoreTotal={NEWSscoreTotal}
-        controlData={controlData}
-        setcontrolData={setcontrolData}
-      />
-      <InstructionNewsComponent
-        history={history}
-        personData={personData}
-        setPersonData={setPersonData}
-        ControlCardVisibility={ControlCardVisibility}
-        controlData={controlData}
-        setcontrolData={setcontrolData}
-        ControlRiskCardVisibility={ControlRiskCardVisibility}
-        setControlRiskCardVisibility={setControlRiskCardVisibility}
-      />
+    <div className="instruction-page-container slidable">
+      <div className="instruction-page">
+        <ScoreCard NEWSscoreTotal={NEWSscoreTotal} personData={personData} />
+        <InstructionCardFirst
+          personData={personData}
+          setPersonData={setPersonData}
+          ControlCardVisibility={ControlCardVisibility}
+          setControlCardVisibility={setControlCardVisibility}
+          NEWSscoreTotal={NEWSscoreTotal}
+          controlData={controlData}
+          setcontrolData={setcontrolData}
+        />
+        <InstructionNewsComponent
+          history={history}
+          personData={personData}
+          setPersonData={setPersonData}
+          ControlCardVisibility={ControlCardVisibility}
+          controlData={controlData}
+          setcontrolData={setcontrolData}
+          ControlRiskCardVisibility={ControlRiskCardVisibility}
+          setControlRiskCardVisibility={setControlRiskCardVisibility}
+        />
+      </div>
     </div>
   );
 }
