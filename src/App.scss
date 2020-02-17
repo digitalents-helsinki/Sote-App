@@ -215,9 +215,9 @@ body {
     background-image: linear-gradient(
       rgba(250, 250, 250, 1) 30%,
       rgba(250, 250, 250, 0.95) 45%,
-      rgba(250, 250, 250, 0.925) 65%,
-      rgba(250, 250, 250, 0.9) 80%,
-      rgba(250, 250, 250, 0.85) 90%,
+      rgba(250, 250, 250, 0.8) 65%,
+      rgba(250, 250, 250, 0.5) 80%,
+      rgba(250, 250, 250, 0.2) 90%,
       rgba(250, 250, 250, 0) 100%
     );
 
@@ -703,12 +703,22 @@ body {
       }
 
       .control-btn {
-        background-color: $sote-yellow;
-        margin: 50px 30px 30px 30px;
-        padding: 10px 15px;
-        text-align: center;
-        border-radius: 4px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        margin: 50px auto 30px auto;
+        display: flex;
+        justify-content: space-between;
+        width: 180px;
+
+        p {
+          font-weight: 800;
+        }
+        .downArrow {
+          width: 24px;
+          height: 24px;
+          background-color: $sote-yellow;
+          padding: 20px 23px 26px 23px;
+          border-radius: 40px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
       }
     }
 

@@ -1,6 +1,9 @@
 body,
 html {
   margin: 0;
+}
+
+body {
   overflow-x: hidden;
 }
 
@@ -8,6 +11,14 @@ html {
   width: 100%;
   height: 100vh;
   background-color: #fafafa;
+}
+
+.App .menu-panel-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 39;
+  background-color: #212121;
 }
 
 .App .menu-panel {
@@ -28,7 +39,7 @@ html {
   );
   position: fixed;
   top: 0;
-  z-index: 21;
+  z-index: 40;
   padding: 12vw 40px 12vw 30px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -275,17 +286,17 @@ html {
     left bottom,
     color-stop(30%, #fafafa),
     color-stop(45%, rgba(250, 250, 250, 0.95)),
-    color-stop(65%, rgba(250, 250, 250, 0.925)),
-    color-stop(80%, rgba(250, 250, 250, 0.9)),
-    color-stop(90%, rgba(250, 250, 250, 0.85)),
+    color-stop(65%, rgba(250, 250, 250, 0.8)),
+    color-stop(80%, rgba(250, 250, 250, 0.5)),
+    color-stop(90%, rgba(250, 250, 250, 0.2)),
     to(rgba(250, 250, 250, 0))
   );
   background-image: linear-gradient(
     #fafafa 30%,
     rgba(250, 250, 250, 0.95) 45%,
-    rgba(250, 250, 250, 0.925) 65%,
-    rgba(250, 250, 250, 0.9) 80%,
-    rgba(250, 250, 250, 0.85) 90%,
+    rgba(250, 250, 250, 0.8) 65%,
+    rgba(250, 250, 250, 0.5) 80%,
+    rgba(250, 250, 250, 0.2) 90%,
     rgba(250, 250, 250, 0) 100%
   );
 }
@@ -327,6 +338,38 @@ html {
 .App .TopArea .flex-container .more-btn {
   height: 24px;
   width: 26px;
+}
+
+.App .ProgressBar.progress-bar-transition-enter {
+  -webkit-transform: translateY(-5vh);
+  transform: translateY(-5vh);
+  opacity: 0 !important;
+}
+
+.App .ProgressBar.progress-bar-transition-enter-active {
+  -webkit-transition: opacity 300ms ease-in, -webkit-transform 300ms;
+  transition: opacity 300ms ease-in, -webkit-transform 300ms;
+  transition: transform 300ms, opacity 300ms ease-in;
+  transition: transform 300ms, opacity 300ms ease-in, -webkit-transform 300ms;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1 !important;
+}
+
+.App .ProgressBar.progress-bar-transition-exit {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1 !important;
+}
+
+.App .ProgressBar.progress-bar-transition-exit-active {
+  -webkit-transition: opacity 300ms ease-out, -webkit-transform 300ms;
+  transition: opacity 300ms ease-out, -webkit-transform 300ms;
+  transition: transform 300ms, opacity 300ms ease-out;
+  transition: transform 300ms, opacity 300ms ease-out, -webkit-transform 300ms;
+  -webkit-transform: translateY(-5vh);
+  transform: translateY(-5vh);
+  opacity: 0 !important;
 }
 
 .App .ProgressBar .bar-background {
@@ -440,17 +483,12 @@ html {
   outline: none;
 }
 
-.App .Page.slide-right-enter {
+.App .slidable.slide-right-enter {
   -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
 }
 
-.App .Page.slide-right-enter + .Page.slide-left-exit {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
-.App .Page.slide-right-enter-active {
+.App .slidable.slide-right-enter-active {
   overflow-y: hidden;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -460,7 +498,12 @@ html {
   transition: transform 300ms, -webkit-transform 300ms;
 }
 
-.App .Page.slide-right-enter-active + .Page.slide-left-exit-active {
+.App .slidable.slide-right-exit {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.App .slidable.slide-right-exit-active {
   overflow-y: hidden;
   -webkit-transform: translateX(-100vw);
   transform: translateX(-100vw);
@@ -470,47 +513,12 @@ html {
   transition: transform 300ms, -webkit-transform 300ms;
 }
 
-.App .Page.slide-right-exit {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
-.App .Page.slide-right-exit + .Page.slide-left-enter {
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
-}
-
-.App .Page.slide-right-exit-active {
-  overflow-y: hidden;
-  -webkit-transform: translateX(-100vw);
-  transform: translateX(-100vw);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-}
-
-.App .Page.slide-right-exit-active + .Page.slide-left-enter-active {
-  overflow-y: hidden;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-}
-
-.App .Page.slide-left-enter {
+.App .slidable.slide-left-enter {
   -webkit-transform: translateX(-100vw);
   transform: translateX(-100vw);
 }
 
-.App .Page.slide-left-enter + .Page.slide-right-exit {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
-.App .Page.slide-left-enter-active {
+.App .slidable.slide-left-enter-active {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: -webkit-transform 300ms;
@@ -520,40 +528,15 @@ html {
   overflow-y: hidden;
 }
 
-.App .Page.slide-left-enter-active + .Page.slide-right-exit-active {
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  overflow-y: hidden;
-}
-
-.App .Page.slide-left-exit {
+.App .slidable.slide-left-exit {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
-.App .Page.slide-left-exit + .Page.slide-right-enter {
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
-}
-
-.App .Page.slide-left-exit-active {
+.App .slidable.slide-left-exit-active {
   overflow-y: hidden;
   -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-}
-
-.App .Page.slide-left-exit-active + .Page.slide-right-enter-active {
-  overflow-y: hidden;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
   -webkit-transition: -webkit-transform 300ms;
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
@@ -890,13 +873,32 @@ html {
 }
 
 .App .instruction-page .InstructionCard-first-container .control-btn {
+  margin: 50px auto 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.App .instruction-page .InstructionCard-first-container .control-btn p {
+  font-weight: 800;
+}
+
+.App
+  .instruction-page
+  .InstructionCard-first-container
+  .control-btn
+  .downArrow {
+  width: 24px;
+  height: 24px;
   background-color: #f0c816;
-  margin: 50px 30px 30px 30px;
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px 23px 26px 23px;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .App .instruction-page .instruction-news-component {

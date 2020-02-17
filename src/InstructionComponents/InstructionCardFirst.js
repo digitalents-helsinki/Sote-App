@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import downArrow from "../Images/down-arrow.svg";
 
 function InstructionCardFirst({
   testingdata,
@@ -39,6 +40,14 @@ function InstructionCardFirst({
     }
   };
 
+  // Pos Y of control button for scrolling to next News Component
+  let posY;
+
+  useEffect(() => {
+    const controlBtn = document.querySelector(".control-btn");
+    posY = controlBtn.getBoundingClientRect();
+  });
+
   return (
     <div className="InstructionCard-first-container">
       <h3>Toimintaohje:</h3>
@@ -46,30 +55,32 @@ function InstructionCardFirst({
       <div className="unusual-findings-list">
         <p>
           {personData["Hengitystaajuus - NEWSscore"] >= 1
-            ? "→  Hengitystaajuus"
+            ? "Hengitystaajuus"
             : null}
         </p>
         <p>
           {personData["Happisaturaatio - NEWSscore"] >= 1
-            ? "→  Happisaturaatio"
+            ? "Happisaturaatio"
             : null}
         </p>
         <p>
           {personData["Systolinen verenpaine - NEWSscore"] >= 1
-            ? "→  Systolinen verenpaine"
+            ? "Systolinen verenpaine"
             : null}
         </p>
         <p>
-          {personData["Syketaajuus - NEWSscore"] >= 1 ? "→  Syketaajuus" : null}
+          {personData["Syketaajuus - NEWSscore"] >= 1 ? "Syketaajuus" : null}
         </p>
         <p>
-          {personData["Mittaa lämpötila - NEWSscore"] >= 1
-            ? "→  Lämpötila"
-            : null}
+          {personData["Mittaa lämpötila - NEWSscore"] >= 1 ? "Lämpötila" : null}
         </p>
       </div>
       <div
         onClick={() => {
+          setTimeout(() => {
+            window.scrollTo({ top: `${posY.top}`, behavior: "smooth" });
+          }, 250);
+
           console.log(personData);
           setcontrolData(personData);
           console.log(controlData);
@@ -81,7 +92,10 @@ function InstructionCardFirst({
         }}
         className="control-btn"
       >
-        Kontrolloi mittaus
+        <p>Kontrolloi</p>
+        <div className="downArrow">
+          <img src={downArrow}></img>
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ function DoubleButton(props) {
     const activeStyle = {
       background: first === redFirst ? "#AD3E2F" : "#377D4F",
       color: "#fff",
-      bordercolor: "#212121"
+      borderColor: "#242424"
     };
     return first === value ? activeStyle : {};
   };
