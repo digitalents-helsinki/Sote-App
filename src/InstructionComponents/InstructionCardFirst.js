@@ -14,7 +14,8 @@ function InstructionCardFirst({
   const instruction_content = {
     emergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 2-3 minuutin.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 2-3 minuutin
+        kuluttua.
       </>
     ),
     mediumEmergencyContent: (
