@@ -18,9 +18,9 @@ function VerenkiertoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
       <DoubleButton
-        header={"Tuntuuko paikallista lämpöeroa:"}
+        header={"Tuntuuko lämpörajoja raajoissa:"}
         bodyText={
-          "molemminpuolisia/ toispuolisia (ranne/nilkka, kyynärpää/ polvi, olkavarsi/nivunen)?"
+          "molemminpuolisia (ranne/nilkka, kyynärpää/polvi, olkavarsi/nivunen)/ toispuolisia."
         }
         redFirst={true}
         personData={personData}

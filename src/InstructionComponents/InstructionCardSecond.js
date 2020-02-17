@@ -1,6 +1,7 @@
 import React from "react";
 
 function InstructionCardSecond({ NEWSscoreTotal }) {
+  //RISKILUOKKA: KORKEA RISKI
   if (NEWSscoreTotal >= 4) {
     return (
       <div className="InstructionCard-second-container">
@@ -9,10 +10,15 @@ function InstructionCardSecond({ NEWSscoreTotal }) {
         <p>
           &rarr; <span>Soita 112.</span>
         </p>
+        <p style={{ fontWeight: "600" }}>
+          Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
+          soittoa.
+        </p>
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
       </div>
     );
   } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+    //RISKILUOKKA: KOHTALAINEN RISKI
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
@@ -57,6 +63,7 @@ function InstructionCardSecond({ NEWSscoreTotal }) {
       </div>
     );
   } else {
+    //RISKILUOKKA: LIEVÄ RISKI
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>

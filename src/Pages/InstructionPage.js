@@ -5,6 +5,7 @@ import InstructionCardSecond from "../InstructionComponents/InstructionCardSecon
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
 import Report from "../InstructionComponents/Report";
+import checkmark from "../Images/checkmark.svg";
 
 function InstructionPage({
   personData,
