@@ -6,9 +6,13 @@ import Page from "../Components/Page";
 function VerenkiertoPage({ personData, setPersonData }) {
   const buttonActive = [
     typeof personData["Tarkista syke:"],
-    typeof personData["Tuntuuko paikallista lämpöeroa:"]
+    typeof personData["Tuntuuko lämpörajoja raajoissa:"]
   ].every(type => type === "boolean");
 
+  console.log(
+    typeof personData["Tarkista syke:"],
+    typeof personData["Tuntuuko paikallista lämpöeroa:"]
+  );
   return (
     <Page title="Verenkierto">
       <DoubleButton
