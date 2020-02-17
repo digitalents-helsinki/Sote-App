@@ -9,10 +9,6 @@ function VerenkiertoPage({ personData, setPersonData }) {
     typeof personData["Tuntuuko lämpörajoja raajoissa:"]
   ].every(type => type === "boolean");
 
-  console.log(
-    typeof personData["Tarkista syke:"],
-    typeof personData["Tuntuuko paikallista lämpöeroa:"]
-  );
   return (
     <Page title="Verenkierto">
       <DoubleButton

@@ -200,7 +200,7 @@ function Report({ personData }) {
         <div className="flex">
           <p className="subject">{"Tuntuuko paikallista lämpöeroa?"}</p>
           <div className="answer">
-            {personData["Tuntuuko paikallista lämpöeroa:"] ? (
+            {personData["Tuntuuko lämpörajoja raajoissa:"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>

@@ -39,7 +39,7 @@ function ProgressBar({ personData }) {
       (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
         personData.Iho),
     typeof personData["Tarkista syke:"] === "boolean" &&
-      typeof personData["Tuntuuko paikallista lämpöeroa:"] === "boolean",
+      typeof personData["Tuntuuko lämpörajoja raajoissa:"] === "boolean",
     personData["Tajunta - Ei poikkeavia löydöksiä."] || personData.Tajunta,
     personData["Hengitystaajuus"],
     personData["Happisaturaatio"],
