@@ -28,7 +28,7 @@ function IhoPage({ personData, setPersonData }) {
   };
 
   return (
-    <Page title={Title} paragraph="Miltä iho tuntuu:">
+    <Page title={Title} paragraph="Miltä iho tuntuu kauttaaltaan?">
       <Checkbox
         checkboxlabel={"Normaali"}
         subject={Title}

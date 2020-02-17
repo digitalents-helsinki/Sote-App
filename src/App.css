@@ -1,6 +1,7 @@
 body,
 html {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .App {
@@ -360,57 +361,6 @@ html {
   background-color: #315991;
 }
 
-.App .nextButtondiv {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(250, 250, 250, 0)),
-    color-stop(50%, rgba(250, 250, 250, 0.9)),
-    color-stop(80%, #fafafa)
-  );
-  background-image: linear-gradient(
-    rgba(250, 250, 250, 0) 0%,
-    rgba(250, 250, 250, 0.9) 50%,
-    #fafafa 80%
-  );
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0 25px 0;
-}
-
-.App .nextButtondiv .nextButtoninactive {
-  width: 265px;
-  height: 52px;
-  border-radius: 52px;
-  background-color: #b5b5b5;
-  color: #cfcfcf;
-  font-size: 17px;
-  text-align: center;
-  -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
-  border: 0;
-  -webkit-transition-delay: 300ms;
-  transition-delay: 300ms;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
-.App .nextButtondiv .nextButtoninactive.nextButtonactive {
-  background-color: #cf7740;
-  color: #fff;
-  -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-}
-
-.App .nextButtondiv .nextButtoninactive:focus,
-.App .nextButtondiv .nextButtonactive:focus {
-  outline: none;
-}
-
 .App .checkboxComponent {
   width: 100%;
   padding: 10px 0;
@@ -490,40 +440,167 @@ html {
   outline: none;
 }
 
+.App .Page.slide-right-enter {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+}
+
+.App .Page.slide-right-enter + .Page.slide-left-exit {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.App .Page.slide-right-enter-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.App .Page.slide-right-enter-active + .Page.slide-left-exit-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.App .Page.slide-right-exit {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.App .Page.slide-right-exit + .Page.slide-left-enter {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+}
+
+.App .Page.slide-right-exit-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.App .Page.slide-right-exit-active + .Page.slide-left-enter-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.App .Page.slide-left-enter {
+  -webkit-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+}
+
+.App .Page.slide-left-enter + .Page.slide-right-exit {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.App .Page.slide-left-enter-active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  overflow-y: hidden;
+}
+
+.App .Page.slide-left-enter-active + .Page.slide-right-exit-active {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  overflow-y: hidden;
+}
+
+.App .Page.slide-left-exit {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.App .Page.slide-left-exit + .Page.slide-right-enter {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+}
+
+.App .Page.slide-left-exit-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.App .Page.slide-left-exit-active + .Page.slide-right-enter-active {
+  overflow-y: hidden;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
 .App .Page {
+  position: absolute;
+  top: 118px;
+  height: 81.7vh;
   width: 100%;
+  overflow-y: scroll;
+}
+
+.App .Page .page-content {
   background-color: #fafafa;
-  padding: 23vh 6vw 30vh 6vw;
+  padding: 4.5vh 6vw 30vh 6vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   /*.attention text and emergency link properties are in the landingpage*/
 }
 
-.App .Page h1 {
+.App .Page .page-content .page-title {
   text-align: center;
   font-size: 1.3rem;
   margin-bottom: 40px;
   font-weight: 600;
 }
 
-.App .Page p {
+.App .Page .page-content .page-paragraph {
   text-align: center;
   margin-bottom: 60px;
   font-weight: 300;
   line-height: 1.8rem;
 }
 
-.App .Page .attentionText {
+.App .Page .page-content .attentionText {
   color: #ad3e2f;
   font-weight: 800;
 }
 
-.App .Page .emergencyPage-link {
+.App .Page .page-content .emergencyPage-link {
   font-size: 1rem;
 }
 
-.App .Page .emergencyPage-link span {
+.App .Page .page-content .emergencyPage-link span {
   text-decoration: underline;
   color: #ad3e2f;
 }
@@ -542,6 +619,7 @@ html {
 .App .DoubleButton p {
   margin-bottom: 25px;
   font-weight: 100;
+  line-height: 1.6rem;
   text-align: start;
   font-size: 0.9rem;
 }
@@ -576,7 +654,7 @@ html {
   box-sizing: border-box;
   width: 100%;
   max-height: 0;
-  background-color: #f0c816;
+  background-color: #fee715;
   overflow: hidden;
   -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
@@ -598,7 +676,7 @@ html {
 
 .App .DoubleButton .active {
   width: 100%;
-  max-height: 200px;
+  max-height: 800px;
   padding: 10px 20px;
 }
 
@@ -722,10 +800,30 @@ html {
 
 .App .instruction-page {
   width: 100%;
+  height: 100%;
   padding: 120px 4vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  position: relative;
   font-family: "Montserrat", sans-serif;
+}
+
+.App .instruction-page .checkmark {
+  width: 40px;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-delay: 400ms;
+  transition-delay: 400ms;
+}
+
+.App .instruction-page .checkmark.animate {
+  opacity: 1;
+  width: 80px;
 }
 
 .App .instruction-page .scoreCard-container {
@@ -1032,5 +1130,56 @@ html {
   border-radius: 4px;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#portal-root .nextButtondiv {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(250, 250, 250, 0)),
+    color-stop(50%, rgba(250, 250, 250, 0.9)),
+    color-stop(80%, #fafafa)
+  );
+  background-image: linear-gradient(
+    rgba(250, 250, 250, 0) 0%,
+    rgba(250, 250, 250, 0.9) 50%,
+    #fafafa 80%
+  );
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 25px 0;
+}
+
+#portal-root .nextButtondiv .nextButtoninactive {
+  width: 265px;
+  height: 52px;
+  border-radius: 52px;
+  background-color: #b5b5b5;
+  color: #cfcfcf;
+  font-size: 17px;
+  text-align: center;
+  -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
+  border: 0;
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+#portal-root .nextButtondiv .nextButtoninactive.nextButtonactive {
+  background-color: #cf7740;
+  color: #fff;
+  -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#portal-root .nextButtondiv .nextButtoninactive:focus,
+#portal-root .nextButtondiv .nextButtonactive:focus {
+  outline: none;
 }
 /*# sourceMappingURL=App.css.map */

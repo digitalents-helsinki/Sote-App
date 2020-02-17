@@ -14,7 +14,36 @@ function HengitystiePage({ personData, setPersonData }) {
       <DoubleButton
         header={"Onko hengitystie auki?"}
         hoitoOhjeHeader={"Hoito-ohje"}
-        hoitoOhje={"Avaa hengitystiet taivuttamalla leuasta ja otsalta."}
+        hoitoOhje={
+          <>
+            Avaa hengitystiet kohottamalla toisen käden kahdella sormella leuan
+            kärkeä ylöspäin ja taivuttamalla päätä taaksepäin toisella kädellä
+            otsaa painaen.{" "}
+            <span style={{ fontWeight: "600" }}>
+              Hengittääkö potilas normalisti?
+            </span>
+            <br />
+            <br />
+            Jos{" "}
+            <span style={{ fontWeight: "600" }}>
+              ilmavirtaus tuntuu omalla poskella tai kädenselällä ja rintakehä
+              nousee säännöllisesti,
+            </span>{" "}
+            käännä asiakas{" "}
+            <span style={{ fontWeight: "600" }}>
+              kylkiasentoon hengityksen turvaamiseksi
+            </span>{" "}
+            ja jatka tutkimusta.
+            <br />
+            <br />
+            <span style={{ fontWeight: "600" }}>
+              Jos ei reagoi, eikä hengitä normaalisti,
+            </span>{" "}
+            soita 112 ja <span style={{ fontWeight: "600" }}>aloita PPE</span> =
+            painelu-puhallaselvytys. HUOM: jos asiakkaalla{" "}
+            <span style={{ fontWeight: "600" }}>DNR -> konsultoi lääkäri.</span>
+          </>
+        }
         personData={personData}
         setPersonData={setPersonData}
       />
@@ -22,7 +51,7 @@ function HengitystiePage({ personData, setPersonData }) {
         header={"Onko ilmatie estettä?"}
         redFirst={true}
         hoitoOhjeHeader={"Hoito-ohje"}
-        hoitoOhje={"Poista ilmatie-este."}
+        hoitoOhje={""}
         personData={personData}
         setPersonData={setPersonData}
       />
