@@ -250,13 +250,13 @@ function Report({ personData }) {
           <p className="subject">Onko iho muutoksia?</p>
           <div className="answer">
             {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
-              <p style={{ color: red }}>Kyllä</p>
-            ) : (
               <p style={{ color: green }}>Ei</p>
+            ) : (
+              <p style={{ color: red }}>Kyllä</p>
             )}
           </div>
         </div>
-        {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
+        {personData.Iho ? (
           <p
             style={{
               fontWeight: "200",
