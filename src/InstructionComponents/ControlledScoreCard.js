@@ -7,6 +7,7 @@ function ControlledScoreCard({
   controlData
 }) {
   const controlData_RiskLevel = () => {
+    console.log(NEWSscoreTotal);
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
@@ -15,7 +16,7 @@ function ControlledScoreCard({
       personData["Systolinen verenpaine - NEWSscore"] === 3 ||
       personData["Syketaajuus - NEWSscore"] === 3 ||
       personData["Mittaa lämpötila - NEWSscore"] === 3 ||
-      personData >= 4
+      NEWSscoreTotal >= 4
     ) {
       return "Korkea riski";
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
