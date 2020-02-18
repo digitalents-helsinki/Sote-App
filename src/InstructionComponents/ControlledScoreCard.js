@@ -7,7 +7,6 @@ function ControlledScoreCard({
   controlData
 }) {
   const controlData_RiskLevel = () => {
-    console.log(NEWSscoreTotal);
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
@@ -52,8 +51,6 @@ function ControlledScoreCard({
       });
     }
   }, [NEWSscoreTotal, personData]);
-  console.log("cardtext", cardText);
-  console.log("controlData_RiskLevel", controlData_RiskLevel());
 
   return (
     <div

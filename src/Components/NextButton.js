@@ -1,6 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const NextButton = ({ onClick, buttonActive, nextPage }) => {
   const history = useHistory();

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  useHistory,
-  useLocation
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import MenuPanel from "./Components/MenuPanel";
 import TopArea from "./Components/TopArea";

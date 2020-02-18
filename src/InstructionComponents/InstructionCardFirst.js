@@ -2,9 +2,7 @@ import React, { useRef } from "react";
 import downArrow from "../Images/down-arrow.svg";
 
 function InstructionCardFirst({
-  testingdata,
   personData,
-  setPersonData,
   ControlCardVisibility,
   setControlCardVisibility,
   NEWSscoreTotal,
@@ -107,7 +105,7 @@ function InstructionCardFirst({
       >
         <p>Kontrolloi</p>
         <div className="downArrow">
-          <img src={downArrow}></img>
+          <img src={downArrow} alt="downArrow"></img>
         </div>
       </div>
     </div>

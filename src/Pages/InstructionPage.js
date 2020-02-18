@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import ScoreCard from "../InstructionComponents/ScoreCard";
 import InstructionCardFirst from "../InstructionComponents/InstructionCardFirst";
-import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
-import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import InstructionNewsComponent from "../InstructionComponents/InstructionNewsComponent";
-import Report from "../InstructionComponents/Report";
-import checkmark from "../Images/checkmark.svg";
 
 function InstructionPage({
   personData,
@@ -19,8 +15,6 @@ function InstructionPage({
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
     false
   );
-
-  console.log(NEWSscoreTotal);
 
   return (
     <div className="instruction-page-container slidable">

@@ -1,12 +1,47 @@
 import React from "react";
 
-function InstructionCardSecond({ NEWSscoreTotal }) {
+function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
+  const singleHighRiskEval = () => {
+    if (
+      personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      personData["Happisaturaatio - NEWSscore"] === 3 ||
+      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      personData["Syketaajuus - NEWSscore"] === 3 ||
+      personData["Mittaa lämpötila - NEWSscore"] === 3
+    ) {
+      return true;
+    }
+  };
+
+  /*const Check_HighRisk_to_LowRisk = () => {
+    if (
+      (controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+      controlData["Happisaturaatio - NEWSscore"] === 3 ||
+      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      controlData["Syketaajuus - NEWSscore"] === 3 ||
+      controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      NEWSscoreTotal >= 4) && 
+    ) {
+      return true
+    }
+  }*/
+
   //RISKILUOKKA: KORKEA RISKI
-  if (NEWSscoreTotal >= 4) {
+  if (NEWSscoreTotal >= 4 || singleHighRiskEval()) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
+        {singleHighRiskEval() && (
+          <p style={{ color: "#ab2615" }}>
+            *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
+          </p>
+        )}
+        {true && (
+          <p style={{ color: "#ab2615" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
         <p>
           &rarr; <span>Soita 112.</span>
         </p>
