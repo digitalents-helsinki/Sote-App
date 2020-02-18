@@ -12,12 +12,6 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
       setCardStyle({
         backgroundColor: "#377d4f"
       });
-    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
-      setRiskLevel(NEWSscoreTotal);
-      setCardText("kohtalainen riski");
-      setCardStyle({
-        backgroundColor: "#284e78"
-      });
     } else if (
       personData["Hengitystaajuus - NEWSscore"] === 3 ||
       personData["Happisaturaatio - NEWSscore"] === 3 ||
@@ -30,6 +24,12 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
       setCardText("Korkea riski");
       setCardStyle({
         backgroundColor: "#ab2615"
+      });
+    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+      setRiskLevel(NEWSscoreTotal);
+      setCardText("Kohtalainen riski");
+      setCardStyle({
+        backgroundColor: "#284e78"
       });
     }
   }, [riskLevel, NEWSscoreTotal, personData]);
