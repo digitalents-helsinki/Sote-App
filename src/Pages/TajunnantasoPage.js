@@ -4,8 +4,6 @@ import DoubleButton from "../Components/DoubleButton";
 import NextButton from "../Components/NextButton";
 
 function TajunnantasoPage({ personData, setPersonData }) {
-  const buttonActive = typeof personData["Tajunnan taso"] === "boolean";
-
   return (
     <Page
       title="Tajunnan taso:"
@@ -17,7 +15,6 @@ function TajunnantasoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       />
-      <NextButton nextPage={"/verensokeri"} buttonActive={buttonActive} />
     </Page>
   );
 }

@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import DoubleButton from "../Components/DoubleButton";
-import NextButton from "../Components/NextButton";
 import Page from "../Components/Page";
 
 function HengitystiePage({ personData, setPersonData }) {
-  const buttonActive = [
-    typeof personData["Onko hengitystie auki?"],
-    typeof personData["Onko ilmatie estettä?"]
-  ].every(type => type === "boolean");
-
   const [hoitoOhje_handler_1, setHoitoOhje_handler_1] = useState(false);
   const [hoitoOhje_handler_2, setHoitoOhje_handler_2] = useState(false);
 
@@ -146,7 +140,6 @@ function HengitystiePage({ personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <NextButton buttonActive={buttonActive} nextPage={"/hengitys"} />
     </Page>
   );
 }

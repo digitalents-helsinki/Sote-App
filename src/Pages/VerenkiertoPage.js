@@ -4,11 +4,6 @@ import NextButton from "../Components/NextButton";
 import Page from "../Components/Page";
 
 function VerenkiertoPage({ personData, setPersonData }) {
-  const buttonActive = [
-    typeof personData["Tarkista syke:"],
-    typeof personData["Tuntuuko lämpörajoja raajoissa:"]
-  ].every(type => type === "boolean");
-
   return (
     <Page title="Verenkierto">
       <DoubleButton
@@ -26,7 +21,6 @@ function VerenkiertoPage({ personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <NextButton nextPage={"/tajunta"} buttonActive={buttonActive} />
     </Page>
   );
 }

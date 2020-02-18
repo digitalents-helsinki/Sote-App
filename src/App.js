@@ -21,6 +21,7 @@ import EmergencyPage from "./Pages/EmergencyPage";
 import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import NextButton from "./Components/NextButton";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -270,7 +271,7 @@ function App() {
             </TransitionGroup>
           )}
         />
-
+        <NextButton personData={personData} NEWSscoreTotal={NEWSscoreTotal} />
         <EmergencyPage
           visibility={emergencyVisibility}
           setEmergencyVisibility={setEmergencyVisibility}

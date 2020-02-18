@@ -1,11 +1,8 @@
 import React from "react";
 import Page from "../Components/Page";
 import NewsComponent from "../Components/NewsComponent";
-import NextButton from "../Components/NextButton";
 
 function SyketaajuusPage({ personData, setPersonData }) {
-  const buttonActive = personData["Syketaajuus"];
-
   return (
     <Page
       title="Syketaajuus"
@@ -17,7 +14,6 @@ function SyketaajuusPage({ personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <NextButton nextPage={"/lampotila"} buttonActive={buttonActive} />
     </Page>
   );
 }
