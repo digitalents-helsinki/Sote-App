@@ -2,7 +2,6 @@ import React from "react";
 
 // When implementing a Textarea component on any of the pages, pass in the State-Variables: "personData" and "setPersonData" to update the global personData variable as props. Also pass in a "name" prop to indicate what the key in the "personData" object should be.
 const Textarea = props => {
-  console.log(props.name);
   return (
     <div className="Textarea">
       <p>

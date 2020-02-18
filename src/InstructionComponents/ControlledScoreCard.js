@@ -45,12 +45,15 @@ function ControlledScoreCard({
         backgroundColor: "#ab2615"
       });
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
-      setCardText("kohtalainen riski");
+      setCardText("Kohtalainen riski");
       setCardStyle({
         backgroundColor: "#284e78"
       });
     }
   }, [NEWSscoreTotal, personData]);
+  console.log("cardtext", cardText);
+  console.log("controlData_RiskLevel", controlData_RiskLevel());
+
   return (
     <div
       style={cardStyle}
