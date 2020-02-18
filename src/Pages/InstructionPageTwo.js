@@ -11,6 +11,13 @@ function InstructionPage({ personData, controlData }) {
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
 
+  const ControlNEWSscoreTotal =
+    controlData["Hengitystaajuus - NEWSscore"] +
+    controlData["Happisaturaatio - NEWSscore"] +
+    controlData["Systolinen verenpaine - NEWSscore"] +
+    controlData["Syketaajuus - NEWSscore"] +
+    controlData["Mittaa lämpötila - NEWSscore"];
+
   return (
     <div className="instruction-page-container slidable">
       <div className="instruction-page">
@@ -18,11 +25,13 @@ function InstructionPage({ personData, controlData }) {
           NEWSscoreTotal={NEWSscoreTotal}
           personData={personData}
           controlData={controlData}
+          ControlNEWSscoreTotal={ControlNEWSscoreTotal}
         />
         <InstructionCardSecond
           NEWSscoreTotal={NEWSscoreTotal}
           personData={personData}
           controlData={controlData}
+          ControlNEWSscoreTotal={ControlNEWSscoreTotal}
         />
         <Report personData={personData} />
       </div>
