@@ -34,6 +34,15 @@ function InstructionCardFirst({
   const chooseEmergencyContent = () => {
     if (NEWSscoreTotal === 0) {
       return instruction_content.noneEmergencyContent;
+    } else if (
+      (personData["Hengitystaajuus - NEWSscore"] === 3 ||
+        personData["Happisaturaatio - NEWSscore"] === 3 ||
+        personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+        personData["Syketaajuus - NEWSscore"] === 3 ||
+        personData["Mittaa lämpötila - NEWSscore"] === 3) &&
+      NEWSscoreTotal <= 3
+    ) {
+      return instruction_content.emergencyContent;
     } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
       return instruction_content.mediumEmergencyContent;
     } else if (NEWSscoreTotal >= 4) {

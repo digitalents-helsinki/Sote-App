@@ -34,9 +34,25 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
     }
   }, [riskLevel, NEWSscoreTotal, personData]);
 
+  const singleHighRiskEval = () => {
+    if (
+      (personData["Hengitystaajuus - NEWSscore"] === 3 ||
+        personData["Happisaturaatio - NEWSscore"] === 3 ||
+        personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+        personData["Syketaajuus - NEWSscore"] === 3 ||
+        personData["Mittaa lämpötila - NEWSscore"] === 3) &&
+      NEWSscoreTotal <= 3
+    ) {
+      return true;
+    }
+  };
+
   return (
     <div style={cardStyle} className="scoreCard-container">
       <p>NEWS-pisteitä yhteensä {riskLevel}p.</p>
+      {singleHighRiskEval() && (
+        <p>Sait yksittäisestä mittauksesta korkean riskiarvon (3p.)</p>
+      )}
       <h3>RISKILUOKKA: {cardText}</h3>
     </div>
   );
