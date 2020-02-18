@@ -6,19 +6,26 @@ function ControlledScoreCard({
   ControlRiskCardVisibility,
   controlData
 }) {
+  const ControlNEWSscoreTotal =
+    controlData["Hengitystaajuus - NEWSscore"] +
+    controlData["Happisaturaatio - NEWSscore"] +
+    controlData["Systolinen verenpaine - NEWSscore"] +
+    controlData["Syketaajuus - NEWSscore"] +
+    controlData["Mittaa lämpötila - NEWSscore"];
+
   const controlData_RiskLevel = () => {
-    if (NEWSscoreTotal === 0) {
+    if (ControlNEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
-      personData["Hengitystaajuus - NEWSscore"] === 3 ||
-      personData["Happisaturaatio - NEWSscore"] === 3 ||
-      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
-      personData["Syketaajuus - NEWSscore"] === 3 ||
-      personData["Mittaa lämpötila - NEWSscore"] === 3 ||
-      NEWSscoreTotal >= 4
+      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+      controlData["Happisaturaatio - NEWSscore"] === 3 ||
+      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      controlData["Syketaajuus - NEWSscore"] === 3 ||
+      controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      ControlNEWSscoreTotal >= 4
     ) {
       return "Korkea riski";
-    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+    } else if (ControlNEWSscoreTotal >= 1 && ControlNEWSscoreTotal <= 3) {
       return "Kohtalainen riski";
     }
   };
