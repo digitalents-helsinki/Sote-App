@@ -3,45 +3,86 @@ import React from "react";
 function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
   const singleHighRiskEval = () => {
     if (
-      personData["Hengitystaajuus - NEWSscore"] === 3 ||
-      personData["Happisaturaatio - NEWSscore"] === 3 ||
-      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
-      personData["Syketaajuus - NEWSscore"] === 3 ||
-      personData["Mittaa lämpötila - NEWSscore"] === 3
+      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+      controlData["Happisaturaatio - NEWSscore"] === 3 ||
+      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      controlData["Syketaajuus - NEWSscore"] === 3 ||
+      controlData["Mittaa lämpötila - NEWSscore"] === 3
     ) {
       return true;
     }
   };
 
-  /*const Check_HighRisk_to_LowRisk = () => {
-    if (
-      (controlData["Hengitystaajuus - NEWSscore"] === 3 ||
+  const ControlNEWSscoreTotal =
+    controlData["Hengitystaajuus - NEWSscore"] +
+    controlData["Happisaturaatio - NEWSscore"] +
+    controlData["Systolinen verenpaine - NEWSscore"] +
+    controlData["Syketaajuus - NEWSscore"] +
+    controlData["Mittaa lämpötila - NEWSscore"];
+
+  const CheckNEWSSCORErisk = () => {
+    if (NEWSscoreTotal === 0) {
+      return "Lievä riski";
+    } else if (
+      personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      personData["Happisaturaatio - NEWSscore"] === 3 ||
+      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      personData["Syketaajuus - NEWSscore"] === 3 ||
+      personData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      NEWSscoreTotal >= 4
+    ) {
+      return "Korkea riski";
+    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+      return "Kohtalainen riski";
+    }
+  };
+
+  const CheckControlNEWSSCORErisk = () => {
+    if (ControlNEWSscoreTotal === 0) {
+      return "Lievä riski";
+    } else if (
+      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
       controlData["Happisaturaatio - NEWSscore"] === 3 ||
       controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
       controlData["Syketaajuus - NEWSscore"] === 3 ||
       controlData["Mittaa lämpötila - NEWSscore"] === 3 ||
-      NEWSscoreTotal >= 4) && 
+      ControlNEWSscoreTotal >= 4
     ) {
-      return true
+      return "Korkea riski";
+    } else if (ControlNEWSscoreTotal >= 1 && ControlNEWSscoreTotal <= 3) {
+      return "Kohtalainen riski";
     }
-  }*/
+  };
+
+  const NEWSscoreRiskChange = () => {
+    if (
+      CheckControlNEWSSCORErisk() === "Korkea riski" &&
+      CheckNEWSSCORErisk() === "Kohtalainen riski"
+    )
+      return true;
+  };
+
+  console.log("CheckNEWSSCORErisk", CheckNEWSSCORErisk());
+  console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
+  console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
   //RISKILUOKKA: KORKEA RISKI
-  if (NEWSscoreTotal >= 4 || singleHighRiskEval()) {
+  if (singleHighRiskEval() || NEWSscoreTotal >= 4) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
-        {singleHighRiskEval() && (
-          <p style={{ color: "#ab2615" }}>
-            *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
-          </p>
-        )}
-        {true && (
+        {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615" }}>
             *Koska riskiluokka oli aluksi korkea.
           </p>
         )}
+        {CheckControlNEWSSCORErisk() === "Korkea riski" &&
+          CheckNEWSSCORErisk() === "Korkea riski" && (
+            <p style={{ color: "#ab2615" }}>
+              *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
+            </p>
+          )}
         <p>
           &rarr; <span>Soita 112.</span>
         </p>

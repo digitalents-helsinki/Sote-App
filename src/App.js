@@ -32,19 +32,19 @@ let testingdata = {
   "Tarkista syke:": false,
   "Tuntuuko lämpörajoja raajoissa:": true,
   "Tajunta - Ei poikkeavia löydöksiä.": true,
-  Hengitystaajuus: 45,
-  "Hengitystaajuus - NEWSscore": 3,
-  Happisaturaatio: 345,
+  Hengitystaajuus: 15,
+  "Hengitystaajuus - NEWSscore": 0,
+  Happisaturaatio: 96,
   "Happisaturaatio - NEWSscore": 0,
-  "Systolinen verenpaine": 45,
-  "Systolinen verenpaine - NEWSscore": 3,
-  Syketaajuus: 35,
-  "Syketaajuus - NEWSscore": 3,
-  "Mittaa lämpötila": 345,
-  "Mittaa lämpötila - NEWSscore": 2,
+  "Systolinen verenpaine": 111,
+  "Systolinen verenpaine - NEWSscore": 0,
+  Syketaajuus: 55,
+  "Syketaajuus - NEWSscore": 0,
+  "Mittaa lämpötila": 37,
+  "Mittaa lämpötila - NEWSscore": 0,
   "Tajunnan taso": true,
-  "Mittaa verensokeri:": 5,
-  "Mittaa verensokeri: - NEWSscore": 2
+  "Mittaa verensokeri:": 10,
+  "Mittaa verensokeri: - NEWSscore": 0
 };
 
 function App() {
