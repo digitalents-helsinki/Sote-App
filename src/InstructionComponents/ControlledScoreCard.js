@@ -7,8 +7,7 @@ function ControlledScoreCard({
   controlData
 }) {
   const controlData_RiskLevel = () => {
-    if (personData === 0) {
-      console.log("Lievä riski");
+    if (NEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
       personData["Hengitystaajuus - NEWSscore"] === 3 ||
@@ -19,14 +18,10 @@ function ControlledScoreCard({
       personData >= 4
     ) {
       return "Korkea riski";
-    } else if (personData >= 1 && personData <= 3) {
-      console.log("Lievä riski");
+    } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
       return "Kohtalainen riski";
     }
   };
-
-  console.log("ControlData", controlData);
-  console.log("PersonData", personData);
 
   const [cardStyle, setCardStyle] = useState(null);
   const [cardText, setCardText] = useState(null);
@@ -56,7 +51,6 @@ function ControlledScoreCard({
       });
     }
   }, [NEWSscoreTotal, personData]);
-
   return (
     <div
       style={cardStyle}
