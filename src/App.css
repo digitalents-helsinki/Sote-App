@@ -781,17 +781,21 @@ body {
   font-size: 15px;
 }
 
-.App .instruction-page {
+.App .instruction-page-container {
+  position: absolute;
   width: 100%;
   height: 100%;
-  padding: 120px 4vw;
+  overflow-y: scroll;
+}
+
+.App .instruction-page-container .instruction-page {
+  padding: 120px 4vw 0 4vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  position: relative;
   font-family: "Montserrat", sans-serif;
 }
 
-.App .instruction-page .checkmark {
+.App .instruction-page-container .instruction-page .checkmark {
   width: 40px;
   position: absolute;
   top: 38%;
@@ -804,12 +808,12 @@ body {
   transition-delay: 400ms;
 }
 
-.App .instruction-page .checkmark.animate {
+.App .instruction-page-container .instruction-page .checkmark.animate {
   opacity: 1;
   width: 80px;
 }
 
-.App .instruction-page .scoreCard-container {
+.App .instruction-page-container .instruction-page .scoreCard-container {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
@@ -824,16 +828,19 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .scoreCard-container p {
+.App .instruction-page-container .instruction-page .scoreCard-container p {
   font-size: 1.1rem;
   margin: 20px 0;
 }
 
-.App .instruction-page .scoreCard-container h3 {
+.App .instruction-page-container .instruction-page .scoreCard-container h3 {
   margin-top: 35px;
 }
 
-.App .instruction-page .InstructionCard-first-container {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container {
   width: 100%;
   background-color: #fff;
   padding: 15px 20px;
@@ -848,23 +855,36 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .InstructionCard-first-container p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container
+  p {
   margin-top: 28px;
   font-weight: 200;
   padding: 0;
 }
 
-.App .instruction-page .InstructionCard-first-container span {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container
+  span {
   font-weight: 600;
 }
 
-.App .instruction-page .InstructionCard-first-container .unusual-findings-list {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container
+  .unusual-findings-list {
   padding: 10px 10px;
   color: #ad3e2f;
   font-weight: 500;
 }
 
 .App
+  .instruction-page-container
   .instruction-page
   .InstructionCard-first-container
   .unusual-findings-list
@@ -872,7 +892,11 @@ body {
   font-size: 1.1rem;
 }
 
-.App .instruction-page .InstructionCard-first-container .control-btn {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container
+  .control-btn {
   margin: 50px auto 30px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -883,11 +907,17 @@ body {
   width: 180px;
 }
 
-.App .instruction-page .InstructionCard-first-container .control-btn p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-first-container
+  .control-btn
+  p {
   font-weight: 800;
 }
 
 .App
+  .instruction-page-container
   .instruction-page
   .InstructionCard-first-container
   .control-btn
@@ -901,7 +931,7 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App .instruction-page .instruction-news-component {
+.App .instruction-page-container .instruction-page .instruction-news-component {
   display: none;
   text-align: center;
   padding: 40px 10px;
@@ -911,11 +941,19 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .instruction-news-component h1 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .instruction-news-component
+  h1 {
   font-size: 1.2rem;
 }
 
-.App .instruction-page .instruction-news-component p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .instruction-news-component
+  p {
   margin: 40px 0 50px 0;
   font-weight: 200;
   -webkit-box-sizing: border-box;
@@ -924,11 +962,17 @@ body {
   line-height: 1.6rem;
 }
 
-.App .instruction-page .instruction-news-component.active {
+.App
+  .instruction-page-container
+  .instruction-page
+  .instruction-news-component.active {
   display: block;
 }
 
-.App .instruction-page .controlled-scoreCard-container {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container {
   display: hidden;
   width: 100%;
   background-color: #284e78;
@@ -944,16 +988,27 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .controlled-scoreCard-container p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container
+  p {
   font-size: 1.1rem;
   margin: 60px 0 10px 0;
 }
 
-.App .instruction-page .controlled-scoreCard-container h3 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container
+  h3 {
   margin-top: 35px;
 }
 
-.App .instruction-page .controlled-scoreCard-container.active {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active {
   display: block;
   width: 100%;
   background-color: #284e78;
@@ -969,16 +1024,27 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .controlled-scoreCard-container.active p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active
+  p {
   font-size: 1.1rem;
   margin: 60px 0 10px 0;
 }
 
-.App .instruction-page .controlled-scoreCard-container.active h3 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active
+  h3 {
   margin-top: 35px;
 }
 
-.App .instruction-page .controlled-scoreCard-container.active {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
@@ -993,16 +1059,27 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .controlled-scoreCard-container.active p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active
+  p {
   font-size: 1.1rem;
   margin: 60px 0 10px 0;
 }
 
-.App .instruction-page .controlled-scoreCard-container.active h3 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .controlled-scoreCard-container.active
+  h3 {
   margin-top: 35px;
 }
 
-.App .instruction-page .InstructionCard-second-container {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-second-container {
   width: 100%;
   background-color: #fff;
   padding: 15px 20px;
@@ -1017,53 +1094,83 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
 
-.App .instruction-page .InstructionCard-second-container hr {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-second-container
+  hr {
   margin: 25px 0;
   opacity: 0.25;
 }
 
-.App .instruction-page .InstructionCard-second-container p {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-second-container
+  p {
   margin: 0 0 20px 0;
   font-weight: 200;
   padding: 0;
 }
 
-.App .instruction-page .InstructionCard-second-container span {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-second-container
+  span {
   font-weight: 600;
 }
 
-.App .instruction-page .InstructionCard-second-container .content {
+.App
+  .instruction-page-container
+  .instruction-page
+  .InstructionCard-second-container
+  .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.App .instruction-page .report-container {
+.App .instruction-page-container .instruction-page .report-container {
   color: #212121;
   margin-top: 60px;
 }
 
-.App .instruction-page .report-container hr {
+.App .instruction-page-container .instruction-page .report-container hr {
   opacity: 0.3;
 }
 
-.App .instruction-page .report-container h2 {
+.App .instruction-page-container .instruction-page .report-container h2 {
   margin: 40px 0 30px 0;
   padding: 0 15px;
 }
 
-.App .instruction-page .report-container .reportElement {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .reportElement {
   margin: 50px 0;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.App .instruction-page .report-container .reportElement h3 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .reportElement
+  h3 {
   color: #284e78;
 }
 
-.App .instruction-page .report-container .reportElement .flex {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .reportElement
+  .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1073,31 +1180,57 @@ body {
   font-size: 0.9rem;
 }
 
-.App .instruction-page .report-container .reportElement .flex .subject {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .reportElement
+  .flex
+  .subject {
   line-height: 1.6rem;
   font-weight: 200;
-  width: 70%;
+  width: 65%;
 }
 
-.App .instruction-page .report-container .reportElement .flex .answer {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .reportElement
+  .flex
+  .answer {
   display: block;
   line-height: 1.6rem;
   font-weight: 600;
-  width: 30%;
+  width: 35%;
 }
 
-.App .instruction-page .report-container .vitalValues {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .vitalValues {
   margin-top: 100px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.App .instruction-page .report-container .vitalValues h3 {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .vitalValues
+  h3 {
   color: #ad3e2f;
 }
 
-.App .instruction-page .report-container .vitalValues .flex {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .vitalValues
+  .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1107,23 +1240,35 @@ body {
   font-size: 1rem;
 }
 
-.App .instruction-page .report-container .vitalValues .flex .vital-subject {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .vitalValues
+  .flex
+  .vital-subject {
   line-height: 1.6rem;
   font-weight: 200;
-  width: 80%;
+  width: 75%;
 }
 
-.App .instruction-page .report-container .vitalValues .flex .vital-answer {
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .vitalValues
+  .flex
+  .vital-answer {
   line-height: 1.6rem;
   font-weight: 400;
-  width: 20%;
+  width: 25%;
 }
 
-.App .instruction-page .controlDone-btn {
+.App .instruction-page-container .instruction-page .controlDone-btn {
   display: none;
 }
 
-.App .instruction-page .controlDone-btn.active {
+.App .instruction-page-container .instruction-page .controlDone-btn.active {
   display: block;
   background-color: #f0c816;
   margin: 50px 30px 30px 30px;
@@ -1134,7 +1279,7 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-#portal-root .nextButtondiv {
+.App .nextButtondiv {
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -1154,9 +1299,13 @@ body {
   width: 100%;
   text-align: center;
   padding: 10px 0 25px 0;
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  transition: transform 300ms, opacity 300ms;
+  transition: transform 300ms, opacity 300ms, -webkit-transform 300ms;
 }
 
-#portal-root .nextButtondiv .nextButtoninactive {
+.App .nextButtondiv .nextButtoninactive {
   width: 265px;
   height: 52px;
   border-radius: 52px;
@@ -1173,15 +1322,15 @@ body {
   transition-duration: 250ms;
 }
 
-#portal-root .nextButtondiv .nextButtoninactive.nextButtonactive {
+.App .nextButtondiv .nextButtoninactive.nextButtonactive {
   background-color: #cf7740;
   color: #fff;
   -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-#portal-root .nextButtondiv .nextButtoninactive:focus,
-#portal-root .nextButtondiv .nextButtonactive:focus {
+.App .nextButtondiv .nextButtoninactive:focus,
+.App .nextButtondiv .nextButtonactive:focus {
   outline: none;
 }
 /*# sourceMappingURL=App.css.map */

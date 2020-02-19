@@ -1,5 +1,6 @@
 import React from "react";
 import NewsComponent from "../Components/NewsComponent";
+import DoubleButton from "../Components/DoubleButton";
 
 function InstructionNewsComponent({
   history,
@@ -87,6 +88,27 @@ function InstructionNewsComponent({
             personData={personData}
             setPersonData={setPersonData}
             cells={[40, null, [41, 50], [51, 90], [91, 110], [111, 130], 131]}
+          />
+        </div>
+      ) : null}
+
+      {controlData["Tajunnan taso"] === false ? (
+        <div
+          className={
+            "instruction-news-component" +
+            (ControlCardVisibility ? " active" : "")
+          }
+        >
+          <h1>Tajunnan taso:</h1>
+          <p>
+            Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista
+            saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
+          </p>
+          <DoubleButton
+            values={["Normaali", "Poikkeava"]}
+            personData={personData}
+            setPersonData={setPersonData}
+            name={"Tajunnan taso"}
           />
         </div>
       ) : null}
