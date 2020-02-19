@@ -48,9 +48,9 @@ function InstructionCardSecond({
       return true;
   };
 
-  console.log("CheckNEWSSCORErisk", CheckNEWSSCORErisk());
-  console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
-  console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
+  // console.log("CheckNEWSSCORErisk", CheckNEWSSCORErisk());
+  // console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
+  // console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
   //RISKILUOKKA: KORKEA RISKI
   if (CheckControlNEWSSCORErisk() === "Korkea riski" || NEWSscoreTotal >= 4) {
