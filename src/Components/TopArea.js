@@ -13,7 +13,12 @@ function TopArea({ setMenuVisibility, personData }) {
       <div className="flex-container">
         <img
           style={{
-            visibility: location.pathname === "/" ? "hidden" : "visible"
+            visibility:
+              location.pathname === "/" ||
+              location.pathname === "/instructionPage" ||
+              location.pathname === "/instructionPageTwo"
+                ? "hidden"
+                : "visible"
           }}
           className="back-arrow"
           src={backArrowSvg}
