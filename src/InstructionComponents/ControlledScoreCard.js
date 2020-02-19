@@ -67,10 +67,12 @@ function ControlledScoreCard({
         (ControlRiskCardVisibility ? " active" : "")
       }
     >
-      <h3>
-        Riskiluokka{" "}
-        {cardText === controlData_RiskLevel() ? "pysyi samana." : "muuttui."}
-      </h3>
+      {NEWSscoreTotal !== 0 && (
+        <h3>
+          Riskiluokka{" "}
+          {cardText === controlData_RiskLevel() ? "pysyi samana." : "muuttui."}
+        </h3>
+      )}
       <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
       <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
     </div>

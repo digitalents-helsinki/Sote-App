@@ -101,8 +101,7 @@ function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
         <hr />
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
+          <p>
             Konsultoi <span>välittömästi</span> oma SH/lääkäri.
           </p>
         </div>
@@ -121,8 +120,7 @@ function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
+          <p>
             Jos oma SH ei paikalla voit konsultoida oman alueesi
             päivystyspoliklinikan vuorovastaavaa tai{" "}
             <span>
