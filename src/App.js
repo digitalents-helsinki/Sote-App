@@ -56,14 +56,25 @@ function App() {
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   const NEWSscoreTotal =
+    (personData["Tajunnan taso"] === false ? 3 : 0) +
     personData["Hengitystaajuus - NEWSscore"] +
     personData["Happisaturaatio - NEWSscore"] +
     personData["Systolinen verenpaine - NEWSscore"] +
     personData["Syketaajuus - NEWSscore"] +
     personData["Mittaa lämpötila - NEWSscore"];
 
+  const ControlNEWSscoreTotal =
+    (controlData["Tajunnan taso"] === false ? 3 : 0) +
+    controlData["Hengitystaajuus - NEWSscore"] +
+    controlData["Happisaturaatio - NEWSscore"] +
+    controlData["Systolinen verenpaine - NEWSscore"] +
+    controlData["Syketaajuus - NEWSscore"] +
+    controlData["Mittaa lämpötila - NEWSscore"];
+
   const generateClassNames = historyAction =>
     historyAction === "PUSH" ? "slide-right" : "slide-left";
+
+  console.log(NEWSscoreTotal);
 
   return (
     <BrowserRouter>
@@ -261,6 +272,8 @@ function App() {
                         setPersonData={setPersonData}
                         controlData={controlData}
                         setcontrolData={setcontrolData}
+                        NEWSscoreTotal={NEWSscoreTotal}
+                        ControlNEWSscoreTotal={ControlNEWSscoreTotal}
                         history={history}
                         {...props}
                       />

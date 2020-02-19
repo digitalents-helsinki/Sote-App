@@ -10,6 +10,7 @@ function InstructionCardSecond({
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
+      personData["Tajunnan taso"] === false ||
       personData["Hengitystaajuus - NEWSscore"] === 3 ||
       personData["Happisaturaatio - NEWSscore"] === 3 ||
       personData["Systolinen verenpaine - NEWSscore"] === 3 ||
@@ -27,6 +28,7 @@ function InstructionCardSecond({
     if (ControlNEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
+      controlData["Tajunnan taso"] === false ||
       controlData["Hengitystaajuus - NEWSscore"] === 3 ||
       controlData["Happisaturaatio - NEWSscore"] === 3 ||
       controlData["Systolinen verenpaine - NEWSscore"] === 3 ||

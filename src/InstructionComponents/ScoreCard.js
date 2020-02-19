@@ -13,6 +13,7 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
         backgroundColor: "#377d4f"
       });
     } else if (
+      personData["Tajunnan taso"] === false ||
       personData["Hengitystaajuus - NEWSscore"] === 3 ||
       personData["Happisaturaatio - NEWSscore"] === 3 ||
       personData["Systolinen verenpaine - NEWSscore"] === 3 ||
@@ -36,7 +37,8 @@ function ScoreCard({ NEWSscoreTotal, personData }) {
 
   const singleHighRiskEval = () => {
     if (
-      (personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      (personData["Tajunnan taso"] === false ||
+        personData["Hengitystaajuus - NEWSscore"] === 3 ||
         personData["Happisaturaatio - NEWSscore"] === 3 ||
         personData["Systolinen verenpaine - NEWSscore"] === 3 ||
         personData["Syketaajuus - NEWSscore"] === 3 ||

@@ -9,9 +9,7 @@ function InstructionNewsComponent({
   ControlCardVisibility,
   setControlCardVisibility,
   controlData,
-  setcontrolData,
-  ControlRiskCardVisibility,
-  setControlRiskCardVisibility
+  setcontrolData
 }) {
   console.log(controlData);
 

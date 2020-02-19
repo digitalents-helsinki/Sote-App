@@ -3,22 +3,13 @@ import InstructionCardSecond from "../InstructionComponents/InstructionCardSecon
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import Report from "../InstructionComponents/Report";
 
-function InstructionPage({ personData, controlData }) {
-  const NEWSscoreTotal =
-    (personData["Tajunnan taso"] === false ? 3 : 0) +
-    personData["Hengitystaajuus - NEWSscore"] +
-    personData["Happisaturaatio - NEWSscore"] +
-    personData["Systolinen verenpaine - NEWSscore"] +
-    personData["Syketaajuus - NEWSscore"] +
-    personData["Mittaa lämpötila - NEWSscore"];
+function InstructionPageTwo({
+  personData,
+  controlData,
+  NEWSscoreTotal,
+  ControlNEWSscoreTotal
+}) {
   console.log(NEWSscoreTotal);
-  const ControlNEWSscoreTotal =
-    (controlData["Tajunnan taso"] === false ? 3 : 0) +
-    controlData["Hengitystaajuus - NEWSscore"] +
-    controlData["Happisaturaatio - NEWSscore"] +
-    controlData["Systolinen verenpaine - NEWSscore"] +
-    controlData["Syketaajuus - NEWSscore"] +
-    controlData["Mittaa lämpötila - NEWSscore"];
 
   return (
     <div className="instruction-page-container slidable">
@@ -41,4 +32,4 @@ function InstructionPage({ personData, controlData }) {
   );
 }
 
-export default InstructionPage;
+export default InstructionPageTwo;
