@@ -129,17 +129,6 @@ function App() {
                     )}
                   />
                   <Route
-                    path="/iho"
-                    children={props => (
-                      <IhoPage
-                        personData={personData}
-                        setPersonData={setPersonData}
-                        history={history}
-                        {...props}
-                      />
-                    )}
-                  />
-                  <Route
                     path="/verenkierto"
                     children={props => (
                       <VerenkiertoPage
@@ -154,6 +143,17 @@ function App() {
                     path="/tajunta"
                     children={props => (
                       <TajuntaPage
+                        personData={personData}
+                        setPersonData={setPersonData}
+                        history={history}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/iho"
+                    children={props => (
+                      <IhoPage
                         personData={personData}
                         setPersonData={setPersonData}
                         history={history}

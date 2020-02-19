@@ -8,9 +8,9 @@ const NextButton = ({ personData, NEWSscoreTotal }) => {
     "/",
     "/hengitystie",
     "/hengitys",
-    "/iho",
     "/verenkierto",
     "/tajunta",
+    "/iho",
     "/hengitystaajuus",
     "/happisaturaatio",
     "/systolinenverenpaine",
@@ -27,6 +27,9 @@ const NextButton = ({ personData, NEWSscoreTotal }) => {
       personData["Hengitys - Vinkuna"] ||
       personData["Hengitys - Korina"] ||
       personData["Hengitys - Rohina"],
+    typeof personData["Tarkista syke:"] === "boolean" &&
+      typeof personData["Tuntuuko lämpörajoja raajoissa:"] === "boolean",
+    personData["Tajunta - Ei poikkeavia löydöksiä."] || personData.Tajunta,
     (personData["Iho, paljastaminen - Normaali"] ||
       personData["Iho, paljastaminen - Kuiva"] ||
       personData["Iho, paljastaminen - Kostea"] ||
@@ -34,9 +37,6 @@ const NextButton = ({ personData, NEWSscoreTotal }) => {
       personData["Iho, paljastaminen - Kuuma"]) &&
       (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
         personData.Iho),
-    typeof personData["Tarkista syke:"] === "boolean" &&
-      typeof personData["Tuntuuko lämpörajoja raajoissa:"] === "boolean",
-    personData["Tajunta - Ei poikkeavia löydöksiä."] || personData.Tajunta,
     personData["Hengitystaajuus"],
     personData["Happisaturaatio"],
     personData["Systolinen verenpaine"],
