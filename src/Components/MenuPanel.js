@@ -55,7 +55,7 @@ function MenuPanel({
               oireet
             </p>
           </div>
-          <div
+          {/* <div
             className="emeregencyPage-fromMenu"
             onClick={() => {
               setPersonData(testingdata);
@@ -63,7 +63,7 @@ function MenuPanel({
             }}
           >
             <p>DevOps: Activate testing Data</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
