@@ -941,9 +941,6 @@ body {
       }
     }
   }
-}
-
-#portal-root {
   .nextButtondiv {
     background-image: linear-gradient(
       rgba(250, 250, 250, 0) 0%,
@@ -956,6 +953,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 10px 0 25px 0;
+    transition: transform 300ms, opacity 300ms;
 
     .nextButtoninactive {
       width: 265px;

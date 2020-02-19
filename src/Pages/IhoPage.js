@@ -1,20 +1,10 @@
 import React from "react";
 import Checkbox from "../Components/Checkbox";
 import Textarea from "../Components/Textarea";
-import NextButton from "../Components/NextButton";
 import Page from "../Components/Page";
 
 function IhoPage({ personData, setPersonData }) {
   const Title = "Iho, paljastaminen";
-
-  const buttonActive =
-    (personData["Iho, paljastaminen - Normaali"] ||
-      personData["Iho, paljastaminen - Kuiva"] ||
-      personData["Iho, paljastaminen - Kostea"] ||
-      personData["Iho, paljastaminen - Kylmä"] ||
-      personData["Iho, paljastaminen - Kuuma"]) &&
-    (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
-      personData.Iho);
 
   const hookIntoTextAreaSetPersonData = value => {
     if (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"]) {
@@ -88,7 +78,6 @@ function IhoPage({ personData, setPersonData }) {
         personData={personData}
         setPersonData={hookIntoTextAreaSetPersonData}
       />
-      <NextButton nextPage={"/verenkierto"} buttonActive={buttonActive} />
     </Page>
   );
 }

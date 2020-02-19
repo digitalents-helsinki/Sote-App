@@ -1,19 +1,78 @@
 import React from "react";
-import { createPortal } from "react-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
-const NextButton = ({ onClick, buttonActive, nextPage }) => {
+const NextButton = ({ personData, NEWSscoreTotal }) => {
   const history = useHistory();
-  const clickHandler =
-    onClick ||
-    (() => {
-      if (buttonActive) {
+  const location = useLocation();
+  const locations = [
+    "/",
+    "/hengitystie",
+    "/hengitys",
+    "/iho",
+    "/verenkierto",
+    "/tajunta",
+    "/hengitystaajuus",
+    "/happisaturaatio",
+    "/systolinenverenpaine",
+    "/syketaajuus",
+    "/lampotila",
+    "/tajunnantaso",
+    "/verensokeri"
+  ];
+  const locationIndex = locations.findIndex(loc => loc === location.pathname);
+  const activeStateExpressions = [
+    typeof personData["Onko hengitystie auki?"] === "boolean" &&
+      typeof personData["Onko ilmatie estettä?"] === "boolean",
+    personData["Hengitys - Normaali hengitys/ei ääniä"] ||
+      personData["Hengitys - Vinkuna"] ||
+      personData["Hengitys - Korina"] ||
+      personData["Hengitys - Rohina"],
+    (personData["Iho, paljastaminen - Normaali"] ||
+      personData["Iho, paljastaminen - Kuiva"] ||
+      personData["Iho, paljastaminen - Kostea"] ||
+      personData["Iho, paljastaminen - Kylmä"] ||
+      personData["Iho, paljastaminen - Kuuma"]) &&
+      (personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ||
+        personData.Iho),
+    typeof personData["Tarkista syke:"] === "boolean" &&
+      typeof personData["Tuntuuko lämpörajoja raajoissa:"] === "boolean",
+    personData["Tajunta - Ei poikkeavia löydöksiä."] || personData.Tajunta,
+    personData["Hengitystaajuus"],
+    personData["Happisaturaatio"],
+    personData["Systolinen verenpaine"],
+    personData["Syketaajuus"],
+    personData["Mittaa lämpötila"],
+    typeof personData["Tajunnan taso"] === "boolean",
+    personData["Mittaa verensokeri:"]
+  ];
+  const nextPage = locations[locationIndex + 1];
+  const buttonActive = locationIndex
+    ? activeStateExpressions[locationIndex - 1]
+    : true;
+  const clickHandler = () => {
+    if (buttonActive) {
+      if (location.pathname === "/verensokeri") {
+        if (NEWSscoreTotal === 0) {
+          window.scrollTo(0, 0);
+          history.push("/instructionPageTwo");
+        } else {
+          window.scrollTo(0, 0);
+          history.push("/instructionPage");
+        }
+      } else {
         history.push(nextPage);
       }
-    });
+    }
+  };
 
-  const component = (
-    <div className="nextButtondiv">
+  return (
+    <div
+      className="nextButtondiv"
+      style={{
+        transform: ~locationIndex ? "translateY(0)" : "translateY(20vh)",
+        opacity: ~locationIndex ? 1 : 0
+      }}
+    >
       <button
         className={
           buttonActive
@@ -27,8 +86,6 @@ const NextButton = ({ onClick, buttonActive, nextPage }) => {
       </button>
     </div>
   );
-
-  return createPortal(component, document.getElementById("portal-root"));
 };
 
 export default NextButton;

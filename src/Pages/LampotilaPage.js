@@ -1,11 +1,8 @@
 import React from "react";
 import Page from "../Components/Page";
 import NewsComponent from "../Components/NewsComponent";
-import NextButton from "../Components/NextButton";
 
 function LampotilaPage({ personData, setPersonData }) {
-  const buttonActive = personData["Mittaa lämpötila"];
-
   return (
     <Page
       title="Mittaa lämpötila:"
@@ -25,7 +22,6 @@ function LampotilaPage({ personData, setPersonData }) {
         personData={personData}
         setPersonData={setPersonData}
       />
-      <NextButton nextPage={"/tajunnantaso"} buttonActive={buttonActive} />
     </Page>
   );
 }

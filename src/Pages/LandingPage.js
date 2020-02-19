@@ -1,6 +1,5 @@
 import React from "react";
 import Page from "../Components/Page";
-import NextButton from "../Components/NextButton";
 
 function LandingPage({ props, setEmergencyVisibility, history, setBackBtn }) {
   return (
@@ -21,7 +20,6 @@ function LandingPage({ props, setEmergencyVisibility, history, setBackBtn }) {
       >
         Todelliset <span>hätätilanneoireet</span>
       </p>
-      <NextButton buttonActive={true} nextPage="/hengitystie" />
     </Page>
   );
 }
