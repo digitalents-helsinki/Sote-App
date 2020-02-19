@@ -1,25 +1,11 @@
 import React from "react";
 
-function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
-  const singleHighRiskEval = () => {
-    if (
-      controlData["Hengitystaajuus - NEWSscore"] === 3 ||
-      controlData["Happisaturaatio - NEWSscore"] === 3 ||
-      controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
-      controlData["Syketaajuus - NEWSscore"] === 3 ||
-      controlData["Mittaa lämpötila - NEWSscore"] === 3
-    ) {
-      return true;
-    }
-  };
-
-  const ControlNEWSscoreTotal =
-    controlData["Hengitystaajuus - NEWSscore"] +
-    controlData["Happisaturaatio - NEWSscore"] +
-    controlData["Systolinen verenpaine - NEWSscore"] +
-    controlData["Syketaajuus - NEWSscore"] +
-    controlData["Mittaa lämpötila - NEWSscore"];
-
+function InstructionCardSecond({
+  NEWSscoreTotal,
+  personData,
+  controlData,
+  ControlNEWSscoreTotal
+}) {
   const CheckNEWSSCORErisk = () => {
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
@@ -67,7 +53,7 @@ function InstructionCardSecond({ NEWSscoreTotal, personData, controlData }) {
   console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
   //RISKILUOKKA: KORKEA RISKI
-  if (singleHighRiskEval() || NEWSscoreTotal >= 4) {
+  if (CheckControlNEWSSCORErisk() === "Korkea riski" || NEWSscoreTotal >= 4) {
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>

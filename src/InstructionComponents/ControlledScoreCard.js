@@ -4,15 +4,9 @@ function ControlledScoreCard({
   NEWSscoreTotal,
   personData,
   ControlRiskCardVisibility,
-  controlData
+  controlData,
+  ControlNEWSscoreTotal
 }) {
-  const ControlNEWSscoreTotal =
-    controlData["Hengitystaajuus - NEWSscore"] +
-    controlData["Happisaturaatio - NEWSscore"] +
-    controlData["Systolinen verenpaine - NEWSscore"] +
-    controlData["Syketaajuus - NEWSscore"] +
-    controlData["Mittaa lämpötila - NEWSscore"];
-
   const controlData_RiskLevel = () => {
     if (ControlNEWSscoreTotal === 0) {
       return "Lievä riski";
