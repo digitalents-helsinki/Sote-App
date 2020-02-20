@@ -28,7 +28,7 @@ function InstructionCardSecond({
     if (ControlNEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
-      controlData["Tajunnan taso"] === false ||
+      personData["Tajunnan taso"] === false ||
       controlData["Hengitystaajuus - NEWSscore"] === 3 ||
       controlData["Happisaturaatio - NEWSscore"] === 3 ||
       controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
@@ -54,8 +54,11 @@ function InstructionCardSecond({
   // console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
   // console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
-  //RISKILUOKKA: KORKEA RISKI
-  if (CheckControlNEWSSCORErisk() === "Korkea riski" || NEWSscoreTotal >= 4) {
+  if (
+    CheckControlNEWSSCORErisk() === "Korkea riski" ||
+    CheckNEWSSCORErisk() === "Korkea riski"
+  ) {
+    //RISKILUOKKA: KORKEA RISKI
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
