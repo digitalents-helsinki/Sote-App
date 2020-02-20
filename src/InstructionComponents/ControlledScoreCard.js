@@ -56,7 +56,7 @@ function ControlledScoreCard({
     }
   }, [NEWSscoreTotal, personData]);
 
-  if (NEWSscoreTotal === 0 && ControlNEWSscoreTotal === 0) {
+  if (!NEWSscoreTotal && !ControlNEWSscoreTotal) {
     return (
       <ScoreCard
         NEWSscoreTotal={NEWSscoreTotal}
