@@ -94,6 +94,7 @@ function App() {
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
           setPersonData={setPersonData}
+          setcontrolData={setcontrolData}
           testingdata={testingdata}
         />
         <TopArea
