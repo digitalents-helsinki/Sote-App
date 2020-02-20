@@ -84,7 +84,10 @@ function InstructionCardSecond({
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
       </div>
     );
-  } else if (NEWSscoreTotal >= 1 && NEWSscoreTotal <= 3) {
+  } else if (
+    CheckControlNEWSSCORErisk() === "Kohtalainen riski" ||
+    CheckNEWSSCORErisk() === "Kohtalainen riski"
+  ) {
     //RISKILUOKKA: KOHTALAINEN RISKI
     return (
       <div className="InstructionCard-second-container">
