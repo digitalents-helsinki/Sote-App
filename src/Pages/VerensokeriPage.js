@@ -2,7 +2,13 @@ import React from "react";
 import NewsComponent from "../Components/NewsComponent";
 import Page from "../Components/Page";
 
-function VerensokeriPage({ history, personData, setPersonData }) {
+function VerensokeriPage({
+  history,
+  personData,
+  setPersonData,
+  NEWSscoreTotal,
+  ControlNEWSscoreTotal
+}) {
   return (
     <Page
       title="Mittaa verensokeri:"
@@ -17,7 +23,11 @@ function VerensokeriPage({ history, personData, setPersonData }) {
           style={{ color: "#AD3E2F", textDecoration: "underline" }}
           onClick={() => {
             window.scrollTo(0, 0);
-            history.push("/instructionPage");
+            if (!NEWSscoreTotal && !ControlNEWSscoreTotal) {
+              history.push("/instructionPageTwo");
+            } else {
+              history.push("/instructionPage");
+            }
           }}
         >
           ohita
