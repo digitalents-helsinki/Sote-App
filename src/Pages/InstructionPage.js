@@ -9,7 +9,8 @@ function InstructionPage({
   history,
   controlData,
   setcontrolData,
-  NEWSscoreTotal
+  NEWSscoreTotal,
+  ControlNEWSscoreTotal
 }) {
   const [ControlCardVisibility, setControlCardVisibility] = useState(false);
   const [ControlRiskCardVisibility, setControlRiskCardVisibility] = useState(
@@ -19,7 +20,11 @@ function InstructionPage({
   return (
     <div className="instruction-page-container slidable">
       <div className="instruction-page">
-        <ScoreCard NEWSscoreTotal={NEWSscoreTotal} personData={personData} />
+        <ScoreCard
+          NEWSscoreTotal={NEWSscoreTotal}
+          personData={personData}
+          ControlNEWSscoreTotal={ControlNEWSscoreTotal}
+        />
         <InstructionCardFirst
           personData={personData}
           setPersonData={setPersonData}

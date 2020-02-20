@@ -33,7 +33,8 @@ function InstructionCardFirst({
     if (NEWSscoreTotal === 0) {
       return instruction_content.noneEmergencyContent;
     } else if (
-      (personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      (personData["Tajunnan taso"] === false ||
+        personData["Hengitystaajuus - NEWSscore"] === 3 ||
         personData["Happisaturaatio - NEWSscore"] === 3 ||
         personData["Systolinen verenpaine - NEWSscore"] === 3 ||
         personData["Syketaajuus - NEWSscore"] === 3 ||
@@ -76,6 +77,7 @@ function InstructionCardFirst({
         <p>
           {personData["Mittaa lämpötila - NEWSscore"] >= 1 ? "Lämpötila" : null}
         </p>
+        <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
       </div>
       <div
         onClick={() => {

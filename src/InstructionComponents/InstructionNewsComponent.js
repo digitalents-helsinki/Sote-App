@@ -9,9 +9,7 @@ function InstructionNewsComponent({
   ControlCardVisibility,
   setControlCardVisibility,
   controlData,
-  setcontrolData,
-  ControlRiskCardVisibility,
-  setControlRiskCardVisibility
+  setcontrolData
 }) {
   console.log(controlData);
 
@@ -143,7 +141,7 @@ function InstructionNewsComponent({
         onClick={() => {
           console.log("beep");
           window.scrollTo(0, 0);
-          history.push("/InstructionPageTwo");
+          history.push("/instructionPageTwo");
           console.log(controlData);
         }}
         className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}
