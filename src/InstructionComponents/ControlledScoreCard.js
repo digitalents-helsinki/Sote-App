@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ScoreCard from "../InstructionComponents/ScoreCard";
 
 function ControlledScoreCard({
   NEWSscoreTotal,
@@ -55,23 +56,35 @@ function ControlledScoreCard({
     }
   }, [NEWSscoreTotal, personData]);
 
-  return (
-    <div
-      style={cardStyle}
-      className={
-        "controlled-scoreCard-container" +
-        (ControlRiskCardVisibility ? " active" : "")
-      }
-    >
-      {NEWSscoreTotal !== 0 && (
-        <h3>
-          Riskiluokka{" "}
-          {cardText === controlData_RiskLevel() ? "pysyi samana." : "muuttui."}
-        </h3>
-      )}
-      <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
-      <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
-    </div>
-  );
+  if (NEWSscoreTotal === 0 && ControlNEWSscoreTotal === 0) {
+    return (
+      <ScoreCard
+        NEWSscoreTotal={NEWSscoreTotal}
+        personData={personData}
+        ControlNEWSscoreTotal={ControlNEWSscoreTotal}
+      />
+    );
+  } else {
+    return (
+      <div
+        style={cardStyle}
+        className={
+          "controlled-scoreCard-container" +
+          (ControlRiskCardVisibility ? " active" : "")
+        }
+      >
+        {NEWSscoreTotal !== 0 && (
+          <h3>
+            Riskiluokka{" "}
+            {cardText === controlData_RiskLevel()
+              ? "pysyi samana."
+              : "muuttui."}
+          </h3>
+        )}
+        <p>Kontrolloidut NEWS-pisteet: {NEWSscoreTotal}p.</p>
+        <h3>{"KONTROLLOITU RISKILUOKKA: " + cardText}</h3>
+      </div>
+    );
+  }
 }
 export default ControlledScoreCard;
