@@ -63,20 +63,20 @@ function InstructionCardSecond({
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
-        {NEWSscoreRiskChange() && (
-          <p style={{ color: "#ab2615" }}>
-            *Koska riskiluokka oli aluksi korkea.
-          </p>
-        )}
         {CheckControlNEWSSCORErisk() === "Korkea riski" &&
           CheckNEWSSCORErisk() === "Korkea riski" && (
-            <p style={{ color: "#ab2615" }}>
+            <p style={{ color: "#ab2615", fontWeight: "bold" }}>
               *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
             </p>
           )}
         <p>
           &rarr; <span>Soita 112.</span>
         </p>
+        {NEWSscoreRiskChange() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
         <p style={{ fontWeight: "600" }}>
           Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
           soittoa.
@@ -157,6 +157,10 @@ function InstructionCardSecond({
             Odota ohjetta.
           </p>
         </div>
+        <h3 style={{ marginTop: "30px" }}>
+          Tarvittaessa jos haluat arvioida asiakasta uudestaan, aloita sovellus
+          alusta.
+        </h3>
       </div>
     );
   }
