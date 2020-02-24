@@ -246,6 +246,8 @@ function App() {
                         setPersonData={setPersonData}
                         history={history}
                         NEWSscoreTotal={NEWSscoreTotal}
+                        NEWSscoreTotal={NEWSscoreTotal}
+                        ControlNEWSscoreTotal={ControlNEWSscoreTotal}
                         {...props}
                       />
                     )}
