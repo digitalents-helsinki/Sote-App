@@ -7,7 +7,7 @@ function CareTypeSelectionPage({ setCareType }) {
   const location = useLocation();
   const clickHandler = value => {
     setCareType(value);
-    if (!location.state.initial) history.goBack();
+    if (location.state && !location.state.initial) history.goBack();
     else history.push("/start");
   };
   return (
