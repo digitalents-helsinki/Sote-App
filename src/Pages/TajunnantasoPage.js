@@ -1,7 +1,6 @@
 import React from "react";
 import Page from "../Components/Page";
 import DoubleButton from "../Components/DoubleButton";
-import NextButton from "../Components/NextButton";
 
 function TajunnantasoPage({ personData, setPersonData }) {
   return (

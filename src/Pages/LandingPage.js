@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Page from "../Components/Page";
-import CareTypeSelectionPage from "../Pages/CareTypeSelectionPage";
+import CareTypeSelection from "../Components/CareTypeSelection";
 
 function LandingPage({
   props,
@@ -9,7 +9,8 @@ function LandingPage({
   setCareType,
   careType
 }) {
-  if (careType) {
+  const [staticCareType] = useState(careType); // prevent rerendering on caretype change (for nice animation)
+  if (staticCareType) {
     return (
       <Page>
         <p className="page-paragraph">
@@ -32,7 +33,7 @@ function LandingPage({
     );
   } else {
     return (
-      <CareTypeSelectionPage
+      <CareTypeSelection
         setCareType={setCareType}
         history={history}
         {...props}

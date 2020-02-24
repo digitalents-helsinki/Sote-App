@@ -1,8 +1,8 @@
 import React from "react";
-import Page from "../Components/Page";
+import Page from "./Page";
 import { useHistory, useLocation } from "react-router-dom";
 
-function CareTypeSelectionPage({ setCareType }) {
+function CareTypeSelection({ setCareType }) {
   const history = useHistory();
   const location = useLocation();
   const clickHandler = value => {
@@ -29,4 +29,4 @@ function CareTypeSelectionPage({ setCareType }) {
   );
 }
 
-export default CareTypeSelectionPage;
+export default CareTypeSelection;

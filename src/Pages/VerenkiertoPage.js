@@ -1,6 +1,5 @@
 import React from "react";
 import DoubleButton from "../Components/DoubleButton";
-import NextButton from "../Components/NextButton";
 import Page from "../Components/Page";
 
 function VerenkiertoPage({ personData, setPersonData }) {

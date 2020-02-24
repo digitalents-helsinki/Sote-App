@@ -22,7 +22,6 @@ import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import NextButton from "./Components/NextButton";
-import CareTypeSelectionPage from "./Pages/CareTypeSelectionPage";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -272,7 +271,6 @@ function App() {
                         personData={personData}
                         setPersonData={setPersonData}
                         history={history}
-                        NEWSscoreTotal={NEWSscoreTotal}
                         NEWSscoreTotal={NEWSscoreTotal}
                         ControlNEWSscoreTotal={ControlNEWSscoreTotal}
                         {...props}
