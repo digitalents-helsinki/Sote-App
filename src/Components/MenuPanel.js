@@ -37,8 +37,7 @@ function MenuPanel({
           <div
             className="reset"
             onClick={() => {
-              if (!["/", "/start"].includes(location.pathname))
-                history.replace("/start");
+              if (location.pathname !== "/") history.replace("/");
               setcontrolData({});
               setPersonData({});
               setMenuVisibility(false);

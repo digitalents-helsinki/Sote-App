@@ -21,7 +21,7 @@ function ProgressBar({ personData }) {
   const locationIndex = locations.findIndex(loc => loc === location.pathname);
   const progressBarWidthInPercents = ~locationIndex
     ? `calc(${(100 / locations.length) * locationIndex}% - 4px)`
-    : ["/", "/start"].includes(location.pathname)
+    : location.pathname === "/"
     ? "0"
     : "calc(100% - 4px)";
   const progressBarShadowExpressions = [

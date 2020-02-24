@@ -1,11 +1,11 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
-const NextButton = ({ personData, NEWSscoreTotal }) => {
+const NextButton = ({ personData, NEWSscoreTotal, careType }) => {
   const history = useHistory();
   const location = useLocation();
   const locations = [
-    "/start",
+    "/",
     "/hengitystie",
     "/hengitys",
     "/verenkierto",
@@ -69,8 +69,12 @@ const NextButton = ({ personData, NEWSscoreTotal }) => {
     <div
       className="nextButtondiv"
       style={{
-        transform: ~locationIndex ? "translateY(0)" : "translateY(20vh)",
-        opacity: ~locationIndex ? 1 : 0
+        transform: careType
+          ? ~locationIndex
+            ? "translateY(0)"
+            : "translateY(20vh)"
+          : "translateY(20vh",
+        opacity: careType ? (~locationIndex ? 1 : 0) : 0
       }}
     >
       <button

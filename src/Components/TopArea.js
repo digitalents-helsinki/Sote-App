@@ -15,7 +15,6 @@ function TopArea({ setMenuVisibility, personData, careType }) {
           style={{
             visibility: [
               "/",
-              "/start",
               "/instructionPage",
               "/instructionPageTwo"
             ].includes(location.pathname)

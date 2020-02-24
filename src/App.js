@@ -131,25 +131,15 @@ function App() {
                 classNames={generateClassNames(history.action)}
               >
                 <Switch location={location}>
-                  {!careType && (
-                    <Route
-                      exact={true}
-                      path="/"
-                      children={props => (
-                        <CareTypeSelectionPage
-                          setCareType={setCareType}
-                          history={history}
-                          {...props}
-                        />
-                      )}
-                    />
-                  )}
                   <Route
-                    path={"/start"}
+                    exact={true}
+                    path="/"
                     children={props => (
                       <LandingPage
                         history={history}
                         setEmergencyVisibility={setEmergencyVisibility}
+                        setCareType={setCareType}
+                        careType={careType}
                         {...props}
                       />
                     )}
@@ -324,7 +314,11 @@ function App() {
             </TransitionGroup>
           )}
         />
-        <NextButton personData={personData} NEWSscoreTotal={NEWSscoreTotal} />
+        <NextButton
+          personData={personData}
+          NEWSscoreTotal={NEWSscoreTotal}
+          careType={careType}
+        />
         <EmergencyPage
           visibility={emergencyVisibility}
           setEmergencyVisibility={setEmergencyVisibility}

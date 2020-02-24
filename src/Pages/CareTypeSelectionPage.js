@@ -8,7 +8,7 @@ function CareTypeSelectionPage({ setCareType }) {
   const clickHandler = value => {
     setCareType(value);
     if (location.state && !location.state.initial) history.goBack();
-    else history.push("/start");
+    else history.push("/"); // hack for animation
   };
   return (
     <Page>
