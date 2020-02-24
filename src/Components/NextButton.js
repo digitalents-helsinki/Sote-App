@@ -5,7 +5,7 @@ const NextButton = ({ personData, NEWSscoreTotal }) => {
   const history = useHistory();
   const location = useLocation();
   const locations = [
-    "/",
+    "/start",
     "/hengitystie",
     "/hengitys",
     "/verenkierto",

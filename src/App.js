@@ -22,6 +22,7 @@ import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import NextButton from "./Components/NextButton";
+import CareTypeSelectionPage from "./Pages/CareTypeSelectionPage";
 
 let testingdata = {
   "Onko hengitystie auki?": true,
@@ -48,7 +49,7 @@ let testingdata = {
   "Mittaa verensokeri: - NEWSscore": 0
 };
 
-function usePersistedState(key, defaultValue) {
+function useSessionState(key, defaultValue) {
   const [state, setState] = useState(
     () => JSON.parse(sessionStorage.getItem(key)) || defaultValue
   );
@@ -58,9 +59,22 @@ function usePersistedState(key, defaultValue) {
   return [state, setState];
 }
 
+function useCookieState(key, defaultValue = "") {
+  const [state, setState] = useState(() =>
+    (cookieMatch => (cookieMatch ? cookieMatch[1] : defaultValue))(
+      document.cookie.match(new RegExp(`(?:^|;\\s*)__HOST_SOTE_${key}=([^;]*)`))
+    )
+  );
+  useEffect(() => {
+    document.cookie = `__HOST_SOTE_${key}=${state}; Max-Age=${Number.MAX_SAFE_INTEGER}; path=/; Secure; SameSite=Strict;`;
+  }, [key, state]);
+  return [state, setState];
+}
+
 function App() {
-  const [personData, setPersonData] = usePersistedState("personData", {});
-  const [controlData, setcontrolData] = usePersistedState("controlData", {});
+  const [careType, setCareType] = useCookieState("careType");
+  const [personData, setPersonData] = useSessionState("personData", {});
+  const [controlData, setcontrolData] = useSessionState("controlData", {});
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -84,8 +98,6 @@ function App() {
   const generateClassNames = historyAction =>
     historyAction === "PUSH" ? "slide-right" : "slide-left";
 
-  console.log(NEWSscoreTotal);
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -96,10 +108,12 @@ function App() {
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
           testingdata={testingdata}
+          setCareType={setCareType}
         />
         <TopArea
           setMenuVisibility={setMenuVisibility}
           personData={personData}
+          careType={careType}
         />
         <Route
           render={({ history, location }) => (
@@ -117,9 +131,21 @@ function App() {
                 classNames={generateClassNames(history.action)}
               >
                 <Switch location={location}>
+                  {!careType && (
+                    <Route
+                      exact={true}
+                      path="/"
+                      children={props => (
+                        <CareTypeSelectionPage
+                          setCareType={setCareType}
+                          history={history}
+                          {...props}
+                        />
+                      )}
+                    />
+                  )}
                   <Route
-                    exact={true}
-                    path="/"
+                    path={"/start"}
                     children={props => (
                       <LandingPage
                         history={history}
@@ -288,6 +314,7 @@ function App() {
                         NEWSscoreTotal={NEWSscoreTotal}
                         ControlNEWSscoreTotal={ControlNEWSscoreTotal}
                         history={history}
+                        careType={careType}
                         {...props}
                       />
                     )}

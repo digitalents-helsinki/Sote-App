@@ -4,8 +4,39 @@ function InstructionCardSecond({
   NEWSscoreTotal,
   personData,
   controlData,
-  ControlNEWSscoreTotal
+  ControlNEWSscoreTotal,
+  careType
 }) {
+  const highRiskInstructions = {
+    Kotihoito: (
+      <>
+        <p>
+          &rarr; <span>Soita 112.</span>
+        </p>
+        <p style={{ fontWeight: "600" }}>
+          Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
+          soittoa.
+        </p>
+        <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
+      </>
+    ),
+    "Ympärivuorokautinen hoiva": (
+      <>
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <div className="content">
+          <p>Konsultoi oma lääkäri.</p>
+        </div>
+        <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+        <div className="content">
+          <p>
+            Konsultoi geriatrista lääkäriä erillisen ohjeen mukaan. Huom. klo 21
+            jälkeen soita päivystyspoliklinikan vuorovastaavalle
+            sairaanhoitajalle.
+          </p>
+        </div>
+      </>
+    )
+  };
   const CheckNEWSSCORErisk = () => {
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
@@ -84,19 +115,12 @@ function InstructionCardSecond({
             *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
           </p>
         )}
-        <p>
-          &rarr; <span>Soita 112.</span>
-        </p>
         {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615", fontWeight: "bold" }}>
             *Koska riskiluokka oli aluksi korkea.
           </p>
         )}
-        <p style={{ fontWeight: "600" }}>
-          Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
-          soittoa.
-        </p>
-        <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
+        {highRiskInstructions[careType]}
       </div>
     );
   } else if (
@@ -136,7 +160,8 @@ function InstructionCardSecond({
         <div className="content">
           <p>
             Jos oma SH ei paikalla voit konsultoida oman alueesi
-            päivystyspoliklinikan vuorovastaavaa tai{" "}
+            päivystyspoliklinikan vuorovastaavaa (Huom. klo 21 jälkeen soita
+            päivystyspoliklinikan vuorovastaavalle sairaanhoitajalle.) tai{" "}
             <span>
               virka-ajan ulkopuolista lääkäriä ISBAR-raportointiohjeen mukaan.
             </span>

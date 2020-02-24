@@ -4,7 +4,7 @@ import backArrowSvg from "../Images/back-arrow.svg";
 import moreBtnSvg from "../Images/more-btn.svg";
 import ProgressBar from "../Components/ProgressBar";
 
-function TopArea({ setMenuVisibility, personData }) {
+function TopArea({ setMenuVisibility, personData, careType }) {
   const location = useLocation();
   const history = useHistory();
 
@@ -13,12 +13,14 @@ function TopArea({ setMenuVisibility, personData }) {
       <div className="flex-container">
         <img
           style={{
-            visibility:
-              location.pathname === "/" ||
-              location.pathname === "/instructionPage" ||
-              location.pathname === "/instructionPageTwo"
-                ? "hidden"
-                : "visible"
+            visibility: [
+              "/",
+              "/start",
+              "/instructionPage",
+              "/instructionPageTwo"
+            ].includes(location.pathname)
+              ? "hidden"
+              : "visible"
           }}
           className="back-arrow"
           src={backArrowSvg}
@@ -28,6 +30,7 @@ function TopArea({ setMenuVisibility, personData }) {
           alt="backArrowSvg"
         />
         <h1 className="AppName">SoTe</h1>
+        {careType && <h2 className="care-type">{careType}</h2>}
         <img
           className="more-btn"
           src={moreBtnSvg}

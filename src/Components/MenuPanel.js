@@ -8,7 +8,8 @@ function MenuPanel({
   setEmergencyVisibility,
   setPersonData,
   setcontrolData,
-  testingdata
+  testingdata,
+  setCareType
 }) {
   const history = useHistory();
   const location = useLocation();
@@ -36,7 +37,8 @@ function MenuPanel({
           <div
             className="reset"
             onClick={() => {
-              if (location.pathname !== "/") history.replace("/");
+              if (!["/", "/start"].includes(location.pathname))
+                history.replace("/start");
               setcontrolData({});
               setPersonData({});
               setMenuVisibility(false);
@@ -56,6 +58,16 @@ function MenuPanel({
               <wbr />
               oireet
             </p>
+          </div>
+          <div
+            className="emeregencyPage-fromMenu"
+            onClick={() => {
+              setCareType("");
+              history.push("/", { initial: false });
+              setMenuVisibility(false);
+            }}
+          >
+            <p>Vaihda hoitotyyppiä</p>
           </div>
           <div
             className="emeregencyPage-fromMenu"

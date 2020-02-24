@@ -7,7 +7,8 @@ function InstructionPageTwo({
   personData,
   controlData,
   NEWSscoreTotal,
-  ControlNEWSscoreTotal
+  ControlNEWSscoreTotal,
+  careType
 }) {
   console.log(NEWSscoreTotal);
 
@@ -25,6 +26,7 @@ function InstructionPageTwo({
           personData={personData}
           controlData={controlData}
           ControlNEWSscoreTotal={ControlNEWSscoreTotal}
+          careType={careType}
         />
         <Report personData={personData} />
       </div>
