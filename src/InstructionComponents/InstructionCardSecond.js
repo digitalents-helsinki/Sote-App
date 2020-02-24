@@ -28,7 +28,7 @@ function InstructionCardSecond({
     if (ControlNEWSscoreTotal === 0) {
       return "Lievä riski";
     } else if (
-      personData["Tajunnan taso"] === false ||
+      controlData["Tajunnan taso"] === false ||
       controlData["Hengitystaajuus - NEWSscore"] === 3 ||
       controlData["Happisaturaatio - NEWSscore"] === 3 ||
       controlData["Systolinen verenpaine - NEWSscore"] === 3 ||
@@ -42,10 +42,26 @@ function InstructionCardSecond({
     }
   };
 
+  const checkForSingleThreePointCase = () => {
+    return (
+      NEWSscoreTotal <= 3 &&
+      (personData["Tajunnan taso"] === false ||
+        personData["Hengitystaajuus - NEWSscore"] === 3 ||
+        personData["Happisaturaatio - NEWSscore"] === 3 ||
+        personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+        personData["Syketaajuus - NEWSscore"] === 3 ||
+        personData["Mittaa lämpötila - NEWSscore"] === 3)
+    );
+  };
+
   const NEWSscoreRiskChange = () => {
     if (
-      CheckControlNEWSSCORErisk() === "Korkea riski" &&
-      CheckNEWSSCORErisk() === "Kohtalainen riski"
+      (CheckControlNEWSSCORErisk() === "Korkea riski" &&
+        CheckNEWSSCORErisk() === "Kohtalainen riski") ||
+      (CheckControlNEWSSCORErisk() === "Kohtalainen riski" &&
+        CheckNEWSSCORErisk() === "Lievä riski") ||
+      (CheckControlNEWSSCORErisk() === "Korkea riski" &&
+        CheckNEWSSCORErisk() === "Lievä riski")
     )
       return true;
   };
@@ -63,20 +79,19 @@ function InstructionCardSecond({
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
-        {NEWSscoreRiskChange() && (
-          <p style={{ color: "#ab2615" }}>
-            *Koska riskiluokka oli aluksi korkea.
+        {checkForSingleThreePointCase() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
           </p>
         )}
-        {CheckControlNEWSSCORErisk() === "Korkea riski" &&
-          CheckNEWSSCORErisk() === "Korkea riski" && (
-            <p style={{ color: "#ab2615" }}>
-              *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
-            </p>
-          )}
         <p>
           &rarr; <span>Soita 112.</span>
         </p>
+        {NEWSscoreRiskChange() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
         <p style={{ fontWeight: "600" }}>
           Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
           soittoa.
@@ -85,14 +100,19 @@ function InstructionCardSecond({
       </div>
     );
   } else if (
-    CheckControlNEWSSCORErisk() === "Kohtalainen riski" ||
-    CheckNEWSSCORErisk() === "Kohtalainen riski"
+    CheckControlNEWSSCORErisk() === "Kohtalainen riski" &&
+    CheckNEWSSCORErisk() !== "Korkea riski"
   ) {
     //RISKILUOKKA: KOHTALAINEN RISKI
     return (
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
+        {NEWSscoreRiskChange() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
           <p>
@@ -157,6 +177,10 @@ function InstructionCardSecond({
             Odota ohjetta.
           </p>
         </div>
+        <h3 style={{ marginTop: "30px" }}>
+          Tarvittaessa jos haluat arvioida asiakasta uudestaan, aloita sovellus
+          alusta.
+        </h3>
       </div>
     );
   }

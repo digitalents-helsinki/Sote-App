@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -48,9 +48,19 @@ let testingdata = {
   "Mittaa verensokeri: - NEWSscore": 0
 };
 
+function usePersistedState(key, defaultValue) {
+  const [state, setState] = useState(
+    () => JSON.parse(sessionStorage.getItem(key)) || defaultValue
+  );
+  useEffect(() => {
+    sessionStorage.setItem(key, JSON.stringify(state));
+  }, [key, state]);
+  return [state, setState];
+}
+
 function App() {
-  const [personData, setPersonData] = useState({});
-  const [controlData, setcontrolData] = useState({});
+  const [personData, setPersonData] = usePersistedState("personData", {});
+  const [controlData, setcontrolData] = usePersistedState("controlData", {});
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -84,6 +94,7 @@ function App() {
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
           setPersonData={setPersonData}
+          setcontrolData={setcontrolData}
           testingdata={testingdata}
         />
         <TopArea

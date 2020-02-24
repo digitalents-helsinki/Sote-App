@@ -7,6 +7,7 @@ function MenuPanel({
   menuVisibility,
   setEmergencyVisibility,
   setPersonData,
+  setcontrolData,
   testingdata
 }) {
   const history = useHistory();
@@ -36,6 +37,7 @@ function MenuPanel({
             className="reset"
             onClick={() => {
               if (location.pathname !== "/") history.replace("/");
+              setcontrolData({});
               setPersonData({});
               setMenuVisibility(false);
             }}
