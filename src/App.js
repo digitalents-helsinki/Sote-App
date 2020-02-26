@@ -107,6 +107,7 @@ function App() {
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
           testingdata={testingdata}
+          careType={careType}
           setCareType={setCareType}
         />
         <TopArea

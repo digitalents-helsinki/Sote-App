@@ -9,6 +9,7 @@ function MenuPanel({
   setPersonData,
   setcontrolData,
   testingdata,
+  careType,
   setCareType
 }) {
   const history = useHistory();
@@ -61,8 +62,10 @@ function MenuPanel({
           <div
             className="emeregencyPage-fromMenu"
             onClick={() => {
-              setCareType("");
-              history.push("/", { initial: false });
+              if (careType) {
+                setCareType("");
+                history.push("/", { initial: false });
+              }
               setMenuVisibility(false);
             }}
           >
