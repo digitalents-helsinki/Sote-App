@@ -15,19 +15,40 @@ var EmergencySymptomsContent = {
   },
 
   elottomuus: {
-    header: "ELOTTOMUUS",
-    span: " ",
+    Kotihoito: {
+      header: "ELOTTOMUUS",
+      span: " ",
 
-    instructions: (
-      <>
-        Ei reagoi, ei hengitysliikkeitä tai harvoja, epäsäännöllisiä, äänekkäitä
-        hengitysliikkeitä &rarr;{" "}
-        <span style={{ fontWeight: "600" }}>
-          SOITA 112. HUOM: Mikäli on DNR-päätös,
-        </span>{" "}
-        soitto omalle hoitajalle tai lääkärille, ei 112.{" "}
-      </>
-    )
+      instructions: (
+        <>
+          Ei reagoi, ei hengitysliikkeitä tai harvoja, epäsäännöllisiä,
+          äänekkäitä hengitysliikkeitä &rarr;{" "}
+          <span style={{ fontWeight: "600" }}>
+            SOITA 112. HUOM: Mikäli on DNR-päätös,
+          </span>{" "}
+          soitto omalle hoitajalle tai lääkärille, ei 112.{" "}
+        </>
+      )
+    },
+    "Ympärivuorokautinen hoiva": {
+      header: "ELOTTOMUUS",
+      span: " ",
+
+      instructions: (
+        <>
+          Ei reagoi, ei hengitysliikkeitä tai harvoja, epäsäännöllisiä,
+          äänekkäitä hengitysliikkeitä &rarr;{" "}
+          <span style={{ fontWeight: "600" }}>
+            Soita konsultoivalle lääkärille.
+          </span>{" "}
+          Huomioi hoitosuunnitelma, hoidon rajaukset ja linjaukset.{" "}
+          <span style={{ fontWeight: "600" }}>
+            Mikäli potilaalla ei rajoituksia
+          </span>{" "}
+          elvytyksen suhteen, aloita painelupuhalluselvytys.
+        </>
+      )
+    }
   },
 
   hengenahdistus: {

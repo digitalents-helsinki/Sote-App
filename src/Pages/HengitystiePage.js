@@ -2,9 +2,35 @@ import React, { useState } from "react";
 import DoubleButton from "../Components/DoubleButton";
 import Page from "../Components/Page";
 
-function HengitystiePage({ personData, setPersonData }) {
+function HengitystiePage({ personData, setPersonData, careType }) {
   const [hoitoOhje_handler_1, setHoitoOhje_handler_1] = useState(false);
   const [hoitoOhje_handler_2, setHoitoOhje_handler_2] = useState(false);
+
+  const elvytysInstruction = {
+    Kotihoito: (
+      <span>
+        <span style={{ fontWeight: "600" }}>Aloita elvytys,</span> jos henkilö
+        menee{" "}
+        <span style={{ fontWeight: "600" }}>
+          tajuttomaksi eikä hengitä normaalisti.
+        </span>{" "}
+        Ilmoita muuttuneesta tilanteesta hätäkeskukseen.
+      </span>
+    ),
+    "Ympärivuorokautinen hoiva": (
+      <span>
+        <span style={{ fontWeight: "600" }}>
+          Mikäli potilaalla ei rajoituksia
+        </span>{" "}
+        elvytyksen suhteen, aloita painelupuhalluselvytys, jos henkilö menee{" "}
+        <span style={{ fontWeight: "600" }}>
+          tajuttomaksi eikä hengitä normaalisti.
+        </span>{" "}
+        Ilmoita muuttuneesta tilanteesta hätäkeskukseen, jos on aiemmin tehty
+        hälytys.
+      </span>
+    )
+  }[careType];
 
   const hoitoOhje_1 = (
     <span>
@@ -111,14 +137,7 @@ function HengitystiePage({ personData, setPersonData }) {
       <br />
       <span style={{ display: "inline-flex", flexDirection: "row" }}>
         <span style={{ marginRight: "10px" }}>→</span>
-        <span>
-          <span style={{ fontWeight: "600" }}>Aloita elvytys,</span> jos henkilö
-          menee{" "}
-          <span style={{ fontWeight: "600" }}>
-            tajuttomaksi eikä hengitä normaalisti.
-          </span>{" "}
-          Ilmoita muuttuneesta tilanteesta hätäkeskukseen.
-        </span>
+        {elvytysInstruction}
       </span>
     </span>
   );

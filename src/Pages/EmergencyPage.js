@@ -3,7 +3,7 @@ import Arrow from "../Images/arrow-white.svg";
 import SymptomCard from "../Components/SymptomCard";
 import ESC from "../Components/EmergencySymptomsContent";
 
-function EmergencyPage({ setEmergencyVisibility, visibility }) {
+function EmergencyPage({ setEmergencyVisibility, visibility, careType }) {
   return (
     <div
       className={
@@ -25,7 +25,11 @@ function EmergencyPage({ setEmergencyVisibility, visibility }) {
       </div>
       <div className="symptoms-container">
         <SymptomCard content={ESC.aivoverenkierronhairio} />
-        <SymptomCard content={ESC.elottomuus} />
+        <SymptomCard
+          content={
+            careType ? ESC.elottomuus[careType] : ESC.elottomuus.Kotihoito
+          }
+        />
         <SymptomCard content={ESC.hengenahdistus} />
         <SymptomCard content={ESC.hyperglykemia} />
         <SymptomCard content={ESC.hypoglykemia} />

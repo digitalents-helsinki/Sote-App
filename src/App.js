@@ -125,6 +125,7 @@ function App() {
                         personData={personData}
                         setPersonData={setPersonData}
                         history={history}
+                        careType={careType}
                         {...props}
                       />
                     )}
@@ -295,6 +296,7 @@ function App() {
         <EmergencyPage
           visibility={emergencyVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
+          careType={careType}
         />
       </div>
     </BrowserRouter>
