@@ -19,8 +19,15 @@ function LandingPage({
     ),
     "Ympärivuorokautinen hoiva": (
       <p className="attentionText page-paragraph">
-        Jos tilanne on todellinen hätätilanne, soita konsultoivalle lääkärille.
-        Huomioi hoitosuunnitelma, hoidon rajaukset ja linjaukset.
+        a) Todellinen hätätilanne
+        <br />
+        <span style={{ color: "#000", fontWeight: "300" }}>
+          Soita konsultoivalle lääkärille.
+          <br />
+          Huomioi hoitosuunnitelma, hoidon rajaukset ja linjaukset
+        </span>
+        <br />
+        b) Konsultoiva tilanne
       </p>
     )
   }[careType];
