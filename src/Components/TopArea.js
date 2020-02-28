@@ -32,6 +32,7 @@ function TopArea({ setMenuVisibility, personData, careType }) {
         {careType && <h2 className="care-type">{careType}</h2>}
         <img
           className="more-btn"
+          style={{ visibility: careType ? "visible" : "hidden" }}
           src={moreBtnSvg}
           alt="moreBtnSvg"
           onClick={() => setMenuVisibility(true)}
