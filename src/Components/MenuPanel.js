@@ -8,7 +8,6 @@ function MenuPanel({
   setEmergencyVisibility,
   setPersonData,
   setcontrolData,
-  testingdata,
   careType,
   setCareType
 }) {
@@ -70,15 +69,6 @@ function MenuPanel({
             }}
           >
             <p>Vaihda hoitotyyppiä</p>
-          </div>
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setPersonData(testingdata);
-              setMenuVisibility(false);
-            }}
-          >
-            <p>DevOps: Activate testing Data</p>
           </div>
         </div>
       </div>

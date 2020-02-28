@@ -23,31 +23,6 @@ import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import NextButton from "./Components/NextButton";
 
-let testingdata = {
-  "Onko hengitystie auki?": true,
-  "Onko ilmatie estettä?": false,
-  "Hengitys - Normaali hengitys/ei ääniä": true,
-  "Iho, paljastaminen - Normaali": true,
-  "Iho, paljastaminen - Ei poikkeavia löydöksiä": false,
-  Iho: "Testing 23435",
-  "Tarkista syke:": false,
-  "Tuntuuko lämpörajoja raajoissa:": true,
-  "Tajunta - Ei poikkeavia löydöksiä.": true,
-  Hengitystaajuus: 15,
-  "Hengitystaajuus - NEWSscore": 0,
-  Happisaturaatio: 96,
-  "Happisaturaatio - NEWSscore": 0,
-  "Systolinen verenpaine": 111,
-  "Systolinen verenpaine - NEWSscore": 0,
-  Syketaajuus: 55,
-  "Syketaajuus - NEWSscore": 0,
-  "Mittaa lämpötila": 37,
-  "Mittaa lämpötila - NEWSscore": 0,
-  "Tajunnan taso": true,
-  "Mittaa verensokeri:": 10,
-  "Mittaa verensokeri: - NEWSscore": 0
-};
-
 function useSessionState(key, defaultValue) {
   const [state, setState] = useState(
     () => JSON.parse(sessionStorage.getItem(key)) || defaultValue
@@ -106,7 +81,6 @@ function App() {
           setEmergencyVisibility={setEmergencyVisibility}
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
-          testingdata={testingdata}
           careType={careType}
           setCareType={setCareType}
         />
