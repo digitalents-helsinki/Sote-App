@@ -1,104 +1,104 @@
 import React from "react";
 
-function Report({ controlData }) {
+function Report({ personData }) {
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
   const green = "#377d4f";
 
   const hengitystaajuusStyle = () => {
-    if (controlData.Hengitystaajuus <= 8 || controlData.Hengitystaajuus >= 25) {
+    if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
       return red;
     } else if (
-      controlData.Hengitystaajuus >= 9 &&
-      controlData.Hengitystaajuus <= 11
+      personData.Hengitystaajuus >= 9 &&
+      personData.Hengitystaajuus <= 11
     ) {
       return lightOrange;
     } else if (
-      controlData.Hengitystaajuus >= 12 &&
-      controlData.Hengitystaajuus <= 20
+      personData.Hengitystaajuus >= 12 &&
+      personData.Hengitystaajuus <= 20
     ) {
       return green;
     } else if (
-      controlData.Hengitystaajuus >= 21 &&
-      controlData.Hengitystaajuus <= 24
+      personData.Hengitystaajuus >= 21 &&
+      personData.Hengitystaajuus <= 24
     ) {
       return orange;
     }
   };
 
   const happisaturaatioStyle = () => {
-    if (controlData.Happisaturaatio <= 91) {
+    if (personData.Happisaturaatio <= 91) {
       return red;
     } else if (
-      controlData.Happisaturaatio >= 92 &&
-      controlData.Happisaturaatio <= 93
+      personData.Happisaturaatio >= 92 &&
+      personData.Happisaturaatio <= 93
     ) {
       return orange;
     } else if (
-      controlData.Happisaturaatio >= 94 &&
-      controlData.Happisaturaatio <= 95
+      personData.Happisaturaatio >= 94 &&
+      personData.Happisaturaatio <= 95
     ) {
       return lightOrange;
-    } else if (controlData.Happisaturaatio >= 96) {
+    } else if (personData.Happisaturaatio >= 96) {
       return green;
     }
   };
 
   const systolinenVerenpaineStyle = () => {
     if (
-      controlData["Systolinen verenpaine"] <= 90 ||
-      controlData["Systolinen verenpaine"] >= 220
+      personData["Systolinen verenpaine"] <= 90 ||
+      personData["Systolinen verenpaine"] >= 220
     ) {
       return red;
     } else if (
-      controlData["Systolinen verenpaine"] >= 91 &&
-      controlData["Systolinen verenpaine"] <= 100
+      personData["Systolinen verenpaine"] >= 91 &&
+      personData["Systolinen verenpaine"] <= 100
     ) {
       return orange;
     } else if (
-      controlData["Systolinen verenpaine"] >= 101 &&
-      controlData["Systolinen verenpaine"] <= 110
+      personData["Systolinen verenpaine"] >= 101 &&
+      personData["Systolinen verenpaine"] <= 110
     ) {
       return lightOrange;
     } else if (
-      controlData["Systolinen verenpaine"] >= 111 &&
-      controlData["Systolinen verenpaine"] <= 219
+      personData["Systolinen verenpaine"] >= 111 &&
+      personData["Systolinen verenpaine"] <= 219
     ) {
       return green;
     }
   };
 
   const SyketaajuusStyle = () => {
-    if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
+    if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return red;
-    } else if (controlData.Syketaajuus >= 111 && controlData.Syketaajuus <= 130) {
+    } else if (personData.Syketaajuus >= 111 && personData.Syketaajuus <= 130) {
       return orange;
     } else if (
-      (controlData.Syketaajuus >= 41 && controlData.Syketaajuus <= 50) ||
-      (controlData.Syketaajuus >= 91 && controlData.Syketaajuus <= 110)
+      (personData.Syketaajuus >= 41 && personData.Syketaajuus <= 50) ||
+      (personData.Syketaajuus >= 91 && personData.Syketaajuus <= 110)
     ) {
       return lightOrange;
-    } else if (controlData.Syketaajuus >= 51 && controlData.Syketaajuus <= 90) {
+    } else if (personData.Syketaajuus >= 51 && personData.Syketaajuus <= 90) {
       return green;
     }
   };
 
   const lampotilaStyle = () => {
-    if (controlData["Mittaa lämpötila"] <= 35) {
+    if (personData["Mittaa lämpötila"] <= 35) {
       return red;
-    } else if (controlData["Mittaa lämpötila"] >= 39.1) {
+    } else if (personData["Mittaa lämpötila"] >= 39.1) {
       return orange;
     } else if (
-      (controlData["Mittaa lämpötila"] >= 35.1 &&
-        controlData["Mittaa lämpötila"] <= 36) ||
-      (controlData["Mittaa lämpötila"] >= 38.1 &&
-        controlData["Mittaa lämpötila"] <= 39)
+      (personData["Mittaa lämpötila"] >= 35.1 &&
+        personData["Mittaa lämpötila"] <= 36) ||
+      (personData["Mittaa lämpötila"] >= 38.1 &&
+        personData["Mittaa lämpötila"] <= 39)
     ) {
       return lightOrange;
     } else if (
-      controlData["Mittaa lämpötila"] >= 36.1 &&
-      controlData["Mittaa lämpötila"] <= 38
+      personData["Mittaa lämpötila"] >= 36.1 &&
+      personData["Mittaa lämpötila"] <= 38
     ) {
       return green;
     }
@@ -106,25 +106,25 @@ function Report({ controlData }) {
 
   const verensokeriStyle = () => {
     if (
-      controlData["Mittaa verensokeri:"] <= 4 ||
-      controlData["Mittaa verensokeri:"] >= 25
+      personData["Mittaa verensokeri:"] <= 4 ||
+      personData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
     } else if (
-      (controlData["Mittaa verensokeri:"] >= 5 &&
-        controlData["Mittaa verensokeri:"] <= 6) ||
-      (controlData["Mittaa verensokeri:"] >= 20 &&
-        controlData["Mittaa verensokeri:"] <= 24)
+      (personData["Mittaa verensokeri:"] >= 5 &&
+        personData["Mittaa verensokeri:"] <= 6) ||
+      (personData["Mittaa verensokeri:"] >= 20 &&
+        personData["Mittaa verensokeri:"] <= 24)
     ) {
       return orange;
     } else if (
-      controlData["Mittaa verensokeri:"] >= 15 &&
-      controlData["Mittaa verensokeri:"] <= 20
+      personData["Mittaa verensokeri:"] >= 15 &&
+      personData["Mittaa verensokeri:"] <= 20
     ) {
       return lightOrange;
     } else if (
-      controlData["Mittaa verensokeri:"] >= 7 &&
-      controlData["Mittaa verensokeri:"] <= 14
+      personData["Mittaa verensokeri:"] >= 7 &&
+      personData["Mittaa verensokeri:"] <= 14
     ) {
       return green;
     }
@@ -132,16 +132,17 @@ function Report({ controlData }) {
 
   return (
     <div className="report-container">
+
+      <p style={{color: "gray"}}>*Time stamp*</p>
+      
       <h2>Raportti 2:</h2>
 
       <div className="reportElement">
-
         <h3>Hengitystie:</h3>
-
         <div className="flex">
           <p className="subject">{"Onko hengitystie auki?"}</p>
           <div className="answer">
-            {controlData["Onko hengitystie auki?"] ? (
+            {personData["Onko hengitystie auki?"] ? (
               <p style={{ color: green }}>Kyllä</p>
             ) : (
               <p style={{ color: red }}>Ei</p>
@@ -151,7 +152,7 @@ function Report({ controlData }) {
         <div className="flex">
           <p className="subject">{"Onko ilmatie estettä?"}</p>
           <div className="answer">
-            {controlData["Onko ilmatie estettä?"] ? (
+            {personData["Onko ilmatie estettä?"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -168,18 +169,18 @@ function Report({ controlData }) {
           <p className="subject">{"Korvin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {controlData["Hengitys - Normaali hengitys/ei ääniä"]
+              {personData["Hengitys - Normaali hengitys/ei ääniä"]
                 ? "Normaali"
                 : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
+              {personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Hengitys - Korina"] ? "Korina" : null}
+              {personData["Hengitys - Korina"] ? "Korina" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Hengitys - Rohina"] ? "Rohina" : null}
+              {personData["Hengitys - Rohina"] ? "Rohina" : null}
             </p>
           </div>
         </div>
@@ -192,7 +193,7 @@ function Report({ controlData }) {
         <div className="flex">
           <p className="subject">{"Syke"}</p>
           <div className="answer">
-            {controlData["Tarkista syke:"] ? (
+            {personData["Tarkista syke:"] ? (
               <p style={{ color: green }}>Säännöllinen</p>
             ) : (
               <p style={{ color: red }}>Epäsäännöllinen</p>
@@ -202,7 +203,7 @@ function Report({ controlData }) {
         <div className="flex">
           <p className="subject">{"Tuntuuko paikallista lämpöeroa?"}</p>
           <div className="answer">
-            {controlData["Tuntuuko lämpörajoja raajoissa:"] ? (
+            {personData["Tuntuuko lämpörajoja raajoissa:"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -217,9 +218,9 @@ function Report({ controlData }) {
         <h3>Tajunta:</h3>
         <div className="flex">
           <p style={{ width: "100%", fontWeight: "200" }} className="answer">
-            {controlData["Tajunta - Ei poikkeavia löydöksiä."]
+            {personData["Tajunta - Ei poikkeavia löydöksiä."]
               ? "Ei poikkeavia löydöksiä."
-              : controlData.Tajunta}
+              : personData.Tajunta}
           </p>
         </div>
       </div>
@@ -232,33 +233,33 @@ function Report({ controlData }) {
           <p className="subject">{"Miltä iho tuntuu?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {controlData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
+              {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}
+              {personData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Iho, paljastaminen - Kostea"] ? "Kostea" : null}
+              {personData["Iho, paljastaminen - Kostea"] ? "Kostea" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Iho, paljastaminen - Kylmä"] ? "Kylmä" : null}
+              {personData["Iho, paljastaminen - Kylmä"] ? "Kylmä" : null}
             </p>
             <p style={{ color: red }}>
-              {controlData["Iho, paljastaminen - Kuuma"] ? "Kuuma" : null}
+              {personData["Iho, paljastaminen - Kuuma"] ? "Kuuma" : null}
             </p>
           </div>
         </div>
         <div className="flex">
           <p className="subject">Onko iho muutoksia?</p>
           <div className="answer">
-            {controlData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
+            {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
               <p style={{ color: green }}>Ei</p>
             ) : (
               <p style={{ color: red }}>Kyllä</p>
             )}
           </div>
         </div>
-        {controlData.Iho ? (
+        {personData.Iho ? (
           <p
             style={{
               fontWeight: "200",
@@ -267,7 +268,7 @@ function Report({ controlData }) {
             }}
             className="answer"
           >
-            {controlData.Iho}
+            {personData.Iho}
           </p>
         ) : null}
       </div>
@@ -279,13 +280,13 @@ function Report({ controlData }) {
         <div className="flex">
           <p className="vital-subject">{"hengitystaajuus:"}</p>
           <p className="vital-answer" style={{ color: hengitystaajuusStyle() }}>
-            {controlData.Hengitystaajuus}
+            {personData.Hengitystaajuus}
           </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Happisaturaatio:"}</p>
           <p className="vital-answer" style={{ color: happisaturaatioStyle() }}>
-            {controlData.Happisaturaatio}
+            {personData.Happisaturaatio}
           </p>
         </div>
         <div className="flex">
@@ -294,19 +295,19 @@ function Report({ controlData }) {
             className="vital-answer"
             style={{ color: systolinenVerenpaineStyle() }}
           >
-            {controlData["Systolinen verenpaine"]}
+            {personData["Systolinen verenpaine"]}
           </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Syketaajuus:"}</p>
           <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
-            {controlData.Syketaajuus}
+            {personData.Syketaajuus}
           </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Tajunnan taso:"}</p>
           <div className="vital-answer">
-            {controlData["Tajunnan taso"] ? (
+            {personData["Tajunnan taso"] ? (
               <p style={{ color: green }}>Normaali</p>
             ) : (
               <p style={{ color: red }}>Poikkeava</p>
@@ -316,13 +317,13 @@ function Report({ controlData }) {
         <div className="flex">
           <p className="vital-subject">{"Lämpötila:"}</p>
           <p className="vital-answer" style={{ color: lampotilaStyle() }}>
-            {controlData["Mittaa lämpötila"]}
+            {personData["Mittaa lämpötila"]}
           </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Verensokeri:"}</p>
           <p className="vital-answer" style={{ color: verensokeriStyle() }}>
-            {controlData["Mittaa verensokeri:"]}
+            {personData["Mittaa verensokeri:"]}
           </p>
         </div>
       </div>
