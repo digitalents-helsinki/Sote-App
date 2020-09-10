@@ -2,6 +2,8 @@ import React from "react";
 import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import Report from "../InstructionComponents/Report";
+import Report2 from "../InstructionComponents/Report2";
+
 
 function InstructionPageTwo({
   personData,
@@ -29,6 +31,7 @@ function InstructionPageTwo({
           careType={careType}
         />
         <Report personData={personData} />
+        <Report2 personData={personData} />
       </div>
     </div>
   );
