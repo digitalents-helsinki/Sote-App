@@ -31,7 +31,9 @@ function InstructionPageTwo({
           careType={careType}
         />
         <Report personData={personData} />
-        <Report2 personData={personData} />
+        <Report2 
+          personData={personData}
+          controlData={controlData} />
       </div>
     </div>
   );
