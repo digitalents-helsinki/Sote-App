@@ -169,7 +169,7 @@ function Report({ controlData }) {
       <div className="reportElement">
         <h3>Hengitys:</h3>
         <div className="flex">
-          <p className="subject">{"Korvin kuultavat äänet?"}</p>
+          <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
               {controlData["Hengitys - Normaali hengitys/ei ääniä"]

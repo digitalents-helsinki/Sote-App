@@ -6,7 +6,7 @@ function HengitysPage({ personData, setPersonData }) {
   const Title = "Hengitys";
 
   return (
-    <Page title={Title} paragraph="Onko korvin kuultavia ääniä?">
+    <Page title={Title} paragraph="Onko korviin kuultavia ääniä?">
       <Checkbox
         checkboxlabel={"Normaali hengitys/ei ääniä"}
         subject={Title}

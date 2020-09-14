@@ -28,7 +28,7 @@ function TopArea({ setMenuVisibility, personData, careType }) {
           }}
           alt="backArrowSvg"
         />
-        <h1 className="AppName">SoTe</h1>
+        <h1 className="AppName">Aina-mukana</h1>
         {careType && <h2 className="care-type">{careType}</h2>}
         <img
           className="more-btn"
