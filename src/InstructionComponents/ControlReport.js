@@ -130,11 +130,18 @@ function Report({ personData }) {
     }
   };
 
+
+  let timeStamp = new Date();
+  let time = timeStamp.toTimeString();
+  // const timeStamp = () => {
+  //   new Date().toString;
+  // };
+
   return (
     <div className="report-container">
+      <p style={{ color: "gray" }}>*Time stamp*</p>
 
-      <p style={{color: "gray"}}>*Time stamp*</p>
-      
+
       <h2>Raportti 2:</h2>
 
       <div className="reportElement">
@@ -218,9 +225,15 @@ function Report({ personData }) {
         <h3>Tajunta:</h3>
         <div className="flex">
           <p style={{ width: "100%", fontWeight: "200" }} className="answer">
-            {personData["Tajunta - Ei poikkeavia löydöksiä."]
-              ? "Ei poikkeavia löydöksiä."
-              : personData.Tajunta}
+
+            {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
+              "Ei poikkeavia löydöksiä."
+            ) : (
+              <div style={{ fontWeight: "bold", color: red }}>
+                {personData.Tajunta}
+              </div>
+            )}
+
           </p>
         </div>
       </div>
@@ -262,9 +275,12 @@ function Report({ personData }) {
         {personData.Iho ? (
           <p
             style={{
-              fontWeight: "200",
+
+              fontWeight: "bold",
               fontSize: "0.9rem",
-              lineHeight: "1.6rem"
+              lineHeight: "1.6rem",
+              color: red
+
             }}
             className="answer"
           >
