@@ -105,7 +105,7 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>Vaihda hoitotyyppiä</p>
+            <p>Vaihda hoitoyksikköä</p>
           </div>
 
           <div>
