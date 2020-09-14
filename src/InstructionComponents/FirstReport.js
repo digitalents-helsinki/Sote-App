@@ -72,7 +72,10 @@ function Report({ controlData }) {
   const SyketaajuusStyle = () => {
     if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
       return red;
-    } else if (controlData.Syketaajuus >= 111 && controlData.Syketaajuus <= 130) {
+    } else if (
+      controlData.Syketaajuus >= 111 &&
+      controlData.Syketaajuus <= 130
+    ) {
       return orange;
     } else if (
       (controlData.Syketaajuus >= 41 && controlData.Syketaajuus <= 50) ||
@@ -132,12 +135,11 @@ function Report({ controlData }) {
 
   return (
     <div className="report-container">
-      <p style={{color: "gray"}}>*Time stamp*</p>
+      <p style={{ color: "gray" }}>*Time stamp*</p>
 
       <h2>Raportti:</h2>
 
       <div className="reportElement">
-
         <h3>Hengitystie:</h3>
 
         <div className="flex">
@@ -326,7 +328,8 @@ function Report({ controlData }) {
           <p className="vital-answer" style={{ color: verensokeriStyle() }}>
             {controlData["Mittaa verensokeri:"]}
           </p>
-        </div> <hr></hr>
+        </div>{" "}
+        <br></br> <hr></hr>
       </div>
     </div>
   );

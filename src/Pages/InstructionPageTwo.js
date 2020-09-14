@@ -4,7 +4,6 @@ import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import ControlReport from "../InstructionComponents/ControlReport";
 import FirstReport from "../InstructionComponents/FirstReport";
 
-
 function InstructionPageTwo({
   personData,
   controlData,
@@ -30,11 +29,8 @@ function InstructionPageTwo({
           ControlNEWSscoreTotal={ControlNEWSscoreTotal}
           careType={careType}
         />
-        <FirstReport 
-          personData={personData}
-          controlData={controlData} />
+        <FirstReport personData={personData} controlData={controlData} />
         <ControlReport personData={personData} />
-        
       </div>
     </div>
   );
