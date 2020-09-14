@@ -24,14 +24,15 @@ function InstructionCardSecond({
       <>
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
-          <p>Konsultoi oma lääkäri.</p>
+          <p>Konsultoi omaa lääkäriä.</p>
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
           <p>
-            Konsultoi geriatrista lääkäriä erillisen ohjeen mukaan. Huom. klo 21
-            jälkeen soita päivystyspoliklinikan vuorovastaavalle
-            sairaanhoitajalle.
+            Konsultoi geriatrista lääkäriä erillisen ohjeen mukaan (Virka-ajan
+            ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen
+            hoivan henkilöstölle). Huom. klo 21 jälkeen soita HUS-akuutin
+            päivystyspoliklinikan vuorovastaavalle sairaanhoitajalle.
           </p>
         </div>
       </>
@@ -140,14 +141,14 @@ function InstructionCardSecond({
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
           <p>
-            Konsultoi <span>välittömästi</span> oma SH/lääkäri.
+            Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä.
           </p>
         </div>
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
-            SH konsultoi omaa lääkäriä tai tekee arviokäynnin tarkastaakseen
-            tilanteen saman päivän/seuraavan päivän aikana.
+            Sairaanhoitaja arvioi asiakkaan tilanteen ja konsultoi tarvittaessa
+            omaa lääkäriä.
           </p>
         </div>
         <div className="content">
@@ -158,19 +159,20 @@ function InstructionCardSecond({
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
-          <p>
-            Jos oma SH ei paikalla voit konsultoida oman alueesi
-            päivystyspoliklinikan vuorovastaavaa (Huom. klo 21 jälkeen soita
-            päivystyspoliklinikan vuorovastaavalle sairaanhoitajalle.) tai{" "}
-            <span>
-              virka-ajan ulkopuolista lääkäriä ISBAR-raportointiohjeen mukaan.
-            </span>
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+            Konsultoi omaa sairaanhoitajaa jos paikalla.
           </p>
         </div>
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
-            Odota ohjetta.
+            Jos oma sairaanhoitaja ei ole paikalla, konsultoi virka-ajan
+            ulkopuolisen konsultaatio-ohjeen mukaan (Virka-ajan ulkopuolinen
+            konsultointiohje kotihoidon ja ympärivuorokautisen hoivan
+            henkilöstölle). Klo 21 jälkeen konsultoi tarvittaessa HUS-akuutin
+            päivystyksen vuorovastaavaa, ellei oma sairaanhoitaja ole paikalla.{" "}
+            <span>Konsultoi ISBAR-raportointiohjeen mukaan.</span>
           </p>
         </div>
       </div>
@@ -185,14 +187,14 @@ function InstructionCardSecond({
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
-            Konsultoi oman yksikön SH tai hoitavaa lääkäriä.
+            Konsultoi oman yksikön sairaanhoitajaa tai hoitavaa lääkäriä.
           </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
-            Konsultoi oman yksikön sh, jos paikalle tai suoraan{" "}
+            Konsultoi oman yksikön sairaanhoitajaa, jos paikalla tai suoraan{" "}
             <span>geriatrista lääkäriä</span> (kts. erillinen konsultointiohje).
           </p>
         </div>
