@@ -58,6 +58,43 @@ function MenuPanel({
               oireet
             </p>
           </div>
+
+          <div
+            className="emeregencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p>NEWS - Aikaisen varoituksen pisteytysjärjestelmä</p>
+          </div>
+
+          <div
+            className="emeregencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p>
+              ABCDE-menetelmä ja sen käyttö
+              <wbr />
+            </p>
+          </div>
+
+          <div
+            className="emeregencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p>
+              ISBAR-raportointiohje konsultoitaessa asiakkaasta
+              <wbr />
+            </p>
+          </div>
+
           <div
             className="emeregencyPage-fromMenu"
             onClick={() => {
@@ -69,6 +106,10 @@ function MenuPanel({
             }}
           >
             <p>Vaihda hoitotyyppiä</p>
+          </div>
+
+          <div>
+            <p>Viimeisimmät raportit</p>
           </div>
         </div>
       </div>
