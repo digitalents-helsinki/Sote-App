@@ -131,8 +131,15 @@ function Report({ personData }) {
   };
 
 
-  let timeStamp = new Date();
-  let time = timeStamp.toTimeString();
+  let endTimeStamp = new Date();
+  let endTime = endTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
+//  let time = function() {
+//    time.toLocaleString();
+//    time.toLocaleDateString();
+//    time.toLocaleTimeString();
+//  }
+
   // const timeStamp = () => {
   //   new Date().toString;
   // };
@@ -143,6 +150,7 @@ function Report({ personData }) {
 
 
       <h2>Raportti 2:</h2>
+      {endTime}
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>

@@ -133,11 +133,15 @@ function Report({ controlData }) {
     }
   };
 
+  let startTimeStamp = new Date();
+  let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
   return (
     <div className="report-container">
       <p style={{ color: "gray" }}>*Time stamp*</p>
 
       <h2>Raportti:</h2>
+      {startTime}
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
