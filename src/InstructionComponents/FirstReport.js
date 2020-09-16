@@ -138,10 +138,9 @@ function Report({ controlData }) {
 
   return (
     <div className="report-container">
-      <p style={{ color: "gray" }}>*Time stamp*</p>
 
       <h2>Raportti:</h2>
-      {startTime}
+      <i style={{ marginLeft: "15px", color: "gray" }}>{startTime}</i>
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
