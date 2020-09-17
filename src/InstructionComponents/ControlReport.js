@@ -312,6 +312,9 @@ function Report({ personData }) {
           </p>
         </div>
         <div className="flex">
+          <p className="vital-subject" style={{ color: red }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+        </div>
+        <div className="flex">
           <p className="vital-subject">{"Systolinen verenpaine:"}</p>
           <p
             className="vital-answer"

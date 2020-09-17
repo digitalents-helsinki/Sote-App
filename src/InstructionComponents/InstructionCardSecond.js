@@ -168,9 +168,15 @@ function InstructionCardSecond({
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
             Jos oma sairaanhoitaja ei ole paikalla, konsultoi virka-ajan
-            ulkopuolisen konsultaatio-ohjeen mukaan (Virka-ajan ulkopuolinen
+            ulkopuolisen konsultaatio-ohjeen mukaan <span>(Virka-ajan ulkopuolinen
             konsultointiohje kotihoidon ja ympärivuorokautisen hoivan
-            henkilöstölle). Klo 21 jälkeen konsultoi tarvittaessa HUS-akuutin
+            henkilöstölle). Konsultoi ISBAR-raportointiohjeen mukaan.</span>
+          </p>
+        </div>
+        <div className="content">
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
+          <span>Klo 21</span> jälkeen konsultoi tarvittaessa HUS-akuutin
             päivystyksen vuorovastaavaa, ellei oma sairaanhoitaja ole paikalla.{" "}
             <span>Konsultoi ISBAR-raportointiohjeen mukaan.</span>
           </p>
