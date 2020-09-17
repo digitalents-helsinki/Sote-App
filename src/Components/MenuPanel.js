@@ -66,6 +66,16 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
+            <p>Konsultoitava tilanne</p>
+          </div>
+
+          <div
+            className="emeregencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p>NEWS - Aikaisen varoituksen pisteytysjärjestelmä</p>
           </div>
 
