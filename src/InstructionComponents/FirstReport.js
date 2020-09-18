@@ -134,6 +134,7 @@ function Report({ controlData }) {
   };
 
   let startTimeStamp = new Date();
+  startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
   let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
 
   return (
