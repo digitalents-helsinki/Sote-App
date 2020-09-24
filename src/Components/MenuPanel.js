@@ -59,49 +59,23 @@ function MenuPanel({
             </p>
           </div>
 
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
+          <div>
             <p>Konsultoitava tilanne</p>
           </div>
 
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
+          <div>
             <p>NEWS - Aikaisen varoituksen pisteytysjärjestelmä</p>
           </div>
 
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
+          <div>
             <p>
               ABCDE-menetelmä ja sen käyttö
-              <wbr />
             </p>
           </div>
 
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
+          <div>
             <p>
               ISBAR-raportointiohje konsultoitaessa asiakkaasta
-              <wbr />
             </p>
           </div>
 
