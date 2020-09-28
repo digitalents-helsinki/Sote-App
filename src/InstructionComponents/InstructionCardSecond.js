@@ -5,7 +5,8 @@ function InstructionCardSecond({
   personData,
   controlData,
   ControlNEWSscoreTotal,
-  careType
+  careType,
+  setCareType
 }) {
   const highRiskInstructions = {
     Kotihoito: (
@@ -20,6 +21,7 @@ function InstructionCardSecond({
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
       </>
     ),
+
     "Ympärivuorokautinen hoiva": (
       <>
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
@@ -38,6 +40,164 @@ function InstructionCardSecond({
       </>
     )
   };
+
+  const highToLowRiskInstructions = {
+    Kotihoito: (
+      <>
+        <div className="InstructionCard-first-container">
+          <h3>Toimintaohje:</h3>
+          <hr />
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
+              sairaanhoitajaa / lääkäriä.
+            </p>
+          </div>
+          <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              klo 21.00 asti konsultoi VÄLITTÖMÄSTI geriatrista päivystäjää.
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
+              vuorovastaavaa sairaanhoitajaa.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+
+    "Ympärivuorokautinen hoiva": (
+      <>
+        <div className="InstructionCard-second-container">
+          <h3>Toimintaohje:</h3>
+          <hr />
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <div className="content">
+            <p>
+              Konsultoi <span>VÄLITTÖMÄSTI</span> omaa sairaanhoitajaa/lääkäriä.
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Sairaanhoitaja arvioi asiakkaan tilanteen ja konsultoi
+              tarvittaessa omaa lääkäriä.
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Jos konsultoit lääkäriä suoraan, hän ohjeistaa tilanteessa.
+            </p>
+          </div>
+          <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi omaa sairaanhoitajaa jos paikalla.
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi virka-ajan
+              ulkopuolisen konsultaatio-ohjeen mukaan{" "}
+              <span>
+                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+                ympärivuorokautisen hoivan henkilöstölle). Konsultoi
+                ISBAR-raportointiohjeen mukaan.
+              </span>
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              <span>Klo 21</span> jälkeen konsultoi tarvittaessa HUS-akuutin
+              päivystyksen vuorovastaavaa, ellei oma sairaanhoitaja ole
+              paikalla. <span>Konsultoi ISBAR-raportointiohjeen mukaan.</span>
+            </p>
+          </div>
+        </div>
+      </>
+    )
+  };
+
+  const highToNoRiskInstructions = {
+    Kotihoito: (
+      <>
+        <div className="InstructionCard-first-container">
+          <h3>Toimintaohje:</h3>
+          <hr />
+
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
+              sairaanhoitajaa / lääkäriä.
+            </p>
+          </div>
+          <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              klo 21.00 asti konsultoi VÄLITTÖMÄSTI geriatrista päivystäjää.
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
+              vuorovastaavaa sairaanhoitajaa.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+
+    "Ympärivuorokautinen hoiva": (
+      <>
+        <div className="InstructionCard-second-container">
+          <h3>Toimintaohje:</h3>
+          <hr />
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi oman yksikön sairaanhoitajaa tai hoitavaa lääkäriä.
+            </p>
+          </div>
+          <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi oman yksikön sairaanhoitajaa, jos paikalla tai suoraan{" "}
+              <span>geriatrista lääkäriä</span> (kts. erillinen
+              konsultointiohje).
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Odota ohjetta.
+            </p>
+          </div>
+          <h3 style={{ marginTop: "30px" }}>
+            Tarvittaessa jos haluat arvioida asiakasta uudestaan, aloita
+            sovellus alusta.
+          </h3>
+        </div>
+      </>
+    )
+  };
+
   const CheckNEWSSCORErisk = () => {
     if (NEWSscoreTotal === 0) {
       return "Lievä riski";
@@ -102,6 +262,50 @@ function InstructionCardSecond({
   // console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
   // console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
+  // KOTIHOITO RISKILUOKAN MUUTOS FUNKTIO
+
+  if (
+    CheckControlNEWSSCORErisk() === "Korkea riski" &&
+    CheckNEWSSCORErisk() === "Lievä riski"
+  ) {
+    //RISKILUOKKA: KORKEASTA LIEVÄÄN
+    return highToNoRiskInstructions[careType];
+  } else if (
+    CheckControlNEWSSCORErisk() === "Korkea riski" &&
+    CheckNEWSSCORErisk() === "Kohtalainen riski"
+  ) {
+    // RISKILUOKKA: KORKEASTA KOHTALAISEEN
+    return (
+      <div className="InstructionCard-first-container">
+        <h3>Toimintaohje:</h3>
+        <hr />
+        {NEWSscoreRiskChange() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <div className="content">
+          <p>
+            Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
+            sairaanhoitajaa / lääkäriä.
+          </p>
+          <p>
+            virka-ajan ulkopuolella klo 21.00 asti konsultoi VÄLITTÖMÄSTI
+            geriatrista päivystäjää.
+          </p>
+          <p>
+            klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
+            vuorovastaavaa sairaanhoitajaa.
+          </p>
+          {highToLowRiskInstructions[careType]}
+        </div>
+      </div>
+    );
+  }
+
+  // RISKILUOKKIEN MUUTOKSET YMPÄRIVUOROKAUTISESSA HOIVASSA
+
   if (
     CheckControlNEWSSCORErisk() === "Korkea riski" ||
     CheckNEWSSCORErisk() === "Korkea riski"
@@ -138,49 +342,7 @@ function InstructionCardSecond({
             *Koska riskiluokka oli aluksi korkea.
           </p>
         )}
-        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
-        <div className="content">
-          <p>
-            Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä.
-          </p>
-        </div>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-            Sairaanhoitaja arvioi asiakkaan tilanteen ja konsultoi tarvittaessa
-            omaa lääkäriä.
-          </p>
-        </div>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-            Jos konsultoit lääkäriä suoraan, hän ohjeistaa tilanteessa.
-          </p>
-        </div>
-        <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-            Konsultoi omaa sairaanhoitajaa jos paikalla.
-          </p>
-        </div>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-            Jos oma sairaanhoitaja ei ole paikalla, konsultoi virka-ajan
-            ulkopuolisen konsultaatio-ohjeen mukaan <span>(Virka-ajan ulkopuolinen
-            konsultointiohje kotihoidon ja ympärivuorokautisen hoivan
-            henkilöstölle). Konsultoi ISBAR-raportointiohjeen mukaan.</span>
-          </p>
-        </div>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-          <span>Klo 21</span> jälkeen konsultoi tarvittaessa HUS-akuutin
-            päivystyksen vuorovastaavaa, ellei oma sairaanhoitaja ole paikalla.{" "}
-            <span>Konsultoi ISBAR-raportointiohjeen mukaan.</span>
-          </p>
-        </div>
+        {highToLowRiskInstructions[careType]}
       </div>
     );
   } else {
