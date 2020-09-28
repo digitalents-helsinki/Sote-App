@@ -135,11 +135,16 @@ function Report({ controlData }) {
 
   let startTimeStamp = new Date();
   startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
-  let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+  let startTime = startTimeStamp.toLocaleString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 
   return (
     <div className="report-container">
-
       <h2>Raportti:</h2>
       <i style={{ marginLeft: "15px", color: "gray" }}>{startTime}</i>
 
@@ -309,6 +314,7 @@ function Report({ controlData }) {
           <p className="vital-subject">{"Syketaajuus:"}</p>
           <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
             {controlData.Syketaajuus}
+            {controlData.Syketaajuus_timestamp}
           </p>
         </div>
         <div className="flex">

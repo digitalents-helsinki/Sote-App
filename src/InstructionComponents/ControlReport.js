@@ -130,15 +130,30 @@ function Report({ personData }) {
     }
   };
 
-
   let endTimeStamp = new Date();
-  let endTime = endTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+  let endTime = endTimeStamp.toLocaleString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  // let endHours = endTimeStamp.getHours();
+  // let endMinutes = endTimeStamp.getMinutes(endTimeStamp.getMinutes().length);
 
-//  let time = function() {
-//    time.toLocaleString();
-//    time.toLocaleDateString();
-//    time.toLocaleTimeString();
-//  }
+  // let startTimeStamp = new Date();
+  // startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
+  // let startHours = startTimeStamp.getHours();
+  // let startMinutes = startTimeStamp.getMinutes(
+  //   startTimeStamp.getMinutes().length
+  // );
+  // let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
+  //  let time = function() {
+  //    time.toLocaleString();
+  //    time.toLocaleDateString();
+  //    time.toLocaleTimeString();
+  //  }
 
   // const timeStamp = () => {
   //   new Date().toString;
@@ -146,9 +161,8 @@ function Report({ personData }) {
 
   return (
     <div className="report-container">
-
-      <h2>Raportti 2:</h2>
-      <i style={{ marginLeft: "15px", color: "gray" }}>{endTime}</i>
+      <h2 style={{ marginBottom: "5px" }}>Raportti runko:</h2>
+      <i>( {endTime} )</i>
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
@@ -231,7 +245,6 @@ function Report({ personData }) {
         <h3>Tajunta:</h3>
         <div className="flex">
           <p style={{ width: "100%", fontWeight: "200" }} className="answer">
-
             {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
               "Ei poikkeavia löydöksiä."
             ) : (
@@ -239,7 +252,6 @@ function Report({ personData }) {
                 {personData.Tajunta}
               </div>
             )}
-
           </p>
         </div>
       </div>
@@ -281,12 +293,10 @@ function Report({ personData }) {
         {personData.Iho ? (
           <p
             style={{
-
               fontWeight: "bold",
               fontSize: "0.9rem",
               lineHeight: "1.6rem",
               color: red
-
             }}
             className="answer"
           >
@@ -296,6 +306,50 @@ function Report({ personData }) {
       </div>
 
       <hr />
+
+      <table>
+        <tr>
+          <h3>Vitaali-arvot:</h3>
+        </tr>
+        <tr>
+          <td>Hengitystaajuus:</td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+        <tr>
+          <td>Happisaturaatio</td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+        <tr>
+          <td>
+            Systolinen <br />
+            Verenpaine:
+          </td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+        <tr>
+          <td>Syketaajuus:</td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+        <tr>
+          <td>Tajunnan taso:</td>
+          <td>Poikkeava</td>
+          <td>Normaali</td>
+        </tr>
+        <tr>
+          <td>Lämpötila:</td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+        <tr>
+          <td>Verensokeri:</td>
+          <td>testi</td>
+          <td>testi</td>
+        </tr>
+      </table>
 
       <div className="vitalValues">
         <h3>Vitaali-arvot:</h3>
@@ -312,7 +366,9 @@ function Report({ personData }) {
           </p>
         </div>
         <div className="flex">
-          <p className="vital-subject" style={{ color: red }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+          <p className="vital-subject" style={{ color: red }}>
+            Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+          </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Systolinen verenpaine:"}</p>
@@ -326,7 +382,7 @@ function Report({ personData }) {
         <div className="flex">
           <p className="vital-subject">{"Syketaajuus:"}</p>
           <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
-            {personData.Syketaajuus}
+            {personData.Syketaajuus} {personData.Syketaajuus_timestamp}
           </p>
         </div>
         <div className="flex">
