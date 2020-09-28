@@ -133,11 +133,15 @@ function Report({ controlData }) {
     }
   };
 
+  let startTimeStamp = new Date();
+  startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
+  let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
   return (
     <div className="report-container">
-      <p style={{ color: "gray" }}>*Time stamp*</p>
 
       <h2>Raportti:</h2>
+      <i style={{ marginLeft: "15px", color: "gray" }}>{startTime}</i>
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
@@ -169,7 +173,7 @@ function Report({ controlData }) {
       <div className="reportElement">
         <h3>Hengitys:</h3>
         <div className="flex">
-          <p className="subject">{"Korvin kuultavat äänet?"}</p>
+          <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
               {controlData["Hengitys - Normaali hengitys/ei ääniä"]

@@ -12,7 +12,7 @@ function CareTypeSelection({ setCareType }) {
   };
   return (
     <Page>
-      <h3 className="care-type-selection-title">Valitse hoitotyyppi</h3>
+      <h3 className="care-type-selection-title">Valitse hoitoyksikkö</h3>
       <button
         className="care-type-selection-button"
         onClick={() => clickHandler("Kotihoito")}

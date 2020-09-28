@@ -57,8 +57,8 @@ body {
 }
 
 .App .menu-panel .content p {
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  font-size: 0.93rem;
+  margin-bottom: 15px;
   margin-left: -15px;
   margin-right: -10px;
   opacity: 0.8;
@@ -569,7 +569,7 @@ body {
   font-weight: 600;
 }
 
-.App .Page .page-content .page-paragraph {
+.App .Page .page-content .page-paragraph .page-paragraph2 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 300;
@@ -1004,7 +1004,7 @@ body {
   .instruction-page
   .controlled-scoreCard-container
   h3 {
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
 .App
@@ -1152,7 +1152,7 @@ body {
   .instruction-page
   .report-container
   .reportElement {
-  margin: 25px 0;
+  margin: 10px 0;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

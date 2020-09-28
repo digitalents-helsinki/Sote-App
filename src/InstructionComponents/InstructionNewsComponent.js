@@ -44,7 +44,8 @@ function InstructionNewsComponent({
           }
         >
           <h1>Happisaturaatio</h1>
-          <p>Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi.</p>
+          <p style={{ marginBottom: "0px" }}>Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi.</p>
+          <p style={{ marginTop: "25px" }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
           <NewsComponent
             name={"Happisaturaatio"}
             personData={personData}

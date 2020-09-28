@@ -131,18 +131,24 @@ function Report({ personData }) {
   };
 
 
-  let timeStamp = new Date();
-  let time = timeStamp.toTimeString();
+  let endTimeStamp = new Date();
+  let endTime = endTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
+//  let time = function() {
+//    time.toLocaleString();
+//    time.toLocaleDateString();
+//    time.toLocaleTimeString();
+//  }
+
   // const timeStamp = () => {
   //   new Date().toString;
   // };
 
   return (
     <div className="report-container">
-      <p style={{ color: "gray" }}>*Time stamp*</p>
-
 
       <h2>Raportti 2:</h2>
+      <i style={{ marginLeft: "15px", color: "gray" }}>{endTime}</i>
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
@@ -173,7 +179,7 @@ function Report({ personData }) {
       <div className="reportElement">
         <h3>Hengitys:</h3>
         <div className="flex">
-          <p className="subject">{"Korvin kuultavat äänet?"}</p>
+          <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
               {personData["Hengitys - Normaali hengitys/ei ääniä"]
@@ -304,6 +310,9 @@ function Report({ personData }) {
           <p className="vital-answer" style={{ color: happisaturaatioStyle() }}>
             {personData.Happisaturaatio}
           </p>
+        </div>
+        <div className="flex">
+          <p className="vital-subject" style={{ color: red }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Systolinen verenpaine:"}</p>
