@@ -135,11 +135,16 @@ function Report({ controlData }) {
 
   let startTimeStamp = new Date();
   startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
-  let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+  let startTime = startTimeStamp.toLocaleString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 
   return (
     <div className="report-container">
-
       <h2>Raportti:</h2>
       <i style={{ marginLeft: "15px", color: "gray" }}>{startTime}</i>
 
@@ -157,9 +162,9 @@ function Report({ controlData }) {
           </div>
         </div>
         <div className="flex">
-          <p className="subject">{"Onko ilmatie estettä?"}</p>
+          <p className="subject">{"Onko ilmatie-estettä?"}</p>
           <div className="answer">
-            {controlData["Onko ilmatie estettä?"] ? (
+            {controlData["Onko ilmatie-estettä?"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -176,7 +181,7 @@ function Report({ controlData }) {
           <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {controlData["Hengitys - Normaali hengitys/ei ääniä"]
+              {controlData["Hengitys - Normaali hengitys / ei ääniä"]
                 ? "Normaali"
                 : null}
             </p>
@@ -188,6 +193,11 @@ function Report({ controlData }) {
             </p>
             <p style={{ color: red }}>
               {controlData["Hengitys - Rohina"] ? "Rohina" : null}
+            </p>
+            <p style={{ color: red }}>
+              {controlData["Hengitys - Raskas hengitys"]
+                ? "Raskas hengitys"
+                : null}
             </p>
           </div>
         </div>

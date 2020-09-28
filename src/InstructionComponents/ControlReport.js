@@ -130,23 +130,17 @@ function Report({ personData }) {
     }
   };
 
-
   let endTimeStamp = new Date();
-  let endTime = endTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
-
-//  let time = function() {
-//    time.toLocaleString();
-//    time.toLocaleDateString();
-//    time.toLocaleTimeString();
-//  }
-
-  // const timeStamp = () => {
-  //   new Date().toString;
-  // };
+  let endTime = endTimeStamp.toLocaleString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 
   return (
     <div className="report-container">
-
       <h2>Raportti 2:</h2>
       <i style={{ marginLeft: "15px", color: "gray" }}>{endTime}</i>
 
@@ -163,9 +157,9 @@ function Report({ personData }) {
           </div>
         </div>
         <div className="flex">
-          <p className="subject">{"Onko ilmatie estettä?"}</p>
+          <p className="subject">{"Onko ilmatie-estettä?"}</p>
           <div className="answer">
-            {personData["Onko ilmatie estettä?"] ? (
+            {personData["Onko ilmatie-estettä?"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -182,7 +176,7 @@ function Report({ personData }) {
           <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {personData["Hengitys - Normaali hengitys/ei ääniä"]
+              {personData["Hengitys - Normaali hengitys / ei ääniä"]
                 ? "Normaali"
                 : null}
             </p>
@@ -194,6 +188,11 @@ function Report({ personData }) {
             </p>
             <p style={{ color: red }}>
               {personData["Hengitys - Rohina"] ? "Rohina" : null}
+            </p>
+            <p style={{ color: red }}>
+              {personData["Hengitys - Raskas hengitys"]
+                ? "Raskas hengitys"
+                : null}
             </p>
           </div>
         </div>
@@ -231,7 +230,6 @@ function Report({ personData }) {
         <h3>Tajunta:</h3>
         <div className="flex">
           <p style={{ width: "100%", fontWeight: "200" }} className="answer">
-
             {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
               "Ei poikkeavia löydöksiä."
             ) : (
@@ -239,7 +237,6 @@ function Report({ personData }) {
                 {personData.Tajunta}
               </div>
             )}
-
           </p>
         </div>
       </div>
@@ -281,12 +278,10 @@ function Report({ personData }) {
         {personData.Iho ? (
           <p
             style={{
-
               fontWeight: "bold",
               fontSize: "0.9rem",
               lineHeight: "1.6rem",
               color: red
-
             }}
             className="answer"
           >
@@ -312,7 +307,9 @@ function Report({ personData }) {
           </p>
         </div>
         <div className="flex">
-          <p className="vital-subject" style={{ color: red }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+          <p className="vital-subject" style={{ color: red }}>
+            Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+          </p>
         </div>
         <div className="flex">
           <p className="vital-subject">{"Systolinen verenpaine:"}</p>
