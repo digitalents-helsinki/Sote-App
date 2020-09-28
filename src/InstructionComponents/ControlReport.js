@@ -1,6 +1,6 @@
 import React from "react";
 
-function Report({ personData }) {
+function Report({ personData, controlData }) {
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
@@ -22,6 +22,27 @@ function Report({ personData }) {
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
+    ) {
+      return orange;
+    }
+  };
+
+  const hengitystaajuusStyle2 = () => {
+    if (controlData.Hengitystaajuus <= 8 || controlData.Hengitystaajuus >= 25) {
+      return red;
+    } else if (
+      controlData.Hengitystaajuus >= 9 &&
+      controlData.Hengitystaajuus <= 11
+    ) {
+      return lightOrange;
+    } else if (
+      controlData.Hengitystaajuus >= 12 &&
+      controlData.Hengitystaajuus <= 20
+    ) {
+      return green;
+    } else if (
+      controlData.Hengitystaajuus >= 21 &&
+      controlData.Hengitystaajuus <= 24
     ) {
       return orange;
     }
@@ -313,8 +334,12 @@ function Report({ personData }) {
         </tr>
         <tr>
           <td>{"Hengitystaajuus:"}</td>
-          <td>testi</td>
-          <td>{personData.Hengitystaajuus}</td>
+          <td style={{ color: hengitystaajuusStyle2() }}>
+            {controlData.Hengitystaajuus}
+          </td>
+          <td style={{ color: hengitystaajuusStyle() }}>
+            {personData.Hengitystaajuus}
+          </td>
         </tr>
         <tr>
           <td>{"Happisaturaatio"}</td>

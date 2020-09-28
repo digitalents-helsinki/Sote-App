@@ -969,14 +969,12 @@ body {
           }
 
           td:nth-child(n + 2) {
-            background: gray;
             text-align: left;
             min-width: 83px;
           }
 
           td {
             display: inherit;
-            color: blue;
             border: 1px solid blue;
             // justify-content: center;
             align-items: center;
