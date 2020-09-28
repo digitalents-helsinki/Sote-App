@@ -312,42 +312,42 @@ function Report({ personData }) {
           <h3>Vitaali-arvot:</h3>
         </tr>
         <tr>
-          <td>Hengitystaajuus:</td>
+          <td>{"Hengitystaajuus:"}</td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData.Hengitystaajuus}</td>
         </tr>
         <tr>
-          <td>Happisaturaatio</td>
+          <td>{"Happisaturaatio"}</td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData.Happisaturaatio}</td>
         </tr>
         <tr>
           <td>
-            Systolinen <br />
-            Verenpaine:
+            {"Systolinen"} <br />
+            {"Verenpaine:"}
           </td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData["Systolinen verenpaine"]}</td>
         </tr>
         <tr>
-          <td>Syketaajuus:</td>
+          <td>{"Syketaajuus:"}</td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData.Syketaajuus}</td>
         </tr>
         <tr>
-          <td>Tajunnan taso:</td>
+          <td>{"Tajunnan taso:"}</td>
           <td>Poikkeava</td>
           <td>Normaali</td>
         </tr>
         <tr>
-          <td>Lämpötila:</td>
+          <td>{"Lämpötila:"}</td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData["Mittaa lämpötila"]}</td>
         </tr>
         <tr>
-          <td>Verensokeri:</td>
+          <td>{"Verensokeri:"}</td>
           <td>testi</td>
-          <td>testi</td>
+          <td>{personData["Mittaa verensokeri:"]}</td>
         </tr>
       </table>
 

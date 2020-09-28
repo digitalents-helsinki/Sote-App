@@ -950,19 +950,36 @@ body {
         table {
           border: 1px solid black;
 
+          h3 {
+            display: flex;
+            color: $sote-red;
+            align-items: center;
+          }
+
           tr {
+            display: flex;
             margin-left: 15px;
-            display: block;
             border: 1px solid red;
+            height: 100px;
+          }
+
+          td:first-child {
+            background: yellow;
+            min-width: 140px;
+          }
+
+          td:nth-child(n + 2) {
+            background: gray;
+            text-align: left;
+            min-width: 83px;
           }
 
           td {
-            min-width: 30px;
+            display: inherit;
             color: blue;
-            border: 1px solid orangered;
-            background: gray;
-            width: 100%;
-            min-width: 50px;
+            border: 1px solid blue;
+            // justify-content: center;
+            align-items: center;
           }
         }
 
