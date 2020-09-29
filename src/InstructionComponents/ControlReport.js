@@ -1,6 +1,6 @@
 import React from "react";
 
-function Report({ personData }) {
+function Report({ personData, controlData }) {
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
@@ -22,6 +22,27 @@ function Report({ personData }) {
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
+    ) {
+      return orange;
+    }
+  };
+
+  const hengitystaajuusStyle2 = () => {
+    if (controlData.Hengitystaajuus <= 8 || controlData.Hengitystaajuus >= 25) {
+      return red;
+    } else if (
+      controlData.Hengitystaajuus >= 9 &&
+      controlData.Hengitystaajuus <= 11
+    ) {
+      return lightOrange;
+    } else if (
+      controlData.Hengitystaajuus >= 12 &&
+      controlData.Hengitystaajuus <= 20
+    ) {
+      return green;
+    } else if (
+      controlData.Hengitystaajuus >= 21 &&
+      controlData.Hengitystaajuus <= 24
     ) {
       return orange;
     }
@@ -139,10 +160,32 @@ function Report({ personData }) {
     minute: "2-digit"
   });
 
+  // let endHours = endTimeStamp.getHours();
+  // let endMinutes = endTimeStamp.getMinutes(endTimeStamp.getMinutes().length);
+
+  // let startTimeStamp = new Date();
+  // startTimeStamp.setMinutes(startTimeStamp.getMinutes() - 2);
+  // let startHours = startTimeStamp.getHours();
+  // let startMinutes = startTimeStamp.getMinutes(
+  //   startTimeStamp.getMinutes().length
+  // );
+  // let startTime = startTimeStamp.toLocaleString([], {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
+
+  //  let time = function() {
+  //    time.toLocaleString();
+  //    time.toLocaleDateString();
+  //    time.toLocaleTimeString();
+  //  }
+
+  // const timeStamp = () => {
+  //   new Date().toString;
+  // };
+
   return (
     <div className="report-container">
-      <h2>Raportti 2:</h2>
-      <i style={{ marginLeft: "15px", color: "gray" }}>{endTime}</i>
+      <h2 style={{ marginBottom: "5px" }}>Raportti runko:</h2>
+      <i>( {endTime} )</i>
+
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
@@ -292,6 +335,54 @@ function Report({ personData }) {
 
       <hr />
 
+      <table>
+        <tr>
+          <h3>Vitaali-arvot:</h3>
+        </tr>
+        <tr>
+          <td>{"Hengitystaajuus:"}</td>
+          <td style={{ color: hengitystaajuusStyle2() }}>
+            {controlData.Hengitystaajuus}
+          </td>
+          <td style={{ color: hengitystaajuusStyle() }}>
+            {personData.Hengitystaajuus}
+          </td>
+        </tr>
+        <tr>
+          <td>{"Happisaturaatio"}</td>
+          <td>testi</td>
+          <td>{personData.Happisaturaatio}</td>
+        </tr>
+        <tr>
+          <td>
+            {"Systolinen"} <br />
+            {"Verenpaine:"}
+          </td>
+          <td>testi</td>
+          <td>{personData["Systolinen verenpaine"]}</td>
+        </tr>
+        <tr>
+          <td>{"Syketaajuus:"}</td>
+          <td>testi</td>
+          <td>{personData.Syketaajuus}</td>
+        </tr>
+        <tr>
+          <td>{"Tajunnan taso:"}</td>
+          <td>Poikkeava</td>
+          <td>Normaali</td>
+        </tr>
+        <tr>
+          <td>{"Lämpötila:"}</td>
+          <td>testi</td>
+          <td>{personData["Mittaa lämpötila"]}</td>
+        </tr>
+        <tr>
+          <td>{"Verensokeri:"}</td>
+          <td>testi</td>
+          <td>{personData["Mittaa verensokeri:"]}</td>
+        </tr>
+      </table>
+
       <div className="vitalValues">
         <h3>Vitaali-arvot:</h3>
         <div className="flex">
@@ -323,7 +414,7 @@ function Report({ personData }) {
         <div className="flex">
           <p className="vital-subject">{"Syketaajuus:"}</p>
           <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
-            {personData.Syketaajuus}
+            {personData.Syketaajuus} {personData.Syketaajuus_timestamp}
           </p>
         </div>
         <div className="flex">
