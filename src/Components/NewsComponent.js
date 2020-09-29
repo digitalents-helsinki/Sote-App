@@ -133,7 +133,10 @@ function NewsComponent(props) {
           //Update personData
           const keyvalue = `${props.name} - NEWSscore`;
           const tsname = `${props.name}_timestamp`;
-          const ts = new Date().toLocaleTimeString();
+          const ts = new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
           const oldData = props.personData;
           const newData = {
             ...oldData,
