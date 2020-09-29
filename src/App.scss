@@ -913,11 +913,6 @@ body {
           padding: 0 15px;
         }
 
-        i {
-          color: gray;
-          margin-left: 15px;
-        }
-
         .reportElement {
           margin: 10px 0;
           padding: 0 15px;
@@ -947,40 +942,6 @@ body {
           }
         }
 
-        table {
-          border: 1px solid black;
-
-          h3 {
-            display: flex;
-            color: $sote-red;
-            align-items: center;
-          }
-
-          tr {
-            display: flex;
-            margin-left: 15px;
-            border: 1px solid red;
-            height: 100px;
-          }
-
-          td:first-child {
-            background: yellow;
-            min-width: 140px;
-          }
-
-          td:nth-child(n + 2) {
-            text-align: left;
-            min-width: 83px;
-          }
-
-          td {
-            display: inherit;
-            border: 1px solid blue;
-            // justify-content: center;
-            align-items: center;
-          }
-        }
-
         .vitalValues {
           margin-top: 50px;
           margin-bottom: 50px;
@@ -990,12 +951,6 @@ body {
 
           h3 {
             color: $sote-red;
-          }
-
-          .time {
-            float: right;
-            color: blue;
-            margin-top: -37px;
           }
 
           .flex {
