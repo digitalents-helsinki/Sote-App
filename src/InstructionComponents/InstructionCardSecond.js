@@ -313,7 +313,7 @@ function InstructionCardSecond({
   } else {
     //RISKILUOKKA: LIEVÄ RISKI
     return (
-      <div className="InstructionCard-first-container">
+      <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
