@@ -44,9 +44,7 @@ function InstructionCardSecond({
   const highToLowRiskInstructions = {
     Kotihoito: (
       <>
-        <div className="InstructionCard-first-container">
-          <h3>Toimintaohje:</h3>
-          <hr />
+        <div>
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
@@ -75,9 +73,7 @@ function InstructionCardSecond({
 
     "Ympärivuorokautinen hoiva": (
       <>
-        <div className="InstructionCard-second-container">
-          <h3>Toimintaohje:</h3>
-          <hr />
+        <div>
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p>
@@ -132,10 +128,7 @@ function InstructionCardSecond({
   const highToNoRiskInstructions = {
     Kotihoito: (
       <>
-        <div className="InstructionCard-first-container">
-          <h3>Toimintaohje:</h3>
-          <hr />
-
+        <div>
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
@@ -164,9 +157,7 @@ function InstructionCardSecond({
 
     "Ympärivuorokautinen hoiva": (
       <>
-        <div className="InstructionCard-second-container">
-          <h3>Toimintaohje:</h3>
-          <hr />
+        <div>
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
@@ -269,7 +260,18 @@ function InstructionCardSecond({
     CheckNEWSSCORErisk() === "Lievä riski"
   ) {
     //RISKILUOKKA: KORKEASTA LIEVÄÄN
-    return highToNoRiskInstructions[careType];
+    return (
+      <div className="InstructionCard-first-container">
+        <h3>Toimintaohje:</h3>
+        <hr />
+        {NEWSscoreRiskChange() && (
+          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
+            *Koska riskiluokka oli aluksi korkea.
+          </p>
+        )}
+        {highToNoRiskInstructions[careType]}
+      </div>
+    );
   } else if (
     CheckControlNEWSSCORErisk() === "Korkea riski" &&
     CheckNEWSSCORErisk() === "Kohtalainen riski"
