@@ -143,7 +143,8 @@ function NewsComponent(props) {
           const newData = {
             ...oldData,
             [props.name]: inputValue,
-            [keyvalue]: NEWSscore
+            [keyvalue]: NEWSscore,
+            [tsname]: ts
           };
           props.setPersonData(newData);
 

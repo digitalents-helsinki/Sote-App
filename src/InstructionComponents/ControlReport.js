@@ -1,6 +1,6 @@
 import React from "react";
 
-function Report({ personData }) {
+function Report({ personData, controlData }) {
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
@@ -22,6 +22,27 @@ function Report({ personData }) {
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
+    ) {
+      return orange;
+    }
+  };
+
+  const hengitystaajuusStyle2 = () => {
+    if (controlData.Hengitystaajuus <= 8 || controlData.Hengitystaajuus >= 25) {
+      return red;
+    } else if (
+      controlData.Hengitystaajuus >= 9 &&
+      controlData.Hengitystaajuus <= 11
+    ) {
+      return lightOrange;
+    } else if (
+      controlData.Hengitystaajuus >= 12 &&
+      controlData.Hengitystaajuus <= 20
+    ) {
+      return green;
+    } else if (
+      controlData.Hengitystaajuus >= 21 &&
+      controlData.Hengitystaajuus <= 24
     ) {
       return orange;
     }
@@ -247,10 +268,8 @@ function Report({ personData }) {
 
   return (
     <div className="report-container">
-
       <h2 style={{ marginBottom: "5px" }}>Raportti:</h2>
       <i>( {endTime} )</i>
-
 
       <div className="reportElement">
         <h3>Hengitystie:</h3>
@@ -399,7 +418,6 @@ function Report({ personData }) {
       </div>
 
       <hr />
-
 
       <table>
         <tr>
