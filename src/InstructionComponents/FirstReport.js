@@ -162,9 +162,9 @@ function Report({ controlData }) {
           </div>
         </div>
         <div className="flex">
-          <p className="subject">{"Onko ilmatie estettä?"}</p>
+          <p className="subject">{"Onko ilmatie-estettä?"}</p>
           <div className="answer">
-            {controlData["Onko ilmatie estettä?"] ? (
+            {controlData["Onko ilmatie-estettä?"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -181,7 +181,7 @@ function Report({ controlData }) {
           <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {controlData["Hengitys - Normaali hengitys/ei ääniä"]
+              {controlData["Hengitys - Normaali hengitys / ei ääniä"]
                 ? "Normaali"
                 : null}
             </p>
@@ -193,6 +193,11 @@ function Report({ controlData }) {
             </p>
             <p style={{ color: red }}>
               {controlData["Hengitys - Rohina"] ? "Rohina" : null}
+            </p>
+            <p style={{ color: red }}>
+              {controlData["Hengitys - Raskas hengitys"]
+                ? "Raskas hengitys"
+                : null}
             </p>
           </div>
         </div>

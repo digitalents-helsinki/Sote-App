@@ -159,6 +159,7 @@ function Report({ personData, controlData }) {
     hour: "2-digit",
     minute: "2-digit"
   });
+
   // let endHours = endTimeStamp.getHours();
   // let endMinutes = endTimeStamp.getMinutes(endTimeStamp.getMinutes().length);
 
@@ -185,6 +186,7 @@ function Report({ personData, controlData }) {
       <h2 style={{ marginBottom: "5px" }}>Raportti runko:</h2>
       <i>( {endTime} )</i>
 
+
       <div className="reportElement">
         <h3>Hengitystie:</h3>
         <div className="flex">
@@ -198,9 +200,9 @@ function Report({ personData, controlData }) {
           </div>
         </div>
         <div className="flex">
-          <p className="subject">{"Onko ilmatie estettä?"}</p>
+          <p className="subject">{"Onko ilmatie-estettä?"}</p>
           <div className="answer">
-            {personData["Onko ilmatie estettä?"] ? (
+            {personData["Onko ilmatie-estettä?"] ? (
               <p style={{ color: red }}>Kyllä</p>
             ) : (
               <p style={{ color: green }}>Ei</p>
@@ -217,7 +219,7 @@ function Report({ personData, controlData }) {
           <p className="subject">{"Korviin kuultavat äänet?"}</p>
           <div className="answer">
             <p style={{ color: green }}>
-              {personData["Hengitys - Normaali hengitys/ei ääniä"]
+              {personData["Hengitys - Normaali hengitys / ei ääniä"]
                 ? "Normaali"
                 : null}
             </p>
@@ -229,6 +231,11 @@ function Report({ personData, controlData }) {
             </p>
             <p style={{ color: red }}>
               {personData["Hengitys - Rohina"] ? "Rohina" : null}
+            </p>
+            <p style={{ color: red }}>
+              {personData["Hengitys - Raskas hengitys"]
+                ? "Raskas hengitys"
+                : null}
             </p>
           </div>
         </div>
