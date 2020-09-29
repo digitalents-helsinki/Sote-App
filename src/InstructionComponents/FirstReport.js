@@ -319,7 +319,6 @@ function Report({ controlData }) {
           <p className="vital-subject">{"Syketaajuus:"}</p>
           <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
             {controlData.Syketaajuus}
-            {controlData.Syketaajuus_timestamp}
           </p>
         </div>
         <div className="flex">
