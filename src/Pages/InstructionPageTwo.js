@@ -2,6 +2,7 @@ import React from "react";
 import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
 import ControlReport from "../InstructionComponents/ControlReport";
+import FirstReport from "../InstructionComponents/FirstReport";
 
 function InstructionPageTwo({
   personData,
@@ -28,7 +29,8 @@ function InstructionPageTwo({
           ControlNEWSscoreTotal={ControlNEWSscoreTotal}
           careType={careType}
         />
-        <ControlReport personData={personData} controlData={controlData} />
+        <FirstReport personData={personData} controlData={controlData} />
+        <ControlReport personData={personData} />
       </div>
     </div>
   );

@@ -913,11 +913,6 @@ body {
           padding: 0 15px;
         }
 
-        i {
-          color: gray;
-          margin-left: 15px;
-        }
-
         .reportElement {
           margin: 10px 0;
           padding: 0 15px;
@@ -946,6 +941,7 @@ body {
             }
           }
         }
+
 
         table {
           margin-bottom: 30px;
@@ -1010,6 +1006,7 @@ body {
           align-items: center;
         }
 
+
         .vitalValues {
           margin-top: 50px;
           margin-bottom: 50px;
@@ -1019,12 +1016,6 @@ body {
 
           h3 {
             color: $sote-red;
-          }
-
-          .time {
-            float: right;
-            color: blue;
-            margin-top: -37px;
           }
 
           .flex {
