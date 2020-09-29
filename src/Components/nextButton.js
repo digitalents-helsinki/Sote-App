@@ -22,10 +22,11 @@ const NextButton = ({ personData, NEWSscoreTotal, careType }) => {
   const locationIndex = locations.findIndex(loc => loc === location.pathname);
   const activeStateExpressions = [
     typeof personData["Onko hengitystie auki?"] === "boolean" &&
-      typeof personData["Onko ilmatie estettä?"] === "boolean",
-    personData["Hengitys - Normaali hengitys/ei ääniä"] ||
+      typeof personData["Onko ilmatie-estettä?"] === "boolean",
+    personData["Hengitys - Normaali hengitys / ei ääniä"] ||
       personData["Hengitys - Vinkuna"] ||
       personData["Hengitys - Korina"] ||
+      personData["Hengitys - Raskas hengitys"] ||
       personData["Hengitys - Rohina"],
     typeof personData["Tarkista syke:"] === "boolean" &&
       typeof personData["Tuntuuko lämpörajoja raajoissa:"] === "boolean",

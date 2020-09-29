@@ -152,7 +152,7 @@ function HengitystiePage({ personData, setPersonData, careType }) {
         setPersonData={setPersonData}
       />
       <DoubleButton
-        header={"Onko ilmatie estettä?"}
+        header={"Onko ilmatie-estettä?"}
         redFirst={true}
         hoitoOhjeHeader={"Hoito-ohje"}
         hoitoOhje={hoitoOhje_2}
