@@ -420,114 +420,116 @@ function Report({ personData, controlData }) {
       <hr />
 
       <table>
-        <tr>
-          <h3>Vitaali-arvot:</h3>
-        </tr>
-        <tr>
-          <td>{"Hengitystaajuus:"}</td>
-          <td style={{ color: hengitystaajuusStyle2() }}>
-            {controlData.Hengitystaajuus_timestamp}
-            <br />
-            {controlData.Hengitystaajuus}
-          </td>
-          <td></td>
-          <td style={{ color: hengitystaajuusStyle() }}>
-            {personData.Hengitystaajuus_timestamp}
-            <br />
-            {personData.Hengitystaajuus}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {"Happisaturaatio:"}
-            <br />
-            <p>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
-          </td>
-          <td style={{ color: happisaturaatioStyle2() }}>
-            {controlData.Happisaturaatio_timestamp}
-            <br />
-            {controlData.Happisaturaatio}
-          </td>
-          <td></td>
-          <td style={{ color: happisaturaatioStyle() }}>
-            {personData.Happisaturaatio_timestamp}
-            <br />
-            {personData.Happisaturaatio}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {"Systolinen"} <br />
-            {"Verenpaine:"}
-          </td>
-          <td style={{ color: systolinenVerenpaineStyle2() }}>
-            {controlData["Systolinen verenpaine_timestamp"]}
-            <br />
-            {controlData["Systolinen verenpaine"]}
-          </td>
-          <td></td>
-          <td style={{ color: systolinenVerenpaineStyle() }}>
-            {personData["Systolinen verenpaine_timestamp"]}
-            <br />
-            {personData["Systolinen verenpaine"]}
-          </td>
-        </tr>
-        <tr>
-          <td>{"Syketaajuus:"}</td>
-          <td style={{ color: SyketaajuusStyle2() }}>
-            {controlData.Syketaajuus_timestamp}
-            <br />
-            {controlData.Syketaajuus}
-          </td>
-          <td></td>
-          <td style={{ color: SyketaajuusStyle() }}>
-            {personData.Syketaajuus_timestamp}
-            <br />
-            {personData.Syketaajuus}
-          </td>
-        </tr>
-        <tr>
-          <td>{"Tajunnan taso:"}</td>
-          {controlData["Tajunnan taso"] ? (
-            <td style={{ color: green }}>Normaali</td>
-          ) : (
-            <td style={{ color: red }}>Poikkeava</td>
-          )}
-          <td></td>
-          {personData["Tajunnan taso"] ? (
-            <td style={{ color: green }}>Normaali</td>
-          ) : (
-            <td style={{ color: red }}>Poikkeava</td>
-          )}
-        </tr>
-        <tr>
-          <td>{"Lämpötila:"}</td>
-          <td style={{ color: lampotilaStyle2() }}>
-            {controlData["Mittaa lämpötila_timestamp"]}
-            <br />
-            {controlData["Mittaa lämpötila"]}
-          </td>
-          <td></td>
-          <td style={{ color: lampotilaStyle() }}>
-            {personData["Mittaa lämpötila_timestamp"]}
-            <br />
-            {personData["Mittaa lämpötila"]}
-          </td>
-        </tr>
-        <tr>
-          <td>{"Verensokeri:"}</td>
-          <td style={{ color: verensokeriStyle2() }}>
-            {controlData["Mittaa verensokeri:_timestamp"]}
-            <br />
-            {controlData["Mittaa verensokeri:"]}
-          </td>
-          <td></td>
-          <td style={{ color: verensokeriStyle() }}>
-            {personData["Mittaa verensokeri:_timestamp"]}
-            <br />
-            {personData["Mittaa verensokeri:"]}
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <h3>Vitaali-arvot:</h3>
+          </tr>
+          <tr>
+            <td>{"Hengitystaajuus:"}</td>
+            <td style={{ color: hengitystaajuusStyle2() }}>
+              {controlData.Hengitystaajuus_timestamp}
+              <br />
+              {controlData.Hengitystaajuus}
+            </td>
+            <td></td>
+            <td style={{ color: hengitystaajuusStyle() }}>
+              {personData.Hengitystaajuus_timestamp}
+              <br />
+              {personData.Hengitystaajuus}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {"Happisaturaatio:"}
+              <br />
+              <p>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+            </td>
+            <td style={{ color: happisaturaatioStyle2() }}>
+              {controlData.Happisaturaatio_timestamp}
+              <br />
+              {controlData.Happisaturaatio}
+            </td>
+            <td></td>
+            <td style={{ color: happisaturaatioStyle() }}>
+              {personData.Happisaturaatio_timestamp}
+              <br />
+              {personData.Happisaturaatio}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {"Systolinen"} <br />
+              {"Verenpaine:"}
+            </td>
+            <td style={{ color: systolinenVerenpaineStyle2() }}>
+              {controlData["Systolinen verenpaine_timestamp"]}
+              <br />
+              {controlData["Systolinen verenpaine"]}
+            </td>
+            <td></td>
+            <td style={{ color: systolinenVerenpaineStyle() }}>
+              {personData["Systolinen verenpaine_timestamp"]}
+              <br />
+              {personData["Systolinen verenpaine"]}
+            </td>
+          </tr>
+          <tr>
+            <td>{"Syketaajuus:"}</td>
+            <td style={{ color: SyketaajuusStyle2() }}>
+              {controlData.Syketaajuus_timestamp}
+              <br />
+              {controlData.Syketaajuus}
+            </td>
+            <td></td>
+            <td style={{ color: SyketaajuusStyle() }}>
+              {personData.Syketaajuus_timestamp}
+              <br />
+              {personData.Syketaajuus}
+            </td>
+          </tr>
+          <tr>
+            <td>{"Tajunnan taso:"}</td>
+            {controlData["Tajunnan taso"] ? (
+              <td style={{ color: green }}>Normaali</td>
+            ) : (
+              <td style={{ color: red }}>Poikkeava</td>
+            )}
+            <td></td>
+            {personData["Tajunnan taso"] ? (
+              <td style={{ color: green }}>Normaali</td>
+            ) : (
+              <td style={{ color: red }}>Poikkeava</td>
+            )}
+          </tr>
+          <tr>
+            <td>{"Lämpötila:"}</td>
+            <td style={{ color: lampotilaStyle2() }}>
+              {controlData["Mittaa lämpötila_timestamp"]}
+              <br />
+              {controlData["Mittaa lämpötila"]}
+            </td>
+            <td></td>
+            <td style={{ color: lampotilaStyle() }}>
+              {personData["Mittaa lämpötila_timestamp"]}
+              <br />
+              {personData["Mittaa lämpötila"]}
+            </td>
+          </tr>
+          <tr>
+            <td>{"Verensokeri:"}</td>
+            <td style={{ color: verensokeriStyle2() }}>
+              {controlData["Mittaa verensokeri:_timestamp"]}
+              <br />
+              {controlData["Mittaa verensokeri:"]}
+            </td>
+            <td></td>
+            <td style={{ color: verensokeriStyle() }}>
+              {personData["Mittaa verensokeri:_timestamp"]}
+              <br />
+              {personData["Mittaa verensokeri:"]}
+            </td>
+          </tr>
+        </tbody>
       </table>
 
       {/* <div className="vitalValues">
