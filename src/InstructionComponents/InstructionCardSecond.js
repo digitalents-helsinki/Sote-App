@@ -5,9 +5,10 @@ function InstructionCardSecond({
   personData,
   controlData,
   ControlNEWSscoreTotal,
-  careType,
-  setCareType
+  careType
 }) {
+  //INSTRUCTIONS FOR DIFFERENT RISK TYPES
+
   const highRiskInstructions = {
     Kotihoito: (
       <>
@@ -57,14 +58,15 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi VÄLITTÖMÄSTI geriatrista päivystäjää.
+              klo 21.00 asti konsultoi <span>VÄLITTÖMÄSTI</span> geriatrista
+              päivystäjää.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
-              vuorovastaavaa sairaanhoitajaa.
+              klo 21 jälkeen konsultoi <span>VÄLITTÖMÄSTI</span> HUS-akuutin
+              päivystyksen vuorovastaavaa sairaanhoitajaa.
             </p>
           </div>
         </div>
@@ -141,14 +143,15 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi VÄLITTÖMÄSTI geriatrista päivystäjää.
+              klo 21.00 asti konsultoi <span>VÄLITTÖMÄSTI</span> geriatrista
+              päivystäjää.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
-              vuorovastaavaa sairaanhoitajaa.
+              klo 21 jälkeen konsultoi <span>VÄLITTÖMÄSTI</span> HUS-akuutin
+              päivystyksen vuorovastaavaa sairaanhoitajaa.
             </p>
           </div>
         </div>
@@ -253,17 +256,13 @@ function InstructionCardSecond({
   // console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
   // console.log("NEWSscoreRiskChange", NEWSscoreRiskChange());
 
-  // KOTIHOITO RISKILUOKAN MUUTOS FUNKTIO
-
   if (
     CheckControlNEWSSCORErisk() === "Korkea riski" &&
     CheckNEWSSCORErisk() === "Lievä riski"
   ) {
     //RISKILUOKKA: KORKEASTA LIEVÄÄN
     return (
-      <div className="InstructionCard-first-container">
-        <h3>Toimintaohje:</h3>
-        <hr />
+      <div className="InstructionCard-second-container">
         {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615", fontWeight: "bold" }}>
             *Koska riskiluokka oli aluksi korkea.
@@ -278,7 +277,7 @@ function InstructionCardSecond({
   ) {
     // RISKILUOKKA: KORKEASTA KOHTALAISEEN
     return (
-      <div className="InstructionCard-first-container">
+      <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
         {NEWSscoreRiskChange() && (
@@ -286,29 +285,10 @@ function InstructionCardSecond({
             *Koska riskiluokka oli aluksi korkea.
           </p>
         )}
-        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
-        <div className="content">
-          <p>
-            Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
-            sairaanhoitajaa / lääkäriä.
-          </p>
-          <p>
-            virka-ajan ulkopuolella klo 21.00 asti konsultoi VÄLITTÖMÄSTI
-            geriatrista päivystäjää.
-          </p>
-          <p>
-            klo 21 jälkeen konsultoi VÄLITTÖMÄSTI HUS-akuutin päivystyksen
-            vuorovastaavaa sairaanhoitajaa.
-          </p>
-          {highToLowRiskInstructions[careType]}
-        </div>
+        {highToLowRiskInstructions[careType]}
       </div>
     );
-  }
-
-  // RISKILUOKKIEN MUUTOKSET YMPÄRIVUOROKAUTISESSA HOIVASSA
-
-  if (
+  } else if (
     CheckControlNEWSSCORErisk() === "Korkea riski" ||
     CheckNEWSSCORErisk() === "Korkea riski"
   ) {
@@ -330,27 +310,10 @@ function InstructionCardSecond({
         {highRiskInstructions[careType]}
       </div>
     );
-  } else if (
-    CheckControlNEWSSCORErisk() === "Kohtalainen riski" &&
-    CheckNEWSSCORErisk() !== "Korkea riski"
-  ) {
-    //RISKILUOKKA: KOHTALAINEN RISKI
-    return (
-      <div className="InstructionCard-second-container">
-        <h3>Toimintaohje:</h3>
-        <hr />
-        {NEWSscoreRiskChange() && (
-          <p style={{ color: "#ab2615", fontWeight: "bold" }}>
-            *Koska riskiluokka oli aluksi korkea.
-          </p>
-        )}
-        {highToLowRiskInstructions[careType]}
-      </div>
-    );
   } else {
     //RISKILUOKKA: LIEVÄ RISKI
     return (
-      <div className="InstructionCard-second-container">
+      <div className="InstructionCard-first-container">
         <h3>Toimintaohje:</h3>
         <hr />
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
