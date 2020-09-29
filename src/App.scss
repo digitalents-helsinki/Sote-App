@@ -942,15 +942,8 @@ body {
           }
         }
 
-
         table {
           margin-bottom: 30px;
-          h3 {
-            display: flex;
-            color: $sote-red;
-            align-items: center;
-            margin-bottom: 0px;
-          }
 
           tr {
             display: flex;
@@ -968,7 +961,7 @@ body {
           }
 
           td:first-child p {
-            color: red;
+            color: rgb(173, 62, 47);
             display: contents;
             font-size: small;
           }
@@ -1005,7 +998,6 @@ body {
           // justify-content: center;
           align-items: center;
         }
-
 
         .vitalValues {
           margin-top: 50px;

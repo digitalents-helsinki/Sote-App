@@ -422,7 +422,11 @@ function Report({ personData, controlData }) {
       <table>
         <tbody>
           <tr>
-            <h3>Vitaali-arvot:</h3>
+            <td
+              style={{ color: red, fontWeight: "bolder", fontSize: "1.17em" }}
+            >
+              Vitaali-arvot:
+            </td>
           </tr>
           <tr>
             <td>{"Hengitystaajuus:"}</td>
