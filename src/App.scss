@@ -947,10 +947,16 @@ body {
 
           tr {
             display: flex;
-            margin-left: 15px;
+            // margin-left: 15px;
             height: 100px;
             width: 90.8vw;
             overflow: hidden;
+            border-bottom: solid 1px #212121;
+          }
+
+          tr:first-child {
+            margin-top: -15px;
+            background: rgb(55, 125, 79);
           }
 
           td:first-child {
@@ -975,10 +981,11 @@ body {
             width: 51vw;
             justify-content: right;
             padding-right: 10px;
+            border-left: solid 1px #212121;
           }
 
           td:nth-child(3) {
-            border-left: dashed 2px #212121;
+            border-left: solid 2px #212121;
             opacity: 0.3;
             min-width: 0px;
           }

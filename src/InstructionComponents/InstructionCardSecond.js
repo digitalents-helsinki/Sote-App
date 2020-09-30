@@ -27,11 +27,13 @@ function InstructionCardSecond({
       <>
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
-          <p>Konsultoi omaa lääkäriä.</p>
+          <p>Konsultoi omaa lääkäriä <span>VÄLITTÖMÄSTI</span>.</p>
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
           <p>
+            <span style={{color: "red"}}>Pitäisikö ohjeena olla suoraan valita linja-1 tai sitten allaoleva ohje..?</span><br /><br />
+
             Konsultoi geriatrista lääkäriä erillisen ohjeen mukaan (Virka-ajan
             ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen
             hoivan henkilöstölle). Huom. klo 21 jälkeen soita HUS-akuutin
@@ -184,7 +186,7 @@ function InstructionCardSecond({
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>
-            Tarvittaessa jos haluat arvioida asiakasta uudestaan, aloita
+            Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen mahdollista konsultaatiota, aloita
             sovellus alusta.
           </h3>
         </div>
@@ -338,7 +340,7 @@ function InstructionCardSecond({
           </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>
-          Tarvittaessa jos haluat arvioida asiakasta uudestaan, aloita sovellus
+          Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen mahdollista konsultaatiota, aloita sovellus
           alusta.
         </h3>
       </div>

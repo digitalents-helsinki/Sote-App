@@ -268,7 +268,7 @@ function Report({ personData, controlData }) {
 
   return (
     <div className="report-container">
-      <h2 style={{ marginBottom: "5px" }}>Raportti:</h2>
+      <h3 style={{ marginBottom: "5px" }}>Raportti:</h3>
       <i>( {endTime} )</i>
 
       <div className="reportElement">
@@ -423,7 +423,7 @@ function Report({ personData, controlData }) {
         <tbody>
           <tr>
             <td
-              style={{ color: red, fontWeight: "bolder", fontSize: "1.17em" }}
+              style={{ color: "white", fontWeight: "bolder", fontSize: "1.17em" }}
             >
               Vitaali-arvot:
             </td>
@@ -431,13 +431,13 @@ function Report({ personData, controlData }) {
           <tr>
             <td>{"Hengitystaajuus:"}</td>
             <td style={{ color: hengitystaajuusStyle2() }}>
-              {controlData.Hengitystaajuus_timestamp}
+              klo {controlData.Hengitystaajuus_timestamp}
               <br />
               {controlData.Hengitystaajuus}
             </td>
             <td></td>
             <td style={{ color: hengitystaajuusStyle() }}>
-              {personData.Hengitystaajuus_timestamp}
+              klo {personData.Hengitystaajuus_timestamp}
               <br />
               {personData.Hengitystaajuus}
             </td>
@@ -446,16 +446,16 @@ function Report({ personData, controlData }) {
             <td>
               {"Happisaturaatio:"}
               <br />
-              <p>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+              <p style={{ fontWeight: "bold" }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
             </td>
             <td style={{ color: happisaturaatioStyle2() }}>
-              {controlData.Happisaturaatio_timestamp}
+            klo {controlData.Happisaturaatio_timestamp}
               <br />
               {controlData.Happisaturaatio}
             </td>
             <td></td>
             <td style={{ color: happisaturaatioStyle() }}>
-              {personData.Happisaturaatio_timestamp}
+            klo {personData.Happisaturaatio_timestamp}
               <br />
               {personData.Happisaturaatio}
             </td>
@@ -466,13 +466,13 @@ function Report({ personData, controlData }) {
               {"Verenpaine:"}
             </td>
             <td style={{ color: systolinenVerenpaineStyle2() }}>
-              {controlData["Systolinen verenpaine_timestamp"]}
+            klo {controlData["Systolinen verenpaine_timestamp"]}
               <br />
               {controlData["Systolinen verenpaine"]}
             </td>
             <td></td>
             <td style={{ color: systolinenVerenpaineStyle() }}>
-              {personData["Systolinen verenpaine_timestamp"]}
+            klo {personData["Systolinen verenpaine_timestamp"]}
               <br />
               {personData["Systolinen verenpaine"]}
             </td>
@@ -480,13 +480,13 @@ function Report({ personData, controlData }) {
           <tr>
             <td>{"Syketaajuus:"}</td>
             <td style={{ color: SyketaajuusStyle2() }}>
-              {controlData.Syketaajuus_timestamp}
+            klo {controlData.Syketaajuus_timestamp}
               <br />
               {controlData.Syketaajuus}
             </td>
             <td></td>
             <td style={{ color: SyketaajuusStyle() }}>
-              {personData.Syketaajuus_timestamp}
+            klo {personData.Syketaajuus_timestamp}
               <br />
               {personData.Syketaajuus}
             </td>
@@ -508,13 +508,13 @@ function Report({ personData, controlData }) {
           <tr>
             <td>{"Lämpötila:"}</td>
             <td style={{ color: lampotilaStyle2() }}>
-              {controlData["Mittaa lämpötila_timestamp"]}
+            klo {controlData["Mittaa lämpötila_timestamp"]}
               <br />
               {controlData["Mittaa lämpötila"]}
             </td>
             <td></td>
             <td style={{ color: lampotilaStyle() }}>
-              {personData["Mittaa lämpötila_timestamp"]}
+            klo {personData["Mittaa lämpötila_timestamp"]}
               <br />
               {personData["Mittaa lämpötila"]}
             </td>
@@ -522,13 +522,13 @@ function Report({ personData, controlData }) {
           <tr>
             <td>{"Verensokeri:"}</td>
             <td style={{ color: verensokeriStyle2() }}>
-              {controlData["Mittaa verensokeri:_timestamp"]}
+              klo {controlData["Mittaa verensokeri:_timestamp"]}
               <br />
               {controlData["Mittaa verensokeri:"]}
             </td>
             <td></td>
             <td style={{ color: verensokeriStyle() }}>
-              {personData["Mittaa verensokeri:_timestamp"]}
+              klo {personData["Mittaa verensokeri:_timestamp"]}
               <br />
               {personData["Mittaa verensokeri:"]}
             </td>
