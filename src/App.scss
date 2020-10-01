@@ -1028,8 +1028,11 @@ body {
           }
 
           @media screen and (max-width: 635px) { 
+            tr:nth-child(9) td:nth-child(n + 2) {
+              font-size: 3.5vw;
+            }
             tr {
-              width: 84vw;
+              overflow: visible;
             }
             td:nth-child(2) {
               max-width: 25vw;
