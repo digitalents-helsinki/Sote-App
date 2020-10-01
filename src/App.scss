@@ -1004,9 +1004,6 @@ body {
           }
 
           @media screen and (max-width: 1800px) {
-            tr {
-              margin-left: -15px;
-            }
             td:nth-child(2) {
               width: 49vw;
             }
@@ -1015,7 +1012,7 @@ body {
             }
           }
 
-          @media screen and (max-width: 1100px) {
+          @media screen and (max-width: 1490px) {
             tr {
               width: 87vw;
             }
@@ -1027,18 +1024,28 @@ body {
             }
           }
 
-          @media screen and (max-width: 635px) { 
-            tr:nth-child(9) td:nth-child(n + 2) {
-              font-size: 3.5vw;
+          @media screen and (max-width: 1120px) {
+            tr {
+              width: 86vw;
             }
+          }
+
+          @media screen and (max-width: 635px) { 
             tr {
               overflow: visible;
+              margin-left: -15px;
             }
             td:nth-child(2) {
               max-width: 25vw;
             }
             td:nth-child(4) {
               width: 25vw;
+            }
+          }
+
+          @media screen and (max-width: 450px) {
+            tr:nth-child(9) td:nth-child(n + 2) {
+              font-size: 3.5vw;
             }
           }
             
