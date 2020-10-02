@@ -268,273 +268,279 @@ function Report({ personData, controlData }) {
 
   return (
     <div className="report-container">
-      <h2 style={{ marginBottom: "5px" }}>Raportti:</h2>
-      <i>( {endTime} )</i>
-
-      <div className="reportElement">
-        <h3>Hengitystie:</h3>
-        <div className="flex">
-          <p className="subject">{"Onko hengitystie auki?"}</p>
-          <div className="answer">
-            {personData["Onko hengitystie auki?"] ? (
-              <p style={{ color: green }}>Kyllä</p>
-            ) : (
-              <p style={{ color: red }}>Ei</p>
-            )}
-          </div>
-        </div>
-        <div className="flex">
-          <p className="subject">{"Onko ilmatie-estettä?"}</p>
-          <div className="answer">
-            {personData["Onko ilmatie-estettä?"] ? (
-              <p style={{ color: red }}>Kyllä</p>
-            ) : (
-              <p style={{ color: green }}>Ei</p>
-            )}
-          </div>
-        </div>
+      <div className="green-box">
+        <h3>Raportti:</h3>
+        <p>{endTime}</p>
       </div>
+      <div className="white-box">
+        <div className="reportElement">
+          <h3>Hengitystie:</h3>
+          <div className="flex">
+            <p className="subject">{"Onko hengitystie auki?"}</p>
+            <div className="answer">
+              {personData["Onko hengitystie auki?"] ? (
+                <p style={{ color: green }}>Kyllä</p>
+              ) : (
+                <p style={{ color: red }}>Ei</p>
+              )}
+            </div>
+          </div>
+          <div className="flex">
+            <p className="subject">{"Onko ilmatie-estettä?"}</p>
+            <div className="answer">
+              {personData["Onko ilmatie-estettä?"] ? (
+                <p style={{ color: red }}>Kyllä</p>
+              ) : (
+                <p style={{ color: green }}>Ei</p>
+              )}
+            </div>
+          </div>
+        </div>
 
-      <hr />
+        <hr />
 
-      <div className="reportElement">
-        <h3>Hengitys:</h3>
-        <div className="flex">
-          <p className="subject">{"Korviin kuultavat äänet?"}</p>
-          <div className="answer">
-            <p style={{ color: green }}>
-              {personData["Hengitys - Normaali hengitys / ei ääniä"]
-                ? "Normaali"
-                : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Hengitys - Korina"] ? "Korina" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Hengitys - Rohina"] ? "Rohina" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Hengitys - Raskas hengitys"]
-                ? "Raskas hengitys"
-                : null}
+        <div className="reportElement">
+          <h3>Hengitys:</h3>
+          <div className="flex">
+            <p className="subject">{"Korviin kuultavat äänet?"}</p>
+            <div className="answer">
+              <p style={{ color: green }}>
+                {personData["Hengitys - Normaali hengitys / ei ääniä"]
+                  ? "Normaali"
+                  : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Hengitys - Vinkuna"] ? "Vinkuna" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Hengitys - Korina"] ? "Korina" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Hengitys - Rohina"] ? "Rohina" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Hengitys - Raskas hengitys"]
+                  ? "Raskas hengitys"
+                  : null}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="reportElement">
+          <h3>Verenkierto:</h3>
+          <div className="flex">
+            <p className="subject">{"Syke"}</p>
+            <div className="answer">
+              {personData["Tarkista syke:"] ? (
+                <p style={{ color: green }}>Säännöllinen</p>
+              ) : (
+                <p style={{ color: red }}>Epäsäännöllinen</p>
+              )}
+            </div>
+          </div>
+          <div className="flex">
+            <p className="subject">{"Tuntuuko paikallista lämpöeroa?"}</p>
+            <div className="answer">
+              {personData["Tuntuuko lämpörajoja raajoissa:"] ? (
+                <p style={{ color: red }}>Kyllä</p>
+              ) : (
+                <p style={{ color: green }}>Ei</p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="reportElement">
+          <h3>Tajunta:</h3>
+          <div className="flex">
+            <p style={{ width: "100%", fontWeight: "200" }} className="answer">
+              {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
+                "Ei poikkeavia löydöksiä."
+              ) : (
+                <div style={{ fontWeight: "bold", color: red }}>
+                  {personData.Tajunta}
+                </div>
+              )}
             </p>
           </div>
         </div>
-      </div>
 
-      <hr />
+        <hr />
 
-      <div className="reportElement">
-        <h3>Verenkierto:</h3>
-        <div className="flex">
-          <p className="subject">{"Syke"}</p>
-          <div className="answer">
-            {personData["Tarkista syke:"] ? (
-              <p style={{ color: green }}>Säännöllinen</p>
-            ) : (
-              <p style={{ color: red }}>Epäsäännöllinen</p>
-            )}
+        <div className="reportElement">
+          <h3>Iho, paljastaminen:</h3>
+          <div className="flex">
+            <p className="subject">{"Miltä iho tuntuu?"}</p>
+            <div className="answer">
+              <p style={{ color: green }}>
+                {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Iho, paljastaminen - Kostea"] ? "Kostea" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Iho, paljastaminen - Kylmä"] ? "Kylmä" : null}
+              </p>
+              <p style={{ color: red }}>
+                {personData["Iho, paljastaminen - Kuuma"] ? "Kuuma" : null}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex">
-          <p className="subject">{"Tuntuuko paikallista lämpöeroa?"}</p>
-          <div className="answer">
-            {personData["Tuntuuko lämpörajoja raajoissa:"] ? (
-              <p style={{ color: red }}>Kyllä</p>
-            ) : (
-              <p style={{ color: green }}>Ei</p>
-            )}
+          <div className="flex">
+            <p className="subject">Onko iho muutoksia?</p>
+            <div className="answer">
+              {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
+                <p style={{ color: green }}>Ei</p>
+              ) : (
+                <p style={{ color: red }}>Kyllä</p>
+              )}
+            </div>
           </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div className="reportElement">
-        <h3>Tajunta:</h3>
-        <div className="flex">
-          <p style={{ width: "100%", fontWeight: "200" }} className="answer">
-            {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
-              "Ei poikkeavia löydöksiä."
-            ) : (
-              <div style={{ fontWeight: "bold", color: red }}>
-                {personData.Tajunta}
-              </div>
-            )}
-          </p>
-        </div>
-      </div>
-
-      <hr />
-
-      <div className="reportElement">
-        <h3>Iho, paljastaminen:</h3>
-        <div className="flex">
-          <p className="subject">{"Miltä iho tuntuu?"}</p>
-          <div className="answer">
-            <p style={{ color: green }}>
-              {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Iho, paljastaminen - Kostea"] ? "Kostea" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Iho, paljastaminen - Kylmä"] ? "Kylmä" : null}
-            </p>
-            <p style={{ color: red }}>
-              {personData["Iho, paljastaminen - Kuuma"] ? "Kuuma" : null}
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <p className="subject">Onko iho muutoksia?</p>
-          <div className="answer">
-            {personData["Iho, paljastaminen - Ei poikkeavia löydöksiä"] ? (
-              <p style={{ color: green }}>Ei</p>
-            ) : (
-              <p style={{ color: red }}>Kyllä</p>
-            )}
-          </div>
-        </div>
-        {personData.Iho ? (
-          <p
-            style={{
-              fontWeight: "bold",
-              fontSize: "0.9rem",
-              lineHeight: "1.6rem",
-              color: red
-            }}
-            className="answer"
-          >
-            {personData.Iho}
-          </p>
-        ) : null}
-      </div>
-
-      <hr />
-
-      <table>
-        <tbody>
-          <tr>
-            <td
-              style={{ color: red, fontWeight: "bolder", fontSize: "1.17em" }}
+          {personData.Iho ? (
+            <p
+              style={{
+                fontWeight: "bold",
+                fontSize: "0.9rem",
+                lineHeight: "1.6rem",
+                color: red
+              }}
+              className="answer"
             >
-              Vitaali-arvot:
-            </td>
-          </tr>
-          <tr>
-            <td>{"Hengitystaajuus:"}</td>
-            <td style={{ color: hengitystaajuusStyle2() }}>
-              {controlData.Hengitystaajuus_timestamp}
-              <br />
-              {controlData.Hengitystaajuus}
-            </td>
-            <td></td>
-            <td style={{ color: hengitystaajuusStyle() }}>
-              {personData.Hengitystaajuus_timestamp}
-              <br />
-              {personData.Hengitystaajuus}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {"Happisaturaatio:"}
-              <br />
-              <p>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
-            </td>
-            <td style={{ color: happisaturaatioStyle2() }}>
+              {personData.Iho}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="green-box">
+        <h3>Vitaali-arvot:</h3>
+      </div>
+
+      <div className="white-box">
+        <table>
+          <tbody>
+            <tr>
+              <td>{"Hengitystaajuus:"}</td>
+              <td style={{ color: hengitystaajuusStyle2() }}>
+                {controlData.Hengitystaajuus_timestamp}
+                <br />
+                {controlData.Hengitystaajuus}
+              </td>
+              <td></td>
+              <td style={{ color: hengitystaajuusStyle() }}>
+                {personData.Hengitystaajuus_timestamp}
+                <br />
+                {personData.Hengitystaajuus}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>
+                {"Happisaturaatio:"}
+                <br />
+                <p style={{ fontWeight: "bold" }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+              </td>
+              <td style={{ color: happisaturaatioStyle2() }}>
               {controlData.Happisaturaatio_timestamp}
-              <br />
-              {controlData.Happisaturaatio}
-            </td>
-            <td></td>
-            <td style={{ color: happisaturaatioStyle() }}>
+                <br />
+                {controlData.Happisaturaatio}
+              </td>
+              <td></td>
+              <td style={{ color: happisaturaatioStyle() }}>
               {personData.Happisaturaatio_timestamp}
-              <br />
-              {personData.Happisaturaatio}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              {"Systolinen"} <br />
-              {"Verenpaine:"}
-            </td>
-            <td style={{ color: systolinenVerenpaineStyle2() }}>
+                <br />
+                {personData.Happisaturaatio}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>
+                {"Systolinen"} <br />
+                {"Verenpaine:"}
+              </td>
+              <td style={{ color: systolinenVerenpaineStyle2() }}>
               {controlData["Systolinen verenpaine_timestamp"]}
-              <br />
-              {controlData["Systolinen verenpaine"]}
-            </td>
-            <td></td>
-            <td style={{ color: systolinenVerenpaineStyle() }}>
+                <br />
+                {controlData["Systolinen verenpaine"]}
+              </td>
+              <td></td>
+              <td style={{ color: systolinenVerenpaineStyle() }}>
               {personData["Systolinen verenpaine_timestamp"]}
-              <br />
-              {personData["Systolinen verenpaine"]}
-            </td>
-          </tr>
-          <tr>
-            <td>{"Syketaajuus:"}</td>
-            <td style={{ color: SyketaajuusStyle2() }}>
+                <br />
+                {personData["Systolinen verenpaine"]}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>{"Syketaajuus:"}</td>
+              <td style={{ color: SyketaajuusStyle2() }}>
               {controlData.Syketaajuus_timestamp}
-              <br />
-              {controlData.Syketaajuus}
-            </td>
-            <td></td>
-            <td style={{ color: SyketaajuusStyle() }}>
+                <br />
+                {controlData.Syketaajuus}
+              </td>
+              <td></td>
+              <td style={{ color: SyketaajuusStyle() }}>
               {personData.Syketaajuus_timestamp}
-              <br />
-              {personData.Syketaajuus}
-            </td>
-          </tr>
-          <tr>
-            <td>{"Tajunnan taso:"}</td>
-            {controlData["Tajunnan taso"] ? (
-              <td style={{ color: green }}>Normaali</td>
-            ) : (
-              <td style={{ color: red }}>Poikkeava</td>
-            )}
-            <td></td>
-            {personData["Tajunnan taso"] ? (
-              <td style={{ color: green }}>Normaali</td>
-            ) : (
-              <td style={{ color: red }}>Poikkeava</td>
-            )}
-          </tr>
-          <tr>
-            <td>{"Lämpötila:"}</td>
-            <td style={{ color: lampotilaStyle2() }}>
+                <br />
+                {personData.Syketaajuus}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>{"Tajunnan taso:"}</td>
+              {controlData["Tajunnan taso"] ? (
+                <td style={{ color: green }}>Normaali</td>
+              ) : (
+                <td style={{ color: red }}>Poikkeava</td>
+              )}
+              <td></td>
+              {personData["Tajunnan taso"] ? (
+                <td style={{ color: green }}>Normaali</td>
+              ) : (
+                <td style={{ color: red }}>Poikkeava</td>
+              )}
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>{"Lämpötila:"}</td>
+              <td style={{ color: lampotilaStyle2() }}>
               {controlData["Mittaa lämpötila_timestamp"]}
-              <br />
-              {controlData["Mittaa lämpötila"]}
-            </td>
-            <td></td>
-            <td style={{ color: lampotilaStyle() }}>
+                <br />
+                {controlData["Mittaa lämpötila"]}
+              </td>
+              <td></td>
+              <td style={{ color: lampotilaStyle() }}>
               {personData["Mittaa lämpötila_timestamp"]}
-              <br />
-              {personData["Mittaa lämpötila"]}
-            </td>
-          </tr>
-          <tr>
-            <td>{"Verensokeri:"}</td>
-            <td style={{ color: verensokeriStyle2() }}>
-              {controlData["Mittaa verensokeri:_timestamp"]}
-              <br />
-              {controlData["Mittaa verensokeri:"]}
-            </td>
-            <td></td>
-            <td style={{ color: verensokeriStyle() }}>
-              {personData["Mittaa verensokeri:_timestamp"]}
-              <br />
-              {personData["Mittaa verensokeri:"]}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <br />
+                {personData["Mittaa lämpötila"]}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>{"Verensokeri:"}</td>
+              <td style={{ color: verensokeriStyle2() }}>
+                {controlData["Mittaa verensokeri:_timestamp"]}
+                <br />
+                {controlData["Mittaa verensokeri:"]}
+              </td>
+              <td></td>
+              <td style={{ color: verensokeriStyle() }}>
+                {personData["Mittaa verensokeri:_timestamp"]}
+                <br />
+                {personData["Mittaa verensokeri:"]}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       {/* <div className="vitalValues">
 

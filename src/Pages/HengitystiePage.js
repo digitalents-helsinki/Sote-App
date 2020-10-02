@@ -39,7 +39,7 @@ function HengitystiePage({ personData, setPersonData, careType }) {
         kärkeä ylöspäin ja taivuttamalla päätä taaksepäin toisella kädellä otsaa
         painaen.{" "}
         <span style={{ fontWeight: "600" }}>
-          Hengittääkö potilas normalisti?
+          Hengittääkö potilas normaalisti?
         </span>
       </span>
       <br />
@@ -84,7 +84,7 @@ function HengitystiePage({ personData, setPersonData, careType }) {
           <>
             <span style={{ fontWeight: "600" }}>
               <br />
-              Jos ei reagoi, eikä hengitä normalisti,
+              Jos ei reagoi, eikä hengitä normaalisti,
             </span>{" "}
             soita 112 ja <span style={{ fontWeight: "600" }}>aloita PPE</span> =
             painelu-puhalluselvytys.{" "}
