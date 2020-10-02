@@ -1,10 +1,11 @@
 import React from "react";
 
-function Report({ personData, controlData }) {
+function Report({ personData, controlData }) { // personData = controlled score, controlData = original score. Fuck you, Thomas.
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
   const green = "#377d4f";
+  const white = "#FF6FFF";
 
   const hengitystaajuusStyle = () => {
     if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
@@ -18,7 +19,7 @@ function Report({ personData, controlData }) {
       personData.Hengitystaajuus >= 12 &&
       personData.Hengitystaajuus <= 20
     ) {
-      return green;
+      return white;
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
@@ -62,7 +63,7 @@ function Report({ personData, controlData }) {
     ) {
       return lightOrange;
     } else if (personData.Happisaturaatio >= 96) {
-      return green;
+      return white;
     }
   };
 
@@ -104,7 +105,7 @@ function Report({ personData, controlData }) {
       personData["Systolinen verenpaine"] >= 111 &&
       personData["Systolinen verenpaine"] <= 219
     ) {
-      return green;
+      return white;
     }
   };
 
@@ -143,7 +144,7 @@ function Report({ personData, controlData }) {
     ) {
       return lightOrange;
     } else if (personData.Syketaajuus >= 51 && personData.Syketaajuus <= 90) {
-      return green;
+      return white;
     }
   };
 
@@ -181,7 +182,7 @@ function Report({ personData, controlData }) {
       personData["Mittaa lämpötila"] >= 36.1 &&
       personData["Mittaa lämpötila"] <= 38
     ) {
-      return green;
+      return white;
     }
   };
 
@@ -227,7 +228,7 @@ function Report({ personData, controlData }) {
       personData["Mittaa verensokeri:"] >= 7 &&
       personData["Mittaa verensokeri:"] <= 14
     ) {
-      return green;
+      return white;
     }
   };
 
@@ -424,6 +425,8 @@ function Report({ personData, controlData }) {
         <h3>Vitaali-arvot:</h3>
       </div>
 
+       {/* -----------------------  TIMESTAMPS  ----------------------- */}
+
       <div className="white-box">
         <table>
           <tbody>
@@ -503,7 +506,7 @@ function Report({ personData, controlData }) {
               )}
               <td></td>
               {personData["Tajunnan taso"] ? (
-                <td style={{ color: green }}>Normaali</td>
+                <td style={{ color: white }}>Normaali</td>
               ) : (
                 <td style={{ color: red }}>Poikkeava</td>
               )}
