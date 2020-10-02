@@ -12,14 +12,12 @@ function InstructionCardFirst({
   const instruction_content = {
     emergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 2-3 minuutin
-        kuluttua.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan.
       </>
     ),
     mediumEmergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 5 minuutin
-        päästä ennen mahdollista konsultaatiota.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan ennen mahdollista konsultaatiota.
       </>
     ),
     noneEmergencyContent: (
