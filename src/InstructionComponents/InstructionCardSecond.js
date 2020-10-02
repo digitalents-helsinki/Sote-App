@@ -242,17 +242,17 @@ function InstructionCardSecond({
     );
   };
 
-  const NEWSscoreRiskChange = () => {
-    if (
-      (CheckControlNEWSSCORErisk() === "Korkea riski" &&
-        CheckNEWSSCORErisk() === "Kohtalainen riski") ||
-      (CheckControlNEWSSCORErisk() === "Kohtalainen riski" &&
-        CheckNEWSSCORErisk() === "Lievä riski") ||
-      (CheckControlNEWSSCORErisk() === "Korkea riski" &&
-        CheckNEWSSCORErisk() === "Lievä riski")
-    )
-      return true;
-  };
+  // const NEWSscoreRiskChange = () => {
+  //   if (
+  //     (CheckControlNEWSSCORErisk() === "Korkea riski" &&
+  //       CheckNEWSSCORErisk() === "Kohtalainen riski") ||
+  //     (CheckControlNEWSSCORErisk() === "Kohtalainen riski" &&
+  //       CheckNEWSSCORErisk() === "Lievä riski") ||
+  //     (CheckControlNEWSSCORErisk() === "Korkea riski" &&
+  //       CheckNEWSSCORErisk() === "Lievä riski")
+  //   )
+  //     return true;
+  // };
 
   // console.log("CheckNEWSSCORErisk", CheckNEWSSCORErisk());
   // console.log("CheckControlNEWSSCORErisk", CheckControlNEWSSCORErisk());
@@ -265,11 +265,11 @@ function InstructionCardSecond({
     //RISKILUOKKA: KORKEASTA LIEVÄÄN
     return (
       <div className="InstructionCard-second-container">
-        {NEWSscoreRiskChange() && (
+        {/* {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615", fontWeight: "bold" }}>
             *Koska riskiluokka oli aluksi korkea.
           </p>
-        )}
+        )} */}
         {highToNoRiskInstructions[careType]}
       </div>
     );
@@ -282,11 +282,11 @@ function InstructionCardSecond({
       <div className="InstructionCard-second-container">
         <h3>Toimintaohje:</h3>
         <hr />
-        {NEWSscoreRiskChange() && (
+        {/* {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615", fontWeight: "bold" }}>
             *Koska riskiluokka oli aluksi korkea.
           </p>
-        )}
+        )} */}
         {highToLowRiskInstructions[careType]}
       </div>
     );
@@ -304,11 +304,11 @@ function InstructionCardSecond({
             *Koska yksittäisestä mittauksesta tuli korkean riskiluokan arvio.
           </p>
         )}
-        {NEWSscoreRiskChange() && (
+        {/* {NEWSscoreRiskChange() && (
           <p style={{ color: "#ab2615", fontWeight: "bold" }}>
             *Koska riskiluokka oli aluksi korkea.
           </p>
-        )}
+        )} */}
         {highRiskInstructions[careType]}
       </div>
     );
