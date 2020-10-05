@@ -13,12 +13,15 @@ function InstructionCardSecond({
     Kotihoito: (
       <>
         <p>
-          &rarr; <span>Soita 112.</span>
+          {/* &rarr;{" "} */}
+          <span style={{ color: "rgb(171, 38, 21)", fontWeight: "800" }}>
+            Soita 112.
+          </span>
         </p>
         <p style={{ fontWeight: "600" }}>
-          Muistathan tarkastaa mahdolliset hoidonrajaukset/-linjaukset ennen 112
-          soittoa.
+          Tarkista hoidonrajaukset/-linjaukset ennen 112 soittoa.
         </p>
+        <br />
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
       </>
     ),
@@ -27,17 +30,22 @@ function InstructionCardSecond({
       <>
         <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
         <div className="content">
-          <p>Konsultoi omaa lääkäriä <span>VÄLITTÖMÄSTI</span>.</p>
+          <p>
+            Konsultoi omaa lääkäriä <span>välittömästi</span>.
+          </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
           <p>
-            <span style={{color: "red"}}>Pitäisikö ohjeena olla suoraan valita linja-1 tai sitten allaoleva ohje..?</span><br /><br />
-
-            Konsultoi geriatrista lääkäriä erillisen ohjeen mukaan (Virka-ajan
-            ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen
-            hoivan henkilöstölle). Huom. klo 21 jälkeen soita HUS-akuutin
-            päivystyspoliklinikan vuorovastaavalle sairaanhoitajalle.
+            <span style={{ color: "red" }}>
+              Pitäisikö ohjeena olla suoraan valita linja-1 tai sitten allaoleva
+              ohje..?
+            </span>
+            <br />
+            <br />
+            Konsultoi lääkäriä erillisen ohjeen mukaan (Virka-ajan ulkopuolinen
+            konsultointiohje kotihoidon ja ympärivuorokautisen hoivan
+            henkilöstölle).
           </p>
         </div>
       </>
@@ -52,7 +60,7 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
+              Konsultoi <span>välittömästi</span> virka-aikana omaa
               sairaanhoitajaa / lääkäriä.
             </p>
           </div>
@@ -60,14 +68,14 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi <span>VÄLITTÖMÄSTI</span> geriatrista
+              klo 21.00 asti konsultoi <span>välittömästi</span> geriatrista
               päivystäjää.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi <span>VÄLITTÖMÄSTI</span> HUS-akuutin
+              klo 21 jälkeen konsultoi <span>välittömästi</span> HUS-akuutin
               päivystyksen vuorovastaavaa sairaanhoitajaa.
             </p>
           </div>
@@ -81,7 +89,7 @@ function InstructionCardSecond({
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p>
-              Konsultoi <span>VÄLITTÖMÄSTI</span> omaa sairaanhoitajaa/lääkäriä.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä.
             </p>
           </div>
           <div className="content">
@@ -137,7 +145,7 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>VÄLITTÖMÄSTI</span> virka-aikana omaa
+              Konsultoi <span>välittömästi</span> virka-aikana omaa
               sairaanhoitajaa / lääkäriä.
             </p>
           </div>
@@ -145,14 +153,14 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi <span>VÄLITTÖMÄSTI</span> geriatrista
+              klo 21.00 asti konsultoi <span>välittömästi</span> geriatrista
               päivystäjää.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi <span>VÄLITTÖMÄSTI</span> HUS-akuutin
+              klo 21 jälkeen konsultoi <span>välittömästi</span> HUS-akuutin
               päivystyksen vuorovastaavaa sairaanhoitajaa.
             </p>
           </div>
@@ -186,8 +194,8 @@ function InstructionCardSecond({
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>
-            Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen mahdollista konsultaatiota, aloita
-            sovellus alusta.
+            Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen
+            mahdollista konsultaatiota, aloita sovellus alusta.
           </h3>
         </div>
       </>
@@ -330,18 +338,13 @@ function InstructionCardSecond({
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
             Konsultoi oman yksikön sairaanhoitajaa, jos paikalla tai suoraan{" "}
-            <span>geriatrista lääkäriä</span> (kts. erillinen konsultointiohje).
-          </p>
-        </div>
-        <div className="content">
-          <p style={{ fontSize: "20px" }}>&rarr;</p>
-          <p style={{ display: "inline", marginLeft: "15px" }}>
-            Odota ohjetta.
+            lääkäriä (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+            ympärivuorokautisen hoivan henkilöstölle).
           </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>
-          Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen mahdollista konsultaatiota, aloita sovellus
-          alusta.
+          Tarvittaessa jos haluat arvioida asiakasta uudestaan ennen mahdollista
+          konsultaatiota, aloita sovellus alusta.
         </h3>
       </div>
     );

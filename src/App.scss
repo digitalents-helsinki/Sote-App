@@ -906,42 +906,42 @@ body {
 
         .green-box {
           width: 100%;
-        background-color: $sote-green;
-        padding: 15px 20px;
-        box-sizing: border-box;
+          background-color: $sote-green;
+          padding: 15px 20px;
+          box-sizing: border-box;
 
-        letter-spacing: 0.5px;
-        line-height: 1.6rem;
-        color: #fff;
+          letter-spacing: 0.5px;
+          line-height: 1.6rem;
+          color: #fff;
 
-        margin: 70px 0 20px 0;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+          margin: 70px 0 20px 0;
+          border-radius: 4px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
-        p {
-          font-size: 1.1rem;
-          margin: 0 0 10px 0;
-          font-style: italic;
-        }
+          p {
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            font-style: italic;
+          }
 
-        h3 {
-          margin-top: 10px;
-        }
+          h3 {
+            margin-top: 10px;
+          }
         }
 
         .white-box {
           width: 100%;
-        background-color: #fff;
-        padding: 15px 20px;
-        box-sizing: border-box;
+          background-color: #fff;
+          padding: 15px 20px;
+          box-sizing: border-box;
 
-        letter-spacing: 0.5px;
-        line-height: 1.6rem;
-        color: #212121;
+          letter-spacing: 0.5px;
+          line-height: 1.6rem;
+          color: #212121;
 
-        margin: 20px 0;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+          margin: 20px 0;
+          border-radius: 4px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
         }
 
         hr {
@@ -978,7 +978,6 @@ body {
         }
 
         table {
-
           tr {
             display: flex;
             // margin-left: 15px;
@@ -989,13 +988,13 @@ body {
             line-height: 25.6px;
             // margin-left: -15px;
           }
-          
+
           tr:nth-of-type(even) {
             border-top: solid 2px #212121;
             opacity: 0.3;
             height: 0px;
           }
-          
+
           td:first-child {
             min-width: 155px;
             max-width: 155px;
@@ -1030,7 +1029,7 @@ body {
             }
           }
 
-          @media screen and (max-width: 635px) { 
+          @media screen and (max-width: 635px) {
             tr {
               overflow: visible;
               margin-left: -15px;
@@ -1048,7 +1047,7 @@ body {
               font-size: 3.5vw;
             }
           }
-            
+
           td:first-child p {
             color: rgb(173, 62, 47);
             display: contents;
