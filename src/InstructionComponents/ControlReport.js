@@ -503,13 +503,13 @@ function Report({ personData, controlData }) {
               {controlData["Tajunnan taso"] ? (
                 <td style={{ color: green }}>Normaali</td>
               ) : (
-                <td style={{ color: red }}>Poikkeava</td>
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
               <td></td>
               {personData["Tajunnan taso"] ? (
                 <td style={{ color: green }}>Normaali</td>
               ) : (
-                <td style={{ color: red }}>Poikkeava</td>
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
             </tr>
             <tr></tr>
