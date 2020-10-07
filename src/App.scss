@@ -730,7 +730,8 @@ body {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
         p {
-          margin-top: 28px;
+          margin-top: 10px;
+          margin-bottom: 10px;
           font-weight: 200;
           padding: 0;
         }
@@ -750,7 +751,7 @@ body {
         }
 
         .control-btn {
-          margin: 50px auto 30px auto;
+          margin: 30px auto 30px auto;
           display: flex;
           justify-content: space-between;
           width: 180px;
