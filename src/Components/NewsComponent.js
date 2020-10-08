@@ -134,7 +134,7 @@ function NewsComponent(props) {
           const keyvalue = `${props.name} - NEWSscore`;
 
           const tsname = `${props.name}_timestamp`;
-          const ts = new Date().toLocaleTimeString([], {
+          const ts = new Date().toLocaleTimeString(['en-GB'], {
             hour: "2-digit",
             minute: "2-digit"
           });
