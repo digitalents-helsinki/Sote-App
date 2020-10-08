@@ -486,7 +486,7 @@ function Report({ personData, controlData }) {
             <tr>
               <td>{"Syketaajuus:"}</td>
               <td style={{ color: SyketaajuusStyle2() }}>
-                <i style={{ color: "black" }}>{controlData.Syketaajuus_timestamp}</i>
+                {controlData.Syketaajuus_timestamp}
                 <br />
                 {controlData.Syketaajuus}
               </td>
