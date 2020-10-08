@@ -66,17 +66,16 @@ function InstructionCardSecond({
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
-            <p style={{ fontSize: "20px" }}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi <span>välittömästi</span> geriatrista
-              päivystäjää.
+            <p style={{ fontSize: "20px"}}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px"}}>
+              Konsultoi omaa sairaanhoitajaa <span>välittömästi</span> jos paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi <span>välittömästi</span> HUS-akuutin
-              päivystyksen vuorovastaavaa sairaanhoitajaa.
+              Jos sairaanhoitaja ei ole paikalla, konsultoi lääkäriä <span>erillisen ohjeen</span> mukaan (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+              ympärivuorokautisen hoivan henkilöstölle).
             </p>
           </div>
         </div>
@@ -117,10 +116,10 @@ function InstructionCardSecond({
             <p style={{ display: "inline", marginLeft: "15px" }}>
               Jos oma sairaanhoitaja ei ole paikalla, konsultoi virka-ajan
               ulkopuolisen konsultaatio-ohjeen mukaan{" "}
-              <span>
-                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
-                ympärivuorokautisen hoivan henkilöstölle). Konsultoi
-                ISBAR-raportointiohjeen mukaan.
+              <br />
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+              ympärivuorokautisen hoivan henkilöstölle). <span>Konsultoi
+              ISBAR-raportointiohjeen mukaan.
               </span>
             </p>
           </div>
@@ -151,17 +150,22 @@ function InstructionCardSecond({
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
-            <p style={{ fontSize: "20px" }}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21.00 asti konsultoi <span>välittömästi</span> geriatrista
-              päivystäjää.
+            <p style={{ fontSize: "20px"}}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px"}}>
+              teksti
+            </p>
+          </div>
+          <div className="content">
+            <p style={{ fontSize: "20px"}}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px"}}>
+              Konsultoi omaa sairaanhoitajaa <span>välittömästi</span> jos paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              klo 21 jälkeen konsultoi <span>välittömästi</span> HUS-akuutin
-              päivystyksen vuorovastaavaa sairaanhoitajaa.
+              Jos sairaanhoitaja ei ole paikalla, konsultoi lääkäriä <span>erillisen ohjeen</span> mukaan (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+              ympärivuorokautisen hoivan henkilöstölle).
             </p>
           </div>
         </div>

@@ -19,15 +19,24 @@ function LandingPage({
     ),
     "Ympärivuorokautinen hoiva": (
       <p className="attentionText page-paragraph">
-        a) Todellinen hätätilanne
+        Todellisessa hätätilanteessa:
         <br />
+        <span style={{ fontWeight: "300" }}>&rarr; Virka-aikana soita hoitavalle lääkärille</span>
+        <br />
+        <span style={{ color: "#000", fontWeight: "300", fontSize: "12px" }}>(Huomioi hoitosuunnitelma ja hoidonrajaukset)</span>
+        <br />
+        <br />
+        <span style={{ fontWeight: "300" }}>&rarr; Virka-ajan ulkopuolella konsultoi lääkäriä erillisen ohjeen mukaan</span>
+        <br />
+        <span style={{ color: "#000", fontWeight: "300", fontSize: "12px" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>
+        {/* <br />
         <span style={{ color: "#000", fontWeight: "300" }}>
           Soita konsultoivalle lääkärille.
           <br />
           Huomioi hoitosuunnitelma, hoidon rajaukset ja linjaukset
         </span>
         <br />
-        b) Konsultoiva tilanne
+        b) Konsultoiva tilanne */}
       </p>
     )
   }[careType];

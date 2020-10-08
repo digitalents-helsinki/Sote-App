@@ -257,20 +257,20 @@ function Report({ personData, controlData }) {
     }
   };
 
-  let endTimeStamp = new Date();
-  let endTime = endTimeStamp.toLocaleString([], {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
+  let endTimeStamp = new Date().toLocaleTimeString(['en-GB'], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit"});
+  // let endTime = endTimeStamp.toLocaleString([], {
+  //   day: "2-digit",
+  //   month: "2-digit",
+  //   year: "numeric",
+  //   hour: "2-digit",
+  //   minute: "2-digit"
+  // });
 
   return (
     <div className="report-container">
       <div className="green-box">
         <h3>ABCDE-raportti:</h3>
-        <p>{endTime}</p>
+        <p>{endTimeStamp}</p>
       </div>
       <div className="white-box">
         <div className="reportElement">
@@ -486,7 +486,7 @@ function Report({ personData, controlData }) {
             <tr>
               <td>{"Syketaajuus:"}</td>
               <td style={{ color: SyketaajuusStyle2() }}>
-                {controlData.Syketaajuus_timestamp}
+                <i style={{ color: "black" }}>{controlData.Syketaajuus_timestamp}</i>
                 <br />
                 {controlData.Syketaajuus}
               </td>
