@@ -73,7 +73,7 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
               (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
               <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
@@ -103,7 +103,7 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
               (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
               <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
@@ -135,7 +135,7 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
               (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
               <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
