@@ -56,26 +56,27 @@ function InstructionCardSecond({
     Kotihoito: (
       <>
         <div>
-          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> virka-aikana omaa
-              sairaanhoitajaa / lääkäriä.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
-            <p style={{ fontSize: "20px"}}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px"}}>
-              Konsultoi omaa sairaanhoitajaa <span>välittömästi</span> jos paikalla.
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos sairaanhoitaja ei ole paikalla, konsultoi lääkäriä <span>erillisen ohjeen</span> mukaan (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
-              ympärivuorokautisen hoivan henkilöstölle).
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
+              <br />
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
           </div>
         </div>
@@ -87,40 +88,25 @@ function InstructionCardSecond({
         <div>
           <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
-            <p>
-              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä.
-            </p>
-          </div>
-          <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Sairaanhoitaja arvioi asiakkaan tilanteen ja konsultoi
-              tarvittaessa omaa lääkäriä.
-            </p>
-          </div>
-          <div className="content">
-            <p style={{ fontSize: "20px" }}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos konsultoit lääkäriä suoraan, hän ohjeistaa tilanteessa.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi omaa sairaanhoitajaa jos paikalla.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi <span>virka-ajan
-              ulkopuolisen konsultaatio-ohjeen</span> mukaan{" "}
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
               <br />
-              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
-              ympärivuorokautisen hoivan henkilöstölle). <span>Konsultoi
-              ISBAR-raportointiohjeen mukaan.
-              </span>
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
           </div>
         </div>
@@ -132,32 +118,27 @@ function InstructionCardSecond({
     Kotihoito: (
       <>
         <div>
-          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> virka-aikana omaa
-              sairaanhoitajaa / lääkäriä.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa/lääkäriä
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
-            <p style={{ fontSize: "20px"}}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px"}}>
-              teksti
-            </p>
-          </div>
-          <div className="content">
-            <p style={{ fontSize: "20px"}}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px"}}>
-              Konsultoi omaa sairaanhoitajaa <span>välittömästi</span> jos paikalla.
+            <p style={{ fontSize: "20px" }}>&rarr;</p>
+            <p style={{ display: "inline", marginLeft: "15px" }}>
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos sairaanhoitaja ei ole paikalla, konsultoi lääkäriä <span>erillisen ohjeen</span> mukaan (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
-              ympärivuorokautisen hoivan henkilöstölle).
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen virka-ajan ulkopuolisen ohjeen mukaan{" "}
+              <br />
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <br />Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
           </div>
         </div>
