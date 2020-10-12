@@ -364,7 +364,14 @@ function Report({ personData, controlData }) {
         <div className="reportElement">
           <h3>Tajunta:</h3>
           <div className="flex">
-            <p style={{ width: "100%", fontWeight: "200" }} className="answer">
+            <p
+              style={{
+                width: "100%",
+                fontWeight: "200",
+                overflowWrap: "break-word"
+              }}
+              className="answer"
+            >
               {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
                 "Ei poikkeavia löydöksiä."
               ) : (
@@ -418,7 +425,8 @@ function Report({ personData, controlData }) {
                 fontWeight: "bold",
                 fontSize: "0.9rem",
                 lineHeight: "1.6rem",
-                color: red
+                color: red,
+                overflowWrap: "break-word"
               }}
               className="answer"
             >
