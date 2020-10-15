@@ -28,7 +28,7 @@ function InstructionCardFirst({
   };
 
   const chooseEmergencyContent = () => {
-    if (NEWSscoreTotal === 0) {
+    if (NEWSscoreTotal === 0 && personData["Mittaa verensokeri: - verensokeriscore"] >= 1) {
       return instruction_content.noneEmergencyContent;
     } else if (
       (personData["Tajunnan taso"] === false ||
@@ -76,6 +76,9 @@ function InstructionCardFirst({
           {personData["Mittaa lämpötila - NEWSscore"] >= 1 ? "Lämpötila" : null}
         </p>
         <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
+        <p>
+          {personData["Mittaa verensokeri: - verensokeriscore"] >= 1 ? "Verensokeri" : null}
+        </p>
       </div>
       <div
         onClick={() => {

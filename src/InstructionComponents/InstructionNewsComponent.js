@@ -142,6 +142,24 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
+      {controlData["Mittaa verensokeri: - verensokeriscore"] >= 1 ? (
+        <div
+          className={
+            "instruction-news-component" +
+            (ControlCardVisibility ? " active" : "")
+          }
+        >
+          <h1>Verensokeri</h1>
+          <p>Mittaa verensokeri.</p>
+          <NewsComponent
+            name={"Mittaa verensokeri:"}
+            personData={personData}
+            setPersonData={setPersonData}
+            cells={[4, [5, 6], null, [7, 14], [15, 20], [21, 24], 25]}
+          />
+        </div>
+      ) : null}
+
       <div
         onClick={() => {
           console.log("beep");
