@@ -547,7 +547,7 @@ function Report({ personData, controlData }) {
               <td style={{ color: verensokeriStyle2() }}>
                 {controlData["Mittaa verensokeri:_timestamp"]}
                 <br />
-                {controlData["Mittaa verensokeri:"]}
+                {controlData["Mittaa verensokeri:"] ? controlData["Mittaa verensokeri:"] : "Ei mitattu"}
               </td>
               <td></td>
               <td style={{ color: verensokeriStyle() }}>
