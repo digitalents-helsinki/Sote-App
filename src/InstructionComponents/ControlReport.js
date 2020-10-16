@@ -543,7 +543,12 @@ function Report({ personData, controlData }) {
             </tr>
             <tr></tr>
             <tr>
-              <td>{"Verensokeri:"}</td>
+              <td>{"Verensokeri:"}
+                <br />
+                <p style={{ fontWeight: "bold" }}>
+                  Huomioi insuliini DM paasto VS tavoite.
+                </p>
+              </td>
               <td style={{ color: verensokeriStyle2() }}>
                 {controlData["Mittaa verensokeri:_timestamp"]}
                 <br />
