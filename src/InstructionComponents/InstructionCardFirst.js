@@ -28,7 +28,7 @@ function InstructionCardFirst({
   };
 
   const chooseEmergencyContent = () => {
-    if (NEWSscoreTotal === 0 && personData["Mittaa verensokeri: - verensokeriscore"] >= 1) {
+    if (NEWSscoreTotal === 0) {
       return instruction_content.noneEmergencyContent;
     } else if (
       (personData["Tajunnan taso"] === false ||
@@ -36,7 +36,8 @@ function InstructionCardFirst({
         personData["Happisaturaatio - NEWSscore"] === 3 ||
         personData["Systolinen verenpaine - NEWSscore"] === 3 ||
         personData["Syketaajuus - NEWSscore"] === 3 ||
-        personData["Mittaa lämpötila - NEWSscore"] === 3) &&
+        personData["Mittaa lämpötila - NEWSscore"] === 3 ||
+        personData["Mittaa verensokeri: - verensokeriscore"] > 0) &&
       NEWSscoreTotal <= 3
     ) {
       return instruction_content.emergencyContent;

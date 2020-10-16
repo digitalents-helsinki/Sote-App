@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
-const NextButton = ({ personData, NEWSscoreTotal, careType }) => {
+const NextButton = ({ personData, NEWSscoreTotal, careType, verensokeriscore }) => {
   const history = useHistory();
   const location = useLocation();
   const locations = [
@@ -53,7 +53,7 @@ const NextButton = ({ personData, NEWSscoreTotal, careType }) => {
   const clickHandler = () => {
     if (buttonActive) {
       if (location.pathname === "/verensokeri") {
-        if (NEWSscoreTotal === 0) {
+        if (NEWSscoreTotal === 0 && verensokeriscore === 0) {
           window.scrollTo(0, 0);
           history.push("/instructionPageTwo");
         } else {
