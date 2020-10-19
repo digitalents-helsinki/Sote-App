@@ -1,119 +1,99 @@
+:root {
+  --vh: 1vh;
+}
 body,
 html {
   margin: 0;
 }
-
 body {
   overflow-x: hidden;
 }
-
 .App {
   width: 100%;
-  height: 100vh;
+  height: var(--vh);
   background-color: #fafafa;
 }
-
 .App .menu-panel-bg {
   width: 100%;
-  height: 100vh;
+  height: var(--vh);
   position: fixed;
   z-index: 39;
   background-color: #212121;
 }
-
 .App .menu-panel {
-  -webkit-transition: -webkit-transform 250ms ease-out;
-  transition: -webkit-transform 250ms ease-out;
   transition: transform 250ms ease-out;
-  transition: transform 250ms ease-out, -webkit-transform 250ms ease-out;
-  -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
   width: 60vw;
-  height: 100vh;
+  height: var(--vh);
   background-image: linear-gradient(
     15deg,
     rgba(29, 61, 105, 0.75),
     rgba(29, 61, 105, 0.9),
     rgba(29, 61, 105, 0.98),
-    #1d3d69
+    rgba(29, 61, 105, 1)
   );
   position: fixed;
   top: 0;
   z-index: 40;
   padding: 12vw 40px 12vw 30px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   color: #fff;
 }
-
 .App .menu-panel img {
   display: block;
   margin-bottom: 50px;
 }
-
 .App .menu-panel .content {
   margin-top: 50px;
 }
-
 .App .menu-panel .content p {
   font-size: 0.93rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   margin-left: -15px;
-  margin-right: -10px;
+  margin-right: -15px;
   opacity: 0.8;
   display: block;
 }
-
 .App .menu-panel.active {
-  -webkit-transform: translateX(40vw);
   transform: translateX(40vw);
 }
-
 .App .emergencyPage-container {
   position: fixed;
   opacity: 0;
   bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: var(--vh);
   overflow: auto;
   z-index: 50;
-  -webkit-transform: translateY(100vh);
-  transform: translateY(100vh);
+  transform: translateY(var(--vh));
   font-family: "Montserrat", sans-serif;
 }
-
 .App .emergencyPage-container .emergencyPage-topBar {
   background-color: #ab2615;
   padding: 26px 8vw 0 8vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: fixed;
   width: 100%;
   height: 150px;
   z-index: 13;
 }
-
 .App .emergencyPage-container .emergencyPage-topBar img {
   width: 26px;
   height: 26px;
 }
-
 .App .emergencyPage-container .emergencyPage-topBar h2 {
   font-size: 24px;
   padding: 20px 0 10px 0;
   color: #fff;
   letter-spacing: 0.5px;
 }
-
 .App .emergencyPage-container .symptoms-container {
   width: 100%;
   padding: 155px 3vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
 }
-
 .App .emergencyPage-container .symptoms-container .symptom-card {
   background-color: #f0e4bb;
   border: 1px solid #e0d9b8;
@@ -121,12 +101,9 @@ body {
   width: 100%;
   padding: 6px 14px;
   margin: 12px 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition-duration: 400;
   transition-duration: 400;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -135,17 +112,10 @@ body {
   font-size: 15px;
   line-height: 20px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -155,7 +125,6 @@ body {
   color: #ab2615;
   width: 70vw;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -164,7 +133,6 @@ body {
   span {
   color: #212121;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -174,7 +142,6 @@ body {
   height: 100%;
   width: 30px;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -184,15 +151,11 @@ body {
   img {
   height: 10px;
 }
-
 .App .emergencyPage-container .symptoms-container .symptom-card .instructions {
   overflow-y: hidden;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
 }
-
 .App
   .emergencyPage-container
   .symptoms-container
@@ -202,99 +165,47 @@ body {
   font-weight: 300;
   line-height: 1.7rem;
 }
-
-@-webkit-keyframes slideToBottom {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
-    opacity: 1;
-  }
-}
-
 @keyframes slideToBottom {
   0% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
+    transform: translateY(var(--vh));
     opacity: 1;
   }
 }
-
-@-webkit-keyframes slideFromBottom {
-  0% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
 @keyframes slideFromBottom {
   0% {
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
+    transform: translateY(var(--vh));
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
-
 .App .emergencyPage-container.active {
-  -webkit-animation-duration: 300ms;
   animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-name: slideFromBottom;
   animation-name: slideFromBottom;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
 }
-
 .App .emergencyPage-container.inactive {
-  -webkit-animation-duration: 300ms;
   animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-name: slideToBottom;
   animation-name: slideToBottom;
-  -webkit-transform: translateY(100vh);
-  transform: translateY(100vh);
+  transform: translateY(var(--vh));
   opacity: 0;
 }
-
 .App .TopArea {
+  font-family: "Montserrat", sans-serif;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 20;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(30%, #fafafa),
-    color-stop(45%, rgba(250, 250, 250, 0.95)),
-    color-stop(65%, rgba(250, 250, 250, 0.8)),
-    color-stop(80%, rgba(250, 250, 250, 0.5)),
-    color-stop(90%, rgba(250, 250, 250, 0.2)),
-    to(rgba(250, 250, 250, 0))
-  );
   background-image: linear-gradient(
-    #fafafa 30%,
+    rgba(250, 250, 250, 1) 30%,
     rgba(250, 250, 250, 0.95) 45%,
     rgba(250, 250, 250, 0.8) 65%,
     rgba(250, 250, 250, 0.5) 80%,
@@ -302,137 +213,102 @@ body {
     rgba(250, 250, 250, 0) 100%
   );
 }
-
 .App .TopArea .flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 100px;
   width: 100%;
   padding: 0 8vw 0 8vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #212121;
 }
-
 .App .TopArea .flex-container img {
   width: 26px;
 }
-
 .App .TopArea .flex-container .back-arrow {
   width: 26px;
   height: 26px;
 }
-
 .App .TopArea .flex-container .AppName {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 800;
   margin: 4px 0 0 0;
 }
-
+.App .TopArea .flex-container .care-type {
+  position: absolute;
+  font-size: 12px;
+  color: #377d4f;
+  top: 1vh;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  margin-left: -8vw;
+}
 .App .TopArea .flex-container .more-btn {
   height: 24px;
   width: 26px;
 }
-
 .App .ProgressBar.progress-bar-transition-enter {
-  -webkit-transform: translateY(-5vh);
   transform: translateY(-5vh);
   opacity: 0 !important;
 }
-
 .App .ProgressBar.progress-bar-transition-enter-active {
-  -webkit-transition: opacity 300ms ease-in, -webkit-transform 300ms;
-  transition: opacity 300ms ease-in, -webkit-transform 300ms;
   transition: transform 300ms, opacity 300ms ease-in;
-  transition: transform 300ms, opacity 300ms ease-in, -webkit-transform 300ms;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1 !important;
 }
-
 .App .ProgressBar.progress-bar-transition-exit {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1 !important;
 }
-
 .App .ProgressBar.progress-bar-transition-exit-active {
-  -webkit-transition: opacity 300ms ease-out, -webkit-transform 300ms;
-  transition: opacity 300ms ease-out, -webkit-transform 300ms;
   transition: transform 300ms, opacity 300ms ease-out;
-  transition: transform 300ms, opacity 300ms ease-out, -webkit-transform 300ms;
-  -webkit-transform: translateY(-5vh);
   transform: translateY(-5vh);
   opacity: 0 !important;
 }
-
 .App .ProgressBar .bar-background {
   background-color: #e8e8e8;
   height: 18px;
   border-radius: 18px;
   margin: 0 8vw;
-  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.06);
   position: relative;
 }
-
 .App .ProgressBar .bar-background .bar-shadow-indicator {
   height: 14px;
   border-radius: 14px;
   position: absolute;
   top: 2px;
   margin: 0 2px;
-  -webkit-transition: width 250ms linear;
   transition: width 250ms linear;
   background-color: #b8b8b8;
 }
-
 .App .ProgressBar .bar-background .bar-indicator {
   height: 14px;
   border-radius: 14px;
   position: absolute;
   top: 2px;
   margin: 0 2px;
-  -webkit-transition: width 250ms linear;
   transition: width 250ms linear;
   background-color: #315991;
 }
-
 .App .checkboxComponent {
   width: 100%;
   padding: 10px 0;
 }
-
 .App .checkboxComponent form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
 .App .checkboxComponent form p {
   color: #212121;
   margin: 0;
   font-weight: 700;
   font-size: 0.9rem;
 }
-
 .App .checkboxComponent form .checkbox-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background-color: #fff;
   border: 2px solid #212121;
@@ -441,11 +317,9 @@ body {
   display: inline-block;
   position: relative;
 }
-
 .App .checkboxComponent form .checkbox-input:focus {
   outline: none;
 }
-
 .App .checkboxComponent form .checkbox-input:checked::after {
   content: url(./Images/checkbox-tik.svg);
   position: absolute;
@@ -454,97 +328,63 @@ body {
   top: -3px;
   left: 3px;
 }
-
 .App .Textarea {
   margin-top: 30px;
 }
-
 .App .Textarea p {
   margin: 10px 0 !important;
   text-align: start !important;
   font-weight: 700 !important;
   font-size: 0.9rem;
 }
-
 .App .Textarea textarea {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   height: 30vh;
   border: 1px solid #8c8c8c;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #fff;
   font-family: "Montserrat", sans-serif;
   font-weight: 100;
   font-style: italic;
   font-size: 14px;
   padding: 15px;
 }
-
 .App .Textarea textarea:focus {
   outline: none;
 }
-
 .App .slidable.slide-right-enter {
-  -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
 }
-
 .App .slidable.slide-right-enter-active {
   overflow-y: hidden;
-  -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
   transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
 }
-
 .App .slidable.slide-right-exit {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-
 .App .slidable.slide-right-exit-active {
   overflow-y: hidden;
-  -webkit-transform: translateX(-100vw);
   transform: translateX(-100vw);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
   transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
 }
-
 .App .slidable.slide-left-enter {
-  -webkit-transform: translateX(-100vw);
   transform: translateX(-100vw);
 }
-
 .App .slidable.slide-left-enter-active {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
   transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
   overflow-y: hidden;
 }
-
 .App .slidable.slide-left-exit {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-
 .App .slidable.slide-left-exit-active {
   overflow-y: hidden;
-  -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
   transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
 }
-
 .App .Page {
   position: absolute;
   top: 118px;
@@ -552,55 +392,67 @@ body {
   width: 100%;
   overflow-y: scroll;
 }
-
 .App .Page .page-content {
   background-color: #fafafa;
-  padding: 4.5vh 6vw 30vh 6vw;
-  -webkit-box-sizing: border-box;
+  padding: 0.5vh 6vw 37vh 6vw;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   /*.attention text and emergency link properties are in the landingpage*/
 }
-
 .App .Page .page-content .page-title {
   text-align: center;
   font-size: 1.3rem;
   margin-bottom: 30px;
   font-weight: 600;
 }
-
-.App .Page .page-content .page-paragraph .page-paragraph2 {
+.App .Page .page-content .page-paragraph {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 300;
   line-height: 1.8rem;
 }
-
+.App .Page .page-content .page-paragraph2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 300;
+  line-height: 1.8rem;
+}
 .App .Page .page-content .attentionText {
   color: #ad3e2f;
   font-weight: 800;
 }
-
 .App .Page .page-content .emergencyPage-link {
   font-size: 1rem;
 }
-
 .App .Page .page-content .emergencyPage-link span {
   text-decoration: underline;
   color: #ad3e2f;
 }
-
-.App .DoubleButton {
-  margin: 50px 10px 70px 10px;
+.App .care-type-selection-title {
+  text-align: center;
+  margin-bottom: 40px;
 }
-
+.App .care-type-selection-button {
+  height: 10vh;
+  width: 80vw;
+  margin-left: 4vw;
+  font-size: 17px;
+  border: 1px solid #8c8c8c;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.App .care-type-selection-button:first-of-type {
+  margin-bottom: 5vh;
+}
+.App .DoubleButton {
+  margin: 30px 10px 0px 10px;
+}
 .App .DoubleButton h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 25px;
 }
-
 .App .DoubleButton p {
   margin-bottom: 25px;
   font-weight: 100;
@@ -608,16 +460,10 @@ body {
   text-align: start;
   font-size: 0.9rem;
 }
-
 .App .DoubleButton form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
 .App .DoubleButton input {
   border: 1px solid #8c8c8c;
   background-color: #fff;
@@ -626,49 +472,39 @@ body {
   width: 40vw;
   font-size: 14px;
 }
-
 .App .DoubleButton input:focus {
   outline: none;
 }
-
 .App .DoubleButton .hoito-ohje {
   margin-top: 10px;
   padding: 0px 20px;
   font-size: 16px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   max-height: 0;
   background-color: #fee715;
   overflow: hidden;
-  -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-
 .App .DoubleButton .hoito-ohje p {
   font-size: 14px;
   text-align: start;
   line-height: 1.8rem;
 }
-
 .App .DoubleButton .double-button-inactive {
   background: "#fff";
   color: "#212121";
   border-color: "#8c8c8c";
 }
-
 .App .DoubleButton .active {
   width: 100%;
   max-height: 880px;
   padding: 10px 20px;
 }
-
 .App .news-container {
   text-align: center;
 }
-
 .App .news-container .news-input {
   border: 1px solid #8c8c8c;
   border-radius: 4px;
@@ -679,166 +515,106 @@ body {
   height: 60px;
   margin-bottom: 20px;
 }
-
 .App .news-container .news-input:focus {
   outline: none;
 }
-
-.App .news-container ::-webkit-input-placeholder {
-  opacity: 0.32;
-}
-
-.App .news-container :-ms-input-placeholder {
-  opacity: 0.32;
-}
-
-.App .news-container ::-ms-input-placeholder {
-  opacity: 0.32;
-}
-
 .App .news-container ::placeholder {
   opacity: 0.32;
 }
-
-.App .news-container .news-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.App .news-container .news-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.App .news-container .news-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
 .App .news-container .news-input:focus::placeholder {
   color: transparent;
 }
-
 .App .news-container .news-meter {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 30px;
   width: 100%;
 }
-
 .App .news-container .news-meter-cell {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 100%;
-  width: 14.28571%;
+  width: 14.2857142857%;
   opacity: 0.65;
   color: #fff;
   font-size: 12px;
-  -webkit-transition-delay: 150ms;
   transition-delay: 150ms;
-  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
 }
-
 .App .news-container .n1 {
   background-color: #ad3e2f;
   border-radius: 4px 0 0 4px;
   overflow: hidden;
 }
-
 .App .news-container .n7 {
   background-color: #ad3e2f;
   border-radius: 0 4px 4px 0;
   overflow: hidden;
 }
-
 .App .news-container .n2,
 .App .news-container .n6 {
   background-color: #db5400;
   overflow: hidden;
 }
-
 .App .news-container .n3,
 .App .news-container .n5 {
   background-color: #f0a171;
   overflow: hidden;
 }
-
 .App .news-container .n4 {
   background-color: #377d4f;
   overflow: hidden;
 }
-
 .App .news-container .active {
   opacity: 1;
   width: 60px;
   height: 40px;
-  -webkit-transform: translateY(-12%);
   transform: translateY(-12%);
   font-size: 15px;
 }
-
 .App .instruction-page-container {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
 }
-
 .App .instruction-page-container .instruction-page {
   padding: 120px 4vw 0 4vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
 .App .instruction-page-container .instruction-page .checkmark {
   width: 40px;
   position: absolute;
   top: 38%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  -webkit-transition-delay: 400ms;
   transition-delay: 400ms;
 }
-
 .App .instruction-page-container .instruction-page .checkmark.animate {
   opacity: 1;
   width: 80px;
 }
-
 .App .instruction-page-container .instruction-page .scoreCard-container {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #fff;
-  margin: 20px 0;
+  margin: 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App .instruction-page-container .instruction-page .scoreCard-container p {
   font-size: 1.1rem;
   margin: 20px 0;
 }
-
 .App .instruction-page-container .instruction-page .scoreCard-container h3 {
   margin-top: 35px;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -846,27 +622,24 @@ body {
   width: 100%;
   background-color: #fff;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #212121;
   margin: 20px 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .InstructionCard-first-container
   p {
-  margin-top: 28px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: 200;
   padding: 0;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -874,7 +647,6 @@ body {
   span {
   font-weight: 600;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -884,7 +656,6 @@ body {
   color: #ad3e2f;
   font-weight: 500;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -893,22 +664,16 @@ body {
   p {
   font-size: 1.1rem;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .InstructionCard-first-container
   .control-btn {
-  margin: 50px auto 30px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  margin: 15px auto 15px auto;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 180px;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -917,7 +682,6 @@ body {
   p {
   font-weight: 800;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -929,20 +693,16 @@ body {
   background-color: #f0c816;
   padding: 20px 23px 26px 23px;
   border-radius: 40px;
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
-
 .App .instruction-page-container .instruction-page .instruction-news-component {
   display: none;
   text-align: center;
   padding: 20px 10px;
   margin: 20px 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -950,27 +710,23 @@ body {
   h1 {
   font-size: 1.2rem;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .instruction-news-component
   p {
-  margin: 40px 0 50px 0;
+  margin: 20px 0 20px 0;
   font-weight: 200;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 15px;
   line-height: 1.6rem;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .instruction-news-component.active {
   display: block;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -979,26 +735,21 @@ body {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #fff;
-  margin: 20px 0;
+  margin: 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .controlled-scoreCard-container
   p {
   font-size: 1.1rem;
-  margin: 60px 0 10px 0;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1006,7 +757,6 @@ body {
   h3 {
   margin-top: 20px;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1015,26 +765,21 @@ body {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #fff;
   margin: 20px 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .controlled-scoreCard-container.active
   p {
   font-size: 1.1rem;
-  margin: 60px 0 10px 0;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1042,7 +787,6 @@ body {
   h3 {
   margin-top: 35px;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1050,17 +794,14 @@ body {
   width: 100%;
   background-color: #284e78;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #fff;
   margin: 20px 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1069,7 +810,6 @@ body {
   font-size: 1.1rem;
   margin: 60px 0 10px 0;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1077,7 +817,6 @@ body {
   h3 {
   margin-top: 35px;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1085,17 +824,14 @@ body {
   width: 100%;
   background-color: #fff;
   padding: 15px 20px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   line-height: 1.6rem;
   color: #212121;
   margin: 20px 0;
   border-radius: 4px;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1104,7 +840,6 @@ body {
   margin: 25px 0;
   opacity: 0.25;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1114,7 +849,6 @@ body {
   font-weight: 200;
   padding: 0;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1122,31 +856,70 @@ body {
   span {
   font-weight: 600;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .InstructionCard-second-container
   .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .App .instruction-page-container .instruction-page .report-container {
   color: #212121;
-  margin-top: 30px;
+  margin-top: 20px;
 }
-
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .green-box {
+  width: 100%;
+  background-color: #377d4f;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #fff;
+  margin: 20px 0 20px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .green-box
+  p {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .green-box
+  h3 {
+  margin-top: 10px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  .white-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+  color: #212121;
+  margin: 20px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+}
 .App .instruction-page-container .instruction-page .report-container hr {
   opacity: 0.3;
 }
-
-.App .instruction-page-container .instruction-page .report-container h2 {
-  margin: 40px 0 30px 0;
-  padding: 0 15px;
-}
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1154,10 +927,8 @@ body {
   .reportElement {
   margin: 10px 0;
   padding: 0 15px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1166,22 +937,16 @@ body {
   h3 {
   color: #284e78;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .report-container
   .reportElement
   .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 0.9rem;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1191,9 +956,8 @@ body {
   .subject {
   line-height: 1.6rem;
   font-weight: 200;
-  width: 65%;
+  width: 63%;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1204,20 +968,204 @@ body {
   display: block;
   line-height: 1.6rem;
   font-weight: 600;
-  width: 35%;
+  width: 37%;
 }
-
+.App .instruction-page-container .instruction-page .report-container table tr {
+  display: flex;
+  height: 120px;
+  width: 89vw;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  line-height: 25.6px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  tr:nth-of-type(even) {
+  border-top: solid 2px #212121;
+  opacity: 0.3;
+  height: 0px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:first-child {
+  min-width: 155px;
+  max-width: 155px;
+  color: #212121;
+  font-size: 1.05em;
+}
+@media screen and (max-width: 1800px) {
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(2) {
+    width: 49vw;
+  }
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(4) {
+    width: 29vw;
+  }
+}
+@media screen and (max-width: 1490px) {
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    tr {
+    width: 87vw;
+  }
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(2) {
+    width: 30vw;
+  }
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(4) {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    tr {
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 635px) {
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    tr {
+    overflow: visible;
+    margin-left: -15px;
+  }
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(2) {
+    max-width: 25vw;
+  }
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    td:nth-child(4) {
+    width: 25vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  .App
+    .instruction-page-container
+    .instruction-page
+    .report-container
+    table
+    tr:nth-child(9)
+    td:nth-child(n + 2) {
+    font-size: 3.5vw;
+  }
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:first-child
+  p {
+  color: #ad3e2f;
+  display: contents;
+  font-size: small;
+  line-height: 15px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:nth-of-type(even) {
+  text-align: center;
+  min-width: 65px;
+  padding-right: 5px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:nth-child(2) {
+  width: 50vw;
+  justify-content: right;
+  padding-right: 10px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:nth-child(3) {
+  border-left: dashed 2px #212121;
+  opacity: 0.3;
+  min-width: 0px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:nth-child(4) {
+  width: 30vw;
+  padding-right: 0px;
+  padding-left: 10px;
+}
+.App
+  .instruction-page-container
+  .instruction-page
+  .report-container
+  table
+  td:nth-child(n + 2)
+  br {
+  margin-bottom: 5px;
+}
+.App .instruction-page-container .instruction-page .report-container td {
+  display: inherit;
+  align-items: center;
+}
 .App
   .instruction-page-container
   .instruction-page
   .report-container
   .vitalValues {
-  margin-top: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 0 15px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1226,22 +1174,16 @@ body {
   h3 {
   color: #ad3e2f;
 }
-
 .App
   .instruction-page-container
   .instruction-page
   .report-container
   .vitalValues
   .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 1rem;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1253,7 +1195,6 @@ body {
   font-weight: 200;
   width: 75%;
 }
-
 .App
   .instruction-page-container
   .instruction-page
@@ -1265,11 +1206,9 @@ body {
   font-weight: 400;
   width: 25%;
 }
-
 .App .instruction-page-container .instruction-page .controlDone-btn {
   display: none;
 }
-
 .App .instruction-page-container .instruction-page .controlDone-btn.active {
   display: block;
   background-color: #f0c816;
@@ -1277,23 +1216,13 @@ body {
   padding: 10px 15px;
   text-align: center;
   border-radius: 4px;
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
-
 .App .nextButtondiv {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(250, 250, 250, 0)),
-    color-stop(50%, rgba(250, 250, 250, 0.9)),
-    color-stop(80%, #fafafa)
-  );
   background-image: linear-gradient(
     rgba(250, 250, 250, 0) 0%,
     rgba(250, 250, 250, 0.9) 50%,
-    #fafafa 80%
+    rgba(250, 250, 250, 1) 80%
   );
   position: fixed;
   bottom: 0;
@@ -1301,12 +1230,8 @@ body {
   width: 100%;
   text-align: center;
   padding: 10px 0 25px 0;
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
   transition: transform 300ms, opacity 300ms;
-  transition: transform 300ms, opacity 300ms, -webkit-transform 300ms;
 }
-
 .App .nextButtondiv .nextButtoninactive {
   width: 265px;
   height: 52px;
@@ -1315,24 +1240,17 @@ body {
   color: #cfcfcf;
   font-size: 17px;
   text-align: center;
-  -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.56);
   border: 0;
-  -webkit-transition-delay: 300ms;
   transition-delay: 300ms;
-  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
 }
-
 .App .nextButtondiv .nextButtoninactive.nextButtonactive {
   background-color: #cf7740;
   color: #fff;
-  -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
-
 .App .nextButtondiv .nextButtoninactive:focus,
 .App .nextButtondiv .nextButtonactive:focus {
   outline: none;
 }
-/*# sourceMappingURL=App.css.map */

@@ -259,7 +259,7 @@ body {
       .care-type {
         position: absolute;
         font-size: 12px;
-        color: grey;
+        color: $sote-green;
         top: 1vh;
         white-space: nowrap;
         text-align: center;
@@ -445,7 +445,7 @@ body {
 
     .page-content {
       background-color: $app-background-color;
-      padding: 4.5vh 6vw 30vh 6vw;
+      padding: 0.5vh 6vw 37vh 6vw;
       box-sizing: border-box;
       font-family: $font-montserrat;
 
@@ -508,7 +508,7 @@ body {
   }
 
   .DoubleButton {
-    margin: 50px 10px 70px 10px;
+    margin: 30px 10px 0px 10px;
 
     h2 {
       font-family: $font-montserrat;
@@ -608,6 +608,7 @@ body {
       display: flex;
       height: 30px;
       width: 100%;
+      justify-content: center;
     }
 
     .news-meter-cell {
@@ -701,7 +702,7 @@ body {
         line-height: 1.6rem;
         color: #fff;
 
-        margin: 20px 0;
+        margin: 0;
         border-radius: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
@@ -730,7 +731,8 @@ body {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
         p {
-          margin-top: 28px;
+          margin-top: 10px;
+          margin-bottom: 10px;
           font-weight: 200;
           padding: 0;
         }
@@ -750,7 +752,7 @@ body {
         }
 
         .control-btn {
-          margin: 50px auto 30px auto;
+          margin: 15px auto 15px auto;
           display: flex;
           justify-content: space-between;
           width: 180px;
@@ -783,7 +785,7 @@ body {
         }
 
         p {
-          margin: 40px 0 50px 0;
+          margin: 20px 0 20px 0;
           font-weight: 200;
           box-sizing: border-box;
           padding: 0 15px;
@@ -806,7 +808,7 @@ body {
         line-height: 1.6rem;
         color: #fff;
 
-        margin: 20px 0;
+        margin: 0;
         border-radius: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
@@ -902,46 +904,46 @@ body {
 
       .report-container {
         color: #212121;
-        margin-top: 30px;
+        margin-top: 20px;
 
         .green-box {
           width: 100%;
-        background-color: $sote-green;
-        padding: 15px 20px;
-        box-sizing: border-box;
+          background-color: $sote-green;
+          padding: 15px 20px;
+          box-sizing: border-box;
 
-        letter-spacing: 0.5px;
-        line-height: 1.6rem;
-        color: #fff;
+          letter-spacing: 0.5px;
+          line-height: 1.6rem;
+          color: #fff;
 
-        margin: 70px 0 20px 0;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+          margin: 20px 0 20px 0;
+          border-radius: 4px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
 
-        p {
-          font-size: 1.1rem;
-          margin: 0 0 10px 0;
-          font-style: italic;
-        }
+          p {
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            font-style: italic;
+          }
 
-        h3 {
-          margin-top: 10px;
-        }
+          h3 {
+            margin-top: 10px;
+          }
         }
 
         .white-box {
           width: 100%;
-        background-color: #fff;
-        padding: 15px 20px;
-        box-sizing: border-box;
+          background-color: #fff;
+          padding: 15px 20px;
+          box-sizing: border-box;
 
-        letter-spacing: 0.5px;
-        line-height: 1.6rem;
-        color: #212121;
+          letter-spacing: 0.5px;
+          line-height: 1.6rem;
+          color: #212121;
 
-        margin: 20px 0;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
+          margin: 20px 0;
+          border-radius: 4px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.21);
         }
 
         hr {
@@ -965,20 +967,19 @@ body {
             .subject {
               line-height: 1.6rem;
               font-weight: 200;
-              width: 65%;
+              width: 63%;
             }
 
             .answer {
               display: block;
               line-height: 1.6rem;
               font-weight: 600;
-              width: 35%;
+              width: 37%;
             }
           }
         }
 
         table {
-
           tr {
             display: flex;
             // margin-left: 15px;
@@ -989,13 +990,13 @@ body {
             line-height: 25.6px;
             // margin-left: -15px;
           }
-          
+
           tr:nth-of-type(even) {
             border-top: solid 2px #212121;
             opacity: 0.3;
             height: 0px;
           }
-          
+
           td:first-child {
             min-width: 155px;
             max-width: 155px;
@@ -1030,7 +1031,7 @@ body {
             }
           }
 
-          @media screen and (max-width: 635px) { 
+          @media screen and (max-width: 635px) {
             tr {
               overflow: visible;
               margin-left: -15px;
@@ -1048,7 +1049,7 @@ body {
               font-size: 3.5vw;
             }
           }
-            
+
           td:first-child p {
             color: rgb(173, 62, 47);
             display: contents;

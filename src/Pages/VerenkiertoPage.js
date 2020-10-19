@@ -7,6 +7,7 @@ function VerenkiertoPage({ personData, setPersonData }) {
     <Page title="Verenkierto">
       <DoubleButton
         header={"Tarkista syke:"}
+        bodyText={"tunnustele ranne/kyynärvarsi/kaula"}
         values={["Säännöllinen", "Epäsäännöllinen"]}
         personData={personData}
         setPersonData={setPersonData}

@@ -43,7 +43,15 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>Aloita alusta</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              Aloita alusta
+            </p>
           </div>
           <div
             className="emeregencyPage-fromMenu"
@@ -52,7 +60,13 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
               Hätätilanne
               <wbr />
               oireet
@@ -60,21 +74,49 @@ function MenuPanel({
           </div>
 
           <div>
-            <p>Konsultoitava tilanne</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              Konsultoitava tilanne
+            </p>
           </div>
 
           <div>
-            <p>NEWS - Aikaisen varoituksen pisteytysjärjestelmä</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
+            </p>
           </div>
 
           <div>
-            <p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
               ABCDE-menetelmä ja sen käyttö
             </p>
           </div>
 
           <div>
-            <p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
               ISBAR-raportointiohje konsultoitaessa asiakkaasta
             </p>
           </div>
@@ -89,11 +131,27 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>Vaihda hoitoyksikköä</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              Vaihda hoitoyksikköä
+            </p>
           </div>
 
           <div>
-            <p>Viimeisimmät raportit</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              Viimeisimmät raportit
+            </p>
           </div>
         </div>
       </div>

@@ -208,15 +208,15 @@ function Report({ personData, controlData }) { // personData = controlled score,
 
   const verensokeriStyle = () => {
     if (
-      personData["Mittaa verensokeri:"] <= 4 ||
+      personData["Mittaa verensokeri:"] <= 3.9 ||
       personData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
     } else if (
-      (personData["Mittaa verensokeri:"] >= 5 &&
+      (personData["Mittaa verensokeri:"] >= 4 &&
         personData["Mittaa verensokeri:"] <= 6) ||
-      (personData["Mittaa verensokeri:"] >= 20 &&
-        personData["Mittaa verensokeri:"] <= 24)
+      (personData["Mittaa verensokeri:"] >= 20.1 &&
+        personData["Mittaa verensokeri:"] <= 24.9)
     ) {
       return orange;
     } else if (
@@ -225,8 +225,8 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (
-      personData["Mittaa verensokeri:"] >= 7 &&
-      personData["Mittaa verensokeri:"] <= 14
+      personData["Mittaa verensokeri:"] >= 6.1 &&
+      personData["Mittaa verensokeri:"] <= 14.9
     ) {
       return white;
     }
@@ -234,15 +234,15 @@ function Report({ personData, controlData }) { // personData = controlled score,
 
   const verensokeriStyle2 = () => {
     if (
-      controlData["Mittaa verensokeri:"] <= 4 ||
+      controlData["Mittaa verensokeri:"] <= 3.9 ||
       controlData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
     } else if (
-      (controlData["Mittaa verensokeri:"] >= 5 &&
+      (controlData["Mittaa verensokeri:"] >= 4 &&
         controlData["Mittaa verensokeri:"] <= 6) ||
-      (controlData["Mittaa verensokeri:"] >= 20 &&
-        controlData["Mittaa verensokeri:"] <= 24)
+      (controlData["Mittaa verensokeri:"] >= 20.1 &&
+        controlData["Mittaa verensokeri:"] <= 24.9)
     ) {
       return orange;
     } else if (
@@ -251,27 +251,33 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (
-      controlData["Mittaa verensokeri:"] >= 7 &&
-      controlData["Mittaa verensokeri:"] <= 14
+      controlData["Mittaa verensokeri:"] >= 6.1 &&
+      controlData["Mittaa verensokeri:"] <= 14.9
     ) {
       return green;
     }
   };
 
-  let endTimeStamp = new Date();
-  let endTime = endTimeStamp.toLocaleString([], {
+  let endTimeStamp = new Date().toLocaleTimeString(["en-GB"], {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit"
   });
+  // let endTime = endTimeStamp.toLocaleString([], {
+  //   day: "2-digit",
+  //   month: "2-digit",
+  //   year: "numeric",
+  //   hour: "2-digit",
+  //   minute: "2-digit"
+  // });
 
   return (
     <div className="report-container">
       <div className="green-box">
-        <h3>Raportti:</h3>
-        <p>{endTime}</p>
+        <h3>ABCDE-raportti:</h3>
+        <p>{endTimeStamp}</p>
       </div>
       <div className="white-box">
         <div className="reportElement">
@@ -359,7 +365,14 @@ function Report({ personData, controlData }) { // personData = controlled score,
         <div className="reportElement">
           <h3>Tajunta:</h3>
           <div className="flex">
-            <p style={{ width: "100%", fontWeight: "200" }} className="answer">
+            <p
+              style={{
+                width: "100%",
+                fontWeight: "200",
+                overflowWrap: "break-word"
+              }}
+              className="answer"
+            >
               {personData["Tajunta - Ei poikkeavia löydöksiä."] ? (
                 "Ei poikkeavia löydöksiä."
               ) : (
@@ -379,7 +392,9 @@ function Report({ personData, controlData }) { // personData = controlled score,
             <p className="subject">{"Miltä iho tuntuu?"}</p>
             <div className="answer">
               <p style={{ color: green }}>
-                {personData["Iho, paljastaminen - Normaali"] ? "Normaali" : null}
+                {personData["Iho, paljastaminen - Normaali"]
+                  ? "Normaali"
+                  : null}
               </p>
               <p style={{ color: red }}>
                 {personData["Iho, paljastaminen - Kuiva"] ? "Kuiva" : null}
@@ -411,7 +426,8 @@ function Report({ personData, controlData }) { // personData = controlled score,
                 fontWeight: "bold",
                 fontSize: "0.9rem",
                 lineHeight: "1.6rem",
-                color: red
+                color: red,
+                overflowWrap: "break-word"
               }}
               className="answer"
             >
@@ -449,16 +465,18 @@ function Report({ personData, controlData }) { // personData = controlled score,
               <td>
                 {"Happisaturaatio:"}
                 <br />
-                <p style={{ fontWeight: "bold" }}>Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.</p>
+                <p style={{ fontWeight: "bold" }}>
+                  Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+                </p>
               </td>
               <td style={{ color: happisaturaatioStyle2() }}>
-              {controlData.Happisaturaatio_timestamp}
+                {controlData.Happisaturaatio_timestamp}
                 <br />
                 {controlData.Happisaturaatio}
               </td>
               <td></td>
               <td style={{ color: happisaturaatioStyle() }}>
-              {personData.Happisaturaatio_timestamp}
+                {personData.Happisaturaatio_timestamp}
                 <br />
                 {personData.Happisaturaatio}
               </td>
@@ -470,13 +488,13 @@ function Report({ personData, controlData }) { // personData = controlled score,
                 {"Verenpaine:"}
               </td>
               <td style={{ color: systolinenVerenpaineStyle2() }}>
-              {controlData["Systolinen verenpaine_timestamp"]}
+                {controlData["Systolinen verenpaine_timestamp"]}
                 <br />
                 {controlData["Systolinen verenpaine"]}
               </td>
               <td></td>
               <td style={{ color: systolinenVerenpaineStyle() }}>
-              {personData["Systolinen verenpaine_timestamp"]}
+                {personData["Systolinen verenpaine_timestamp"]}
                 <br />
                 {personData["Systolinen verenpaine"]}
               </td>
@@ -485,13 +503,13 @@ function Report({ personData, controlData }) { // personData = controlled score,
             <tr>
               <td>{"Syketaajuus:"}</td>
               <td style={{ color: SyketaajuusStyle2() }}>
-              {controlData.Syketaajuus_timestamp}
+                {controlData.Syketaajuus_timestamp}
                 <br />
                 {controlData.Syketaajuus}
               </td>
               <td></td>
               <td style={{ color: SyketaajuusStyle() }}>
-              {personData.Syketaajuus_timestamp}
+                {personData.Syketaajuus_timestamp}
                 <br />
                 {personData.Syketaajuus}
               </td>
@@ -502,37 +520,42 @@ function Report({ personData, controlData }) { // personData = controlled score,
               {controlData["Tajunnan taso"] ? (
                 <td style={{ color: green }}>Normaali</td>
               ) : (
-                <td style={{ color: red }}>Poikkeava</td>
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
               <td></td>
               {personData["Tajunnan taso"] ? (
                 <td style={{ color: white }}>Normaali</td>
               ) : (
-                <td style={{ color: red }}>Poikkeava</td>
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
             </tr>
             <tr></tr>
             <tr>
               <td>{"Lämpötila:"}</td>
               <td style={{ color: lampotilaStyle2() }}>
-              {controlData["Mittaa lämpötila_timestamp"]}
+                {controlData["Mittaa lämpötila_timestamp"]}
                 <br />
                 {controlData["Mittaa lämpötila"]}
               </td>
               <td></td>
               <td style={{ color: lampotilaStyle() }}>
-              {personData["Mittaa lämpötila_timestamp"]}
+                {personData["Mittaa lämpötila_timestamp"]}
                 <br />
                 {personData["Mittaa lämpötila"]}
               </td>
             </tr>
             <tr></tr>
             <tr>
-              <td>{"Verensokeri:"}</td>
+              <td>{"Verensokeri:"}
+                <br />
+                <p style={{ fontWeight: "bold" }}>
+                  Huomioi insuliini DM paasto VS tavoite.
+                </p>
+              </td>
               <td style={{ color: verensokeriStyle2() }}>
                 {controlData["Mittaa verensokeri:_timestamp"]}
                 <br />
-                {controlData["Mittaa verensokeri:"]}
+                {controlData["Mittaa verensokeri:"] ? controlData["Mittaa verensokeri:"] : "Ei mitattu"}
               </td>
               <td></td>
               <td style={{ color: verensokeriStyle() }}>
