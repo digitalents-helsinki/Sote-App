@@ -207,15 +207,15 @@ function Report({ personData, controlData }) {
 
   const verensokeriStyle = () => {
     if (
-      personData["Mittaa verensokeri:"] <= 4 ||
+      personData["Mittaa verensokeri:"] <= 3.9 ||
       personData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
     } else if (
-      (personData["Mittaa verensokeri:"] >= 5 &&
+      (personData["Mittaa verensokeri:"] >= 4 &&
         personData["Mittaa verensokeri:"] <= 6) ||
-      (personData["Mittaa verensokeri:"] >= 20 &&
-        personData["Mittaa verensokeri:"] <= 24)
+      (personData["Mittaa verensokeri:"] >= 20.1 &&
+        personData["Mittaa verensokeri:"] <= 24.9)
     ) {
       return orange;
     } else if (
@@ -224,8 +224,8 @@ function Report({ personData, controlData }) {
     ) {
       return lightOrange;
     } else if (
-      personData["Mittaa verensokeri:"] >= 7 &&
-      personData["Mittaa verensokeri:"] <= 14
+      personData["Mittaa verensokeri:"] >= 6.1 &&
+      personData["Mittaa verensokeri:"] <= 14.9
     ) {
       return green;
     }

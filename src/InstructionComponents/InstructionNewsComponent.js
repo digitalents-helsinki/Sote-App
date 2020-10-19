@@ -155,7 +155,7 @@ function InstructionNewsComponent({
             name={"Mittaa verensokeri:"}
             personData={personData}
             setPersonData={setPersonData}
-            cells={[4, [5, 6], null, [7, 14], [15, 20], [21, 24], 25]}
+            cells={[3.9, [4, 6], null, [6.1, 14.9], [15, 20], [20.1, 24.9], 25]}
           />
         </div>
       ) : null}
