@@ -6,8 +6,8 @@ function HappisaturaatioPage({ personData, setPersonData }) {
   return (
     <Page
       title="Happisaturaatio"
-      paragraph="Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi."
-      paragraph2="Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa."
+      paragraph="Aseta SpO2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi."
+      paragraph2="Huomioi asiakkaan keuhkosairaus SpO2 arvoa tulkittaessa."
     >
       <NewsComponent
         name={"Happisaturaatio"}

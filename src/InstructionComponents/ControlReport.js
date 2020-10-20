@@ -463,7 +463,7 @@ function Report({ personData, controlData }) {
                 {"Happisaturaatio:"}
                 <br />
                 <p style={{ fontWeight: "bold" }}>
-                  Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+                  Huomioi asiakkaan keuhkosairaus SpO2 arvoa tulkittaessa.
                 </p>
               </td>
               <td style={{ color: happisaturaatioStyle2() }}>
@@ -582,7 +582,7 @@ function Report({ personData, controlData }) {
         </div>
         <div className="flex">
           <p className="vital-subject" style={{ color: red }}>
-            Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+            Huomioi asiakkaan keuhkosairaus SpO2 arvoa tulkittaessa.
           </p>
         </div>
         <div className="flex">
