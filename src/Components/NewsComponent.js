@@ -79,7 +79,7 @@ function NewsComponent(props) {
             (window.innerHeight ||
               document.documentElement.clientHeight ||
               document.body.clientHeight) /
-              1.8;
+              2.5;
           const scrollToNews = () => {
             try {
               scrollParent.scrollTo({ top: y, behavior: "smooth" });
