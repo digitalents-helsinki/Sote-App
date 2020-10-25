@@ -29,7 +29,7 @@ function TajunnantasoComponent(props) {
         if (cell === null) {
           return (
             <div
-              className={`news-meter-cell n${idx + 1} ${calculateActiveState(
+              className={`news-meter-cell-tajunnantaso n${idx + 1} ${calculateActiveState(
                 cell,
                 idx
               )}`}
@@ -39,7 +39,7 @@ function TajunnantasoComponent(props) {
         } else if (Array.isArray(cell)) {
           return (
             <div
-              className={`news-meter-cell n${idx + 1} ${calculateActiveState(
+              className={`news-meter-cell-tajunnantaso n${idx + 1} ${calculateActiveState(
                 cell,
                 idx
               )}`}
@@ -49,7 +49,7 @@ function TajunnantasoComponent(props) {
         } else {
           return (
             <div
-              className={`news-meter-cell n${idx + 1} ${calculateActiveState(
+              className={`news-meter-cell-tajunnantaso n${idx + 1} ${calculateActiveState(
                 cell,
                 idx
               )}`}
@@ -61,9 +61,9 @@ function TajunnantasoComponent(props) {
     }
   
     return (
-      <div className="news-container">
+      <div className="news-container-tajunnantaso">
         <input
-          className="news-input"
+          className="news-input-tajunnantaso"
           type="number"
           placeholder={
             props.personData[props.name] ? props.personData[props.name] : ""
@@ -78,7 +78,7 @@ function TajunnantasoComponent(props) {
               (window.innerHeight ||
                 document.documentElement.clientHeight ||
                 document.body.clientHeight) /
-                1.8;
+                2.5;
             const scrollToNews = () => {
               try {
                 scrollParent.scrollTo({ top: y, behavior: "smooth" });
@@ -115,7 +115,7 @@ function TajunnantasoComponent(props) {
           onChange={e => {
             const inputValue = Number(e.target.value);
   
-            const getNewsFromIndex = index => [3, 2, 1, 0, 1, 2, 3][index];
+            const getNewsFromIndex = index => [0, 3][index];
             const NEWSscore = props.cells.reduce((score, cell, idx) => {
               if (score !== null) return score;
               if (cell) {
@@ -150,7 +150,7 @@ function TajunnantasoComponent(props) {
           //--Update personData
         }}
       />
-      <div className="news-meter" ref={newsRef}>
+      <div className="news-meter-tajunnantaso" ref={newsRef}>
         {renderCells()}
       </div>
     </div>
