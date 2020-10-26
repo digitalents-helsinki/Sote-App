@@ -41,6 +41,14 @@ function Button(props) {
           onClick={clickHandler(false)}
           value={values[1]}
         ></input>
+
+        <input
+          type="button"
+          className="double-button-inactive"
+          style={formulateButtonStyle(true)}
+          onclick={clickHandler(0)}
+          value={values[0]}
+        ></input>
       </form>
       {props.hoitoOhje && (
         <div
