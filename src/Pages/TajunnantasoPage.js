@@ -20,6 +20,7 @@ function TajunnantasoPage({ personData, setPersonData }) {
         values={["Normaali", 5]}
         personData={personData}
         setPersonData={setPersonData}
+        Tajunnantaso={Tajunnantaso}
         name={"Tajunnan taso"}
       />
       <Tajunnantaso
