@@ -41,9 +41,9 @@ function InstructionCardSecond({
         <div className="content">
         <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-            Konsultoi lääkäriä erillisen ohjeen mukaan (Virka-ajan ulkopuolinen
-            konsultointiohje kotihoidon ja ympärivuorokautisen hoivan
-            henkilöstölle).
+            Konsultoi lääkäriä erillisen ohjeen mukaan
+            <br />
+            <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
             <br />
             Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
           </p>
@@ -75,7 +75,7 @@ function InstructionCardSecond({
             <p style={{ display: "inline", marginLeft: "15px" }}>
               Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
-              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -106,7 +106,7 @@ function InstructionCardSecond({
             <p style={{ display: "inline", marginLeft: "15px" }}>
               Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
-              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -139,7 +139,7 @@ function InstructionCardSecond({
             <p style={{ display: "inline", marginLeft: "15px" }}>
               Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
               <br />
-              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -164,7 +164,7 @@ function InstructionCardSecond({
             <p style={{ display: "inline", marginLeft: "15px" }}>
               Konsultoi oman yksikön sairaanhoitajaa jos paikalla tai suoraan <span>geriatrista lääkäriä</span> virka-ajan ulkopuolisen ohjeen mukaan
               <br />
-              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle).
+              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -314,8 +314,9 @@ function InstructionCardSecond({
           <p style={{ fontSize: "20px" }}>&rarr;</p>
           <p style={{ display: "inline", marginLeft: "15px" }}>
             Konsultoi oman yksikön sairaanhoitajaa jos paikalla tai suoraan{" "}
-            lääkäriä (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
-            ympärivuorokautisen hoivan henkilöstölle).
+            lääkäriä
+            <br />
+            <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
           </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>

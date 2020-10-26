@@ -621,7 +621,7 @@ body {
 
       opacity: 0.65;
       color: #fff;
-      font-size: 12px;
+      font-size: 10px;
 
       transition-delay: 150ms;
       transition-duration: 250ms;
@@ -658,7 +658,79 @@ body {
 
     .active {
       opacity: 1;
-      width: 60px;
+      width: 75px;
+      height: 40px;
+      transform: translateY(-12%);
+      font-size: 15px;
+    }
+  }
+
+  .news-container-tajunnantaso {
+    text-align: center;
+
+    .news-input-tajunnantaso {
+      border: 1px solid #8c8c8c;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 28px;
+      color: $sote-black;
+
+      width: 140px;
+      height: 60px;
+
+      margin-bottom: 20px;
+    }
+
+    .news-input-tajunnantaso:focus {
+      outline: none;
+    }
+
+    ::placeholder {
+      opacity: 0.32;
+    }
+
+    .news-input-tajunnantaso:focus::placeholder {
+      color: transparent;
+    }
+
+    .news-meter-tajunnantaso {
+      display: flex;
+      height: 30px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .news-meter-cell-tajunnantaso {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+      width: (100% / 2);
+
+      opacity: 0.65;
+      color: #fff;
+      font-size: 10px;
+
+      transition-delay: 150ms;
+      transition-duration: 250ms;
+    }
+
+    .n1 {
+      background-color: $sote-green;
+      border-radius: 4px 0 0 4px;
+      overflow: hidden;
+    }
+
+    .n2 {
+      background-color: $sote-red;
+      border-radius: 0 4px 4px 0;
+      overflow: hidden;
+    }
+
+    .active {
+      opacity: 1;
+      width: 65%;
       height: 40px;
       transform: translateY(-12%);
       font-size: 15px;
@@ -742,7 +814,7 @@ body {
         }
 
         .unusual-findings-list {
-          padding: 10px 10px;
+          padding: 10px 0px;
           color: $sote-red;
           font-weight: 500;
 
@@ -1065,7 +1137,7 @@ body {
 
           td:nth-child(2) {
             width: 50vw;
-            justify-content: right;
+            justify-content: end;
             padding-right: 10px;
           }
 

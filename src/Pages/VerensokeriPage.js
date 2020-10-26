@@ -16,7 +16,7 @@ function VerensokeriPage({
     >
       <p
         className="page-paragraph"
-        style={{ fontSize: "0.9rem", marginTop: "-30px" }}
+        style={{ fontSize: "0.9rem", marginTop: "0px" }}
       >
         Jos ei tarvetta mittaukselle,{" "}
         <span
