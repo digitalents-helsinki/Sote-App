@@ -21,7 +21,7 @@ function Button(props) {
       [personDataKey]: value === newValue ? null : newValue
     });
 
-  console.log(props.values);
+  console.log();
   return (
     <div className="DoubleButton">
       <h2>{props.header}</h2>
@@ -41,14 +41,6 @@ function Button(props) {
           style={formulateButtonStyle()}
           onClick={clickHandler(false)}
           value={values[1]}
-        ></input>
-
-        <input
-          type="button"
-          className="double-button-inactive"
-          style={formulateButtonStyle(true)}
-          onClick={clickHandler(0)}
-          value={values[0]}
         ></input>
       </form>
       {props.hoitoOhje && (

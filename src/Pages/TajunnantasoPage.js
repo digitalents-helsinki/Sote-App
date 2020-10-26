@@ -18,7 +18,7 @@ function TajunnantasoPage({ personData, setPersonData }) {
         name={"Tajunnan taso"}
       /> */}
       <Button
-        values={["Normaali", 5]}
+        values={["Normaali", "Poikkeava"]}
         personData={personData}
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
