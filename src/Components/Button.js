@@ -1,4 +1,5 @@
 import React from "react";
+import Tajunnantaso from "../Components/Tajunnantaso";
 
 function Button(props) {
   const personDataKey = props.name ? props.name : props.header;
@@ -46,7 +47,7 @@ function Button(props) {
           type="button"
           className="double-button-inactive"
           style={formulateButtonStyle(true)}
-          onclick={clickHandler(0)}
+          onClick={clickHandler(0)}
           value={values[0]}
         ></input>
       </form>
