@@ -1,5 +1,4 @@
 import React from "react";
-import Tajunnantaso from "../Components/Tajunnantaso";
 
 function Button(props) {
   const personDataKey = props.name ? props.name : props.header;
@@ -22,6 +21,7 @@ function Button(props) {
       [personDataKey]: value === newValue ? null : newValue
     });
 
+  console.log(props.values);
   return (
     <div className="DoubleButton">
       <h2>{props.header}</h2>
