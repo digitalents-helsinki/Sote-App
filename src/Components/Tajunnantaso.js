@@ -60,8 +60,15 @@ function TajunnantasoComponent(props) {
   // console.log(props.cells);
   const poikkeava = () => {
     console.log(props.cells[1]);
-    return props.cells[1];
+    // return props.personData[props.name].value + 6;
+    alert((props.personData["Tajunnan taso"] = +6));
+    // return (props.personData['Tajunnan taso'] =+ 6);
+
+    // alert (props.cells[1]);
+    // return props.cells[1];
   };
+  console.log(props.personData["Tajunnan taso"]);
+  console.log(props.personData);
 
   return (
     <div className="news-container-tajunnantaso">
