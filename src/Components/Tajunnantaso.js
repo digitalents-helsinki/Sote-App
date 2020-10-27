@@ -65,25 +65,27 @@ function TajunnantasoComponent(props) {
 
   return (
     <div className="news-container-tajunnantaso">
-      <form>
-        <input
-          type="button"
-          className="double-button-inactive"
-          // style={formulateButtonStyle(true)}
-          onClick={normaali}
-          value={"Normaali"}
-          // value={values[0]}
-        ></input>
+      <div className="DoubleButton">
+        <form>
+          <input
+            type="button"
+            className="double-button-inactive"
+            // style={formulateButtonStyle(true)}
+            onClick={normaali}
+            value={"Normaali"}
+            // value={values[0]}
+          ></input>
 
-        <input
-          type="button"
-          className="double-button-inactive"
-          // style={formulateButtonStyle()}
-          onClick={poikkeava}
-          value={"Poikkeava"}
-          // value={values[1]}
-        ></input>
-      </form>
+          <input
+            type="button"
+            className="double-button-inactive"
+            // style={formulateButtonStyle()}
+            onClick={poikkeava}
+            value={"Poikkeava"}
+            // value={values[1]}
+          ></input>
+        </form>
+      </div>
       <input
         className="news-input-tajunnantaso"
         type="number"
