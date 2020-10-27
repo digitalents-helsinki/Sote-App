@@ -1,11 +1,12 @@
 import React from "react";
 
-function Report({ personData, controlData }) { // personData = controlled score, controlData = original score. Fuck you, Thomas.
+function Report({ personData, controlData }) {
+  // personData = controlled score, controlData = original score.
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
   const green = "#377d4f";
-  const white = "#FF6FFF";
+  // const white = "#FF6FFF";
 
   const hengitystaajuusStyle = () => {
     if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
@@ -19,7 +20,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData.Hengitystaajuus >= 12 &&
       personData.Hengitystaajuus <= 20
     ) {
-      return white;
+      return green;
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
@@ -63,7 +64,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (personData.Happisaturaatio >= 96) {
-      return white;
+      return green;
     }
   };
 
@@ -105,7 +106,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Systolinen verenpaine"] >= 111 &&
       personData["Systolinen verenpaine"] <= 219
     ) {
-      return white;
+      return green;
     }
   };
 
@@ -144,7 +145,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (personData.Syketaajuus >= 51 && personData.Syketaajuus <= 90) {
-      return white;
+      return green;
     }
   };
 
@@ -182,7 +183,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Mittaa lämpötila"] >= 36.1 &&
       personData["Mittaa lämpötila"] <= 38
     ) {
-      return white;
+      return green;
     }
   };
 
@@ -228,7 +229,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Mittaa verensokeri:"] >= 6.1 &&
       personData["Mittaa verensokeri:"] <= 14.9
     ) {
-      return white;
+      return green;
     }
   };
 
@@ -441,7 +442,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
         <h3>Vitaali-arvot:</h3>
       </div>
 
-       {/* -----------------------  TIMESTAMPS  ----------------------- */}
+      {/* -----------------------  TIMESTAMPS  ----------------------- */}
 
       <div className="white-box">
         <table>
@@ -524,7 +525,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
               )}
               <td></td>
               {personData["Tajunnan taso"] ? (
-                <td style={{ color: white }}>Normaali</td>
+                <td style={{ color: green }}>Normaali</td>
               ) : (
                 <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
@@ -546,7 +547,8 @@ function Report({ personData, controlData }) { // personData = controlled score,
             </tr>
             <tr></tr>
             <tr>
-              <td>{"Verensokeri:"}
+              <td>
+                {"Verensokeri:"}
                 <br />
                 <p style={{ fontWeight: "bold" }}>
                   Huomioi insuliini DM paasto VS tavoite.
@@ -555,7 +557,9 @@ function Report({ personData, controlData }) { // personData = controlled score,
               <td style={{ color: verensokeriStyle2() }}>
                 {controlData["Mittaa verensokeri:_timestamp"]}
                 <br />
-                {controlData["Mittaa verensokeri:"] ? controlData["Mittaa verensokeri:"] : "Ei mitattu"}
+                {controlData["Mittaa verensokeri:"]
+                  ? controlData["Mittaa verensokeri:"]
+                  : "Ei mitattu"}
               </td>
               <td></td>
               <td style={{ color: verensokeriStyle() }}>
