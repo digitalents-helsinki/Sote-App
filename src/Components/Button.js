@@ -15,13 +15,15 @@ function Button(props) {
     return first === value ? activeStyle : {};
   };
 
-  const clickHandler = newValue => () =>
+  const handleClick = newValue => cell =>
     props.setPersonData({
       ...props.personData,
       [personDataKey]: value === newValue ? null : newValue
     });
 
+
   console.log();
+
   return (
     <div className="DoubleButton">
       <h2>{props.header}</h2>
@@ -31,7 +33,7 @@ function Button(props) {
           type="button"
           className="double-button-inactive"
           style={formulateButtonStyle(true)}
-          onClick={clickHandler(true)}
+          onClick={handleClick(true)}
           value={values[0]}
         ></input>
 
@@ -39,7 +41,7 @@ function Button(props) {
           type="button"
           className="double-button-inactive"
           style={formulateButtonStyle()}
-          onClick={clickHandler(false)}
+          onClick={handleClick(false)}
           value={values[1]}
         ></input>
       </form>
