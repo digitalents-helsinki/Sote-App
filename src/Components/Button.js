@@ -21,7 +21,8 @@ function Button(props) {
       [personDataKey]: value === newValue ? null : newValue
     });
 
-  console.log(props.values);
+
+  console.log();
 
   return (
     <div className="DoubleButton">

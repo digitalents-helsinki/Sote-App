@@ -1,7 +1,8 @@
 import React from "react";
 import Page from "../Components/Page";
 // import DoubleButton from "../Components/DoubleButton";
-import Button from "../Components/Button";
+// import Button from "../Components/Button";
+// import TajunnantasoComponent from "../Components/Tajunnantaso";
 import Tajunnantaso from "../Components/Tajunnantaso";
 
 function TajunnantasoPage({ personData, setPersonData }) {
@@ -16,16 +17,17 @@ function TajunnantasoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       /> */}
-      <Button
-        values={["Normaali", 5]}
+      {/* <Button
+        values={["Normaali", "Poikkeava"]}
         personData={personData}
         setPersonData={setPersonData}
         Tajunnantaso={Tajunnantaso}
         name={"Tajunnan taso"}
-      />
+        Tajunnantaso={TajunnantasoComponent}
+      /> */}
       <Tajunnantaso
         cells={["Normaali", 5]}
-        name={"Tajunnantaso"}
+        name={"Tajunnan taso"}
         personData={personData}
         setPersonData={setPersonData}
       />
