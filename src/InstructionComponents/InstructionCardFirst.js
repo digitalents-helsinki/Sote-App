@@ -17,12 +17,13 @@ function InstructionCardFirst({
     ),
     mediumEmergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan ennen mahdollista konsultaatiota.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan ennen mahdollista
+        konsultaatiota.
       </>
     ),
     noneEmergencyContent: (
       <>
-        <span>Kontrolloi</span> nollan pisteen tilanne
+        <span>Kontrolloi</span>
       </>
     )
   };
@@ -78,7 +79,9 @@ function InstructionCardFirst({
         </p>
         <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
         <p>
-          {personData["Mittaa verensokeri: - verensokeriscore"] >= 1 ? "Verensokeri" : null}
+          {personData["Mittaa verensokeri: - verensokeriscore"] >= 1
+            ? "Verensokeri"
+            : null}
         </p>
       </div>
       <div
