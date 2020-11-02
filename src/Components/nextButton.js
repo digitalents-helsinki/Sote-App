@@ -10,7 +10,7 @@ const NextButton = ({ personData, NEWSscoreTotal, careType, verensokeriscore }) 
     "/hengitys",
     "/verenkierto",
     "/tajunta",
-    "/iho",
+    "/silmiä",
     "/hengitystaajuus",
     "/happisaturaatio",
     "/systolinenverenpaine",
