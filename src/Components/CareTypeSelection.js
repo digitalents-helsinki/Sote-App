@@ -44,7 +44,7 @@ function CareTypeSelection({ setCareType }) {
       <Modal ref={modalRef}>
         <h2 style={{fontWeight: 400, color: "#377d4f"}}>Kotihoito</h2>
         <p>
-          Olet valinnut <span style={{fontWeight: 600}}>Kotihoito</span><wbr />-yksikön, haluatko jatkaa?
+          Olet valinnut <span style={{fontWeight: 600}}>Kotihoitoyksikön</span><wbr />, haluatko jatkaa?
         </p>
         <button className="no" onClick={() => modalRef.current.close()}>Peruuta</button>
         <button className="yes" onClick={() => clickHandler("Kotihoito")}>Kyllä</button>
@@ -52,7 +52,7 @@ function CareTypeSelection({ setCareType }) {
       <Modal ref={modalRef2}>
         <h2 style={{fontWeight: 400, color: "#377d4f"}}>Ympärivuorokautinen hoiva</h2>
         <p>
-          Olet valinnut <span style={{fontWeight: 600}}>Ympärivuorokautinen hoiva</span><wbr />-yksikön, haluatko jatkaa?
+          Olet valinnut <span style={{fontWeight: 600}}>Ympärivuorokautisen hoivayksikön</span><wbr />, haluatko jatkaa?
         </p>
         <button className="no" onClick={() => modalRef2.current.close()}>Peruuta</button>
         <button className="yes" onClick={() => clickHandler("Ympärivuorokautinen hoiva")}>Kyllä</button>
