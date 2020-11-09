@@ -48,7 +48,9 @@ function TajunnantasoComponent(props) {
             className={`news-meter-cell-tajunnantaso n${idx +
               1} ${calculateActiveState(cell, idx)}`}
             key={idx}
-          >{`${!idx ? "≤ " : "≥ "}${cell}`}</div>
+          >
+            {cell}
+          </div>
         );
       }
     });
@@ -61,7 +63,7 @@ function TajunnantasoComponent(props) {
   const poikkeava = () => {
     console.log(props.cells[1]);
     // return props.personData[props.name].value + 6;
-    alert((props.personData["Tajunnan taso"] = +6));
+    alert(props.personData["Tajunnan taso"]);
     // return (props.personData['Tajunnan taso'] =+ 6);
 
     // alert (props.cells[1]);

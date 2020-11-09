@@ -53,6 +53,28 @@ function MenuPanel({
               Aloita alusta
             </p>
           </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              if (careType) {
+                setCareType("");
+                history.push("/", { initial: false });
+              }
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0"
+              }}
+            >
+              Vaihda hoitoyksikköä
+            </p>
+          </div>
+
           <div
             className="emergencyPage-fromMenu"
             onClick={() => {
@@ -78,7 +100,21 @@ function MenuPanel({
               style={{
                 display: "list-item",
                 listStyleType: "disclosure-closed",
-                marginLeft: "0"
+                marginLeft: "0",
+                color: "#f0a171"
+              }}
+            >
+              Päivystystilanteiden opas
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
               }}
             >
               Konsultoitava tilanne
@@ -90,19 +126,8 @@ function MenuPanel({
               style={{
                 display: "list-item",
                 listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
+                marginLeft: "20px",
+                color: "#f0a171"
               }}
             >
               ABCDE-menetelmä ja sen käyttö
@@ -114,31 +139,24 @@ function MenuPanel({
               style={{
                 display: "list-item",
                 listStyleType: "disclosure-closed",
-                marginLeft: "0"
+                marginLeft: "20px",
+                color: "#f0a171"
               }}
             >
               ISBAR-raportointiohje konsultoitaessa asiakkaasta
             </p>
           </div>
 
-          <div
-            className="emergencyPage-fromMenu"
-            onClick={() => {
-              if (careType) {
-                setCareType("");
-                history.push("/", { initial: false });
-              }
-              setMenuVisibility(false);
-            }}
-          >
+          <div>
             <p
               style={{
                 display: "list-item",
                 listStyleType: "disclosure-closed",
-                marginLeft: "0"
+                marginLeft: "20px",
+                color: "#f0a171"
               }}
             >
-              Vaihda hoitoyksikköä
+              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
             </p>
           </div>
 
