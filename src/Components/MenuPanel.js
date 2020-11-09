@@ -53,19 +53,8 @@ function MenuPanel({
               Aloita alusta
             </p>
           </div>
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle
-            </p>
-          </div>
           <div
-            className="emeregencyPage-fromMenu"
+            className="emergencyPage-fromMenu"
             onClick={() => {
               setEmergencyVisibility(true);
               setMenuVisibility(false);
@@ -133,7 +122,7 @@ function MenuPanel({
           </div>
 
           <div
-            className="emeregencyPage-fromMenu"
+            className="emergencyPage-fromMenu"
             onClick={() => {
               if (careType) {
                 setCareType("");

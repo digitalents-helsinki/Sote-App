@@ -1,11 +1,13 @@
 import React from "react";
 
-function Report({ personData, controlData }) { // personData = controlled score, controlData = original score. Fuck you, Thomas.
+function Report({ personData, controlData }) {
+  // personData = controlled score, controlData = original score.
   const red = "#ad3e2f";
   const orange = "#db5400";
   const lightOrange = "#f0a171";
   const green = "#377d4f";
-  const white = "#FF6FFF";
+  const bold = "600";
+  // const white = "#FF6FFF";
 
   const hengitystaajuusStyle = () => {
     if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
@@ -19,12 +21,18 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData.Hengitystaajuus >= 12 &&
       personData.Hengitystaajuus <= 20
     ) {
-      return white;
+      return green;
     } else if (
       personData.Hengitystaajuus >= 21 &&
       personData.Hengitystaajuus <= 24
     ) {
       return orange;
+    }
+  };
+
+  const hengitystaajuusBold = () => {
+    if (personData.Hengitystaajuus <= 8 || personData.hengitystaajuus >= 25) {
+      return bold;
     }
   };
 
@@ -49,6 +57,12 @@ function Report({ personData, controlData }) { // personData = controlled score,
     }
   };
 
+  const hengitystaajuusBold2 = () => {
+    if (controlData.Hengitystaajuus <= 8 || controlData.hengitystaajuus >= 25) {
+      return bold;
+    }
+  };
+
   const happisaturaatioStyle = () => {
     if (personData.Happisaturaatio <= 91) {
       return red;
@@ -63,7 +77,13 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (personData.Happisaturaatio >= 96) {
-      return white;
+      return green;
+    }
+  };
+
+  const happisaturaatioBold = () => {
+    if (personData.Happisaturaatio <= 91) {
+      return bold;
     }
   };
 
@@ -82,6 +102,12 @@ function Report({ personData, controlData }) { // personData = controlled score,
       return lightOrange;
     } else if (controlData.Happisaturaatio >= 96) {
       return green;
+    }
+  };
+
+  const happisaturaatioBold2 = () => {
+    if (controlData.Happisaturaatio <= 91) {
+      return bold;
     }
   };
 
@@ -105,7 +131,16 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Systolinen verenpaine"] >= 111 &&
       personData["Systolinen verenpaine"] <= 219
     ) {
-      return white;
+      return green;
+    }
+  };
+
+  const systolinenVerenpaineBold = () => {
+    if (
+      personData["Systolinen verenpaine"] <= 90 ||
+      personData["Systolinen verenpaine"] >= 220
+    ) {
+      return bold;
     }
   };
 
@@ -133,6 +168,15 @@ function Report({ personData, controlData }) { // personData = controlled score,
     }
   };
 
+  const systolinenVerenpaineBold2 = () => {
+    if (
+      controlData["Systolinen verenpaine"] <= 90 ||
+      controlData["Systolinen verenpaine"] >= 220
+    ) {
+      return bold;
+    }
+  };
+
   const SyketaajuusStyle = () => {
     if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return red;
@@ -144,7 +188,13 @@ function Report({ personData, controlData }) { // personData = controlled score,
     ) {
       return lightOrange;
     } else if (personData.Syketaajuus >= 51 && personData.Syketaajuus <= 90) {
-      return white;
+      return green;
+    }
+  };
+
+  const SyketaajuusBold = () => {
+    if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
+      return bold;
     }
   };
 
@@ -166,6 +216,12 @@ function Report({ personData, controlData }) { // personData = controlled score,
     }
   };
 
+  const SyketaajuusBold2 = () => {
+    if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
+      return bold;
+    }
+  };
+
   const lampotilaStyle = () => {
     if (personData["Mittaa lämpötila"] <= 35) {
       return red;
@@ -182,7 +238,13 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Mittaa lämpötila"] >= 36.1 &&
       personData["Mittaa lämpötila"] <= 38
     ) {
-      return white;
+      return green;
+    }
+  };
+
+  const lampotilaBold = () => {
+    if (personData["Mittaa lämpötila"] <= 35) {
+      return bold;
     }
   };
 
@@ -203,6 +265,12 @@ function Report({ personData, controlData }) { // personData = controlled score,
       controlData["Mittaa lämpötila"] <= 38
     ) {
       return green;
+    }
+  };
+
+  const lampotilaBold2 = () => {
+    if (controlData["Mittaa lämpötila"] <= 35) {
+      return bold;
     }
   };
 
@@ -228,7 +296,16 @@ function Report({ personData, controlData }) { // personData = controlled score,
       personData["Mittaa verensokeri:"] >= 6.1 &&
       personData["Mittaa verensokeri:"] <= 14.9
     ) {
-      return white;
+      return green;
+    }
+  };
+
+  const verensokeriBold = () => {
+    if (
+      personData["Mittaa verensokeri:"] <= 3.9 ||
+      personData["Mittaa verensokeri:"] >= 25
+    ) {
+      return bold;
     }
   };
 
@@ -255,6 +332,15 @@ function Report({ personData, controlData }) { // personData = controlled score,
       controlData["Mittaa verensokeri:"] <= 14.9
     ) {
       return green;
+    }
+  };
+
+  const verensokeriBold2 = () => {
+    if (
+      controlData["Mittaa verensokeri:"] <= 3.9 ||
+      controlData["Mittaa verensokeri:"] >= 25
+    ) {
+      return bold;
     }
   };
 
@@ -441,21 +527,47 @@ function Report({ personData, controlData }) { // personData = controlled score,
         <h3>Vitaali-arvot:</h3>
       </div>
 
-       {/* -----------------------  TIMESTAMPS  ----------------------- */}
+      {/* -----------------------  TIMESTAMPS  ----------------------- */}
 
       <div className="white-box">
         <table>
           <tbody>
             <tr>
               <td>{"Hengitystaajuus:"}</td>
-              <td style={{ color: hengitystaajuusStyle2() }}>
-                {controlData.Hengitystaajuus_timestamp}
+              <td
+                style={{
+                  color: hengitystaajuusStyle2(),
+                  fontWeight: hengitystaajuusBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData.Hengitystaajuus_timestamp}
+                </span>
                 <br />
                 {controlData.Hengitystaajuus}
               </td>
               <td></td>
-              <td style={{ color: hengitystaajuusStyle() }}>
-                {personData.Hengitystaajuus_timestamp}
+              <td
+                style={{
+                  color: hengitystaajuusStyle(),
+                  fontWeight: hengitystaajuusBold()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData.Hengitystaajuus_timestamp}
+                </span>
                 <br />
                 {personData.Hengitystaajuus}
               </td>
@@ -469,14 +581,40 @@ function Report({ personData, controlData }) { // personData = controlled score,
                   Huomioi asiakkaan keuhkosairaus SpO2 arvoa tulkittaessa.
                 </p>
               </td>
-              <td style={{ color: happisaturaatioStyle2() }}>
-                {controlData.Happisaturaatio_timestamp}
+              <td
+                style={{
+                  color: happisaturaatioStyle2(),
+                  fontWeight: happisaturaatioBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData.Happisaturaatio_timestamp}
+                </span>
                 <br />
                 {controlData.Happisaturaatio}
               </td>
               <td></td>
-              <td style={{ color: happisaturaatioStyle() }}>
-                {personData.Happisaturaatio_timestamp}
+              <td
+                style={{
+                  color: happisaturaatioStyle(),
+                  fontWeight: happisaturaatioBold()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData.Happisaturaatio_timestamp}
+                </span>
                 <br />
                 {personData.Happisaturaatio}
               </td>
@@ -487,14 +625,40 @@ function Report({ personData, controlData }) { // personData = controlled score,
                 {"Systolinen"} <br />
                 {"Verenpaine:"}
               </td>
-              <td style={{ color: systolinenVerenpaineStyle2() }}>
-                {controlData["Systolinen verenpaine_timestamp"]}
+              <td
+                style={{
+                  color: systolinenVerenpaineStyle2(),
+                  fontWeight: systolinenVerenpaineBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData["Systolinen verenpaine_timestamp"]}
+                </span>
                 <br />
                 {controlData["Systolinen verenpaine"]}
               </td>
               <td></td>
-              <td style={{ color: systolinenVerenpaineStyle() }}>
-                {personData["Systolinen verenpaine_timestamp"]}
+              <td
+                style={{
+                  color: systolinenVerenpaineStyle(),
+                  fontWeight: systolinenVerenpaineBold()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData["Systolinen verenpaine_timestamp"]}
+                </span>
                 <br />
                 {personData["Systolinen verenpaine"]}
               </td>
@@ -502,14 +666,40 @@ function Report({ personData, controlData }) { // personData = controlled score,
             <tr></tr>
             <tr>
               <td>{"Syketaajuus:"}</td>
-              <td style={{ color: SyketaajuusStyle2() }}>
-                {controlData.Syketaajuus_timestamp}
+              <td
+                style={{
+                  color: SyketaajuusStyle2(),
+                  fontWeight: SyketaajuusBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData.Syketaajuus_timestamp}
+                </span>
                 <br />
                 {controlData.Syketaajuus}
               </td>
               <td></td>
-              <td style={{ color: SyketaajuusStyle() }}>
-                {personData.Syketaajuus_timestamp}
+              <td
+                style={{
+                  color: SyketaajuusStyle(),
+                  fontWeight: SyketaajuusBold()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData.Syketaajuus_timestamp}
+                </span>
                 <br />
                 {personData.Syketaajuus}
               </td>
@@ -524,7 +714,7 @@ function Report({ personData, controlData }) { // personData = controlled score,
               )}
               <td></td>
               {personData["Tajunnan taso"] ? (
-                <td style={{ color: white }}>Normaali</td>
+                <td style={{ color: green }}>Normaali</td>
               ) : (
                 <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
               )}
@@ -532,34 +722,86 @@ function Report({ personData, controlData }) { // personData = controlled score,
             <tr></tr>
             <tr>
               <td>{"Lämpötila:"}</td>
-              <td style={{ color: lampotilaStyle2() }}>
-                {controlData["Mittaa lämpötila_timestamp"]}
+              <td
+                style={{
+                  color: lampotilaStyle2(),
+                  fontWeight: lampotilaBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData["Mittaa lämpötila_timestamp"]}
+                </span>
                 <br />
                 {controlData["Mittaa lämpötila"]}
               </td>
               <td></td>
-              <td style={{ color: lampotilaStyle() }}>
-                {personData["Mittaa lämpötila_timestamp"]}
+              <td
+                style={{ color: lampotilaStyle(), fontWeight: lampotilaBold() }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData["Mittaa lämpötila_timestamp"]}
+                </span>
                 <br />
                 {personData["Mittaa lämpötila"]}
               </td>
             </tr>
             <tr></tr>
             <tr>
-              <td>{"Verensokeri:"}
+              <td>
+                {"Verensokeri:"}
                 <br />
                 <p style={{ fontWeight: "bold" }}>
                   Huomioi insuliini DM paasto VS tavoite.
                 </p>
               </td>
-              <td style={{ color: verensokeriStyle2() }}>
-                {controlData["Mittaa verensokeri:_timestamp"]}
+              <td
+                style={{
+                  color: verensokeriStyle2(),
+                  fontWeight: verensokeriBold2()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData["Mittaa verensokeri:_timestamp"]}
+                </span>
                 <br />
-                {controlData["Mittaa verensokeri:"] ? controlData["Mittaa verensokeri:"] : "Ei mitattu"}
+                {controlData["Mittaa verensokeri:"]
+                  ? controlData["Mittaa verensokeri:"]
+                  : "Ei mitattu"}
               </td>
               <td></td>
-              <td style={{ color: verensokeriStyle() }}>
-                {personData["Mittaa verensokeri:_timestamp"]}
+              <td
+                style={{
+                  color: verensokeriStyle(),
+                  fontWeight: verensokeriBold()
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {personData["Mittaa verensokeri:_timestamp"]}
+                </span>
                 <br />
                 {personData["Mittaa verensokeri:"]}
               </td>

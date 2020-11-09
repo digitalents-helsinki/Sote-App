@@ -53,7 +53,7 @@ const NextButton = ({ personData, NEWSscoreTotal, careType, verensokeriscore }) 
   const clickHandler = () => {
     if (buttonActive) {
       if (location.pathname === "/verensokeri") {
-        if (NEWSscoreTotal === 0 && verensokeriscore === 0) {
+        if (NEWSscoreTotal === 0 && personData["Mittaa verensokeri: - verensokeriscore"] === 0) {
           window.scrollTo(0, 0);
           history.push("/instructionPageTwo");
         } else {
