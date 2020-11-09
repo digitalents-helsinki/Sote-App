@@ -852,8 +852,7 @@ body {
 .App
   .instruction-page-container
   .instruction-page
-  .InstructionCard-second-container
-  span {
+  .InstructionCard-second-container {
   font-weight: 600;
 }
 .App

@@ -8,7 +8,8 @@ function InstructionPageTwo({
   controlData,
   NEWSscoreTotal,
   ControlNEWSscoreTotal,
-  careType
+  careType,
+  setEmergencyVisibility
 }) {
   console.log(NEWSscoreTotal);
 
@@ -27,6 +28,7 @@ function InstructionPageTwo({
           controlData={controlData}
           ControlNEWSscoreTotal={ControlNEWSscoreTotal}
           careType={careType}
+          setEmergencyVisibility={setEmergencyVisibility}
         />
 
         <ControlReport personData={personData} controlData={controlData} />

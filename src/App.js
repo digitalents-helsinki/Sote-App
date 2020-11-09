@@ -271,6 +271,7 @@ function App() {
                     path="/instructionPageTwo"
                     children={props => (
                       <InstructionPageTwo
+                        setEmergencyVisibility={setEmergencyVisibility}
                         personData={personData}
                         setPersonData={setPersonData}
                         controlData={controlData}
