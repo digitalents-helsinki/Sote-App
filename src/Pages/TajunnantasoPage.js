@@ -17,14 +17,14 @@ function TajunnantasoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       /> */}
-      {/* <Button
+      <Button
         values={["Normaali", "Poikkeava"]}
         personData={personData}
         setPersonData={setPersonData}
         Tajunnantaso={Tajunnantaso}
         name={"Tajunnan taso"}
         // Tajunnantaso={TajunnantasoComponent}
-      /> */}
+      />
       <Tajunnantaso
         cells={["Normaali", "Poikkeava"]}
         name={"Tajunnan taso"}

@@ -81,6 +81,10 @@ body {
   @media only screen and (max-width: 635px) {
     .menu-panel {
       width: 80vw;
+
+      .content {
+        margin-top: 60px;
+      }
     }
   }
 

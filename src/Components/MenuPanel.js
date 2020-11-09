@@ -75,6 +75,19 @@ function MenuPanel({
             </p>
           </div>
 
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0",
+                color: "#f0a171"
+              }}
+            >
+              Päivystystilanteiden opas
+            </p>
+          </div>
+
           <div
             className="emergencyPage-fromMenu"
             onClick={() => {
@@ -86,25 +99,13 @@ function MenuPanel({
               style={{
                 display: "list-item",
                 listStyleType: "disclosure-closed",
-                marginLeft: "0"
+                marginLeft: "20px",
+                color: "#f0a171"
               }}
             >
               Hätätilanne
               <wbr />
               oireet
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0",
-                color: "#f0a171"
-              }}
-            >
-              Päivystystilanteiden opas
             </p>
           </div>
 
