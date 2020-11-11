@@ -7,7 +7,6 @@ function Report({ personData, controlData }) {
   const lightOrange = "#f0a171";
   const green = "#377d4f";
   const bold = "600";
-  // const white = "#FF6FFF";
 
   const hengitystaajuusStyle = () => {
     if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
@@ -63,6 +62,22 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const hengitystaajuus = () => {
+    if (controlData.Hengitystaajuus === undefined) {
+      return null;
+    } else {
+      return personData.Hengitystaajuus;
+    }
+  };
+
+  const hengitystaajuus2 = () => {
+    if (controlData.Hengitystaajuus === undefined) {
+      return personData.Hengitystaajuus;
+    } else {
+      return controlData.Hengitystaajuus;
+    }
+  };
+
   const happisaturaatioStyle = () => {
     if (personData.Happisaturaatio <= 91) {
       return red;
@@ -108,6 +123,22 @@ function Report({ personData, controlData }) {
   const happisaturaatioBold2 = () => {
     if (controlData.Happisaturaatio <= 91) {
       return bold;
+    }
+  };
+
+  const happisaturaatio = () => {
+    if (controlData.Happisaturaatio === undefined) {
+      return null;
+    } else {
+      return personData.Happisaturaatio;
+    }
+  };
+
+  const happisaturaatio2 = () => {
+    if (controlData.Happisaturaatio === undefined) {
+      return personData.Happisaturaatio;
+    } else {
+      return controlData.Happisaturaatio;
     }
   };
 
@@ -177,6 +208,22 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const systolinenVerenpaine = () => {
+    if (controlData["Systolinen verenpaine"] === undefined) {
+      return null;
+    } else {
+      return personData["Systolinen verenpaine"];
+    }
+  };
+
+  const systolinenVerenpaine2 = () => {
+    if (controlData["Systolinen verenpaine"] === undefined) {
+      return personData["Systolinen verenpaine"];
+    } else {
+      return controlData["Systolinen verenpaine"];
+    }
+  };
+
   const SyketaajuusStyle = () => {
     if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return red;
@@ -219,6 +266,22 @@ function Report({ personData, controlData }) {
   const SyketaajuusBold2 = () => {
     if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
       return bold;
+    }
+  };
+
+  const syketaajuus = () => {
+    if (controlData.Syketaajuus === undefined) {
+      return null;
+    } else {
+      return personData.Syketaajuus;
+    }
+  };
+
+  const syketaajuus2 = () => {
+    if (controlData.Syketaajuus === undefined) {
+      return personData.Syketaajuus;
+    } else {
+      return controlData.Syketaajuus;
     }
   };
 
@@ -271,6 +334,22 @@ function Report({ personData, controlData }) {
   const lampotilaBold2 = () => {
     if (controlData["Mittaa lämpötila"] <= 35) {
       return bold;
+    }
+  };
+
+  const lampotila = () => {
+    if (controlData["Mittaa lämpötila"] === undefined) {
+      return null;
+    } else {
+      return personData["Mittaa lämpötila"];
+    }
+  };
+
+  const lampotila2 = () => {
+    if (controlData["Mittaa lämpötila"] === undefined) {
+      return personData["Mittaa lämpötila"];
+    } else {
+      return controlData["Mittaa lämpötila"];
     }
   };
 
@@ -361,7 +440,7 @@ function Report({ personData, controlData }) {
 
   return (
     <div className="report-container">
-      <div className="green-box">
+      <div className="sote-box">
         <h3>ABCDE-raportti:</h3>
         <p>{endTimeStamp}</p>
       </div>
@@ -435,7 +514,7 @@ function Report({ personData, controlData }) {
             </div>
           </div>
           <div className="flex">
-            <p className="subject">{"Tuntuuko paikallista lämpöeroa?"}</p>
+            <p className="subject">{"Tuntuuko lämpörajoja raajoissa?"}</p>
             <div className="answer">
               {personData["Tuntuuko lämpörajoja raajoissa:"] ? (
                 <p style={{ color: red }}>Kyllä</p>
@@ -523,7 +602,7 @@ function Report({ personData, controlData }) {
         </div>
       </div>
 
-      <div className="green-box">
+      <div className="sote-box">
         <h3>Vitaali-arvot:</h3>
       </div>
 
@@ -547,10 +626,11 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData.Hengitystaajuus_timestamp}
+                  {controlData.Hengitystaajuus_timestamp ? (controlData.Hengitystaajuus_timestamp) : (personData.Hengitystaajuus_timestamp)}
                 </span>
                 <br />
-                {controlData.Hengitystaajuus}
+                {/* {controlData.Hengitystaajuus} */}
+                {hengitystaajuus2()}
               </td>
               <td></td>
               <td
@@ -569,7 +649,8 @@ function Report({ personData, controlData }) {
                   {personData.Hengitystaajuus_timestamp}
                 </span>
                 <br />
-                {personData.Hengitystaajuus}
+                {/* {personData.Hengitystaajuus} */}
+                {hengitystaajuus()}
               </td>
             </tr>
             <tr></tr>
@@ -594,10 +675,11 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData.Happisaturaatio_timestamp}
+                  {controlData.Happisaturaatio_timestamp ? (controlData.Happisaturaatio_timestamp) : (personData.Happisaturaatio_timestamp)}
                 </span>
                 <br />
-                {controlData.Happisaturaatio}
+                {/* {controlData.Happisaturaatio} */}
+                {happisaturaatio2()}
               </td>
               <td></td>
               <td
@@ -616,7 +698,8 @@ function Report({ personData, controlData }) {
                   {personData.Happisaturaatio_timestamp}
                 </span>
                 <br />
-                {personData.Happisaturaatio}
+                {/* {personData.Happisaturaatio} */}
+                {happisaturaatio()}
               </td>
             </tr>
             <tr></tr>
@@ -638,10 +721,11 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData["Systolinen verenpaine_timestamp"]}
+                  {controlData["Systolinen verenpaine_timestamp"] ? (controlData["Systolinen verenpaine_timestamp"]) : (personData["Systolinen verenpaine_timestamp"])}
                 </span>
                 <br />
-                {controlData["Systolinen verenpaine"]}
+                {/* {controlData["Systolinen verenpaine"]} */}
+                {systolinenVerenpaine2()}
               </td>
               <td></td>
               <td
@@ -660,7 +744,8 @@ function Report({ personData, controlData }) {
                   {personData["Systolinen verenpaine_timestamp"]}
                 </span>
                 <br />
-                {personData["Systolinen verenpaine"]}
+                {/* {personData["Systolinen verenpaine"]} */}
+                {systolinenVerenpaine()}
               </td>
             </tr>
             <tr></tr>
@@ -679,10 +764,11 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData.Syketaajuus_timestamp}
+                  {controlData.Syketaajuus_timestamp ? (controlData.Syketaajuus_timestamp) : (personData.Syketaajuus_timestamp)}
                 </span>
                 <br />
-                {controlData.Syketaajuus}
+                {/* {controlData.Syketaajuus} */}
+                {syketaajuus2()}
               </td>
               <td></td>
               <td
@@ -701,7 +787,8 @@ function Report({ personData, controlData }) {
                   {personData.Syketaajuus_timestamp}
                 </span>
                 <br />
-                {personData.Syketaajuus}
+                {/* {personData.Syketaajuus} */}
+                {syketaajuus()}
               </td>
             </tr>
             <tr></tr>
@@ -735,10 +822,11 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData["Mittaa lämpötila_timestamp"]}
+                  {controlData["Mittaa lämpötila_timestamp"] ? (controlData["Mittaa lämpötila_timestamp"]) : (personData["Mittaa lämpötila_timestamp"])}
                 </span>
                 <br />
-                {controlData["Mittaa lämpötila"]}
+                {/* {controlData["Mittaa lämpötila"]} */}
+                {lampotila2()}
               </td>
               <td></td>
               <td
@@ -754,7 +842,8 @@ function Report({ personData, controlData }) {
                   {personData["Mittaa lämpötila_timestamp"]}
                 </span>
                 <br />
-                {personData["Mittaa lämpötila"]}
+                {/* {personData["Mittaa lämpötila"]} */}
+                {lampotila()}
               </td>
             </tr>
             <tr></tr>

@@ -144,7 +144,7 @@ function MenuPanel({
                 color: "#f0a171"
               }}
             >
-              ISBAR-raportointiohje konsultoitaessa asiakkaasta
+              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
             </p>
           </div>
 
@@ -157,7 +157,7 @@ function MenuPanel({
                 color: "#f0a171"
               }}
             >
-              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
+              ISBAR-raportointiohje konsultoitaessa asiakkaasta
             </p>
           </div>
 
