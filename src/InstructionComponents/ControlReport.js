@@ -65,6 +65,13 @@ function Report({ personData, controlData }) {
   const hengitystaajuus = () => {
     if (controlData.Hengitystaajuus === undefined) {
       return null;
+    } else if (
+      controlData.Hengitystaajuus >= 12 &&
+      controlData.Hengitystaajuus <= 20 &&
+      personData.Hengitystaajuus >= 12 &&
+      personData.Hengitystaajuus <= 20
+      ) {
+      return null;
     } else {
       return personData.Hengitystaajuus;
     }
@@ -128,6 +135,11 @@ function Report({ personData, controlData }) {
 
   const happisaturaatio = () => {
     if (controlData.Happisaturaatio === undefined) {
+      return null;
+    } else if (
+      controlData.Happisaturaatio >= 96 &&
+      personData.Happisaturaatio >= 96
+    ) {
       return null;
     } else {
       return personData.Happisaturaatio;
@@ -211,6 +223,13 @@ function Report({ personData, controlData }) {
   const systolinenVerenpaine = () => {
     if (controlData["Systolinen verenpaine"] === undefined) {
       return null;
+    } else if (
+      controlData["Systolinen verenpaine"] >= 111 &&
+      controlData["Systolinen verenpaine"] <= 219 &&
+      personData["Systolinen verenpaine"] >= 111 &&
+      personData["Systolinen verenpaine"] <= 219
+    ) {
+      return null;
     } else {
       return personData["Systolinen verenpaine"];
     }
@@ -271,6 +290,13 @@ function Report({ personData, controlData }) {
 
   const syketaajuus = () => {
     if (controlData.Syketaajuus === undefined) {
+      return null;
+    } else if (
+      controlData.Syketaajuus >= 51 &&
+      controlData.Syketaajuus <= 90 &&
+      personData.Syketaajuus >= 51 &&
+      controlData.Syketaajuus <= 90
+    ) {
       return null;
     } else {
       return personData.Syketaajuus;
@@ -339,6 +365,13 @@ function Report({ personData, controlData }) {
 
   const lampotila = () => {
     if (controlData["Mittaa lämpötila"] === undefined) {
+      return null;
+    } else if (
+      controlData["Mittaa lämpötila"] >= 36.1 &&
+      controlData["Mittaa lämpötila"] <= 38 &&
+      personData["Mittaa lämpötila"] >= 36.1 &&
+      personData["Mittaa lämpötila"] <= 38
+    ) {
       return null;
     } else {
       return personData["Mittaa lämpötila"];
@@ -426,6 +459,13 @@ function Report({ personData, controlData }) {
   const verensokeri = () => {
     if (
       controlData["Mittaa verensokeri:"] === undefined
+    ) {
+      return null;
+    } else if (
+      controlData["Mittaa verensokeri:"] >= 6.1 &&
+      controlData["Mittaa verensokeri:"] <= 14.9 &&
+      personData["Mittaa verensokeri:"] >= 6.1 &&
+      personData["Mittaa verensokeri:"] <= 14.9
     ) {
       return null;
     } else if (
