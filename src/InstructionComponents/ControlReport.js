@@ -423,6 +423,34 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const verensokeri = () => {
+    if (
+      controlData["Mittaa verensokeri:"] === undefined
+    ) {
+      return null;
+    } else if (
+      personData["Mittaa verensokeri:"] !== undefined
+    ) {
+      return personData["Mittaa verensokeri:"];
+    } else {
+      return null;
+    }
+  };
+
+  const verensokeri2 = () => {
+    if (
+      controlData["Mittaa verensokeri:"] !== undefined
+    ) {
+      return controlData["Mittaa verensokeri:"];
+    } else if (
+      personData["Mittaa verensokeri:"] !== undefined
+    ) {
+      return personData["Mittaa verensokeri:"];
+    } else {
+      return "Ei mitattu";
+    }
+  };
+
   let endTimeStamp = new Date().toLocaleTimeString(["en-GB"], {
     day: "2-digit",
     month: "2-digit",
@@ -868,12 +896,13 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData["Mittaa verensokeri:_timestamp"]}
+                  {controlData["Mittaa verensokeri:_timestamp"] ? (controlData["Mittaa verensokeri:_timestamp"]) : (personData["Mittaa verensokeri:_timestamp"])}
                 </span>
                 <br />
-                {controlData["Mittaa verensokeri:"]
+                {/* {controlData["Mittaa verensokeri:"]
                   ? controlData["Mittaa verensokeri:"]
-                  : "Ei mitattu"}
+                  : "Ei mitattu"} */}
+                  {verensokeri2()}
               </td>
               <td></td>
               <td
@@ -892,7 +921,8 @@ function Report({ personData, controlData }) {
                   {personData["Mittaa verensokeri:_timestamp"]}
                 </span>
                 <br />
-                {personData["Mittaa verensokeri:"]}
+                {/* {personData["Mittaa verensokeri:"]} */}
+                {verensokeri()}
               </td>
             </tr>
           </tbody>
