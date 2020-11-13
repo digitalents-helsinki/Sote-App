@@ -85,6 +85,21 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const hengitystaajuusTimestamp = () => {
+    if (controlData.Hengitystaajuus === undefined) {
+      return null;
+    } else if (
+      controlData.Hengitystaajuus >= 12 &&
+      controlData.Hengitystaajuus <= 20 &&
+      personData.Hengitystaajuus >= 12 &&
+      personData.Hengitystaajuus <= 20
+      ) {
+      return null;
+    } else {
+      return personData.Hengitystaajuus_timestamp;
+    }
+  };
+
   const happisaturaatioStyle = () => {
     if (personData.Happisaturaatio <= 91) {
       return red;
@@ -151,6 +166,19 @@ function Report({ personData, controlData }) {
       return personData.Happisaturaatio;
     } else {
       return controlData.Happisaturaatio;
+    }
+  };
+
+  const happisaturaatioTimestamp = () => {
+    if (controlData.Happisaturaatio === undefined) {
+      return null;
+    } else if (
+      controlData.Happisaturaatio >= 96 &&
+      personData.Happisaturaatio >= 96
+      ) {
+      return null;
+    } else {
+      return personData.Happisaturaatio_timestamp;
     }
   };
 
@@ -243,6 +271,21 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const systolinenVerenpaineTimestamp = () => {
+    if (controlData["Systolinen verenpaine"] === undefined) {
+      return null;
+    } else if (
+      controlData["Systolinen verenpaine"] >= 111 &&
+      controlData["Systolinen verenpaine"] <= 219 &&
+      personData["Systolinen verenpaine"] >= 111 &&
+      personData["Systolinen verenpaine"] <= 219
+      ) {
+      return null;
+    } else {
+      return personData["Systolinen verenpaine_timestamp"];
+    }
+  };
+
   const SyketaajuusStyle = () => {
     if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return red;
@@ -308,6 +351,21 @@ function Report({ personData, controlData }) {
       return personData.Syketaajuus;
     } else {
       return controlData.Syketaajuus;
+    }
+  };
+
+  const syketaajuusTimestamp = () => {
+    if (controlData.Syketaajuus === undefined) {
+      return null;
+    } else if (
+      controlData.Syketaajuus >= 51 &&
+      controlData.Syketaajuus <= 90 &&
+      personData.Syketaajuus >= 51 &&
+      controlData.Syketaajuus <= 90
+      ) {
+      return null;
+    } else {
+      return personData.Syketaajuus_timestamp;
     }
   };
 
@@ -383,6 +441,21 @@ function Report({ personData, controlData }) {
       return personData["Mittaa lämpötila"];
     } else {
       return controlData["Mittaa lämpötila"];
+    }
+  };
+
+  const lampotilaTimestamp = () => {
+    if (controlData["Mittaa lämpötila"] === undefined) {
+      return null;
+    } else if (
+      controlData["Mittaa lämpötila"] >= 36.1 &&
+      controlData["Mittaa lämpötila"] <= 38 &&
+      personData["Mittaa lämpötila"] >= 36.1 &&
+      personData["Mittaa lämpötila"] <= 38
+      ) {
+      return null;
+    } else {
+      return personData["Mittaa lämpötila_timestamp"];
     }
   };
 
@@ -488,6 +561,21 @@ function Report({ personData, controlData }) {
       return personData["Mittaa verensokeri:"];
     } else {
       return "Ei mitattu";
+    }
+  };
+
+  const verensokeriTimestamp = () => {
+    if (controlData["Mittaa verensokeri:"] === undefined) {
+      return null;
+    } else if (
+      controlData["Mittaa verensokeri:"] >= 6.1 &&
+      controlData["Mittaa verensokeri:"] <= 14.9 &&
+      personData["Mittaa verensokeri:"] >= 6.1 &&
+      personData["Mittaa verensokeri:"] <= 14.9
+      ) {
+      return null;
+    } else {
+      return personData["Mittaa verensokeri:_timestamp"];
     }
   };
 
@@ -683,8 +771,8 @@ function Report({ personData, controlData }) {
               <td>{"Hengitystaajuus:"}</td>
               <td
                 style={{
-                  color: hengitystaajuusStyle2(),
-                  fontWeight: hengitystaajuusBold2()
+                  color: hengitystaajuusStyle2() ? (hengitystaajuusStyle2()) : (hengitystaajuusStyle()),
+                  fontWeight: hengitystaajuusBold2() ? hengitystaajuusBold2() : hengitystaajuusBold()
                 }}
               >
                 <span
@@ -714,7 +802,7 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData.Hengitystaajuus_timestamp}
+                  {hengitystaajuusTimestamp()}
                 </span>
                 <br />
                 {/* {personData.Hengitystaajuus} */}
@@ -732,8 +820,8 @@ function Report({ personData, controlData }) {
               </td>
               <td
                 style={{
-                  color: happisaturaatioStyle2(),
-                  fontWeight: happisaturaatioBold2()
+                  color: happisaturaatioStyle2() ? (happisaturaatioStyle2()) : (happisaturaatioStyle()),
+                  fontWeight: happisaturaatioBold2() ? (happisaturaatioBold2()) : (happisaturaatioBold())
                 }}
               >
                 <span
@@ -763,7 +851,7 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData.Happisaturaatio_timestamp}
+                  {happisaturaatioTimestamp()}
                 </span>
                 <br />
                 {/* {personData.Happisaturaatio} */}
@@ -778,8 +866,8 @@ function Report({ personData, controlData }) {
               </td>
               <td
                 style={{
-                  color: systolinenVerenpaineStyle2(),
-                  fontWeight: systolinenVerenpaineBold2()
+                  color: systolinenVerenpaineStyle2() ? (systolinenVerenpaineStyle2()) : (systolinenVerenpaineStyle()),
+                  fontWeight: systolinenVerenpaineBold2() ? (systolinenVerenpaineBold2()) : (systolinenVerenpaineBold())
                 }}
               >
                 <span
@@ -809,7 +897,7 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData["Systolinen verenpaine_timestamp"]}
+                  {systolinenVerenpaineTimestamp()}
                 </span>
                 <br />
                 {/* {personData["Systolinen verenpaine"]} */}
@@ -821,8 +909,8 @@ function Report({ personData, controlData }) {
               <td>{"Syketaajuus:"}</td>
               <td
                 style={{
-                  color: SyketaajuusStyle2(),
-                  fontWeight: SyketaajuusBold2()
+                  color: SyketaajuusStyle2() ? (SyketaajuusStyle2()) : (SyketaajuusStyle()),
+                  fontWeight: SyketaajuusBold2() ? (SyketaajuusBold2()) : (SyketaajuusBold())
                 }}
               >
                 <span
@@ -852,7 +940,7 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData.Syketaajuus_timestamp}
+                  {syketaajuusTimestamp()}
                 </span>
                 <br />
                 {/* {personData.Syketaajuus} */}
@@ -861,26 +949,11 @@ function Report({ personData, controlData }) {
             </tr>
             <tr></tr>
             <tr>
-              <td>{"Tajunnan taso:"}</td>
-              {controlData["Tajunnan taso"] ? (
-                <td style={{ color: green }}>Normaali</td>
-              ) : (
-                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
-              )}
-              <td></td>
-              {personData["Tajunnan taso"] ? (
-                <td style={{ color: green }}>Normaali</td>
-              ) : (
-                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
-              )}
-            </tr>
-            <tr></tr>
-            <tr>
               <td>{"Lämpötila:"}</td>
               <td
                 style={{
-                  color: lampotilaStyle2(),
-                  fontWeight: lampotilaBold2()
+                  color: lampotilaStyle2() ? (lampotilaStyle2()) : (lampotilaStyle()),
+                  fontWeight: lampotilaBold2() ? (lampotilaBold2()) : (lampotilaBold())
                 }}
               >
                 <span
@@ -907,12 +980,27 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData["Mittaa lämpötila_timestamp"]}
+                  {lampotilaTimestamp()}
                 </span>
                 <br />
                 {/* {personData["Mittaa lämpötila"]} */}
                 {lampotila()}
               </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>{"Tajunnan taso:"}</td>
+              {controlData["Tajunnan taso"] ? (
+                <td style={{ color: green }}>Normaali</td>
+              ) : (
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
+              )}
+              <td></td>
+              {personData["Tajunnan taso"] ? (
+                <td style={{ color: green }}>Normaali</td>
+              ) : (
+                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
+              )}
             </tr>
             <tr></tr>
             <tr>
@@ -925,8 +1013,8 @@ function Report({ personData, controlData }) {
               </td>
               <td
                 style={{
-                  color: verensokeriStyle2(),
-                  fontWeight: verensokeriBold2()
+                  color: verensokeriStyle2() ? (verensokeriStyle2()) : (verensokeriStyle()),
+                  fontWeight: verensokeriBold2() ? (verensokeriBold2()) : (verensokeriBold())
                 }}
               >
                 <span
@@ -958,7 +1046,7 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {personData["Mittaa verensokeri:_timestamp"]}
+                  {verensokeriTimestamp()}
                 </span>
                 <br />
                 {/* {personData["Mittaa verensokeri:"]} */}
