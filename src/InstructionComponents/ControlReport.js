@@ -579,6 +579,47 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const allTimestamp = () => {
+    if (verensokeriTimestamp() !== null) {
+      return personData["Mittaa verensokeri:_timestamp"];
+    } else if (
+      lampotilaTimestamp() !== null
+    ) {
+      return personData["Mittaa lämpötila_timestamp"];
+    } else if (
+      syketaajuusTimestamp() !== null
+    ) {
+      return personData.Syketaajuus_timestamp;
+    } else if (
+      systolinenVerenpaineTimestamp() !== null
+    ) {
+      return personData["Systolinen verenpaine_timestamp"];
+    } else if (
+      happisaturaatioTimestamp() !== null
+    ) {
+      return personData.Happisaturaatio_timestamp;
+    } else if (
+      hengitystaajuusTimestamp() !== null
+    ) {
+      return personData.Hengitystaajuus_timestamp;
+    } else if (
+      controlData["Mittaa verensokeri:"] === undefined &&
+      personData["Mittaa verensokeri:"] !== undefined
+    ) {
+      return personData["Mittaa verensokeri:_timestamp"];
+    } else {
+      return personData["Mittaa lämpötila_timestamp"];
+    }
+  };
+
+  // const reportTimestamp = new Date().allTimestamp.toLocaleTimeString(["en-GB"], {
+  //   day: "2-digit",
+  //   month: "2-digit",
+  //   year: "numeric",
+  //   hour: "2-digit",
+  //   minute: "2-digit"
+  // });
+
   let endTimeStamp = new Date().toLocaleTimeString(["en-GB"], {
     day: "2-digit",
     month: "2-digit",
@@ -599,6 +640,8 @@ function Report({ personData, controlData }) {
       <div className="sote-box">
         <h3>ABCDE-raportti:</h3>
         <p>{endTimeStamp}</p>
+        <p>{allTimestamp()}</p>
+        {/* <p>{reportTimestamp}</p> */}
       </div>
       <div className="white-box">
         <div className="reportElement">
