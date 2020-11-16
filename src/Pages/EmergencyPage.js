@@ -1,5 +1,6 @@
 import React from "react";
 import Arrow from "../Images/arrow-white.svg";
+import hatatilanne from "../Images/hatatilanne.png";
 import SymptomCard from "../Components/SymptomCard";
 import ESC from "../Components/EmergencySymptomsContent";
 
@@ -41,6 +42,17 @@ function EmergencyPage({ setEmergencyVisibility, visibility, careType }) {
         <SymptomCard content={ESC.vitaalihairio} />
         <SymptomCard content={ESC.voimakasallergia} />
         <SymptomCard content={ESC.voimakasverenvuoto} />
+        <img
+          src={hatatilanne}
+          alt=""
+          style={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "100%",
+            height: "auto"
+          }}
+        />
       </div>
     </div>
   );
