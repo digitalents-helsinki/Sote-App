@@ -42,17 +42,9 @@ function EmergencyPage({ setEmergencyVisibility, visibility, careType }) {
         <SymptomCard content={ESC.vitaalihairio} />
         <SymptomCard content={ESC.voimakasallergia} />
         <SymptomCard content={ESC.voimakasverenvuoto} />
-        <img
-          src={hatatilanne}
-          alt=""
-          style={{
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "100%",
-            height: "auto"
-          }}
-        />
+        <div className="hatatilanne-image">
+          <img src={hatatilanne} alt="" />
+        </div>
       </div>
     </div>
   );
