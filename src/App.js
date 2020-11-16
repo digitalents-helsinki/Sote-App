@@ -18,6 +18,10 @@ import VerensokeriPage from "./Pages/VerensokeriPage";
 import TajunnantasoPage from "./Pages/TajunnantasoPage";
 import HengitysPage from "./Pages/HengitysPage";
 import EmergencyPage from "./Pages/EmergencyPage";
+import KonsultoitavaPage from "./Pages/KonsultoitavaPage";
+import ABCDEPage from "./Pages/ABCDEPage";
+import NewsPisteytysPage from "./Pages/NewsPisteytysPage";
+import ISBARPage from "./Pages/ISBARPage";
 import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -51,6 +55,10 @@ function App() {
   const [controlData, setcontrolData] = useSessionState("controlData", {});
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
+  const [konsultoitavaVisibility, setKonsultoitavaVisibility] = useState(null);
+  const [ABCDEVisibility, setABCDEVisibility] = useState(null);
+  const [NewsPisteytysVisibility, setNewsPisteytysVisibility] = useState(null);
+  const [ISBARVisibility, setISBARVisibility] = useState(null);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   const NEWSscoreTotal =
@@ -79,6 +87,10 @@ function App() {
           menuVisibility={menuVisibility}
           setMenuVisibility={setMenuVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
+          setKonsultoitavaVisibility={setKonsultoitavaVisibility}
+          setABCDEVisibility={setABCDEVisibility}
+          setNewsPisteytysVisibility={setNewsPisteytysVisibility}
+          setISBARVisibility={setISBARVisibility}
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
           careType={careType}
@@ -298,6 +310,26 @@ function App() {
           visibility={emergencyVisibility}
           setEmergencyVisibility={setEmergencyVisibility}
           careType={careType}
+        />
+        <KonsultoitavaPage
+          visibility={konsultoitavaVisibility}
+          setKonsultoitavaVisibility={setKonsultoitavaVisibility}
+          careType={careType}
+        />
+        <ABCDEPage
+          visibility={ABCDEVisibility}
+          setABCDEVisibility={setABCDEVisibility}
+          careType={careType}
+        />
+        <NewsPisteytysPage
+          visibility={NewsPisteytysVisibility}
+          setNewsPisteytysVisibility={setNewsPisteytysVisibility}
+          caretype={careType}
+        />
+        <ISBARPage
+          visibility={ISBARVisibility}
+          setISBARVisibility={setISBARVisibility}
+          caretype={careType}
         />
       </div>
     </BrowserRouter>

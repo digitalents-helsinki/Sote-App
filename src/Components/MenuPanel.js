@@ -6,6 +6,10 @@ function MenuPanel({
   setMenuVisibility,
   menuVisibility,
   setEmergencyVisibility,
+  setKonsultoitavaVisibility,
+  setABCDEVisibility,
+  setNewsPisteytysVisibility,
+  setISBARVisibility,
   setPersonData,
   setcontrolData,
   careType,
@@ -109,7 +113,13 @@ function MenuPanel({
             </p>
           </div>
 
-          <div>
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setKonsultoitavaVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p
               style={{
                 display: "list-item",
@@ -122,7 +132,13 @@ function MenuPanel({
             </p>
           </div>
 
-          <div>
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setABCDEVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p
               style={{
                 display: "list-item",
@@ -135,7 +151,13 @@ function MenuPanel({
             </p>
           </div>
 
-          <div>
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setNewsPisteytysVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p
               style={{
                 display: "list-item",
@@ -148,7 +170,13 @@ function MenuPanel({
             </p>
           </div>
 
-          <div>
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setISBARVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p
               style={{
                 display: "list-item",
