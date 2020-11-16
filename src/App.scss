@@ -39,7 +39,7 @@ body {
   .menu-panel {
     transition: transform 250ms ease-out;
     transform: translateX(100vw);
-    width: 60vw;
+    width: 40vw;
     height: $realViewPortHeight;
     background-image: linear-gradient(
       15deg,
@@ -65,7 +65,7 @@ body {
     }
 
     .content {
-      margin-top: 50px;
+      margin-top: 80px;
 
       p {
         font-size: 0.93rem;
@@ -78,8 +78,24 @@ body {
     }
   }
 
+  @media only screen and (max-width: 635px) {
+    .menu-panel {
+      width: 80vw;
+
+      .content {
+        margin-top: 60px;
+      }
+    }
+  }
+
   .menu-panel.active {
-    transform: translateX(40vw);
+    transform: translateX(60vw);
+  }
+
+  @media only screen and (max-width: 635px) {
+    .menu-panel.active {
+      transform: translateX(20vw);
+    }
   }
 
   .emergencyPage-container {
@@ -737,6 +753,110 @@ body {
     }
   }
 
+  //---------------MODAL-----------------------------
+
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+  }
+
+  @keyframes modalBackdrop {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(40, 77, 120, 0.3);
+    animation-name: modalBackdrop;
+    animation-duration: 0.8s;
+  }
+
+  @keyframes modalFade {
+    0% {
+      opacity: 0;
+      top: 30vh;
+    }
+    100% {
+      opacity: 1;
+      top: 50vh;
+    }
+  }
+
+  .modal-box {
+    position: relative;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 70vw;
+    max-width: 550px;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 101;
+    padding: 20px 40px 0px 30px;
+    border: solid 0px rgb(140, 140, 140);
+    // border-radius: 10px;
+    animation-name: modalFade;
+    animation-duration: 0.8s;
+
+    p {
+      line-height: 1.5rem;
+    }
+
+    .yes {
+      display: block;
+      position: absolute;
+      height: 40px;
+      width: 100px;
+      bottom: 0;
+      right: 0;
+      border: solid 1px rgb(140, 140, 140);
+      border-radius: 2px;
+      font-size: 1em;
+      margin: 0 25px 25px 0;
+    }
+
+    .yes:hover {
+      background: $sote-green;
+      color: rgb(255, 255, 255);
+    }
+
+    .no {
+      display: block;
+      position: absolute;
+      height: 40px;
+      width: 100px;
+      bottom: 0;
+      left: 0;
+      border: solid 1px rgb(140, 140, 140);
+      border-radius: 2px;
+      font-size: 1em;
+      margin: 0 0 25px 25px;
+    }
+
+    .no:hover {
+      background: $sote-red;
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  //---------------MODAL ENDS------------------------
+
   //--------------BELOW ARE ALL INSTRUCTION PAGE RELATED STYLINGS-------------------
 
   .instruction-page-container {
@@ -978,9 +1098,9 @@ body {
         color: #212121;
         margin-top: 20px;
 
-        .green-box {
+        .sote-box {
           width: 100%;
-          background-color: $sote-green;
+          background-color: $sote-blue;
           padding: 15px 20px;
           box-sizing: border-box;
 

@@ -53,73 +53,6 @@ function MenuPanel({
               Aloita alusta
             </p>
           </div>
-          <div
-            className="emergencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              Hätätilanne
-              <wbr />
-              oireet
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              Konsultoitava tilanne
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              ABCDE-menetelmä ja sen käyttö
-            </p>
-          </div>
-
-          <div>
-            <p
-              style={{
-                display: "list-item",
-                listStyleType: "disclosure-closed",
-                marginLeft: "0"
-              }}
-            >
-              ISBAR-raportointiohje konsultoitaessa asiakkaasta
-            </p>
-          </div>
 
           <div
             className="emergencyPage-fromMenu"
@@ -139,6 +72,92 @@ function MenuPanel({
               }}
             >
               Vaihda hoitoyksikköä
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "0",
+                color: "#f0a171"
+              }}
+            >
+              Päivystystilanteiden opas
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
+              }}
+            >
+              Hätätilanne
+              <wbr />
+              oireet
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
+              }}
+            >
+              Konsultoitava tilanne
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
+              }}
+            >
+              ABCDE-menetelmä ja sen käyttö
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
+              }}
+            >
+              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
+            </p>
+          </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "disclosure-closed",
+                marginLeft: "20px",
+                color: "#f0a171"
+              }}
+            >
+              ISBAR-raportointiohje konsultoitaessa asiakkaasta
             </p>
           </div>
 

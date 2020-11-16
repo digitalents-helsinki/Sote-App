@@ -5,27 +5,49 @@ function InstructionCardSecond({
   personData,
   controlData,
   ControlNEWSscoreTotal,
-  careType
+  careType,
+  setEmergencyVisibility
 }) {
   //INSTRUCTIONS FOR DIFFERENT RISK TYPES
 
   const highRiskInstructions = {
     Kotihoito: (
-      <>
+      <div>
         <div className="content">
           <p style={{ fontSize: "20px" }}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px" }}>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
             <span style={{ color: "rgb(171, 38, 21)", fontWeight: "800" }}>
               Soita 112.
             </span>
           </p>
         </div>
+
+        <div>
+          <p
+            className="emergencyPage-link page-paragraph"
+            onClick={() => {
+              setEmergencyVisibility(true);
+            }}
+          >
+            Todelliset{" "}
+            <span
+              style={{
+                fontWeight: "300",
+                color: "#ad3e2f",
+                textDecoration: "underline"
+              }}
+            >
+              hätätilanneoireet
+            </span>
+          </p>
+        </div>
+
         <p style={{ fontWeight: "600" }}>
           Tarkista hoidonrajaukset/-linjaukset ennen 112 soittoa.
         </p>
         <br />
         <p>Tarvittaessa mittaa uudestaan vitaalit ambulanssia odottaessa.</p>
-      </>
+      </div>
     ),
 
     "Ympärivuorokautinen hoiva": (
@@ -39,11 +61,21 @@ function InstructionCardSecond({
         </div>
         <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
         <div className="content">
-        <p style={{ fontSize: "20px" }}>&rarr;</p>
-            <p style={{ display: "inline", marginLeft: "15px" }}>
+          <p style={{ fontSize: "20px" }}>&rarr;</p>
+          <p style={{ display: "inline", marginLeft: "15px" }}>
             Konsultoi lääkäriä erillisen ohjeen mukaan
             <br />
-            <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+            <span
+              style={{
+                fontWeight: "200",
+                fontSize: "12px",
+                letterSpacing: "0.1rem"
+              }}
+            >
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+              ympärivuorokautisen hoivan henkilöstölle)
+            </span>
+            .
             <br />
             Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
           </p>
@@ -56,7 +88,7 @@ function InstructionCardSecond({
     Kotihoito: (
       <>
         <div>
-        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
@@ -67,15 +99,26 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos
+              paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
-              <br />
-              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen{" "}
+              <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
+              <span
+                style={{
+                  fontWeight: "200",
+                  fontSize: "12px",
+                  letterSpacing: "0.1rem"
+                }}
+              >
+                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+                ympärivuorokautisen hoivan henkilöstölle)
+              </span>
+              .
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -98,15 +141,26 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos
+              paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
-              <br />
-              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen{" "}
+              <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
+              <span
+                style={{
+                  fontWeight: "200",
+                  fontSize: "12px",
+                  letterSpacing: "0.1rem"
+                }}
+              >
+                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+                ympärivuorokautisen hoivan henkilöstölle)
+              </span>
+              .
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -120,7 +174,7 @@ function InstructionCardSecond({
     Kotihoito: (
       <>
         <div>
-        <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
+          <h3 style={{ marginTop: "30px" }}>Virka-aikana:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
@@ -131,15 +185,26 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos paikalla.
+              Konsultoi <span>välittömästi</span> omaa sairaanhoitajaa jos
+              paikalla.
             </p>
           </div>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen <span>virka-ajan ulkopuolisen ohjeen</span> mukaan{" "}
-              <br />
-              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+              Jos oma sairaanhoitaja ei ole paikalla, konsultoi erillisen{" "}
+              <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
+              <span
+                style={{
+                  fontWeight: "200",
+                  fontSize: "12px",
+                  letterSpacing: "0.1rem"
+                }}
+              >
+                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+                ympärivuorokautisen hoivan henkilöstölle)
+              </span>
+              .
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -155,16 +220,29 @@ function InstructionCardSecond({
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi <span>välittömästi</span> oman yksikön sairaanhoitajaa tai hoitavaa lääkäriä.
+              Konsultoi <span>välittömästi</span> oman yksikön sairaanhoitajaa
+              tai hoitavaa lääkäriä.
             </p>
           </div>
           <h3 style={{ marginTop: "30px" }}>Virka-ajan ulkopuolella:</h3>
           <div className="content">
             <p style={{ fontSize: "20px" }}>&rarr;</p>
             <p style={{ display: "inline", marginLeft: "15px" }}>
-              Konsultoi oman yksikön sairaanhoitajaa jos paikalla tai suoraan <span>geriatrista lääkäriä</span> virka-ajan ulkopuolisen ohjeen mukaan
+              Konsultoi oman yksikön sairaanhoitajaa jos paikalla tai suoraan{" "}
+              <span>geriatrista lääkäriä</span> virka-ajan ulkopuolisen ohjeen
+              mukaan
               <br />
-              <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+              <span
+                style={{
+                  fontWeight: "200",
+                  fontSize: "12px",
+                  letterSpacing: "0.1rem"
+                }}
+              >
+                (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+                ympärivuorokautisen hoivan henkilöstölle)
+              </span>
+              .
               <br />
               Konsultoi <span>ISBAR</span>-raportointiohjeen mukaan.
             </p>
@@ -316,7 +394,17 @@ function InstructionCardSecond({
             Konsultoi oman yksikön sairaanhoitajaa jos paikalla tai suoraan{" "}
             lääkäriä
             <br />
-            <span style={{ fontWeight: "200", fontSize: "12px", letterSpacing: "0.1rem" }}>(Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja ympärivuorokautisen hoivan henkilöstölle)</span>.
+            <span
+              style={{
+                fontWeight: "200",
+                fontSize: "12px",
+                letterSpacing: "0.1rem"
+              }}
+            >
+              (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
+              ympärivuorokautisen hoivan henkilöstölle)
+            </span>
+            .
           </p>
         </div>
         <h3 style={{ marginTop: "30px" }}>
