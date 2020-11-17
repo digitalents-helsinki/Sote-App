@@ -95,27 +95,6 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {controlData["Tajunnan taso"] === false ? (
-        <div
-          className={
-            "instruction-news-component" +
-            (ControlCardVisibility ? " active" : "")
-          }
-        >
-          <h1>Tajunnan taso:</h1>
-          <p>
-            Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista
-            saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
-          </p>
-          <DoubleButton
-            values={["Normaali", "Poikkeava"]}
-            personData={personData}
-            setPersonData={setPersonData}
-            name={"Tajunnan taso"}
-          />
-        </div>
-      ) : null}
-
       {controlData["Mittaa lämpötila - NEWSscore"] >= 1 ? (
         <div
           className={
@@ -138,6 +117,27 @@ function InstructionNewsComponent({
               39.1,
               null
             ]}
+          />
+        </div>
+      ) : null}
+
+      {controlData["Tajunnan taso"] === false ? (
+        <div
+          className={
+            "instruction-news-component" +
+            (ControlCardVisibility ? " active" : "")
+          }
+        >
+          <h1>Tajunnan taso:</h1>
+          <p>
+            Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista
+            saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
+          </p>
+          <DoubleButton
+            values={["Normaali", "Poikkeava"]}
+            personData={personData}
+            setPersonData={setPersonData}
+            name={"Tajunnan taso"}
           />
         </div>
       ) : null}

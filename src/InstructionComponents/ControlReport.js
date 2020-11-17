@@ -459,6 +459,81 @@ function Report({ personData, controlData }) {
     }
   };
 
+  const tajunnanTasoStyle = () => {
+    if (personData["Tajunnan taso"] === true) {
+      return green;
+    } else {
+      return red;
+    }
+  };
+
+  const tajunnanTasoStyle2 = () => {
+    if (controlData["Tajunnan taso"] === undefined) {
+      return green;
+    } else if (
+      controlData["Tajunnan taso"] === true
+    ) {
+      return green;
+    } else {
+      return red;
+    }
+  };
+
+  const tajunnanTasoBold = () => {
+    if (personData["Tajunnan taso"] === false) {
+      return bold;
+    }
+  };
+
+  const tajunnanTasoBold2 = () => {
+    if (controlData["Tajunnan taso"] === false) {
+      return bold;
+    }
+  };
+
+  const tajunnanTaso = () => {
+    if (controlData["Tajunnan taso"] === undefined) {
+      return null;
+    } else if (
+      controlData["Tajunnan taso"] === true &&
+      personData["Tajunnan taso"] === true
+    ) {
+      return null;
+    } else if (
+      controlData["Tajunnan taso"] === false &&
+      personData["Tajunnan taso"] === false
+    ) {
+      return "Poikkeava";
+    } else {
+      return "Normaali";
+    }
+  };
+
+  const tajunnanTaso2 = () => {
+    if (controlData["Tajunnan taso"] === undefined) {
+      return "Normaali";
+    } else if (
+      controlData["Tajunnan taso"] === true
+      ) {
+        return "Normaali"
+      } else {
+      return "Poikkeava";
+    }
+  };
+
+  const tajunnanTasoTimestamp = () => {
+    if (controlData["Tajunnan taso"] === undefined) {
+      return null;
+    } else if (
+      controlData["Tajunnan taso"] === true &&
+      personData["Tajunnan taso"] === true
+    ) {
+      return null
+    } else {
+      return personData["Tajunnan taso_timestamp"];
+    }
+  };
+
   const verensokeriStyle = () => {
     if (
       personData["Mittaa verensokeri:"] <= 3.9 ||
@@ -583,6 +658,10 @@ function Report({ personData, controlData }) {
     if (verensokeriTimestamp() !== null) {
       return personData["Mittaa verensokeri:_timestamp"];
     } else if (
+      tajunnanTasoTimestamp() !== null
+    ) {
+      return personData["Tajunnan taso_timestamp"];
+    } else if (
       lampotilaTimestamp() !== null
     ) {
       return personData["Mittaa lämpötila_timestamp"];
@@ -603,12 +682,12 @@ function Report({ personData, controlData }) {
     ) {
       return personData.Hengitystaajuus_timestamp;
     } else if (
-      controlData["Mittaa verensokeri:"] === undefined &&
+      controlData["Mittaa verensokeri:"] !== undefined &&
       personData["Mittaa verensokeri:"] !== undefined
     ) {
       return personData["Mittaa verensokeri:_timestamp"];
     } else {
-      return personData["Mittaa lämpötila_timestamp"];
+      return personData["Tajunnan taso_timestamp"];
     }
   };
 
@@ -1033,17 +1112,41 @@ function Report({ personData, controlData }) {
             <tr></tr>
             <tr>
               <td>{"Tajunnan taso:"}</td>
-              {controlData["Tajunnan taso"] ? (
-                <td style={{ color: green }}>Normaali</td>
-              ) : (
-                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
-              )}
+              <td
+                style={{
+                  color: tajunnanTasoStyle2() ? (tajunnanTasoStyle2()) : (tajunnanTasoStyle()),
+                  fontWeight: tajunnanTasoBold2() ? (tajunnanTasoBold2()) : (tajunnanTasoBold())
+                }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {controlData["Tajunnan taso_timestamp"] ? (controlData["Tajunnan taso_timestamp"]) : (personData["Tajunnan taso_timestamp"])}
+                </span>
+                <br />
+                {/* {controlData["Tajunnan taso"]} */}
+                {tajunnanTaso2()}
+              </td>
               <td></td>
-              {personData["Tajunnan taso"] ? (
-                <td style={{ color: green }}>Normaali</td>
-              ) : (
-                <td style={{ color: red, fontWeight: "bold" }}>Poikkeava</td>
-              )}
+              <td
+                style={{ color: tajunnanTasoStyle(), fontWeight: tajunnanTasoBold() }}
+              >
+                <span
+                  style={{
+                    display: "contents",
+                    color: "rgb(33, 33, 33)",
+                    fontWeight: "400"
+                  }}
+                >
+                  {tajunnanTasoTimestamp()}
+                </span>
+                <br />
+                {tajunnanTaso()}
+              </td>
             </tr>
             <tr></tr>
             <tr>

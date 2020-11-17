@@ -15,10 +15,17 @@ function DoubleButton(props) {
     return first === value ? activeStyle : {};
   };
 
+  const tsname = `${props.name}_timestamp`;
+  const ts = new Date().toLocaleTimeString(['en-GB'], {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
   const clickHandler = newValue => () =>
     props.setPersonData({
       ...props.personData,
-      [personDataKey]: value === newValue ? null : newValue
+      [personDataKey]: value === newValue ? null : newValue,
+      [tsname]: ts
     });
 
   return (

@@ -14,14 +14,18 @@ function ABCDEPage({ setABCDEVisibility, visibility, careType }) {
           : "")
       }
     >
-      <div className="emergencyPage-topBar">
-        <img
+      <div className="wave-mid">
+        {/* <img
           src={Arrow}
           alt="arrow.svg"
           onClick={() => setABCDEVisibility(false)}
         ></img>
-        <h2>ABCDE</h2>
+        <h2>ABCDE</h2> */}
+        <div style={{background: "", height: "140px"}}>
+        <p>test</p>
+        </div>
       </div>
+      <div className="wave-bottom" />
       <div className="symptoms-container">
         <div className="hatatilanne-image">
           <img src={ABCDE} alt="" />
