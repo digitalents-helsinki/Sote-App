@@ -142,7 +142,7 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {controlData["Mittaa verensokeri: - verensokeriscore"] >= 1 ? (
+      {controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +

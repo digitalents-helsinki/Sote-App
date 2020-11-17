@@ -131,26 +131,20 @@ function NewsComponent(props) {
             return score;
           }, null);
 
-          const verensokeriscore = props.cells.reduce((score, cell, idx) => {
-            if (score !== null) return score;
-            if (cell) {
-              if (Array.isArray(cell)) {
-                if (inputValue >= cell[0] && inputValue <= cell[1]) {
-                  return getNewsFromIndex(idx);
-                }
-              } else if (idx === 0) {
-                if (inputValue <= cell) return getNewsFromIndex(idx);
-              } else if (cell <= inputValue) return getNewsFromIndex(idx);
-            }
-            return score;
-          }, null);
-
           //Update personData
           const keyvalue = `${props.name} - NEWSscore`;
-          const sokerivalue = `${props.name} - verensokeriscore`;
 
           const tsname = `${props.name}_timestamp`;
           const ts = new Date().toLocaleTimeString(['en-GB'], {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
+          const timestamp = `${props.name}_timestampfull`;
+          const tsfull = new Date().toLocaleTimeString(['en-GB'], {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
             hour: "2-digit",
             minute: "2-digit"
           });
@@ -160,8 +154,8 @@ function NewsComponent(props) {
             ...oldData,
             [props.name]: inputValue,
             [keyvalue]: NEWSscore,
-            [sokerivalue]: verensokeriscore,
-            [tsname]: ts
+            [tsname]: ts,
+            [timestamp]: tsfull
           };
           props.setPersonData(newData);
 

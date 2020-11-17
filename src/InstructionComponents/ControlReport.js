@@ -9,6 +9,7 @@ function Report({ personData, controlData }) {
   const blue = "#284e78";
   const darkred = "#ab2615";
   const bold = "600";
+  const light = "400";
 
   const colorBox = () => {
     if (
@@ -90,8 +91,18 @@ function Report({ personData, controlData }) {
   };
 
   const hengitystaajuusBold2 = () => {
-    if (controlData.Hengitystaajuus <= 8 || controlData.hengitystaajuus >= 25) {
+    if (controlData.Hengitystaajuus <= 8 || controlData.Hengitystaajuus >= 25) {
       return bold;
+    } else if (
+      controlData.Hengitystaajuus >= 9 && controlData.Hengitystaajuus <= 24 
+    ) {
+      return light;
+    } else if (
+      personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25
+    ) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -178,6 +189,16 @@ function Report({ personData, controlData }) {
   const happisaturaatioBold2 = () => {
     if (controlData.Happisaturaatio <= 91) {
       return bold;
+    } else if (
+      controlData.Happisaturaatio >= 92 
+    ) {
+      return light;
+    } else if (
+      personData.Happisaturaatio <= 91
+    ) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -278,6 +299,18 @@ function Report({ personData, controlData }) {
       controlData["Systolinen verenpaine"] >= 220
     ) {
       return bold;
+    } else if (
+      controlData["Systolinen verenpaine"] >= 91 &&
+      controlData["Systolinen verenpaine"] <= 219 
+    ) {
+      return light;
+    } else if (
+      personData["Systolinen verenpaine"] <= 90 ||
+      personData["Systolinen verenpaine"] >= 220
+    ) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -319,7 +352,7 @@ function Report({ personData, controlData }) {
     }
   };
 
-  const SyketaajuusStyle = () => {
+  const syketaajuusStyle = () => {
     if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return red;
     } else if (personData.Syketaajuus >= 111 && personData.Syketaajuus <= 130) {
@@ -334,13 +367,13 @@ function Report({ personData, controlData }) {
     }
   };
 
-  const SyketaajuusBold = () => {
+  const syketaajuusBold = () => {
     if (personData.Syketaajuus <= 40 || personData.Syketaajuus >= 131) {
       return bold;
     }
   };
 
-  const SyketaajuusStyle2 = () => {
+  const syketaajuusStyle2 = () => {
     if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
       return red;
     } else if (
@@ -358,9 +391,24 @@ function Report({ personData, controlData }) {
     }
   };
 
-  const SyketaajuusBold2 = () => {
-    if (controlData.Syketaajuus <= 40 || controlData.Syketaajuus >= 131) {
+  const syketaajuusBold2 = () => {
+    if (
+      controlData.Syketaajuus <= 40 ||
+      controlData.Syketaajuus >= 131
+    ) {
       return bold;
+    } else if (
+      controlData.Syketaajuus >= 41 &&
+      controlData.Syketaajuus <= 130
+    ) {
+      return light;
+    } else if (
+      personData.Syketaajuus <= 40 ||
+      personData.Syketaajuus >= 131
+    ) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -451,6 +499,12 @@ function Report({ personData, controlData }) {
   const lampotilaBold2 = () => {
     if (controlData["Mittaa lämpötila"] <= 35) {
       return bold;
+    } else if (controlData["Mittaa lämpötila"] >= 35.1) {
+      return light;
+    } else if (personData["Mittaa lämpötila"] <= 35) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -634,6 +688,18 @@ function Report({ personData, controlData }) {
       controlData["Mittaa verensokeri:"] >= 25
     ) {
       return bold;
+    } else if (
+      controlData["Mittaa verensokeri:"] >= 4 &&
+      controlData["Mittaa verensokeri:"] <= 24.9
+    ) {
+      return light;
+    } else if (
+      personData["Mittaa verensokeri:"] <= 3.9 ||
+      personData["Mittaa verensokeri:"] >= 25
+    ) {
+      return bold;
+    } else {
+      return light;
     }
   };
 
@@ -687,40 +753,39 @@ function Report({ personData, controlData }) {
     }
   };
 
-  const allTimestamp = () => {
+  const timestamp = () => {
     if (verensokeriTimestamp() !== null) {
-      return personData["Mittaa verensokeri:_timestamp"];
+      return personData["Mittaa verensokeri:_timestampfull"];
     } else if (
       tajunnanTasoTimestamp() !== null
     ) {
-      return personData["Tajunnan taso_timestamp"];
+      return personData["Tajunnan taso_timestampfull"];
     } else if (
       lampotilaTimestamp() !== null
     ) {
-      return personData["Mittaa lämpötila_timestamp"];
+      return personData["Mittaa lämpötila_timestampfull"];
     } else if (
       syketaajuusTimestamp() !== null
     ) {
-      return personData.Syketaajuus_timestamp;
+      return personData.Syketaajuus_timestampfull;
     } else if (
       systolinenVerenpaineTimestamp() !== null
     ) {
-      return personData["Systolinen verenpaine_timestamp"];
+      return personData["Systolinen verenpaine_timestampfull"];
     } else if (
       happisaturaatioTimestamp() !== null
     ) {
-      return personData.Happisaturaatio_timestamp;
+      return personData.Happisaturaatio_timestampfull;
     } else if (
       hengitystaajuusTimestamp() !== null
     ) {
-      return personData.Hengitystaajuus_timestamp;
+      return personData.Hengitystaajuus_timestampfull;
     } else if (
-      controlData["Mittaa verensokeri:"] !== undefined &&
       personData["Mittaa verensokeri:"] !== undefined
     ) {
-      return personData["Mittaa verensokeri:_timestamp"];
+      return personData["Mittaa verensokeri:_timestampfull"];
     } else {
-      return personData["Tajunnan taso_timestamp"];
+      return personData["Tajunnan taso_timestampfull"];
     }
   };
 
@@ -732,13 +797,6 @@ function Report({ personData, controlData }) {
   //   minute: "2-digit"
   // });
 
-  let endTimeStamp = new Date().toLocaleTimeString(["en-GB"], {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
   // let endTime = endTimeStamp.toLocaleString([], {
   //   day: "2-digit",
   //   month: "2-digit",
@@ -751,8 +809,7 @@ function Report({ personData, controlData }) {
     <div className="report-container">
       <div className="sote-box" style={{ background: colorBox() }}>
         <h3>ABCDE-raportti:</h3>
-        <p>{endTimeStamp}</p>
-        <p>{allTimestamp()}</p>
+        <p>{timestamp()}</p>
         {/* <p>{reportTimestamp}</p> */}
       </div>
       <div className="white-box">
@@ -927,7 +984,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: hengitystaajuusStyle2() ? (hengitystaajuusStyle2()) : (hengitystaajuusStyle()),
-                  fontWeight: hengitystaajuusBold2() ? hengitystaajuusBold2() : hengitystaajuusBold()
+                  fontWeight: hengitystaajuusBold2()
                 }}
               >
                 <span
@@ -976,7 +1033,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: happisaturaatioStyle2() ? (happisaturaatioStyle2()) : (happisaturaatioStyle()),
-                  fontWeight: happisaturaatioBold2() ? (happisaturaatioBold2()) : (happisaturaatioBold())
+                  fontWeight: happisaturaatioBold2()
                 }}
               >
                 <span
@@ -1022,7 +1079,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: systolinenVerenpaineStyle2() ? (systolinenVerenpaineStyle2()) : (systolinenVerenpaineStyle()),
-                  fontWeight: systolinenVerenpaineBold2() ? (systolinenVerenpaineBold2()) : (systolinenVerenpaineBold())
+                  fontWeight: systolinenVerenpaineBold2()
                 }}
               >
                 <span
@@ -1064,8 +1121,8 @@ function Report({ personData, controlData }) {
               <td>{"Syketaajuus:"}</td>
               <td
                 style={{
-                  color: SyketaajuusStyle2() ? (SyketaajuusStyle2()) : (SyketaajuusStyle()),
-                  fontWeight: SyketaajuusBold2() ? (SyketaajuusBold2()) : (SyketaajuusBold())
+                  color: syketaajuusStyle2() ? (syketaajuusStyle2()) : (syketaajuusStyle()),
+                  fontWeight: syketaajuusBold2()
                 }}
               >
                 <span
@@ -1084,8 +1141,8 @@ function Report({ personData, controlData }) {
               <td></td>
               <td
                 style={{
-                  color: SyketaajuusStyle(),
-                  fontWeight: SyketaajuusBold()
+                  color: syketaajuusStyle(),
+                  fontWeight: syketaajuusBold()
                 }}
               >
                 <span
@@ -1108,7 +1165,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: lampotilaStyle2() ? (lampotilaStyle2()) : (lampotilaStyle()),
-                  fontWeight: lampotilaBold2() ? (lampotilaBold2()) : (lampotilaBold())
+                  fontWeight: lampotilaBold2()
                 }}
               >
                 <span
@@ -1148,7 +1205,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: tajunnanTasoStyle2() ? (tajunnanTasoStyle2()) : (tajunnanTasoStyle()),
-                  fontWeight: tajunnanTasoBold2() ? (tajunnanTasoBold2()) : (tajunnanTasoBold())
+                  fontWeight: tajunnanTasoBold2()
                 }}
               >
                 <span
@@ -1193,7 +1250,7 @@ function Report({ personData, controlData }) {
               <td
                 style={{
                   color: verensokeriStyle2() ? (verensokeriStyle2()) : (verensokeriStyle()),
-                  fontWeight: verensokeriBold2() ? (verensokeriBold2()) : (verensokeriBold())
+                  fontWeight: verensokeriBold2()
                 }}
               >
                 <span

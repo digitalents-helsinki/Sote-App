@@ -38,7 +38,7 @@ function InstructionCardFirst({
         personData["Systolinen verenpaine - NEWSscore"] === 3 ||
         personData["Syketaajuus - NEWSscore"] === 3 ||
         personData["Mittaa lämpötila - NEWSscore"] === 3 ||
-        personData["Mittaa verensokeri: - verensokeriscore"] > 0) &&
+        personData["Mittaa verensokeri: - NEWSscore"] > 0) &&
       NEWSscoreTotal <= 3
     ) {
       return instruction_content.emergencyContent;
@@ -79,7 +79,7 @@ function InstructionCardFirst({
         </p>
         <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
         <p>
-          {personData["Mittaa verensokeri: - verensokeriscore"] >= 1
+          {personData["Mittaa verensokeri: - NEWSscore"] >= 1
             ? "Verensokeri"
             : null}
         </p>
