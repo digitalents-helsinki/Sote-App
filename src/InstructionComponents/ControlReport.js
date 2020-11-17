@@ -6,7 +6,40 @@ function Report({ personData, controlData }) {
   const orange = "#db5400";
   const lightOrange = "#f0a171";
   const green = "#377d4f";
+  const blue = "#284e78";
+  const darkred = "#ab2615";
   const bold = "600";
+
+  const colorBox = () => {
+    if (
+      personData["Hengitystaajuus - NEWSscore"] === 3 ||
+      personData["Happisaturaatio - NEWSscore"] === 3 ||
+      personData["Systolinen verenpaine - NEWSscore"] === 3 ||
+      personData["Syketaajuus - NEWSscore"] === 3 ||
+      personData["Mittaa lämpötila - NEWSscore"] === 3 ||
+      personData["Tajunnan taso"] === false      
+    ) {
+      return darkred;
+    } else if (
+      personData["Hengitystaajuus - NEWSscore"] +
+      personData["Happisaturaatio - NEWSscore"] +
+      personData["Systolinen verenpaine - NEWSscore"] +
+      personData["Syketaajuus - NEWSscore"] +
+      personData["Mittaa lämpötila - NEWSscore"] >= 4
+    ) {
+      return darkred;
+    } else if (
+      personData["Hengitystaajuus - NEWSscore"] === 0 &&
+      personData["Happisaturaatio - NEWSscore"] === 0 &&
+      personData["Systolinen verenpaine - NEWSscore"] === 0 &&
+      personData["Syketaajuus - NEWSscore"] === 0 &&
+      personData["Mittaa lämpötila - NEWSscore"] === 0
+    ) {
+      return green;
+    } else {
+      return blue;
+    }
+  }
 
   const hengitystaajuusStyle = () => {
     if (personData.Hengitystaajuus <= 8 || personData.Hengitystaajuus >= 25) {
@@ -716,7 +749,7 @@ function Report({ personData, controlData }) {
 
   return (
     <div className="report-container">
-      <div className="sote-box">
+      <div className="sote-box" style={{ background: colorBox() }}>
         <h3>ABCDE-raportti:</h3>
         <p>{endTimeStamp}</p>
         <p>{allTimestamp()}</p>
@@ -880,7 +913,7 @@ function Report({ personData, controlData }) {
         </div>
       </div>
 
-      <div className="sote-box">
+      <div className="sote-box" style={{ background: colorBox() }}>
         <h3>Vitaali-arvot:</h3>
       </div>
 
