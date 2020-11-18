@@ -35,7 +35,7 @@ function LandingPage({
           mukaan
         </span>
         <br />
-        <span style={{ color: "#000", fontWeight: "300", fontSize: "12px" }}>
+        <span style={{ color: "#000", fontWeight: "500", fontSize: "14px" }}>
           (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
           ympärivuorokautisen hoivan henkilöstölle)
         </span>

@@ -67,7 +67,7 @@ function InstructionCardSecond({
             <br />
             <span
               style={{
-                fontWeight: "200",
+                fontWeight: "bold",
                 fontSize: "12px",
                 letterSpacing: "0.1rem"
               }}
@@ -110,7 +110,7 @@ function InstructionCardSecond({
               <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
               <span
                 style={{
-                  fontWeight: "200",
+                  fontWeight: "bold",
                   fontSize: "12px",
                   letterSpacing: "0.1rem"
                 }}
@@ -152,7 +152,7 @@ function InstructionCardSecond({
               <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
               <span
                 style={{
-                  fontWeight: "200",
+                  fontWeight: "bold",
                   fontSize: "12px",
                   letterSpacing: "0.1rem"
                 }}
@@ -196,7 +196,7 @@ function InstructionCardSecond({
               <span>virka-ajan ulkopuolisen ohjeen</span> mukaan <br />
               <span
                 style={{
-                  fontWeight: "200",
+                  fontWeight: "bold",
                   fontSize: "12px",
                   letterSpacing: "0.1rem"
                 }}
@@ -234,7 +234,7 @@ function InstructionCardSecond({
               <br />
               <span
                 style={{
-                  fontWeight: "200",
+                  fontWeight: "bold",
                   fontSize: "12px",
                   letterSpacing: "0.1rem"
                 }}
@@ -396,7 +396,7 @@ function InstructionCardSecond({
             <br />
             <span
               style={{
-                fontWeight: "200",
+                fontWeight: "bold",
                 fontSize: "12px",
                 letterSpacing: "0.1rem"
               }}
