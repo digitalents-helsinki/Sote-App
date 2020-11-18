@@ -789,28 +789,11 @@ function Report({ personData, controlData }) {
     }
   };
 
-  // const reportTimestamp = new Date().allTimestamp.toLocaleTimeString(["en-GB"], {
-  //   day: "2-digit",
-  //   month: "2-digit",
-  //   year: "numeric",
-  //   hour: "2-digit",
-  //   minute: "2-digit"
-  // });
-
-  // let endTime = endTimeStamp.toLocaleString([], {
-  //   day: "2-digit",
-  //   month: "2-digit",
-  //   year: "numeric",
-  //   hour: "2-digit",
-  //   minute: "2-digit"
-  // });
-
   return (
     <div className="report-container">
       <div className="sote-box" style={{ background: colorBox() }}>
         <h3>ABCDE-raportti:</h3>
         <p>{timestamp()}</p>
-        {/* <p>{reportTimestamp}</p> */}
       </div>
       <div className="white-box">
         <div className="reportElement">
@@ -997,7 +980,6 @@ function Report({ personData, controlData }) {
                   {controlData.Hengitystaajuus_timestamp ? (controlData.Hengitystaajuus_timestamp) : (personData.Hengitystaajuus_timestamp)}
                 </span>
                 <br />
-                {/* {controlData.Hengitystaajuus} */}
                 {hengitystaajuus2()}
               </td>
               <td></td>
@@ -1017,11 +999,12 @@ function Report({ personData, controlData }) {
                   {hengitystaajuusTimestamp()}
                 </span>
                 <br />
-                {/* {personData.Hengitystaajuus} */}
                 {hengitystaajuus()}
               </td>
             </tr>
+
             <tr></tr>
+
             <tr>
               <td>
                 {"Happisaturaatio:"}
@@ -1046,7 +1029,6 @@ function Report({ personData, controlData }) {
                   {controlData.Happisaturaatio_timestamp ? (controlData.Happisaturaatio_timestamp) : (personData.Happisaturaatio_timestamp)}
                 </span>
                 <br />
-                {/* {controlData.Happisaturaatio} */}
                 {happisaturaatio2()}
               </td>
               <td></td>
@@ -1066,11 +1048,12 @@ function Report({ personData, controlData }) {
                   {happisaturaatioTimestamp()}
                 </span>
                 <br />
-                {/* {personData.Happisaturaatio} */}
                 {happisaturaatio()}
               </td>
             </tr>
+
             <tr></tr>
+
             <tr>
               <td>
                 {"Systolinen"} <br />
@@ -1092,7 +1075,6 @@ function Report({ personData, controlData }) {
                   {controlData["Systolinen verenpaine_timestamp"] ? (controlData["Systolinen verenpaine_timestamp"]) : (personData["Systolinen verenpaine_timestamp"])}
                 </span>
                 <br />
-                {/* {controlData["Systolinen verenpaine"]} */}
                 {systolinenVerenpaine2()}
               </td>
               <td></td>
@@ -1112,11 +1094,12 @@ function Report({ personData, controlData }) {
                   {systolinenVerenpaineTimestamp()}
                 </span>
                 <br />
-                {/* {personData["Systolinen verenpaine"]} */}
                 {systolinenVerenpaine()}
               </td>
             </tr>
+
             <tr></tr>
+
             <tr>
               <td>{"Syketaajuus:"}</td>
               <td
@@ -1135,7 +1118,6 @@ function Report({ personData, controlData }) {
                   {controlData.Syketaajuus_timestamp ? (controlData.Syketaajuus_timestamp) : (personData.Syketaajuus_timestamp)}
                 </span>
                 <br />
-                {/* {controlData.Syketaajuus} */}
                 {syketaajuus2()}
               </td>
               <td></td>
@@ -1155,11 +1137,12 @@ function Report({ personData, controlData }) {
                   {syketaajuusTimestamp()}
                 </span>
                 <br />
-                {/* {personData.Syketaajuus} */}
                 {syketaajuus()}
               </td>
             </tr>
+
             <tr></tr>
+
             <tr>
               <td>{"Lämpötila:"}</td>
               <td
@@ -1178,7 +1161,6 @@ function Report({ personData, controlData }) {
                   {controlData["Mittaa lämpötila_timestamp"] ? (controlData["Mittaa lämpötila_timestamp"]) : (personData["Mittaa lämpötila_timestamp"])}
                 </span>
                 <br />
-                {/* {controlData["Mittaa lämpötila"]} */}
                 {lampotila2()}
               </td>
               <td></td>
@@ -1195,11 +1177,12 @@ function Report({ personData, controlData }) {
                   {lampotilaTimestamp()}
                 </span>
                 <br />
-                {/* {personData["Mittaa lämpötila"]} */}
                 {lampotila()}
               </td>
             </tr>
+
             <tr></tr>
+
             <tr>
               <td>{"Tajunnan taso:"}</td>
               <td
@@ -1218,7 +1201,6 @@ function Report({ personData, controlData }) {
                   {controlData["Tajunnan taso_timestamp"] ? (controlData["Tajunnan taso_timestamp"]) : (personData["Tajunnan taso_timestamp"])}
                 </span>
                 <br />
-                {/* {controlData["Tajunnan taso"]} */}
                 {tajunnanTaso2()}
               </td>
               <td></td>
@@ -1238,7 +1220,9 @@ function Report({ personData, controlData }) {
                 {tajunnanTaso()}
               </td>
             </tr>
+
             <tr></tr>
+            
             <tr>
               <td>
                 {"Verensokeri:"}
@@ -1263,9 +1247,6 @@ function Report({ personData, controlData }) {
                   {controlData["Mittaa verensokeri:_timestamp"] ? (controlData["Mittaa verensokeri:_timestamp"]) : (personData["Mittaa verensokeri:_timestamp"])}
                 </span>
                 <br />
-                {/* {controlData["Mittaa verensokeri:"]
-                  ? controlData["Mittaa verensokeri:"]
-                  : "Ei mitattu"} */}
                   {verensokeri2()}
               </td>
               <td></td>
@@ -1285,72 +1266,12 @@ function Report({ personData, controlData }) {
                   {verensokeriTimestamp()}
                 </span>
                 <br />
-                {/* {personData["Mittaa verensokeri:"]} */}
                 {verensokeri()}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      {/* <div className="vitalValues">
-
-        <h3>Vitaali-arvot:</h3>
-        <div className="flex">
-          <p className="vital-subject">{"hengitystaajuus:"}</p>
-          <p className="vital-answer" style={{ color: hengitystaajuusStyle() }}>
-            {personData.Hengitystaajuus}
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Happisaturaatio:"}</p>
-          <p className="vital-answer" style={{ color: happisaturaatioStyle() }}>
-            {personData.Happisaturaatio}
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject" style={{ color: red }}>
-            Huomioi asiakkaan keuhkosairaus SpO2 arvoa tulkittaessa.
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Systolinen verenpaine:"}</p>
-          <p
-            className="vital-answer"
-            style={{ color: systolinenVerenpaineStyle() }}
-          >
-            {personData["Systolinen verenpaine"]}
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Syketaajuus:"}</p>
-          <p className="vital-answer" style={{ color: SyketaajuusStyle() }}>
-            {personData.Syketaajuus}
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Tajunnan taso:"}</p>
-          <div className="vital-answer">
-            {personData["Tajunnan taso"] ? (
-              <p style={{ color: green }}>Normaali</p>
-            ) : (
-              <p style={{ color: red }}>Poikkeava</p>
-            )}
-          </div>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Lämpötila:"}</p>
-          <p className="vital-answer" style={{ color: lampotilaStyle() }}>
-            {personData["Mittaa lämpötila"]}
-          </p>
-        </div>
-        <div className="flex">
-          <p className="vital-subject">{"Verensokeri:"}</p>
-          <p className="vital-answer" style={{ color: verensokeriStyle() }}>
-            {personData["Mittaa verensokeri:"]}
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }
