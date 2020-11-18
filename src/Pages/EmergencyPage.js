@@ -3,6 +3,7 @@ import Arrow from "../Images/arrow-white.svg";
 import hatatilanne from "../Images/hatatilanne.png";
 import SymptomCard from "../Components/SymptomCard";
 import ESC from "../Components/EmergencySymptomsContent";
+import helsinki from "../Images/helsinki.png";
 
 function EmergencyPage({ setEmergencyVisibility, visibility, careType }) {
   return (
@@ -23,6 +24,10 @@ function EmergencyPage({ setEmergencyVisibility, visibility, careType }) {
           onClick={() => setEmergencyVisibility(false)}
         ></img>
         <h2>Hätätilanneoireet</h2>
+      <img className="helsinki"
+        src={helsinki}
+        alt=""
+      ></img>
       </div>
       <div className="symptoms-container">
         <SymptomCard content={ESC.aivoverenkierronhairio} />
