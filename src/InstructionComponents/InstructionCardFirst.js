@@ -98,14 +98,14 @@ function InstructionCardFirst({
             }
           }, 250);
 
-          console.log(personData);
+          // console.log(personData);
           setcontrolData(personData);
-          console.log(controlData);
+          // console.log(controlData);
 
           !ControlCardVisibility
             ? setControlCardVisibility(true)
             : setControlCardVisibility(false);
-          console.log(ControlCardVisibility);
+          // console.log(ControlCardVisibility);
         }}
         className="control-btn"
         ref={ctrlBtnRef}

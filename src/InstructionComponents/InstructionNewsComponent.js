@@ -11,7 +11,6 @@ function InstructionNewsComponent({
   controlData,
   setcontrolData
 }) {
-  console.log(controlData);
 
   return (
     <div>
@@ -168,10 +167,10 @@ function InstructionNewsComponent({
 
       <div
         onClick={() => {
-          console.log("beep");
+          // console.log("beep");
           window.scrollTo(0, 0);
           history.push("/instructionPageTwo");
-          console.log(controlData);
+          // console.log(controlData);
         }}
         className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}
       >
