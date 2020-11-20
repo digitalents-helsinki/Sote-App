@@ -11,7 +11,6 @@ function InstructionPageTwo({
   careType,
   setEmergencyVisibility
 }) {
-  // console.log(NEWSscoreTotal);
 
   return (
     <div className="instruction-page-container slidable">

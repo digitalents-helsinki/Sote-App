@@ -1,5 +1,4 @@
 import React, {forwardRef, useImperativeHandle} from 'react';
-// import ReactDom from "react-dom";
 
 const Modal = forwardRef((props, ref) => {
 

@@ -1,9 +1,6 @@
 import React from "react";
 import Page from "../Components/Page";
 import DoubleButton from "../Components/DoubleButton";
-// import Button from "../Components/Button";
-// import TajunnantasoComponent from "../Components/Tajunnantaso";
-// import Tajunnantaso from "../Components/Tajunnantaso";
 
 function TajunnantasoPage({ personData, setPersonData }) {
   return (

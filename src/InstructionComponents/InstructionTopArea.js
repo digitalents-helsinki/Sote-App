@@ -14,7 +14,7 @@ function InstructionTopArea({ setMenuVisibility, history }) {
           }}
           alt="backArrowSvg"
         />
-        <h1 className="AppName">SoTe</h1>
+        <h1 className="AppName">Aina mukana</h1>
         <img
           className="more-btn"
           src={moreBtnSvg}
