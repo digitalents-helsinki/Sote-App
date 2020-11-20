@@ -39,14 +39,6 @@ function LandingPage({
           (Virka-ajan ulkopuolinen konsultointiohje kotihoidon ja
           ympärivuorokautisen hoivan henkilöstölle)
         </span>
-        {/* <br />
-        <span style={{ color: "#000", fontWeight: "300" }}>
-          Soita konsultoivalle lääkärille.
-          <br />
-          Huomioi hoitosuunnitelma, hoidon rajaukset ja linjaukset
-        </span>
-        <br />
-        b) Konsultoiva tilanne */}
       </p>
     )
   }[careType];
