@@ -623,7 +623,8 @@ function Report({ personData, controlData }) {
 
   const verensokeriStyle = () => {
     if (
-      personData["Mittaa verensokeri:"] <= 3.9 ||
+      (personData["Mittaa verensokeri:"] <= 3.9 &&
+      personData["Mittaa verensokeri:"] >= 0.1) ||
       personData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
@@ -658,7 +659,8 @@ function Report({ personData, controlData }) {
 
   const verensokeriStyle2 = () => {
     if (
-      controlData["Mittaa verensokeri:"] <= 3.9 ||
+      (controlData["Mittaa verensokeri:"] <= 3.9 &&
+      controlData["Mittaa verensokeri:"] >= 0.1) ||
       controlData["Mittaa verensokeri:"] >= 25
     ) {
       return red;
@@ -684,17 +686,20 @@ function Report({ personData, controlData }) {
 
   const verensokeriBold2 = () => {
     if (
-      controlData["Mittaa verensokeri:"] <= 3.9 ||
+      (controlData["Mittaa verensokeri:"] <= 3.9 &&
+      controlData["Mittaa verensokeri:"] >= 0.1) ||
       controlData["Mittaa verensokeri:"] >= 25
     ) {
       return bold;
     } else if (
-      controlData["Mittaa verensokeri:"] >= 4 &&
-      controlData["Mittaa verensokeri:"] <= 24.9
+      (controlData["Mittaa verensokeri:"] >= 4 &&
+      controlData["Mittaa verensokeri:"] <= 24.9) ||
+      controlData["Mittaa verensokeri:"] === 0
     ) {
       return light;
     } else if (
-      personData["Mittaa verensokeri:"] <= 3.9 ||
+      (personData["Mittaa verensokeri:"] <= 3.9 &&
+      personData["Mittaa verensokeri:"] >= 0.1) ||
       personData["Mittaa verensokeri:"] >= 25
     ) {
       return bold;
@@ -705,7 +710,8 @@ function Report({ personData, controlData }) {
 
   const verensokeri = () => {
     if (
-      controlData["Mittaa verensokeri:"] === undefined
+      controlData["Mittaa verensokeri:"] === undefined ||
+      personData["Mittaa verensokeri:"] === 0
     ) {
       return null;
     } else if (
@@ -726,6 +732,15 @@ function Report({ personData, controlData }) {
 
   const verensokeri2 = () => {
     if (
+      personData["Mittaa verensokeri:"] === 0 &&
+      controlData["Mittaa verensokeri:"] === 0
+    ) {
+      return "Ei mitattu";
+    } else if (
+      personData["Mittaa verensokeri:"] === 0
+    ) {
+      return "Ei mitattu";
+    } else if (
       controlData["Mittaa verensokeri:"] !== undefined
     ) {
       return controlData["Mittaa verensokeri:"];
@@ -739,7 +754,7 @@ function Report({ personData, controlData }) {
   };
 
   const verensokeriTimestamp = () => {
-    if (controlData["Mittaa verensokeri:"] === undefined) {
+    if (controlData["Mittaa verensokeri:"] === undefined || (controlData["Mittaa verensokeri:"] === 0 && personData["Mittaa verensokeri:"] === 0)) {
       return null;
     } else if (
       controlData["Mittaa verensokeri:"] >= 6.1 &&
@@ -747,6 +762,23 @@ function Report({ personData, controlData }) {
       personData["Mittaa verensokeri:"] >= 6.1 &&
       personData["Mittaa verensokeri:"] <= 14.9
       ) {
+      return null;
+    } else {
+      return personData["Mittaa verensokeri:_timestamp"];
+    }
+  };
+
+  const verensokeriTimestamp2 = () => {
+    if (controlData["Mittaa verensokeri:"] >= 0.1) {
+      return controlData["Mittaa verensokeri:_timestamp"];
+    } else if (
+      controlData["Mittaa verensokeri:"] === undefined && personData["Mittaa verensokeri:"] >= 0.1
+    ) {
+      return personData["Mittaa verensokeri:_timestamp"];
+    } else if (
+      (controlData["Mittaa verensokeri:"] === 0 && personData["Mittaa verensokeri:"] === 0) ||
+      (controlData["Mittaa verensokeri:"] === undefined && personData["Mittaa verensokeri:"] === 0)
+    ) {
       return null;
     } else {
       return personData["Mittaa verensokeri:_timestamp"];
@@ -1244,7 +1276,8 @@ function Report({ personData, controlData }) {
                     fontWeight: "400"
                   }}
                 >
-                  {controlData["Mittaa verensokeri:_timestamp"] ? (controlData["Mittaa verensokeri:_timestamp"]) : (personData["Mittaa verensokeri:_timestamp"])}
+                  {verensokeriTimestamp2()}
+                  {/* {controlData["Mittaa verensokeri:_timestamp"] ? (controlData["Mittaa verensokeri:_timestamp"]) : (personData["Mittaa verensokeri:_timestamp"])} */}
                 </span>
                 <br />
                   {verensokeri2()}

@@ -139,10 +139,16 @@ function InstructionNewsComponent({
             setPersonData={setPersonData}
             name={"Tajunnan taso"}
           />
+          <div className="news-huomio">
+        <div id="news">* NEWS-pisteet:</div>{" "}
+        <br />
+        <div id="green">Normaali = 0p</div>{" , "}
+        <div id="red">Poikkeava = 3p</div>
+      </div>
         </div>
       ) : null}
 
-      {controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
+      {controlData["Mittaa verensokeri:"] >= 0.1 && controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
         <div
           className={
             "instruction-news-component" +

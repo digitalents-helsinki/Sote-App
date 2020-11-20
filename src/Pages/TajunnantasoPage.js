@@ -17,20 +17,12 @@ function TajunnantasoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       />
-      {/* <Button
-        values={["Normaali", "Poikkeava"]}
-        personData={personData}
-        setPersonData={setPersonData}
-        Tajunnantaso={Tajunnantaso}
-        name={"Tajunnan taso"}
-        // Tajunnantaso={TajunnantasoComponent}
-      />
-      <Tajunnantaso
-        cells={["Normaali", "Poikkeava"]}
-        name={"Tajunnan taso"}
-        personData={personData}
-        setPersonData={setPersonData}
-      /> */}
+      <div className="news-huomio">
+        <div id="news">* NEWS-pisteet:</div>{" "}
+        <br />
+        <div id="green">Normaali = 0p</div>{" , "}
+        <div id="red">Poikkeava = 3p</div>
+      </div>
     </Page>
   );
 }

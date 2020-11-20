@@ -79,7 +79,7 @@ function InstructionCardFirst({
         </p>
         <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
         <p>
-          {personData["Mittaa verensokeri: - NEWSscore"] >= 1
+          {personData["Mittaa verensokeri: - NEWSscore"] >= 1 && personData["Mittaa verensokeri:"] >= 0.1
             ? "Verensokeri"
             : null}
         </p>
