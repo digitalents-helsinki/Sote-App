@@ -20,16 +20,12 @@ function CareTypeSelection({ setCareType }) {
   const openModal2 = () => {
     modalRef2.current.openModal()
   };
-  // const closeTopArea = () => {
-  //   document.querySelector('.TopArea').style.backgroundImage = "none";
-  // };
 
   return (
     <Page>
       <h3 className="care-type-selection-title">Valitse hoitoyksikkö</h3>
       <button
         className="care-type-selection-button"
-        // onClick={() => {openModal();closeTopArea();}}
         onClick={openModal}
       >
         Kotihoito
