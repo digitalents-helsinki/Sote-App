@@ -55,7 +55,7 @@ function App() {
   const [controlData, setcontrolData] = useSessionState("controlData", {});
 
   const [emergencyVisibility, setEmergencyVisibility] = useState(null); // this should start out as null for animation logic
-  const [konsultoitavaVisibility, setKonsultoitavaVisibility] = useState(null);
+  const [KonsultoitavaVisibility, setKonsultoitavaVisibility] = useState(null);
   const [ABCDEVisibility, setABCDEVisibility] = useState(null);
   const [NewsPisteytysVisibility, setNewsPisteytysVisibility] = useState(null);
   const [ISBARVisibility, setISBARVisibility] = useState(null);
@@ -312,7 +312,7 @@ function App() {
           careType={careType}
         />
         <KonsultoitavaPage
-          visibility={konsultoitavaVisibility}
+          visibility={KonsultoitavaVisibility}
           setKonsultoitavaVisibility={setKonsultoitavaVisibility}
           careType={careType}
         />
