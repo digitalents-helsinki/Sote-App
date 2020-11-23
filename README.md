@@ -22,6 +22,7 @@ The finished project can be viewed at: https://sote.azureedge.net/ ( only in Fin
 - **Toni Nieminen** - [tounsa](https://github.com/tounsa)
 - **Isa Hänninen** - [IsaEmilia](https://github.com/IsaEmilia)
 
+
 See also the list of [contributors](https://github.com/digitalents-helsink/Sote-App/graphs/contributors) who participated in this project.
 
 ## License
