@@ -54,7 +54,8 @@ function MenuPanel({
                 marginLeft: "-15px",
                 color: "#ffffff"
               }}
-            ><span style={{fontSize: "15px"}}>&#9658; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
               Aloita alusta
             </p>
           </div>
@@ -76,20 +77,22 @@ function MenuPanel({
                 marginLeft: "-15px",
                 color: "#ffffff"
               }}
-            ><span style={{fontSize: "15px"}}>&#9658; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
               Vaihda hoitoyksikköä
             </p>
           </div>
 
           <div>
-          <p
+            <p
               style={{
                 display: "list-item",
                 listStyleType: "none",
                 marginLeft: "-15px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9658; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
               Päivystystilanteiden opas
             </p>
           </div>
@@ -108,7 +111,8 @@ function MenuPanel({
                 marginLeft: "5px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9656; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
               Hätätilanne
               <wbr />
               oireet
@@ -129,7 +133,8 @@ function MenuPanel({
                 marginLeft: "5px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9656; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
               Konsultoitava tilanne
             </p>
           </div>
@@ -148,7 +153,8 @@ function MenuPanel({
                 marginLeft: "5px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9656; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
               ABCDE-menetelmä ja sen käyttö
             </p>
           </div>
@@ -167,7 +173,8 @@ function MenuPanel({
                 marginLeft: "5px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9656; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
               NEWS - Aikaisen varoituksen pisteytysjärjestelmä
             </p>
           </div>
@@ -186,12 +193,13 @@ function MenuPanel({
                 marginLeft: "5px",
                 color: "#f0a171"
               }}
-            ><span style={{fontSize: "15px"}}>&#9656; </span>
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
               ISBAR-raportointiohje konsultoitaessa asiakkaasta
             </p>
           </div>
 
-          <div>
+          {/* <div>
             <p
               style={{
                 display: "list-item",
@@ -202,7 +210,7 @@ function MenuPanel({
             ><span style={{fontSize: "15px"}}>&#9658; </span>
               Viimeisimmät raportit
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
