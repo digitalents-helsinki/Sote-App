@@ -16,7 +16,7 @@ function VerensokeriPage({
     >
       <p
         className="page-paragraph"
-        style={{ fontSize: "0.9rem", marginTop: "-30px" }}
+        style={{ fontSize: "0.9rem", marginTop: "0px" }}
       >
         Jos ei tarvetta mittaukselle,{" "}
         <span
@@ -34,7 +34,7 @@ function VerensokeriPage({
         </span>
       </p>
       <NewsComponent
-        cells={[4, [5, 6], null, [7, 14], [15, 20], [21, 24], 25]}
+        cells={[3.9, [4, 6], null, [6.1, 14.9], [15, 20], [20.1, 24.9], 25]}
         name={"Mittaa verensokeri:"}
         personData={personData}
         setPersonData={setPersonData}

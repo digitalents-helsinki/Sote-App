@@ -6,6 +6,10 @@ function MenuPanel({
   setMenuVisibility,
   menuVisibility,
   setEmergencyVisibility,
+  setKonsultoitavaVisibility,
+  setABCDEVisibility,
+  setNewsPisteytysVisibility,
+  setISBARVisibility,
   setPersonData,
   setcontrolData,
   careType,
@@ -43,23 +47,21 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>Aloita alusta</p>
-          </div>
-          <div
-            className="emeregencyPage-fromMenu"
-            onClick={() => {
-              setEmergencyVisibility(true);
-              setMenuVisibility(false);
-            }}
-          >
-            <p>
-              Hätätilanne
-              <wbr />
-              oireet
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "-15px",
+                color: "#ffffff"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
+              Aloita alusta
             </p>
           </div>
+
           <div
-            className="emeregencyPage-fromMenu"
+            className="emergencyPage-fromMenu"
             onClick={() => {
               if (careType) {
                 setCareType("");
@@ -68,8 +70,147 @@ function MenuPanel({
               setMenuVisibility(false);
             }}
           >
-            <p>Vaihda hoitotyyppiä</p>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "-15px",
+                color: "#ffffff"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
+              Vaihda hoitoyksikköä
+            </p>
           </div>
+
+          <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "-15px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9658; </span>
+              Päivystystilanteiden opas
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setEmergencyVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "5px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
+              Hätätilanne
+              <wbr />
+              oireet
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setKonsultoitavaVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "5px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
+              Konsultoitava tilanne
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setABCDEVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "5px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
+              ABCDE-menetelmä ja sen käyttö
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setNewsPisteytysVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "5px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
+              NEWS - Aikaisen varoituksen pisteytysjärjestelmä
+            </p>
+          </div>
+
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setISBARVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "5px",
+                color: "#f0a171"
+              }}
+            >
+              <span style={{ fontSize: "15px" }}>&#9656; </span>
+              ISBAR-raportointiohje konsultoitaessa asiakkaasta
+            </p>
+          </div>
+
+          {/* <div>
+            <p
+              style={{
+                display: "list-item",
+                listStyleType: "none",
+                marginLeft: "-15px",
+                color: "#ffffff"
+              }}
+            ><span style={{fontSize: "15px"}}>&#9658; </span>
+              Viimeisimmät raportit
+            </p>
+          </div> */}
         </div>
       </div>
     </>

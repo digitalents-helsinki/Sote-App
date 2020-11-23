@@ -71,8 +71,8 @@ var EmergencySymptomsContent = {
       <>
         Verensokeri yli 25 mmol/l tai{" "}
         <span style={{ fontWeight: "600" }}>HIGH</span> (mittarinäyttö),{" "}
-        <span style={{ fontWeight: "600" }}>ja OIREITA</span> (kuivumsen merkit,
-        jano, väsymys, tajunnantason lasku, runsasvirtsaisuus).
+        <span style={{ fontWeight: "600" }}>ja OIREITA</span> (kuivumisen
+        merkit, jano, väsymys, tajunnantason lasku, runsasvirtsaisuus).
       </>
     )
   },
@@ -84,7 +84,7 @@ var EmergencySymptomsContent = {
     instructions: (
       <>
         Verensokeri alle 4 mmol/l ja lisäksi{" "}
-        <span style={{ fontWeight: "600" }}>voimakaat oireet</span> tai{" "}
+        <span style={{ fontWeight: "600" }}>voimakkaat oireet</span> tai{" "}
         <span style={{ fontWeight: "600" }}>tajuton.</span>
       </>
     )

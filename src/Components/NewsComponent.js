@@ -79,7 +79,7 @@ function NewsComponent(props) {
             (window.innerHeight ||
               document.documentElement.clientHeight ||
               document.body.clientHeight) /
-              1.8;
+              2.5;
           const scrollToNews = () => {
             try {
               scrollParent.scrollTo({ top: y, behavior: "smooth" });
@@ -130,13 +130,32 @@ function NewsComponent(props) {
             }
             return score;
           }, null);
+
           //Update personData
           const keyvalue = `${props.name} - NEWSscore`;
+
+          const tsname = `${props.name}_timestamp`;
+          const ts = new Date().toLocaleTimeString(['en-GB'], {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
+          const timestamp = `${props.name}_timestampfull`;
+          const tsfull = new Date().toLocaleTimeString(['en-GB'], {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
           const oldData = props.personData;
           const newData = {
             ...oldData,
             [props.name]: inputValue,
-            [keyvalue]: NEWSscore
+            [keyvalue]: NEWSscore,
+            [tsname]: ts,
+            [timestamp]: tsfull
           };
           props.setPersonData(newData);
 

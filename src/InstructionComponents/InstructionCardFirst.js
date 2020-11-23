@@ -12,19 +12,18 @@ function InstructionCardFirst({
   const instruction_content = {
     emergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 2-3 minuutin
-        kuluttua.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan.
       </>
     ),
     mediumEmergencyContent: (
       <>
-        <span>Kontrolloi</span> seuraavat löydökset uudestaan noin 5 minuutin
-        päästä ennen mahdollista konsultaatiota.
+        <span>Kontrolloi</span> seuraavat löydökset uudestaan ennen mahdollista
+        konsultaatiota.
       </>
     ),
     noneEmergencyContent: (
       <>
-        <span>Kontrolloi</span> nollan pisteen tilanne
+        <span>Kontrolloi</span>
       </>
     )
   };
@@ -38,7 +37,8 @@ function InstructionCardFirst({
         personData["Happisaturaatio - NEWSscore"] === 3 ||
         personData["Systolinen verenpaine - NEWSscore"] === 3 ||
         personData["Syketaajuus - NEWSscore"] === 3 ||
-        personData["Mittaa lämpötila - NEWSscore"] === 3) &&
+        personData["Mittaa lämpötila - NEWSscore"] === 3 ||
+        personData["Mittaa verensokeri: - NEWSscore"] > 0) &&
       NEWSscoreTotal <= 3
     ) {
       return instruction_content.emergencyContent;
@@ -78,6 +78,11 @@ function InstructionCardFirst({
           {personData["Mittaa lämpötila - NEWSscore"] >= 1 ? "Lämpötila" : null}
         </p>
         <p>{personData["Tajunnan taso"] === false ? "Tajunnan taso" : null}</p>
+        <p>
+          {personData["Mittaa verensokeri: - NEWSscore"] >= 1 && personData["Mittaa verensokeri:"] >= 0.1
+            ? "Verensokeri"
+            : null}
+        </p>
       </div>
       <div
         onClick={() => {
@@ -93,14 +98,14 @@ function InstructionCardFirst({
             }
           }, 250);
 
-          console.log(personData);
+          // console.log(personData);
           setcontrolData(personData);
-          console.log(controlData);
+          // console.log(controlData);
 
           !ControlCardVisibility
             ? setControlCardVisibility(true)
             : setControlCardVisibility(false);
-          console.log(ControlCardVisibility);
+          // console.log(ControlCardVisibility);
         }}
         className="control-btn"
         ref={ctrlBtnRef}

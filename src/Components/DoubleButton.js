@@ -15,10 +15,27 @@ function DoubleButton(props) {
     return first === value ? activeStyle : {};
   };
 
+  const tsname = `${props.name}_timestamp`;
+  const ts = new Date().toLocaleTimeString(['en-GB'], {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  const timestamp = `${props.name}_timestampfull`;
+          const tsfull = new Date().toLocaleTimeString(['en-GB'], {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
   const clickHandler = newValue => () =>
     props.setPersonData({
       ...props.personData,
-      [personDataKey]: value === newValue ? null : newValue
+      [personDataKey]: value === newValue ? null : newValue,
+      [tsname]: ts,
+      [timestamp]: tsfull
     });
 
   return (

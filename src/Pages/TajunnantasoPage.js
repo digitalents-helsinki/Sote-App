@@ -6,7 +6,7 @@ function TajunnantasoPage({ personData, setPersonData }) {
   return (
     <Page
       title="Tajunnan taso:"
-      paragraph="Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta."
+      paragraph="Reagoiko puheelle, kosketukselle, kivulle tai avaako silmät?"
     >
       <DoubleButton
         values={["Normaali", "Poikkeava"]}
@@ -14,6 +14,12 @@ function TajunnantasoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
         name={"Tajunnan taso"}
       />
+      <div className="news-huomio">
+        <div id="news">* NEWS-pisteet:</div>{" "}
+        <br />
+        <div id="green">Normaali = 0p</div>{" , "}
+        <div id="red">Poikkeava = 3p</div>
+      </div>
     </Page>
   );
 }

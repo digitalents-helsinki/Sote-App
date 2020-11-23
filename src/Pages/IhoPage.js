@@ -50,7 +50,7 @@ function IhoPage({ personData, setPersonData }) {
         setPersonData={setPersonData}
       />
 
-      <h4 style={{ fontSize: "1rem", lineHeight: "1.8rem", marginTop: "60px" }}>
+      <h4 style={{ fontSize: "1rem", lineHeight: "1.8rem", marginTop: "30px" }}>
         Kirjaa asiakkaan ihomuutokset ja muut löydökset:
       </h4>
 

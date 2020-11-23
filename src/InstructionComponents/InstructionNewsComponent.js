@@ -11,7 +11,6 @@ function InstructionNewsComponent({
   controlData,
   setcontrolData
 }) {
-  console.log(controlData);
 
   return (
     <div>
@@ -44,7 +43,12 @@ function InstructionNewsComponent({
           }
         >
           <h1>Happisaturaatio</h1>
-          <p>Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi.</p>
+          <p style={{ marginBottom: "0px" }}>
+            Aseta Spo2 mittari asiakkaan sormeen noin 1-2 minuutin ajaksi.
+          </p>
+          <p style={{ marginTop: "20px" }}>
+            Huomioi asiakkaan keuhkosairaus Spo2 arvoa tulkittaessa.
+          </p>
           <NewsComponent
             name={"Happisaturaatio"}
             personData={personData}
@@ -90,27 +94,6 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
-      {controlData["Tajunnan taso"] === false ? (
-        <div
-          className={
-            "instruction-news-component" +
-            (ControlCardVisibility ? " active" : "")
-          }
-        >
-          <h1>Tajunnan taso:</h1>
-          <p>
-            Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista
-            saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
-          </p>
-          <DoubleButton
-            values={["Normaali", "Poikkeava"]}
-            personData={personData}
-            setPersonData={setPersonData}
-            name={"Tajunnan taso"}
-          />
-        </div>
-      ) : null}
-
       {controlData["Mittaa lämpötila - NEWSscore"] >= 1 ? (
         <div
           className={
@@ -137,12 +120,57 @@ function InstructionNewsComponent({
         </div>
       ) : null}
 
+      {controlData["Tajunnan taso"] === false ? (
+        <div
+          className={
+            "instruction-news-component" +
+            (ControlCardVisibility ? " active" : "")
+          }
+        >
+          <h1>Tajunnan taso:</h1>
+          <p>
+            Asiakkaan käytös/tajunta. Tarvittaessa konsultoi kolleegaa/omaista
+            saadaksesi lisätietoa asiakkaan käyttäytymisestä/tajunnan tasosta.
+          </p>
+          <DoubleButton
+            values={["Normaali", "Poikkeava"]}
+            personData={personData}
+            setPersonData={setPersonData}
+            name={"Tajunnan taso"}
+          />
+          <div className="news-huomio">
+        <div id="news">* NEWS-pisteet:</div>{" "}
+        <br />
+        <div id="green">Normaali = 0p</div>{" , "}
+        <div id="red">Poikkeava = 3p</div>
+      </div>
+        </div>
+      ) : null}
+
+      {controlData["Mittaa verensokeri:"] >= 0.1 && controlData["Mittaa verensokeri: - NEWSscore"] >= 1 ? (
+        <div
+          className={
+            "instruction-news-component" +
+            (ControlCardVisibility ? " active" : "")
+          }
+        >
+          <h1>Verensokeri</h1>
+          <p>Mittaa verensokeri.</p>
+          <NewsComponent
+            name={"Mittaa verensokeri:"}
+            personData={personData}
+            setPersonData={setPersonData}
+            cells={[3.9, [4, 6], null, [6.1, 14.9], [15, 20], [20.1, 24.9], 25]}
+          />
+        </div>
+      ) : null}
+
       <div
         onClick={() => {
-          console.log("beep");
+          // console.log("beep");
           window.scrollTo(0, 0);
           history.push("/instructionPageTwo");
-          console.log(controlData);
+          // console.log(controlData);
         }}
         className={"controlDone-btn" + (ControlCardVisibility ? " active" : "")}
       >

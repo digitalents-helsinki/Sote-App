@@ -1,16 +1,16 @@
 import React from "react";
 import InstructionCardSecond from "../InstructionComponents/InstructionCardSecond";
 import ControlledScoreCard from "../InstructionComponents/ControlledScoreCard";
-import Report from "../InstructionComponents/Report";
+import ControlReport from "../InstructionComponents/ControlReport";
 
 function InstructionPageTwo({
   personData,
   controlData,
   NEWSscoreTotal,
   ControlNEWSscoreTotal,
-  careType
+  careType,
+  setEmergencyVisibility
 }) {
-  console.log(NEWSscoreTotal);
 
   return (
     <div className="instruction-page-container slidable">
@@ -27,8 +27,10 @@ function InstructionPageTwo({
           controlData={controlData}
           ControlNEWSscoreTotal={ControlNEWSscoreTotal}
           careType={careType}
+          setEmergencyVisibility={setEmergencyVisibility}
         />
-        <Report personData={personData} />
+
+        <ControlReport personData={personData} controlData={controlData} />
       </div>
     </div>
   );
