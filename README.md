@@ -15,7 +15,7 @@ The finished project can be viewed at: https://sote.azureedge.net/ ( only in Fin
 ## Authors
 
 - **Pekka Laine** - Project Lead [N.A](https://github.com/N.A)
-- **Topias Rytkönen** - [TopiasR-DT](https://github.com/TopiasR-DT)
+- **Topias Rytkönen** - [Topias-R](https://github.com/TopiasR-DT)
 - **Thomas Hillebrink** - [Thomas](https://github.com/ThomasHillebrink)
 - **Ben Panyanil** - [BenPanyanil](https://github.com/BenPanyanil)
 - **Zohaib Malik** - [ZohaibAM](https://github.com/ZohaibAM)
