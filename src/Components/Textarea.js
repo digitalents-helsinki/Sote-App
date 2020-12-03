@@ -14,7 +14,7 @@ const Textarea = props => {
       </p>
       <form onClick={scrollY()}>
         <textarea
-          placeholder="Kirjoita tähän löydöksiäsi..."
+          placeholder="Kirjoita tähän poikkeavat löydökset..."
           value={
             props.personData[props.name] ? props.personData[props.name] : ""
           }
