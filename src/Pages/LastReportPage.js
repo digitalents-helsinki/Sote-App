@@ -27,6 +27,12 @@ function LastReportPage({ setLastReportVisibility, visibility }) {
         ></img>
       </div>
       <div className="hatatilanne-container">
+          <div className="report-header">
+              <p>report date</p>
+              <div className="report-button">
+                <p>+</p>
+              </div>
+          </div>
           <p>Test</p>
       </div>
     </div>
