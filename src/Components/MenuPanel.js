@@ -10,6 +10,7 @@ function MenuPanel({
   setABCDEVisibility,
   setNewsPisteytysVisibility,
   setISBARVisibility,
+  setLastReportVisibility,
   setPersonData,
   setcontrolData,
   careType,
@@ -199,7 +200,13 @@ function MenuPanel({
             </p>
           </div>
 
-          {/* <div>
+          <div
+            className="emergencyPage-fromMenu"
+            onClick={() => {
+              setLastReportVisibility(true);
+              setMenuVisibility(false);
+            }}
+          >
             <p
               style={{
                 display: "list-item",
@@ -210,7 +217,7 @@ function MenuPanel({
             ><span style={{fontSize: "15px"}}>&#9658; </span>
               Viimeisimmät raportit
             </p>
-          </div> */}
+          </div>
         </div>
       </div>
     </>

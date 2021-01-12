@@ -22,6 +22,7 @@ import KonsultoitavaPage from "./Pages/KonsultoitavaPage";
 import ABCDEPage from "./Pages/ABCDEPage";
 import NewsPisteytysPage from "./Pages/NewsPisteytysPage";
 import ISBARPage from "./Pages/ISBARPage";
+import LastReportPage from "./Pages/LastReportPage";
 import InstructionPage from "./Pages/InstructionPage";
 import InstructionPageTwo from "./Pages/InstructionPageTwo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -59,6 +60,7 @@ function App() {
   const [ABCDEVisibility, setABCDEVisibility] = useState(null);
   const [NewsPisteytysVisibility, setNewsPisteytysVisibility] = useState(null);
   const [ISBARVisibility, setISBARVisibility] = useState(null);
+  const [LastReportVisibility, setLastReportVisibility] = useState(null);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   const NEWSscoreTotal =
@@ -91,6 +93,7 @@ function App() {
           setABCDEVisibility={setABCDEVisibility}
           setNewsPisteytysVisibility={setNewsPisteytysVisibility}
           setISBARVisibility={setISBARVisibility}
+          setLastReportVisibility={setLastReportVisibility}
           setPersonData={setPersonData}
           setcontrolData={setcontrolData}
           careType={careType}
@@ -330,6 +333,11 @@ function App() {
           visibility={ISBARVisibility}
           setISBARVisibility={setISBARVisibility}
           caretype={careType}
+        />
+        <LastReportPage
+          visibility={LastReportVisibility}
+          setLastReportVisibility={setLastReportVisibility}
+          careType={careType}
         />
       </div>
     </BrowserRouter>
