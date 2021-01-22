@@ -208,7 +208,7 @@ body {
         color: #fff;
         letter-spacing: 1px;
       }
-      
+
       .helsinki {
         display: block;
         position: absolute;
@@ -296,7 +296,6 @@ body {
       display: table;
 
       .report-header {
-
         display: flex;
         position: relative;
         height: auto;
@@ -329,69 +328,72 @@ body {
 
       @keyframes dropdownFade {
         0% {
-          opacity: 0;
+          opacity: 1;
           max-height: 335px;
-          // margin-top: -2662px;
+          overflow-y: scroll;
+        }
+        61% {
+          overflow-y: scroll;
         }
         100% {
           opacity: 1;
           max-height: 0px;
+          overflow-y: hidden;
         }
       }
 
       .dropdown-content {
-          display: none;
-          position: relative;
-          max-height: 0;
-          width: 80%;
-          margin: 0 auto;
-          background-color: #f9f9f9;
-          border-radius: 0 0 3px 3px;
-          border: solid rgb(204, 204, 204) 1px;
-          border-top: none;
-          padding: 0 10px;
-          align-items: center;
-          justify-content: center;
-          overflow: scroll;
-          animation-name: dropdownFade;
-          animation-duration: 0.25s;
-          animation-timing-function: ease-in;
-          overflow-x: hidden;
+        display: block;
+        // display: none // animaatio ei toimi takaisin päin mikäli käytössä on display: none
+        position: relative;
+        max-height: 0px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        border-radius: 0 0 3px 3px;
+        border: solid rgb(204, 204, 204) 1px;
+        border-top: none;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: center;
+        overflow: scroll;
+        overflow-x: hidden;
+        animation-name: dropdownFade;
+        animation-duration: 1.25s;
+        animation-timing-function: ease-out;
 
-          img {
-            max-width: 100%;
-          }
+        img {
+          max-width: 100%;
+        }
       }
 
-      // ALEMPI KEYFRAME EI TOIMI, TOIMII AINOASTAAN PAREMPANA ANIMAATIONA JOSTAIN SYYSTÄ
-
-      @keyframes dropdownScale {
+      @keyframes dropdown {
+        0% {
+          opacity: 1;
+          max-height: 0px;
+        }
         100% {
           opacity: 1;
           max-height: 335px;
-        } 0% {
-          opacity: 1;
-          max-height: 0;
         }
       }
 
       .show {
         display: block;
         max-height: 335px;
-        animation-name: dropdownScale;
+        animation-name: dropdown;
         animation-duration: 1.25s;
         animation-timing-function: ease-out;
         // background-color: red;
-        // tätä voi käyttää testaamiseen 
+        // tätä voi käyttää testaamiseen
 
         img {
           max-width: 100%;
-          // tätä voi käyttää testaamiseen 
+          // tätä voi käyttää testaamiseen
         }
       }
 
       .hatatilanne-image {
-
         padding: 50px 0;
 
         img {
@@ -834,7 +836,7 @@ body {
       margin-bottom: 5px;
       font-weight: 600;
     }
-    
+
     #green {
       display: inline-flex;
       color: $sote-green;
@@ -844,7 +846,6 @@ body {
       display: inline-flex;
       color: $sote-dark-red;
     }
-
   }
 
   .news-container {
@@ -1300,7 +1301,6 @@ body {
             margin: 0 0 10px 0;
             font-style: italic;
           }
-
         }
 
         .white-box {
@@ -1369,7 +1369,6 @@ body {
             height: 0px;
           }
 
-          
           tr:nth-child(11) td:nth-child(2) {
             text-align: right;
           }
@@ -1476,8 +1475,6 @@ body {
           // justify-content: center;
           align-items: center;
         }
-
-
       }
       .controlDone-btn {
         display: none;

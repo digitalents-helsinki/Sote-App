@@ -9,7 +9,7 @@ function myFunction() {
 
 // window.onclick = function(event) {
 //   if (!event.target.matches('.report-button')) {
-//     let dropdowns = document.getElementsByClassName("dropdown-content");
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
 //     var i;
 //     for (i = 0; i < dropdowns.length; i++) {
 //       var openDropdown = dropdowns[i];
@@ -39,45 +39,42 @@ function LastReportPage({ setLastReportVisibility, visibility }) {
           onClick={() => setLastReportVisibility(false)}
         ></img>
         <h2 className="responsiveh2">Viimeisimmät raportit</h2>
-        <img className="helsinki"
-          src={helsinki}
-          alt=""
-        ></img>
+        <img className="helsinki" src={helsinki} alt=""></img>
       </div>
       <div className="hatatilanne-container">
-          <div className="report-header">
-              <p>Raportti - 14/01/2021, 14:52</p>
-              <div className="report-button">
-                <p>+</p>
-              </div>
+        <div className="report-header">
+          <p>Raportti - 14/01/2021, 14:52</p>
+          <div className="report-button">
+            <p>+</p>
           </div>
-          <div className="report-header" style={{color: "#ab2615"}}>
-              <p>Raportti - 14/01/2021, 13:20</p>
-              <div onClick={myFunction} className="report-button">
-                <p>!</p>
-              </div>
+        </div>
+        <div className="report-header" style={{ color: "#ab2615" }}>
+          <p>Raportti - 14/01/2021, 13:20</p>
+          <div onClick={myFunction} className="report-button">
+            <p>!</p>
           </div>
-          <div id="dropdown" className="dropdown-content">
-            <img src={reportimage} alt=""></img>
+        </div>
+        <div id="dropdown" className="dropdown-content">
+          <img src={reportimage} alt=""></img>
+        </div>
+        <div className="report-header">
+          <p>Raportti - 13/01/2021, 9:57</p>
+          <div className="report-button">
+            <p>+</p>
           </div>
-          <div className="report-header">
-              <p>Raportti - 13/01/2021, 9:57</p>
-              <div className="report-button">
-                <p>+</p>
-              </div>
+        </div>
+        <div className="report-header">
+          <p>Raportti - 13/01/2021, 9:57</p>
+          <div className="report-button">
+            <p>+</p>
           </div>
-          <div className="report-header">
-              <p>Raportti - 13/01/2021, 9:57</p>
-              <div className="report-button">
-                <p>+</p>
-              </div>
+        </div>
+        <div className="report-header">
+          <p>Raportti - 13/01/2021, 9:57</p>
+          <div className="report-button">
+            <p>+</p>
           </div>
-          <div className="report-header">
-              <p>Raportti - 13/01/2021, 9:57</p>
-              <div className="report-button">
-                <p>+</p>
-              </div>
-          </div>
+        </div>
       </div>
     </div>
   );
