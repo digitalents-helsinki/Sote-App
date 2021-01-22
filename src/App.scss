@@ -359,7 +359,7 @@ body {
         overflow: scroll;
         overflow-x: hidden;
         animation-name: dropdownFade;
-        animation-duration: 1.25s;
+        animation-duration: 0.25s;
         animation-timing-function: ease-out;
 
         img {
@@ -382,7 +382,7 @@ body {
         display: block;
         max-height: 335px;
         animation-name: dropdown;
-        animation-duration: 1.25s;
+        animation-duration: 0.25s;
         animation-timing-function: ease-out;
         // background-color: red;
         // tätä voi käyttää testaamiseen
